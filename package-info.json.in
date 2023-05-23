@@ -1,9 +1,9 @@
 {
-	"author" : "Cycling '74",
-	"description" : "Lightweight reference implementation of a package built using the Min-API.",
+	"author" : "Valerio Orlandini",
+	"description" : "A collection of various objects for creative patching.",
 	"homepatcher" : "C++ Object Development Kit.maxpat",
 	"max_version_min" : "8.0", "max_version_max" : "none",
-	"name" : "@C74_PACKAGE_NAME@",
+	"name" : "Sonus",
 	"os" : {
 		"macintosh" : {
 			"platform" : [ "x64", "aarch64" ],
@@ -15,10 +15,10 @@
 		}
 	},
 	"package_extra" : {
-		"reverse_domain" : "com.cycling74",
-		"copyright" : "Copyright (c) 2018 Cycling '74"
+		"reverse_domain" : "com.valeriorlandini",
+		"copyright" : "Copyright (c) 2023 Valerio Orlandini"
 	},
 	"tags" : [ ],
-	"version" : "@GIT_VERSION_MAJ@.@GIT_VERSION_MIN@.@GIT_VERSION_SUB@",
-	"website" : "http://www.github.com/Cycling74/min-devkit"
+	"version" : "0.0.1",
+	"website" : "http://www.github.com/valeriorlandini/sonus"
 }

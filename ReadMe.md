@@ -1,28 +1,39 @@
-# My Package
-This package was created using the Min-DevKit for Max, an API and supporting tools for writing externals in modern C++.
+# sonus
+A collection of various objects for creative patching.
 
 
 
-## Prerequisites
+## How to build
 
-You can use the objects provided in this package as-is.
+Enter in the directory `build`.
 
-To code your own objects, or to re-compile existing objects, you will need a compiler:
+### Mac 
 
-* On the Mac this means **Xcode 9 or later** (you can get from the App Store for free). 
-* On Windows this means **Visual Studio 2017** (you can download a free version from Microsoft). The installer for Visual Studio 2017 offers an option to install Git, which you should choose to do.
+Run `cmake -G Xcode ..`
 
-You will also need the Min-DevKit, available from the Package Manager inside of Max or [directly from Github](https://github.com/Cycling74/min-devkit).
+Next run `cmake --build .` or open the Xcode project from this "build" folder and use the GUI.
 
+Note: you can add the `-j4` option where "4" is the number of cores to use.  This can help to speed up your builds, though sometimes the error output is interleaved in such a way as to make troubleshooting more difficult.
 
+If you are running on a Mac M1 machine, you will likely see an error `cannot be loaded due to system security policy` when loading your externals in Max. To resolve this, you can ad-hoc codesign your external with `codesign --force --deep -s - myobject.mxo`.
 
+### Windows
 
-## Contributors / Acknowledgements
+You can run `cmake --help` to get a list of the options available. 
 
-The My Package is the work of some amazing and creative artists, researchers, and coders.
+Visual Studio 2022:
 
+`cmake -G "Visual Studio 17 2022" ..`
 
+Visual Studio 2019:
 
-## Support
+`cmake -G "Visual Studio 16 2019" ..`
 
-For support, please contact the developer of this package.
+Visual Studio 2017:
+
+`cmake -G "Visual Studio 15 2017 Win64" ..`
+
+Having generated the projects, you can now build by opening the .sln file in the build folder with the Visual Studio app (just double-click the .sln file) or you can build on the command line like this:
+
+`cmake --build . --config Release`
+
