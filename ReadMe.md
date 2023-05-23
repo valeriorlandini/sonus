@@ -5,7 +5,8 @@ A collection of various objects for creative patching.
 
 ## How to build
 
-Enter in the directory `build`.
+`mkdir build` to create a folder with your various build files
+`cd build` to put yourself into that folder
 
 ### Mac 
 
