@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="C:\Users\Valerio\Documents\Max 8\Packages\sonus\source\min-lib\include\c74_lib.h">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Users\Valerio\Documents\Max 8\Packages\sonus\source\min-lib\include\c74_lib_adsr.h">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Users\Valerio\Documents\Max 8\Packages\sonus\source\min-lib\include\c74_lib_allpass.h">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Users\Valerio\Documents\Max 8\Packages\sonus\source\min-lib\include\c74_lib_circular_storage.h">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Users\Valerio\Documents\Max 8\Packages\sonus\source\min-lib\include\c74_lib_dcblocker.h">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Users\Valerio\Documents\Max 8\Packages\sonus\source\min-lib\include\c74_lib_delay.h">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Users\Valerio\Documents\Max 8\Packages\sonus\source\min-lib\include\c74_lib_easing.h">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Users\Valerio\Documents\Max 8\Packages\sonus\source\min-lib\include\c74_lib_filters.h">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Users\Valerio\Documents\Max 8\Packages\sonus\source\min-lib\include\c74_lib_generator.h">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Users\Valerio\Documents\Max 8\Packages\sonus\source\min-lib\include\c74_lib_interpolator.h">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Users\Valerio\Documents\Max 8\Packages\sonus\source\min-lib\include\c74_lib_limiter.h">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Users\Valerio\Documents\Max 8\Packages\sonus\source\min-lib\include\c74_lib_math.h">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Users\Valerio\Documents\Max 8\Packages\sonus\source\min-lib\include\c74_lib_onepole.h">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Users\Valerio\Documents\Max 8\Packages\sonus\source\min-lib\include\c74_lib_oscillator.h">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Users\Valerio\Documents\Max 8\Packages\sonus\source\min-lib\include\c74_lib_saturation.h">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Users\Valerio\Documents\Max 8\Packages\sonus\source\min-lib\include\c74_lib_sync.h">
+      <Filter>Header Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{AEE6D44D-AC60-3F62-B093-308523D34937}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
