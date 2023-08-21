@@ -1,6 +1,6 @@
 /// @file       sonus.wavesets.cpp
 ///	@ingroup 	sonus.*
-///	@copyright	Copyright 2023 Sonus Dept. All rights reserved.
+///	@copyright	Copyright 2023 Valerio Orlandini. All rights reserved.
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "c74_min.h"
@@ -37,7 +37,7 @@ class wavesets : public object<wavesets>
 public:
     MIN_DESCRIPTION	{ "Make wavesets operations a buffer~." };
     MIN_TAGS		{ "audio, sampling" };
-    MIN_AUTHOR		{ "Sonus Dept." };
+    MIN_AUTHOR		{ "Valerio Orlandini" };
     MIN_RELATED		{ "index~, buffer~, wave~" };
 
     inlet<>  inlet_index	    { this, "Buffer transformation based on wavesets detection" };
@@ -90,7 +90,7 @@ public:
     {
         this,
         "mute",
-        "Mutes n wavesets after keeping m",
+        "Mute n wavesets after keeping m",
         MIN_FUNCTION
         {
             if (!args.empty())

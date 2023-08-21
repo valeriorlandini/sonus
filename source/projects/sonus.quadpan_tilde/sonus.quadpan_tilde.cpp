@@ -1,6 +1,6 @@
 /// @file
 ///	@ingroup 	sonus.*
-///	@copyright	Copyright 2023 Sonus Dept. All rights reserved.
+///	@copyright	Copyright 2023 Valerio Orlandini. All rights reserved.
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "c74_min.h"
@@ -13,7 +13,7 @@ class quadpan : public object<quadpan>, public sample_operator<3, 4>
 public:
 	MIN_DESCRIPTION {"Pan the input in a quadraphonic setup"};
 	MIN_TAGS {"audio, routing"};
-	MIN_AUTHOR {"Sonus Dept."};
+	MIN_AUTHOR {"Valerio Orlandini"};
 	MIN_RELATED {"sonus.quadpanner"};
 
 	inlet<>  in1 {this, "(signal) Input"};

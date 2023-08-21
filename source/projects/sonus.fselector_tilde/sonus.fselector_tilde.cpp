@@ -1,6 +1,6 @@
 /// @file
 ///	@ingroup 	sonus.*
-///	@copyright	Copyright 2023 Sonus Dept. All rights reserved.
+///	@copyright	Copyright 2023 Valerio Orlandini. All rights reserved.
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "c74_min.h"
@@ -24,7 +24,7 @@ class fselector_tilde : public object<fselector_tilde>, public vector_operator<>
 public:
 	MIN_DESCRIPTION {"Continuous selector from contiguous inputs"};
 	MIN_TAGS {"audio, routing"};
-	MIN_AUTHOR {"Sonus Dept."};
+	MIN_AUTHOR {"Valerio Orlandini"};
 	MIN_RELATED {"selector~"};
 
 	outlet<> out1 {this, "(signal) Output", "signal"};

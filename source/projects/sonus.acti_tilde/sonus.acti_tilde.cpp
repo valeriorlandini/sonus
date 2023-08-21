@@ -1,6 +1,6 @@
 /// @file
 ///	@ingroup 	sonus.*
-///	@copyright	Copyright 2023 Sonus Dept. All rights reserved.
+///	@copyright	Copyright 2023 Valerio Orlandini. All rights reserved.
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "c74_min.h"
@@ -13,8 +13,8 @@ class acti_tilde : public object<acti_tilde>, public sample_operator<1, 1>
 {
 public:
 	MIN_DESCRIPTION {"Activation functions"};
-	MIN_TAGS {"neural networks, math"};
-	MIN_AUTHOR {"Sonus Dept."};
+	MIN_TAGS {"neural networks, math, ai"};
+	MIN_AUTHOR {"Valerio Orlandini"};
 	MIN_RELATED {"sonus.acti"};
 
 	inlet<>  in {this, "(signal) Input"};

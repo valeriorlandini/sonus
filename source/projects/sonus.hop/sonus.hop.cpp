@@ -1,6 +1,6 @@
 /// @file
 ///	@ingroup 	sonus.*
-///	@copyright	Copyright 2023 Sonus Dept. All rights reserved.
+///	@copyright	Copyright 2023 Valerio Orlandini. All rights reserved.
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "c74_min.h"
@@ -24,8 +24,8 @@ class hop : public object<hop>
 {
 public:
 	MIN_DESCRIPTION {"Hot inlets math operators"};
-	MIN_TAGS {"audio, routing"};
-	MIN_AUTHOR {"Sonus Dept."};
+	MIN_TAGS {"math"};
+	MIN_AUTHOR {"Valerio Orlandini"};
 	MIN_RELATED {"expr, pow"};
 
 	inlet<>  in_x {this, "(number) Left operand"};
@@ -103,7 +103,8 @@ public:
         }
     };
 
-    message<> m_number {
+    message<> m_number
+	{
 		this,
 		"number",
 		"Operand",

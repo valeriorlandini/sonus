@@ -1,6 +1,6 @@
 /// @file
 ///	@ingroup 	sonus.*
-///	@copyright	Copyright 2023 Sonus Dept. All rights reserved.
+///	@copyright	Copyright 2023 Valerio Orlandini. All rights reserved.
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "c74_min.h"
@@ -13,7 +13,7 @@ class quadpanner : public object<quadpanner>
 public:
 	MIN_DESCRIPTION {"Returns the gains of a quadraphonic setup"};
 	MIN_TAGS {"audio, routing"};
-	MIN_AUTHOR {"Sonus Dept."};
+	MIN_AUTHOR {"Valerio Orlandini"};
 	MIN_RELATED {"sonus.quadpan~"};
 
 	inlet<>  in_x {this, "(float) X position, from left to right (0..1)"};
@@ -45,10 +45,11 @@ public:
         }
     };
 
-    message<> m_number {
+    message<> m_number
+	{
 		this,
 		"number",
-		"Coordinate, left to right on first inlet and front to rear to second inlet (0..1)",
+		"Coordinate. Left to right on first inlet and front to rear on second inlet (0..1)",
         MIN_FUNCTION
 		{
 			if (inlet == 0)
@@ -70,6 +71,7 @@ public:
         this,
         "x",
         0.5,
+		range {0.0, 1.0},
         title {"X position"},
         description {"X position, from front to rear (0..1)."},
 		setter
@@ -79,8 +81,7 @@ public:
 				output(args[0], y_pos.get());
 				return args;
 			}
-		},
-		range {0.0, 1.0}
+		}
     };
 
 	attribute<number, threadsafe::no, limit::clamp> y_pos
@@ -88,6 +89,7 @@ public:
         this,
         "y",
         0.5,
+		range {0.0, 1.0},
         title {"Y position"},
         description {"Y position, from front to rear (0..1)."},
 		setter
@@ -97,8 +99,7 @@ public:
 				output(x_pos.get(), args[0]);
 				return args;
 			}
-		},
-		range {0.0, 1.0}
+		}
     };
 
 	void output(double x, double y)

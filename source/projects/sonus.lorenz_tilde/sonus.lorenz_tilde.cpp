@@ -1,6 +1,6 @@
 /// @file
 ///	@ingroup 	sonus.*
-///	@copyright	Copyright 2023 Sonus Dept. All rights reserved.
+///	@copyright	Copyright 2023 Valerio Orlandini. All rights reserved.
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "c74_min.h"
@@ -23,7 +23,7 @@ class lorenz_tilde : public object<lorenz_tilde>, public sample_operator<1, 3>
 public:
 	MIN_DESCRIPTION {"Lorenz system based oscillator"};
 	MIN_TAGS {"strange attractors, oscillator"};
-	MIN_AUTHOR {"Sonus Dept."};
+	MIN_AUTHOR {"Valerio Orlandini"};
 	MIN_RELATED {"sonus.lorenz"};
 
 	inlet<>  in {this, "(signal) Frequency"};

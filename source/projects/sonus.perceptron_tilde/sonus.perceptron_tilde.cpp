@@ -1,6 +1,6 @@
 /// @file
 ///	@ingroup 	sonus.*
-///	@copyright	Copyright 2023 Sonus Dept. All rights reserved.
+///	@copyright	Copyright 2023 Valerio Orlandini. All rights reserved.
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "c74_min.h"
@@ -11,8 +11,8 @@ class perceptron : public object<perceptron>, public sample_operator<3, 2>
 {
 public:
 	MIN_DESCRIPTION {"Implementation of the classic perceptron algorithm"};
-	MIN_TAGS {"audio, neural networks"};
-	MIN_AUTHOR {"Sonus Dept."};
+	MIN_TAGS {"audio, neural networks, ai"};
+	MIN_AUTHOR {"Valerio Orlandini"};
 	MIN_RELATED {"sonus.neuron"};
 
 	inlet<>  in1 {this, "(signal) Input"};
