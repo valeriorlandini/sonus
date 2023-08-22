@@ -16,7 +16,7 @@ public:
 	MIN_AUTHOR {"Valerio Orlandini"};
 	MIN_RELATED {""};
 
-	inlet<>  in_f {this, "(signal/float) Frequency", frequency};
+	inlet<>  in_f {this, "(signal/float) Frequency"};
 	inlet<>  in_c {this, "(float) Cycles with same shape"};
 	outlet<> out {this, "(signal) Output", "signal"};
 
@@ -89,6 +89,9 @@ public:
 	sample operator()(sample x)
     {	
 		double output = 0.0;
+
+		if (in_f.has_signal_connection())
+			frequency = x;
 
 		if (osc_.run())
 		{
