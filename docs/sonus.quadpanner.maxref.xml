@@ -42,7 +42,7 @@
 
 		<method name='float'>
 			<digest>Coordinate</digest>
-			<description>Coordinate. Left to right on first inlet and front to rear to second inlet (0..1) </description>
+			<description>Coordinate. Left to right on first inlet and front to rear on second inlet (0..1) </description>
 		</method>
 
 	</methodlist>

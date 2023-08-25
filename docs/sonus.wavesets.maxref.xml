@@ -41,8 +41,8 @@
 		</method>
 
 		<method name='mute'>
-			<digest>Mutes n wavesets after keeping m </digest>
-			<description>Mutes n wavesets after keeping m </description>
+			<digest>Mute n wavesets after keeping m </digest>
+			<description>Mute n wavesets after keeping m </description>
 		</method>
 
 		<method name='restore'>

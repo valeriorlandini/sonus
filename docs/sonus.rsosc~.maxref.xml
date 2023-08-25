@@ -22,6 +22,16 @@
 
 	<objarglist>
 
+		<objarg name='Frequency' optional='1' type='number'>
+			<digest>Oscillator frequency</digest>
+			<description>Oscillator frequency. </description>
+		</objarg>
+
+		<objarg name='Cycles' optional='1' type='number'>
+			<digest>Oscillator cycles with the same shape</digest>
+			<description>Oscillator cycles with the same shape. </description>
+		</objarg>
+
 	</objarglist>
 
 

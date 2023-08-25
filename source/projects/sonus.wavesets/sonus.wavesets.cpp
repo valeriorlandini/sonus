@@ -313,7 +313,7 @@ public:
                 analyse();
                 buffer_lock<> b(m_buffer);
                 Shapes waveshape = SINE;
-                if (args[0] == "sine")
+                if (args[0] == "sin")
                 {
                     waveshape = SINE;
                 }
@@ -321,7 +321,7 @@ public:
                 {
                     waveshape = SAW;
                 }
-                else if (args[0] == "pulse")
+                else if (args[0] == "rect")
                 {
                     waveshape = PULSE;
                 }

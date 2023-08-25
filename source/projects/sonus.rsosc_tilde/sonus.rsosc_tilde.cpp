@@ -19,6 +19,7 @@ public:
 	inlet<>  in_f {this, "(signal/float) Frequency"};
 	inlet<>  in_c {this, "(float) Cycles with same shape"};
 	outlet<> out {this, "(signal) Output", "signal"};
+	outlet<> out_b {this, "(symbol) Current wave shape"};
 
 	message<> dspsetup
 	{
@@ -30,6 +31,28 @@ public:
 			return {};
 		}
 	};
+
+	argument<number> frequency_arg
+	{
+		this,
+		"frequency",
+		"Oscillator frequency.",
+        MIN_ARGUMENT_FUNCTION
+		{
+            frequency = arg;
+        }
+    };
+
+	argument<number> cycles_arg
+	{
+		this,
+		"cycles",
+		"Oscillator cycles with the same shape.",
+        MIN_ARGUMENT_FUNCTION
+		{
+            cycles = arg;
+        }
+    };
 
 	attribute<number, threadsafe::no> frequency
 	{
@@ -100,7 +123,22 @@ public:
 			if (cycle_ >= cycles)
 			{
 				shape_ = amtl::VAWaveforms(rand() % 4);
-				cycle_ = 0;
+				cycle_ = 0;		
+				switch (shape_)
+				{
+					case amtl::SINE:
+					out_b.send("sine");
+					break;
+					case amtl::SAW:
+					out_b.send("saw");
+					break;
+					case amtl::PULSE:
+					out_b.send("square");
+					break;
+					case amtl::TRIANGLE:
+					out_b.send("triangle");
+					break;
+				}
 			}
 		}
 
