@@ -1,6 +1,33 @@
 # sonus
-A collection of various objects for creative patching.
+A collection of various Max/MSP objects for creative patching. This package was born as a collection of some custom externals
+I made for different projects, so they are not really linked by a common thread. They anyway more or less deal with math,
+artificial intelligence and weird sounds.
 
+Currently finished externals are:
+
+### Generators
+* sonus.vaosc~
+* sonus.window~
+
+### Effects
+* sonus.quadpan~
+
+### Sample Manipulation
+* sonus.wavesets~
+
+### Neural Networks and AI
+* sonus.acti
+* sonus.acti~
+* sonus.ca
+* sonus.neuron
+* sonus.perceptron~
+
+### Math and Utilities
+* sonus.fselector~
+* sonus.hop
+* sonus.mima~
+* sonus.quadpanner
+* sonus.tent
 
 
 ## How to build

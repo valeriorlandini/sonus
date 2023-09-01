@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 130.0, 132.0, 847.0, 555.0 ],
+		"rect" : [ 100.0, 124.0, 847.0, 531.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -48,7 +48,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 163.315506756305695, 359.489294707775116, 119.459892392158508, 25.0 ],
-					"presentation_linecount" : 2,
 					"text" : "maximum value"
 				}
 
@@ -63,7 +62,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 133.342245161533356, 326.842236399650574, 114.139037370681763, 25.0 ],
-					"presentation_linecount" : 2,
 					"text" : "minimum value"
 				}
 
@@ -78,7 +76,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 105.0, 294.729937434196472, 335.759351432323456, 25.0 ],
-					"presentation_linecount" : 6,
 					"text" : "absolute maximum value (i.e. not considering the sign"
 				}
 
