@@ -26,8 +26,6 @@ SOFTWARE.
 
 #include <algorithm>
 #include <cmath>
-#include <cstdlib>
-#include <ctime>
 
 namespace amtl
 {
@@ -48,15 +46,11 @@ public:
 
     bool set_sample_rate(const TSample &sample_rate);
     bool set_frequency(const TSample &frequency);
-    //bool set_pulse_width(const TSample &pulse_width);
     void reset();
 
     inline bool run();
     inline bool run(TSample &sine_out, TSample &triangle_out, TSample &saw_out,
                     TSample &square_out);
-    /*inline TSample run(const VAWaveforms &wave_1,
-                       const VAWaveforms &wave_2 = -1,
-                       const TSample &mix = 0.0);*/
 
     inline void get_last_sample(TSample &sine_out, TSample &triangle_out,
                                 TSample &saw_out, TSample &square_out);
@@ -91,7 +85,6 @@ private:
     TSample sine_out_;
     TSample triangle_out_;
     TSample square_out_;
-    //TSample pulse_width_;
 };
 
 template <class TSample>
@@ -107,8 +100,6 @@ BLOsc<TSample>::BLOsc(const TSample &sample_rate, const TSample &frequency)
     {
         set_sample_rate(44100.0);
     }
-
-    //set_pulse_width(0.5);
 
     reset();
 }
@@ -138,29 +129,18 @@ bool BLOsc<TSample>::set_frequency(const TSample &frequency)
     {
         frequency_ = frequency;
     }
+    else
+    {
+        frequency_ = half_sample_rate_ * 0.999;
+    }
 
     step_ = frequency_ * inv_sample_rate_;
 
-    harmonics_ = std::min(25.0, floor(half_sample_rate_ / frequency_));
+    harmonics_ = std::min(30.0, floor(half_sample_rate_ / abs(frequency_)));
 
     return true;
 }
-/*
-template <class TSample>
-inline bool VAOsc<TSample>::set_pulse_width(const TSample &pulse_width)
-{
-    if (pulse_width >= 0.0 && pulse_width <= 1.0)
-    {
-        pulse_width_ = pulse_width;
 
-        return true;
-    }
-
-    std::cerr << "VAOsc::pulse_width_ must be inside [0.0, 1.0] range\n";
-
-    return false;
-}
-*/
 template <class TSample>
 void BLOsc<TSample>::reset()
 {
@@ -189,25 +169,20 @@ inline bool BLOsc<TSample>::run()
     square_out_ = 0.0;
     triangle_out_ = 0.0;
 
-    TSample sawg_ = 0.0;
-    TSample sqg_ = 0.0;
-    TSample trig_ = 0.0;
-
     for (TSample harmonic = 1.0; harmonic <= harmonics_; harmonic++)
     {
-        saw_out_ += sin(ramp_ * M_PI * 2.0 * harmonic) / harmonic;
+        saw_out_ += sin(-ramp_ * M_PI * 2.0 * harmonic) / harmonic;
 
         if ((unsigned int)harmonic % 2)
         {
             square_out_ += sin(ramp_ * M_PI * 2.0 * harmonic) / harmonic;
-            triangle_out_ += sin(ramp_ * M_PI * 2.0 * harmonic) / (harmonic * harmonic);
+            triangle_out_ += cos(ramp_ * M_PI * 2.0 * harmonic) / (harmonic * harmonic);
         }
     }
 
     saw_out_ *= 0.55;
     square_out_ *= 1.07;
-
-
+    triangle_out_ *= 0.82;
 
     return new_cycle;
 }

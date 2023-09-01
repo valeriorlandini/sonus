@@ -6,8 +6,8 @@
 
 <c74object name='sonus.vaosc~' category='oscillators'>
 
-	<digest>Virtual analog oscillator with classic shapes </digest>
-	<description>Virtual analog oscillator with classic shapes </description>
+	<digest>Virtual bandlimited analog oscillator with classic shapes </digest>
+	<description>Virtual bandlimited analog oscillator with classic shapes </description>
 
 
 	<!--METADATA-->

@@ -11,7 +11,7 @@ using namespace c74::min;
 class rsosc_tilde : public object<rsosc_tilde>, public sample_operator<1, 1>
 {
 public:
-	MIN_DESCRIPTION {"Oscillator with changing random change"};
+	MIN_DESCRIPTION {"Non bandlimited oscillator with changing random change"};
 	MIN_TAGS {"oscillators"};
 	MIN_AUTHOR {"Valerio Orlandini"};
 	MIN_RELATED {""};
@@ -163,7 +163,7 @@ public:
 
 	private:
 	amtl::VAOsc<double> osc_;
-	amtl::VAWaveforms shape_ = amtl::SINE;
+	amtl::VAWaveforms shape_ = amtl::VAWaveforms::SINE;
 	unsigned long cycle_ = 0;
 };
 
