@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 137.0, 200.0, 1037.0, 709.0 ],
+		"rect" : [ 131.0, 121.0, 1037.0, 709.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,29 @@
 		"showontab" : 0,
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-37",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 26.0, 337.0, 183.0, 20.0 ],
+					"text" : "Multishape bandlimited oscillator"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-38",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 26.0, 313.0, 82.0, 22.0 ],
+					"text" : "sonus.vaosc~"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-39",
 					"maxclass" : "live.line",
@@ -406,7 +429,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 337.0, 183.0, 20.0 ],
+					"patching_rect" : [ 26.0, 407.0, 183.0, 20.0 ],
 					"text" : "Window functions generator"
 				}
 
@@ -562,7 +585,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 313.0, 91.0, 22.0 ],
+					"patching_rect" : [ 26.0, 383.0, 91.0, 22.0 ],
 					"text" : "sonus.window~"
 				}
 
@@ -750,6 +773,14 @@
 					"destination" : [ "obj-58", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-35", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-38", 0 ]
 				}
 
 			}

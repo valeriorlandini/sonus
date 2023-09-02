@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 308.0, 112.0, 854.0, 622.0 ],
+		"rect" : [ 100.0, 100.0, 854.0, 622.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -46,7 +46,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 572.0, 139.0, 169.0, 22.0 ],
+					"patching_rect" : [ 572.0, 145.5, 169.0, 22.0 ],
 					"text" : "loadmess replace sample.wav"
 				}
 
@@ -61,8 +61,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 190.205963671207428, 367.5, 197.794036328792572, 100.0 ],
-					"presentation_linecount" : 4,
+					"patching_rect" : [ 190.205963671207428, 367.5, 199.0, 100.0 ],
 					"text" : "each time \"backup 1\" is sent, a copy of the current buffer is stored to memory (replacing any previous one), so that it can be restored with \"restore\" message"
 				}
 
@@ -204,7 +203,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 462.205963671207428, 139.0, 48.0, 22.0 ],
+					"patching_rect" : [ 462.205963671207428, 145.5, 48.0, 22.0 ],
 					"text" : "replace"
 				}
 
@@ -217,7 +216,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 572.0, 176.0, 121.0, 22.0 ],
+					"patching_rect" : [ 572.0, 182.5, 121.0, 22.0 ],
 					"text" : "loadmess set sample"
 				}
 
@@ -241,7 +240,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 462.205963671207428, 176.0, 88.0, 22.0 ],
+					"patching_rect" : [ 462.205963671207428, 182.5, 88.0, 22.0 ],
 					"text" : "buffer~ sample"
 				}
 

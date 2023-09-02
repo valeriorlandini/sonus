@@ -136,7 +136,14 @@ bool BLOsc<TSample>::set_frequency(const TSample &frequency)
 
     step_ = frequency_ * inv_sample_rate_;
 
-    harmonics_ = std::min(30.0, floor(half_sample_rate_ / abs(frequency_)));
+    if (frequency != 0.0)
+    {
+        harmonics_ = std::min(30.0, floor(half_sample_rate_ / abs(frequency_)));
+    }
+    else
+    {
+        harmonics_ = 0.0;
+    }
 
     return true;
 }
