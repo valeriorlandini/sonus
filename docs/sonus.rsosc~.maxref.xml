@@ -6,8 +6,8 @@
 
 <c74object name='sonus.rsosc~' category='oscillators'>
 
-	<digest>Oscillator with changing random change </digest>
-	<description>Oscillator with changing random change </description>
+	<digest>Non bandlimited oscillator with changing random change </digest>
+	<description>Non bandlimited oscillator with changing random change </description>
 
 
 	<!--METADATA-->

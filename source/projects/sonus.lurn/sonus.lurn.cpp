@@ -5,6 +5,8 @@
 
 #include "c74_min.h"
 #include <cmath>
+#include <cstdlib>
+#include <ctime>
 
 using namespace c74::min;
 
@@ -21,21 +23,50 @@ public:
 	outlet<> out {this, "(symbol) Output"};
 	outlet<> out_end {this, "(bang) Bang when all elements have been chosen"};
 
+	lurn()
+	{
+		srand(time(0));
+	}
 	
-	message<> m_number
+	message<> anything
 	{
 		this,
-		"number",
-		"Depends on inlet. A number on the first inlet resets the initial value, while on the second inlet sets the mu parameter.",
+		"anything",
+		"On second inlet, list of items to choose from.",
+        MIN_FUNCTION
+		{
+			if (inlet == 1)
+			{
+				elements_ = from_atoms<std::vector<std::string>>(args);
+				elements_left_ = from_atoms<std::vector<std::string>>(args);
+				elements_.erase(elements_.begin());
+				elements_left_.erase(elements_left_.begin());
+
+				if (elements_.size() > 0)
+				{
+					all_out_ = false;
+				}
+			}
+
+			return {};
+		}
+    };
+
+	message<> clear
+	{
+		this,
+		"clear",
+		"Clear the list of already chosen elements.",
         MIN_FUNCTION
 		{
 			if (inlet == 0)
 			{
-				x = args;
-			}
-			else
-			{
-				mu = args;
+				elements_left_ = elements_;
+
+				if (elements_.size() > 0)
+				{
+					all_out_ = false;
+				}
 			}
 
 			return {};
@@ -46,25 +77,36 @@ public:
 	{
 		this,
 		"bang",
-		"Output next value",
+		"Output next value.",
 		MIN_FUNCTION
 		{
-			if (x < 0.5)
+			if (inlet == 0)
 			{
-				x *= mu;
+				if (all_out_)
+				{
+					out_end.send(k_sym_bang);
+				}
+				else
+				{
+					unsigned int element = rand() % elements_left_.size();
+					out.send(elements_left_.at(element));
+					elements_left_.erase(elements_left_.begin() + element);
+					if (elements_left_.size() == 0)
+					{
+						all_out_ = true;
+						out_end.send(k_sym_bang);
+					}
+				}
 			}
-			else
-			{
-				x = (1.0 - x) * mu;
-			}
-			out.send(x.get());
+
 			return {};
 		}
 	};
 
 	private:
 	std::vector<std::string> elements_;
-	std::vector<std::string> elements_out_;
+	std::vector<std::string> elements_left_;
+	bool all_out_ = true;
 };
 
 MIN_EXTERNAL(lurn);

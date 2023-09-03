@@ -41,7 +41,7 @@ public:
 	{
 		this,
 		"list",
-		"Perform calcultation on the list.",
+		"Perform calculation on the list.",
         MIN_FUNCTION {
 			auto x = from_atoms<std::vector<double>>(args);
 			const std::vector<double>& wg = this->weights;

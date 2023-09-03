@@ -11,10 +11,10 @@ using namespace c74::min;
 class rsosc_tilde : public object<rsosc_tilde>, public sample_operator<1, 1>
 {
 public:
-	MIN_DESCRIPTION {"Non bandlimited oscillator with changing random change"};
+	MIN_DESCRIPTION {"Non bandlimited oscillator with changing random shape"};
 	MIN_TAGS {"oscillators"};
 	MIN_AUTHOR {"Valerio Orlandini"};
-	MIN_RELATED {""};
+	MIN_RELATED {"sonus.vaosc~"};
 
 	inlet<>  in_f {this, "(signal/float) Frequency"};
 	inlet<>  in_c {this, "(float) Cycles with same shape"};

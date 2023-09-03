@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 131.0, 121.0, 1037.0, 709.0 ],
+		"rect" : [ 237.0, 268.0, 1037.0, 759.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -41,11 +41,59 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-37",
+					"id" : "obj-43",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 822.0, 337.0, 183.0, 34.0 ],
+					"presentation_linecount" : 2,
+					"text" : "Non repeating random sequences"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-44",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 822.0, 313.0, 64.0, 22.0 ],
+					"text" : "sonus.lurn"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-41",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 26.0, 337.0, 183.0, 20.0 ],
+					"text" : "Oscillator with random shapes"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-42",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 26.0, 313.0, 80.0, 22.0 ],
+					"text" : "sonus.rsosc~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-37",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 26.0, 407.0, 183.0, 20.0 ],
 					"text" : "Multishape bandlimited oscillator"
 				}
 
@@ -57,7 +105,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 313.0, 82.0, 22.0 ],
+					"patching_rect" : [ 26.0, 383.0, 82.0, 22.0 ],
 					"text" : "sonus.vaosc~"
 				}
 
@@ -271,7 +319,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 822.0, 477.0, 183.0, 20.0 ],
+					"patching_rect" : [ 822.0, 547.0, 183.0, 20.0 ],
 					"text" : "Tent map calculator"
 				}
 
@@ -283,7 +331,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 822.0, 453.0, 64.0, 22.0 ],
+					"patching_rect" : [ 822.0, 523.0, 64.0, 22.0 ],
 					"text" : "sonus.tent"
 				}
 
@@ -307,7 +355,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 822.0, 407.0, 183.0, 34.0 ],
+					"patching_rect" : [ 822.0, 477.0, 183.0, 34.0 ],
 					"text" : "Quadraphonic panner coefficients calculator"
 				}
 
@@ -329,7 +377,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 822.0, 337.0, 183.0, 20.0 ],
+					"patching_rect" : [ 822.0, 407.0, 183.0, 20.0 ],
 					"text" : "Signal extremes analyzer"
 				}
 
@@ -429,7 +477,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 407.0, 183.0, 20.0 ],
+					"patching_rect" : [ 26.0, 477.0, 183.0, 20.0 ],
 					"text" : "Window functions generator"
 				}
 
@@ -441,7 +489,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 822.0, 383.0, 108.0, 22.0 ],
+					"patching_rect" : [ 822.0, 453.0, 108.0, 22.0 ],
 					"text" : "sonus.quadpanner"
 				}
 
@@ -477,7 +525,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 822.0, 313.0, 80.0, 22.0 ],
+					"patching_rect" : [ 822.0, 383.0, 80.0, 22.0 ],
 					"text" : "sonus.mima~"
 				}
 
@@ -585,7 +633,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 383.0, 91.0, 22.0 ],
+					"patching_rect" : [ 26.0, 453.0, 91.0, 22.0 ],
 					"text" : "sonus.window~"
 				}
 
@@ -789,6 +837,22 @@
 					"destination" : [ "obj-36", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-40", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-42", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-44", 0 ]
 				}
 
 			}
