@@ -41,13 +41,35 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-45",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 822.0, 407.0, 183.0, 20.0 ],
+					"text" : "Mathematical constants"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-46",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 822.0, 383.0, 77.0, 22.0 ],
+					"text" : "sonus.mathc"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-43",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 822.0, 337.0, 183.0, 34.0 ],
-					"presentation_linecount" : 2,
 					"text" : "Non repeating random sequences"
 				}
 
@@ -319,7 +341,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 822.0, 547.0, 183.0, 20.0 ],
+					"patching_rect" : [ 822.0, 617.0, 183.0, 20.0 ],
 					"text" : "Tent map calculator"
 				}
 
@@ -331,7 +353,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 822.0, 523.0, 64.0, 22.0 ],
+					"patching_rect" : [ 822.0, 593.0, 64.0, 22.0 ],
 					"text" : "sonus.tent"
 				}
 
@@ -355,7 +377,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 822.0, 477.0, 183.0, 34.0 ],
+					"patching_rect" : [ 822.0, 547.0, 183.0, 34.0 ],
 					"text" : "Quadraphonic panner coefficients calculator"
 				}
 
@@ -377,7 +399,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 822.0, 407.0, 183.0, 20.0 ],
+					"patching_rect" : [ 822.0, 477.0, 183.0, 20.0 ],
 					"text" : "Signal extremes analyzer"
 				}
 
@@ -489,7 +511,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 822.0, 453.0, 108.0, 22.0 ],
+					"patching_rect" : [ 822.0, 523.0, 108.0, 22.0 ],
 					"text" : "sonus.quadpanner"
 				}
 
@@ -525,7 +547,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 822.0, 383.0, 80.0, 22.0 ],
+					"patching_rect" : [ 822.0, 453.0, 80.0, 22.0 ],
 					"text" : "sonus.mima~"
 				}
 
@@ -853,6 +875,14 @@
 					"destination" : [ "obj-58", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-44", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-46", 0 ]
 				}
 
 			}

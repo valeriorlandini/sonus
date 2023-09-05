@@ -6,8 +6,8 @@
 
 <c74object name='sonus.rsosc~' category='oscillators'>
 
-	<digest>Non bandlimited oscillator with changing random change </digest>
-	<description>Non bandlimited oscillator with changing random change </description>
+	<digest>Non bandlimited oscillator with changing random shape </digest>
+	<description>Non bandlimited oscillator with changing random shape </description>
 
 
 	<!--METADATA-->
@@ -67,6 +67,7 @@
 	<!--RELATED-->
 
 	<seealsolist>
+		<seealso name='sonus.vaosc~' />
 	</seealsolist>
 
 
