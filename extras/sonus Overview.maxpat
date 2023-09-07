@@ -41,6 +41,29 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-47",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 26.0, 264.0, 183.0, 20.0 ],
+					"text" : "Pulsar oscillator"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-48",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 26.0, 240.0, 84.0, 22.0 ],
+					"text" : "sonus.pulsar~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-45",
 					"maxclass" : "comment",
 					"numinlets" : 1,
@@ -92,7 +115,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 337.0, 183.0, 20.0 ],
+					"patching_rect" : [ 26.0, 410.0, 183.0, 20.0 ],
 					"text" : "Oscillator with random shapes"
 				}
 
@@ -104,7 +127,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 313.0, 80.0, 22.0 ],
+					"patching_rect" : [ 26.0, 386.0, 80.0, 22.0 ],
 					"text" : "sonus.rsosc~"
 				}
 
@@ -115,7 +138,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 407.0, 183.0, 20.0 ],
+					"patching_rect" : [ 26.0, 480.0, 183.0, 20.0 ],
 					"text" : "Multishape bandlimited oscillator"
 				}
 
@@ -127,7 +150,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 383.0, 82.0, 22.0 ],
+					"patching_rect" : [ 26.0, 456.0, 82.0, 22.0 ],
 					"text" : "sonus.vaosc~"
 				}
 
@@ -477,7 +500,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 264.0, 183.0, 20.0 ],
+					"patching_rect" : [ 26.0, 337.0, 183.0, 20.0 ],
 					"text" : "Rössler attractor based oscillator"
 				}
 
@@ -499,7 +522,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 477.0, 183.0, 20.0 ],
+					"patching_rect" : [ 26.0, 550.0, 183.0, 20.0 ],
 					"text" : "Window functions generator"
 				}
 
@@ -583,7 +606,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 240.0, 94.0, 22.0 ],
+					"patching_rect" : [ 26.0, 313.0, 94.0, 22.0 ],
 					"text" : "sonus.roessler~"
 				}
 
@@ -655,7 +678,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 453.0, 91.0, 22.0 ],
+					"patching_rect" : [ 26.0, 526.0, 91.0, 22.0 ],
 					"text" : "sonus.window~"
 				}
 
@@ -883,6 +906,14 @@
 					"destination" : [ "obj-58", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-46", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-48", 0 ]
 				}
 
 			}

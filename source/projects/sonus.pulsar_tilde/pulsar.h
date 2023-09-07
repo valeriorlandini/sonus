@@ -21,7 +21,8 @@ enum PulsarWaveforms
     SAW,
     SQUARE,
     NOISE,
-    DC
+    DC,
+    PHASOR
 };
 
 enum PulsarWindows
@@ -189,22 +190,14 @@ inline TSample Pulsar<TSample>::run()
     {
         gen_wave_ = false;
     }
-    if (ramp_ > 1.0)
+    if (abs(ramp_) > 1.0)
     {
-        while (ramp_ > 1.0)
+        while (abs(ramp_) > 1.0)
         {
-            ramp_ -=  1.0;
+            ramp_ -=  1.0 * copysign(1.0, ramp_);
         }
         
-        wave_ramp_ -=  1.0;
-        while (wave_ramp_ > 1.0)
-        {
-            wave_ramp_ -=  1.0;
-        }
-        if (wave_ramp_ < 0.0)
-        {
-            wave_ramp_ = 0.0;
-        }
+        wave_ramp_ =  ramp_ * inv_duty_cycle_;
 
         gen_wave_ = true;
     }
@@ -212,7 +205,7 @@ inline TSample Pulsar<TSample>::run()
     if (gen_wave_)
     {
         wave_ramp_ += wave_step_;
-        if (wave_ramp_ > 1.0)
+        if (abs(wave_ramp_) > 1.0)
         {
             gen_wave_ = false;
             return output_;
@@ -228,27 +221,30 @@ inline TSample Pulsar<TSample>::run()
             {
                 output_ += sin(-wave_ramp_ * M_PI * 2.0 * harmonic) / harmonic;
             }
-            output_ *= 0.55;
+            output_ *= 2.0 / M_PI;
             break;
             case SQUARE:
             for (TSample harmonic = 1.0; harmonic <= harmonics_; harmonic += 2)
             {
                 output_ += sin(wave_ramp_ * M_PI * 2.0 * harmonic) / harmonic;
             }
-            output_ *= 1.07;
+            output_ *= 4.0 / M_PI;
             break;
             case TRIANGLE:
             for (TSample harmonic = 1.0; harmonic <= harmonics_; harmonic += 2)
             {
-                output_ += cos(wave_ramp_ * M_PI * 2.0 * harmonic) / (harmonic * harmonic);
+                output_ += cos((wave_ramp_ + 0.75) * M_PI * 2.0 * harmonic) / (harmonic * harmonic);
             }
-            output_ *= 0.82;
+            output_ *= 8.0 / (M_PI * M_PI);
             break;
             case NOISE:
             output_ = (rand() * INV_RAND_MAX * 2.0) - 1.0;
             break;
             case DC:
             output_ = 1.0;
+            break;
+            case PHASOR:
+            output_ = wave_ramp_;
             break;
         }
 

@@ -20,6 +20,12 @@ public:
 	inlet<>  in_dc {this, "(signal/float) Duty cycle"};
 	outlet<> out {this, "(signal) Output", "signal"};
 
+	enum class waveforms : int { sine, triangle, saw, square, noise, dc, phasor, enum_count };
+    enum_map waveforms_range = {"sine", "triangle", "saw", "square", "noise", "dc", "phasor"};
+
+	enum class windows : int { hann, hamming, blackman, nuttall, blackmannuttall, blackmanharris, flattop, bartletthann, rectangular, enum_count };
+    enum_map windows_range = {"hann", "hamming", "blackman", "nuttall", "blackman-nuttall", "blackman-harris", "flat-top", "bartlett-hann", "rectangular"};
+
 	message<> dspsetup
 	{
 		this,
@@ -53,6 +59,42 @@ public:
         }
     };
 
+    attribute<windows> window
+	{
+		this,
+		"window",
+		windows::rectangular,
+		windows_range,
+		title {"Window"},
+        description {"Window function to multiply the pulsar."},
+		setter
+		{
+			MIN_FUNCTION
+			{
+				pulsar_.set_window((PulsarWindows)args[0]);
+				return args;
+			}
+		}
+    };
+
+    attribute<waveforms> waveform
+	{
+		this,
+		"waveform",
+		waveforms::sine,
+		waveforms_range,
+		title {"Waveform"},
+        description {"Waveform of the pulsar."},
+		setter
+		{
+			MIN_FUNCTION
+			{
+				pulsar_.set_waveform((PulsarWaveforms)args[0]);
+				return args;
+			}
+		}
+    };
+
 	attribute<number, threadsafe::no> frequency
 	{
         this,
@@ -73,7 +115,7 @@ public:
 	attribute<number, threadsafe::no, limit::clamp> duty_cycle
 	{
         this,
-        "duty cycle",
+        "duty",
         0.5,
 		range {0.0, 1.0},
         title {"Duty cycle"},
@@ -83,22 +125,6 @@ public:
 			MIN_FUNCTION
 			{
 				pulsar_.set_duty_cycle(args[0]);
-				return args;
-			}
-		}
-    };
-
-	attribute<bool, threadsafe::no> normalize
-	{
-        this,
-        "normalize",
-        true,
-        title {"Normalize gains"},
-        description {"Whether or not normalize amounts of various shapes so that they always sum to 1 (unless they are all 0)."},
-		setter
-		{
-			MIN_FUNCTION
-			{
 				return args;
 			}
 		}

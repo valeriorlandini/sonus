@@ -51,19 +51,24 @@
 
 	<attributelist>
 
-		<attribute name='frequency' get='1' set='1' type='float64' size='1' >
-			<digest>Oscillator frequency</digest>
-			<description>Oscillator frequency. </description>
+		<attribute name='window' get='1' set='1' type='long' size='1' >
+			<digest>Window function to multiply the pulsar</digest>
+			<description>Window function to multiply the pulsar. </description>
 		</attribute>
 
-		<attribute name='duty cycle' get='1' set='1' type='float64' size='1' >
+		<attribute name='waveform' get='1' set='1' type='long' size='1' >
+			<digest>Waveform of the pulsar</digest>
+			<description>Waveform of the pulsar. </description>
+		</attribute>
+
+		<attribute name='duty' get='1' set='1' type='float64' size='1' >
 			<digest>Duty cycle of the wave (0-1)</digest>
 			<description>Duty cycle of the wave (0-1). </description>
 		</attribute>
 
-		<attribute name='normalize' get='1' set='1' type='long' size='1' >
-			<digest>Whether or not normalize amounts of various shapes so that they always sum to 1 (unless they are all 0)</digest>
-			<description>Whether or not normalize amounts of various shapes so that they always sum to 1 (unless they are all 0). </description>
+		<attribute name='frequency' get='1' set='1' type='float64' size='1' >
+			<digest>Oscillator frequency</digest>
+			<description>Oscillator frequency. </description>
 		</attribute>
 
 	</attributelist>
