@@ -9,10 +9,6 @@
 
 #include "window_functions.h"
 
-#ifndef INV_RAND_MAX
-#define INV_RAND_MAX (1.0 / RAND_MAX)
-#endif
-
 
 enum PulsarWaveforms
 {
@@ -77,6 +73,12 @@ private:
 
     PulsarWaveforms waveform_;
     PulsarWindows window_;
+
+    const TSample m_2pi_ = 2.0 * M_PI;
+    const TSample m_2_pi_ = 2.0 / M_PI;
+    const TSample m_4_pi_ = 4.0 / M_PI;
+    const TSample m_8_pipi_ = 8.0 / (M_PI * M_PI);
+    const TSample inv_rand_max2_ = 2.0 * (1.0 / RAND_MAX);
 };
 
 template <class TSample>
@@ -214,31 +216,31 @@ inline TSample Pulsar<TSample>::run()
         switch (waveform_)
         {
             case SINE:
-            output_ = sin(wave_ramp_ * M_PI * 2.0);
+            output_ = sin(wave_ramp_ * m_2pi_);
             break;
             case SAW:
             for (TSample harmonic = 1.0; harmonic <= harmonics_; harmonic++)
             {
-                output_ += sin(-wave_ramp_ * M_PI * 2.0 * harmonic) / harmonic;
+                output_ += sin((-wave_ramp_ + 0.5) * m_2pi_ * harmonic) / harmonic;
             }
-            output_ *= 2.0 / M_PI;
+            output_ *= 0.55;
             break;
             case SQUARE:
             for (TSample harmonic = 1.0; harmonic <= harmonics_; harmonic += 2)
             {
-                output_ += sin(wave_ramp_ * M_PI * 2.0 * harmonic) / harmonic;
+                output_ += sin(wave_ramp_ * m_2pi_ * harmonic) / harmonic;
             }
-            output_ *= 4.0 / M_PI;
+            output_ *= 1.07;
             break;
             case TRIANGLE:
             for (TSample harmonic = 1.0; harmonic <= harmonics_; harmonic += 2)
             {
-                output_ += cos((wave_ramp_ + 0.75) * M_PI * 2.0 * harmonic) / (harmonic * harmonic);
+                output_ += cos((wave_ramp_ + 0.75) * m_2pi_ * harmonic) / (harmonic * harmonic);
             }
-            output_ *= 8.0 / (M_PI * M_PI);
+            output_ *= 0.82;
             break;
             case NOISE:
-            output_ = (rand() * INV_RAND_MAX * 2.0) - 1.0;
+            output_ = (rand() * inv_rand_max2_) - 1.0;
             break;
             case DC:
             output_ = 1.0;

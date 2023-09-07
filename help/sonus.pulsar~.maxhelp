@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 733.0, 294.0, 847.0, 601.0 ],
+		"rect" : [ 100.0, 100.0, 847.0, 601.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -126,6 +126,8 @@
 					"format" : 6,
 					"id" : "obj-19",
 					"maxclass" : "flonum",
+					"maximum" : 1.0,
+					"minimum" : 0.0,
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
@@ -305,13 +307,15 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-4", 1 ],
-					"source" : [ "obj-10", 1 ]
+					"order" : 0,
+					"source" : [ "obj-10", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
+					"order" : 1,
 					"source" : [ "obj-10", 0 ]
 				}
 
