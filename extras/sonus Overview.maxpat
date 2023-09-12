@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 85.0, 1532.0, 749.0 ],
+		"rect" : [ 42.0, 85.0, 1532.0, 749.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,30 @@
 		"showontab" : 0,
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-51",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 222.0, 264.0, 183.0, 20.0 ],
+					"text" : "Bit manipulator"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-52",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 222.0, 240.0, 87.0, 22.0 ],
+					"presentation_linecount" : 2,
+					"text" : "sonus.bitman~"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-49",
 					"maxclass" : "comment",
@@ -434,7 +458,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 222.0, 264.0, 183.0, 20.0 ],
+					"patching_rect" : [ 222.0, 337.0, 183.0, 20.0 ],
 					"text" : "Quadraphonic panner"
 				}
 
@@ -569,7 +593,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 222.0, 240.0, 98.0, 22.0 ],
+					"patching_rect" : [ 222.0, 313.0, 98.0, 22.0 ],
 					"text" : "sonus.quadpan~"
 				}
 
@@ -945,6 +969,14 @@
 					"destination" : [ "obj-58", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-50", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-52", 0 ]
 				}
 
 			}
