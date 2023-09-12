@@ -6,10 +6,13 @@ artificial intelligence and weird sounds.
 Currently finished externals are:
 
 ### Generators
+* sonus.rsosc~
 * sonus.vaosc~
 * sonus.window~
 
 ### Effects
+* sonus.8bitinv~
+* sonus.bitman~
 * sonus.quadpan~
 
 ### Sample Manipulation
@@ -25,6 +28,8 @@ Currently finished externals are:
 ### Math and Utilities
 * sonus.fselector~
 * sonus.hop
+* sonus.lurn
+* sonus.mathc
 * sonus.mima~
 * sonus.quadpanner
 * sonus.tent

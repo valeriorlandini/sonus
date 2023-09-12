@@ -4,17 +4,16 @@
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "c74_min.h"
-#include <cmath>
 
 using namespace c74::min;
 
-class bitinv : public object<bitinv>, public sample_operator<1, 1>
+class bitinv_tilde : public object<bitinv_tilde>, public sample_operator<1, 1>
 {
 public:
 	MIN_DESCRIPTION {"Invert the bits of an 8-bit bitreduced signal"};
 	MIN_TAGS {"effects, glitch, bitcrusher"};
 	MIN_AUTHOR {"Valerio Orlandini"};
-	MIN_RELATED {""};
+	MIN_RELATED {"sonus.bitman~"};
 
 	inlet<>  in {this, "(signal) Input"};
 	inlet<>  in_1 {this, "(int) Invert 1st bit (0-1)"};
@@ -26,7 +25,6 @@ public:
 	inlet<>  in_7 {this, "(int) Invert 7th bit (0-1)"};
 	inlet<>  in_8 {this, "(int) Invert 8th bit (0-1)"};
 	outlet<> out {this, "(signal) Output", "signal"};
-	outlet<> out2 {this, "(signal) Output"};
 
 	message<> m_number
 	{
@@ -54,7 +52,6 @@ public:
 					if (i < 8)
 					{
 						bit_status_[i] = (bool)args[i];
-						out2.send(args[i]);
 					}
 				}
 			}
@@ -84,4 +81,4 @@ public:
 	bool bit_status_[8] = {false, false, false, false, false, false, false, false};
 };
 
-MIN_EXTERNAL(bitinv);
+MIN_EXTERNAL(bitinv_tilde);
