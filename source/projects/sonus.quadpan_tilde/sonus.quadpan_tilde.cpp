@@ -8,7 +8,7 @@
 
 using namespace c74::min;
 
-class quadpan : public object<quadpan>, public sample_operator<3, 4>
+class quadpan_tilde : public object<quadpan_tilde>, public sample_operator<3, 4>
 {
 public:
 	MIN_DESCRIPTION {"Pan the input in a quadraphonic setup"};
@@ -35,4 +35,4 @@ public:
 	}
 };
 
-MIN_EXTERNAL(quadpan);
+MIN_EXTERNAL(quadpan_tilde);

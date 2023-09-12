@@ -7,7 +7,7 @@
 
 using namespace c74::min;
 
-class perceptron : public object<perceptron>, public sample_operator<3, 2>
+class perceptron_tilde : public object<perceptron_tilde>, public sample_operator<3, 2>
 {
 public:
 	MIN_DESCRIPTION {"Implementation of the classic perceptron algorithm"};
@@ -30,4 +30,4 @@ public:
 	}
 };
 
-MIN_EXTERNAL(perceptron);
+MIN_EXTERNAL(perceptron_tilde);

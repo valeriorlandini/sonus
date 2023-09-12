@@ -8,7 +8,7 @@
 
 using namespace c74::min;
 
-class mima : public object<mima>, public sample_operator<1, 3>
+class mima_tilde : public object<mima_tilde>, public sample_operator<1, 3>
 {
 public:
 	MIN_DESCRIPTION {"Reports the minimum and maximum value ever received"};
@@ -60,4 +60,4 @@ public:
 	sample max_ = 0.0;
 };
 
-MIN_EXTERNAL(mima);
+MIN_EXTERNAL(mima_tilde);
