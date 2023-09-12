@@ -6,7 +6,7 @@
 #include <cstdlib>
 #include <ctime>
 #include "c74_min.h"
-#include "blosc.h"
+#include "../include/blosc.h"
 
 #define INV_RAND_MAX_2 (2.0 * (1.0 / RAND_MAX))
 

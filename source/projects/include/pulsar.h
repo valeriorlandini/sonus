@@ -75,9 +75,6 @@ private:
     PulsarWindows window_;
 
     const TSample m_2pi_ = 2.0 * M_PI;
-    const TSample m_2_pi_ = 2.0 / M_PI;
-    const TSample m_4_pi_ = 4.0 / M_PI;
-    const TSample m_8_pipi_ = 8.0 / (M_PI * M_PI);
     const TSample inv_rand_max2_ = 2.0 * (1.0 / RAND_MAX);
 };
 
