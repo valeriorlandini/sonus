@@ -1,9 +1,9 @@
 {
 	"author" : "Valerio Orlandini",
 	"description" : "A collection of various objects for creative patching.",
-	"homepatcher" : "C++ Object Development Kit.maxpat",
+	"homepatcher" : "sonus Overview.maxpat",
 	"max_version_min" : "8.0", "max_version_max" : "none",
-	"name" : "Sonus",
+	"name" : "sonus",
 	"os" : {
 		"macintosh" : {
 			"platform" : [ "x64", "aarch64" ],
