@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 831.0, 638.0 ],
+		"rect" : [ 99.0, 100.0, 831.0, 638.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,42 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-12",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 546.0, 202.0, 46.0, 20.0 ],
+					"text" : "toggle"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-11",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 546.0, 167.5, 46.0, 20.0 ],
+					"text" : "set"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-8",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 546.0, 135.5, 46.0, 20.0 ],
+					"text" : "clear"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"bubble" : 1,
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
@@ -49,7 +85,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 152.353658616542816, 313.0, 273.0, 40.0 ],
-					"presentation_linecount" : 3,
 					"text" : "argument: the number of bits (1-32) the signal should be reduced to, defaults to 8",
 					"textjustification" : 1
 				}
@@ -108,6 +143,7 @@
 , 			{
 				"box" : 				{
 					"bubble" : 1,
+					"bubbleside" : 3,
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
 					"id" : "obj-30",
@@ -115,7 +151,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 489.353658616542816, 161.5, 185.805966973304749, 55.0 ],
+					"patching_rect" : [ 100.597016513347626, 184.5, 185.805966973304749, 55.0 ],
 					"text" : "the bit operations are: 0 (leave untouched), 1 (toggle), 2 (set), 3 (clear)",
 					"textjustification" : 1
 				}
@@ -128,7 +164,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 229.5, 256.5, 72.0, 22.0 ],
+					"patching_rect" : [ 300.0, 255.0, 72.0, 22.0 ],
 					"text" : "prepend set"
 				}
 
@@ -142,7 +178,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 229.5, 137.0, 241.0, 104.0 ],
+					"patching_rect" : [ 300.0, 135.5, 241.0, 104.0 ],
 					"setminmax" : [ 0.0, 3.0 ],
 					"setstyle" : 1,
 					"settype" : 0,

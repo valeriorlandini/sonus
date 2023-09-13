@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 42.0, 85.0, 1532.0, 749.0 ],
+		"rect" : [ 42.0, 85.0, 1030.0, 749.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -58,7 +58,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 222.0, 240.0, 87.0, 22.0 ],
-					"presentation_linecount" : 2,
 					"text" : "sonus.bitman~"
 				}
 
