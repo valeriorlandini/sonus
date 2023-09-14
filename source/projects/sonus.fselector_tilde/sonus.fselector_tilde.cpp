@@ -27,7 +27,7 @@ public:
 	MIN_AUTHOR {"Valerio Orlandini"};
 	MIN_RELATED {"selector~"};
 
-	outlet<> out1 {this, "(signal) Output", "signal"};
+	outlet<> out {this, "(signal) Output", "signal"};
 
 	argument<int> inputs_arg
     {
