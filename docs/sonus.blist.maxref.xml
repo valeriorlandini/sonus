@@ -30,12 +30,22 @@
 
 	<methodlist>
 
+		<method name='bang'>
+			<digest>Output corresponding symbol or number </digest>
+			<description>Output corresponding symbol or number </description>
+		</method>
+
 	</methodlist>
 
 
 	<!--ATTRIBUTES-->
 
 	<attributelist>
+
+		<attribute name='numout' get='1' set='1' type='long' size='1' >
+			<digest>If enabled, output numbers instead of symbols</digest>
+			<description>If enabled, output numbers instead of symbols. </description>
+		</attribute>
 
 	</attributelist>
 
