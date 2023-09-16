@@ -6,6 +6,7 @@
 #include "c74_min.h"
 #include <algorithm>
 #include <random>
+#include "../include/interp.h"
 
 using namespace c74::min;
 
@@ -290,6 +291,60 @@ public:
                         for (int s = start; s <= end; ++s)
                         {
                             b.lookup(s, ch) = curr_waveset.at(pos++);
+                        }
+                    }
+                }
+
+                b.dirty();
+            }            
+
+            return {};
+        }
+    };
+
+    message<> average
+    {
+        this,
+        "average",
+        "Average each waveset with the next one",
+        MIN_FUNCTION
+        {
+            analyse();
+            buffer_lock<> b(m_buffer);
+
+            if (b.valid())
+            {
+                for (int ch = 0; ch < b.channel_count(); ch++)
+                {
+                    int w = 0;
+                    for (w = 0; w < wavesets_idx_.at(ch).size(); w++)
+                    {
+                        int start_curr = wavesets_idx_.at(ch).at(w).start;
+                        int end_curr = wavesets_idx_.at(ch).at(w).end;
+                        
+                        int start_next = wavesets_idx_.at(ch).at((w + 1) % wavesets_idx_.at(ch).size()).start;
+                        int end_next = wavesets_idx_.at(ch).at((w + 1) % wavesets_idx_.at(ch).size()).end;
+                        
+                        std::vector<float> curr_waveset;
+                        std::vector<float> next_waveset;
+
+                        for (int s = end_curr; s >= start_curr; --s)
+                        {
+                            curr_waveset.push_back((float)b.lookup(s, ch));
+                        }
+                        for (int s = end_next; s >= start_next; --s)
+                        {
+                            next_waveset.push_back((float)b.lookup(s, ch));
+                        }
+     
+                        int pos = 0;
+
+                        std::vector<float> resized_next = resize_chunk(next_waveset, curr_waveset.size());
+
+                        for (int s = start_curr; s <= end_curr; ++s)
+                        {
+                            b.lookup(s, ch) = (curr_waveset.at(pos) + resized_next.at(pos)) * 0.5;
+                            ++pos;
                         }
                     }
                 }

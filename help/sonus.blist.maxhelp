@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 99.0, 100.0, 847.0, 534.0 ],
+		"rect" : [ 731.0, 418.0, 847.0, 474.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,43 +40,60 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-8",
-					"maxclass" : "ezdac~",
-					"numinlets" : 2,
+					"id" : "obj-25",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 33.0, 412.5, 45.0, 45.0 ]
+					"patching_rect" : [ 33.0, 326.0, 91.0, 22.0 ],
+					"text" : "print @popup 1"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"fontface" : 0,
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-7",
-					"maxclass" : "number~",
-					"mode" : 2,
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "signal", "float" ],
-					"patching_rect" : [ 33.0, 352.0, 56.0, 22.0 ],
-					"sig" : 0.0
+					"id" : "obj-18",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 198.0, 176.0, 24.0, 24.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"fontface" : 0,
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-4",
-					"maxclass" : "number~",
-					"mode" : 1,
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "signal", "float" ],
-					"patching_rect" : [ 33.0, 169.0, 56.0, 22.0 ],
-					"sig" : 0.0
+					"id" : "obj-13",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 143.0, 176.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 89.0, 176.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 33.0, 176.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -86,24 +103,25 @@
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
 					"id" : "obj-17",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 89.0, 167.5, 175.0, 25.0 ],
-					"text" : "input value"
+					"patching_rect" : [ 246.0, 168.0, 189.0, 40.0 ],
+					"text" : "a bang on the inlet outputs the corresponding item"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"attr" : "activation",
+					"attr" : "numout",
 					"id" : "obj-14",
 					"maxclass" : "attrui",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 89.0, 221.0, 192.0, 22.0 ]
+					"patching_rect" : [ 246.0, 226.0, 192.0, 22.0 ]
 				}
 
 			}
@@ -113,7 +131,7 @@
 					"maxclass" : "live.line",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 474.0, 805.0, 5.0 ]
+					"patching_rect" : [ 16.0, 420.0, 805.0, 5.0 ]
 				}
 
 			}
@@ -135,7 +153,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 300.0, 497.0, 237.0, 22.0 ],
+					"patching_rect" : [ 300.0, 443.0, 237.0, 22.0 ],
 					"text" : "https://github.com/valeriorlandini/sonus",
 					"textcolor" : [ 0.0, 0.015686274509804, 0.396078431372549, 1.0 ]
 				}
@@ -150,7 +168,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 511.0, 129.0, 36.0 ],
+					"patching_rect" : [ 10.0, 457.0, 129.0, 36.0 ],
 					"text" : ";\r\nmax launchbrowser $1"
 				}
 
@@ -161,11 +179,12 @@
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
 					"id" : "obj-19",
+					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 290.0, 219.5, 175.0, 25.0 ],
-					"text" : "activation function"
+					"patching_rect" : [ 450.0, 209.5, 282.0, 55.0 ],
+					"text" : "if checked, the output is a number instead of a symbol. if the item cannot be represented as a number, it is converted to 0.0"
 				}
 
 			}
@@ -178,8 +197,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 89.0, 350.5, 113.0, 25.0 ],
-					"text" : "output value"
+					"patching_rect" : [ 141.0, 324.5, 76.0, 25.0 ],
+					"text" : "output"
 				}
 
 			}
@@ -187,11 +206,11 @@
 				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
-					"numinlets" : 1,
+					"numinlets" : 4,
 					"numoutlets" : 1,
-					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 33.0, 301.0, 70.0, 22.0 ],
-					"text" : "sonus.acti~"
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 33.0, 282.0, 184.0, 22.0 ],
+					"text" : "sonus.blist 9 hi 15.1 \"hello world\""
 				}
 
 			}
@@ -212,11 +231,12 @@
 					"fontname" : "Arial",
 					"fontsize" : 16.0,
 					"id" : "obj-1",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 80.0, 805.0, 25.0 ],
-					"text" : "A collection of typical activation functions used in neural networks. For a control rate version, check sonus.acti",
+					"patching_rect" : [ 16.0, 80.0, 805.0, 43.0 ],
+					"text" : "Specify a series of items (symbols or numbers) and an inlet will be created for each of them. When the inlet receives a bang, the item is sent to the output.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 
@@ -232,7 +252,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 55.0, 805.0, 29.0 ],
-					"text" : "activation functions"
+					"text" : "output a different item of a list according to the inlet"
 				}
 
 			}
@@ -246,7 +266,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 481.0, 805.0, 20.0 ],
+					"patching_rect" : [ 16.0, 427.0, 805.0, 20.0 ],
 					"text" : "handmade in italy by valerio orlandini",
 					"textjustification" : 1
 				}
@@ -263,12 +283,26 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 12.0, 805.0, 48.0 ],
-					"text" : "sonus.acti~"
+					"text" : "sonus.blist"
 				}
 
 			}
  ],
 		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 1 ],
+					"source" : [ "obj-11", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 2 ],
+					"source" : [ "obj-13", 0 ]
+				}
+
+			}
+, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-14", 0 ]
@@ -277,15 +311,15 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
-					"source" : [ "obj-2", 0 ]
+					"destination" : [ "obj-2", 3 ],
+					"source" : [ "obj-18", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-2", 0 ],
-					"source" : [ "obj-4", 0 ]
+					"destination" : [ "obj-25", 0 ],
+					"source" : [ "obj-2", 0 ]
 				}
 
 			}
@@ -297,9 +331,16 @@
 				}
 
 			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-9", 0 ]
+				}
+
+			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "sonus.acti~.mxe64",
+				"name" : "sonus.blist.mxe64",
 				"type" : "mx64"
 			}
  ],

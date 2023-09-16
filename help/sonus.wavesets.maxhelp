@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 854.0, 622.0 ],
+		"rect" : [ 99.0, 100.0, 854.0, 622.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -168,8 +168,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 73.5, 220.5, 55.0, 22.0 ],
-					"text" : "mute 2 5"
+					"patching_rect" : [ 73.5, 220.5, 62.0, 22.0 ],
+					"text" : "mute 20 4"
 				}
 
 			}
@@ -181,7 +181,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 33.0, 162.0, 60.0, 22.0 ],
-					"text" : "shuffle 20"
+					"text" : "shuffle 60"
 				}
 
 			}
@@ -191,8 +191,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 33.0, 509.5, 32.0, 22.0 ],
-					"text" : "print"
+					"patching_rect" : [ 33.0, 509.5, 91.0, 22.0 ],
+					"text" : "print @popup 1"
 				}
 
 			}
@@ -269,7 +269,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 138.0, 211.5, 250.0, 40.0 ],
+					"patching_rect" : [ 139.194033026695251, 211.5, 250.0, 40.0 ],
 					"text" : "mute n wavesets after keeping m (n and m are the two arguments)"
 				}
 
@@ -284,7 +284,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 94.0, 145.5, 294.0, 55.0 ],
+					"patching_rect" : [ 95.194033026695251, 145.5, 294.0, 55.0 ],
 					"text" : "randomly reorder the wavesets or groups of them (in this second case, specify the number of consecutive wavesets for each group)"
 				}
 

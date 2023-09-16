@@ -65,6 +65,11 @@
 			<description>Reverse each or a group of n wavesets </description>
 		</method>
 
+		<method name='average'>
+			<digest>Average each waveset with the next one </digest>
+			<description>Average each waveset with the next one </description>
+		</method>
+
 	</methodlist>
 
 

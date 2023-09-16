@@ -26,6 +26,7 @@ Currently finished externals are:
 * sonus.perceptron~
 
 ### Math and Utilities
+* sonus.blist
 * sonus.fselector~
 * sonus.hop
 * sonus.lurn
