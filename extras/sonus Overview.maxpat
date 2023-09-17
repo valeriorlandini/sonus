@@ -47,7 +47,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 822.0, 194.0, 183.0, 34.0 ],
-					"presentation_linecount" : 2,
 					"text" : "Output a different item of a list according to the inlet"
 				}
 

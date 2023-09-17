@@ -40,6 +40,33 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"bubble" : 1,
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
+					"id" : "obj-10",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 189.194033026695251, 367.0, 198.805966973304749, 40.0 ],
+					"text" : "average groups of n wavesets with the following one"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 98.0, 376.0, 75.0, 22.0 ],
+					"text" : "average 150"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"hidden" : 1,
 					"id" : "obj-19",
 					"maxclass" : "newobj",
@@ -61,7 +88,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 190.205963671207428, 367.5, 199.0, 100.0 ],
+					"patching_rect" : [ 189.194033026695251, 416.5, 199.0, 100.0 ],
 					"text" : "each time \"backup 1\" is sent, a copy of the current buffer is stored to memory (replacing any previous one), so that it can be restored with \"restore\" message"
 				}
 
@@ -73,7 +100,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 117.0, 418.0, 46.0, 22.0 ],
+					"patching_rect" : [ 117.0, 468.0, 46.0, 22.0 ],
 					"text" : "restore"
 				}
 
@@ -85,7 +112,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 117.0, 394.0, 57.0, 22.0 ],
+					"patching_rect" : [ 117.0, 444.0, 57.0, 22.0 ],
 					"text" : "backup 1"
 				}
 
@@ -191,7 +218,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 33.0, 509.5, 91.0, 22.0 ],
+					"patching_rect" : [ 33.0, 571.5, 91.0, 22.0 ],
 					"text" : "print @popup 1"
 				}
 
@@ -295,7 +322,7 @@
 					"maxclass" : "live.line",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 561.0, 805.0, 5.0 ]
+					"patching_rect" : [ 16.0, 623.0, 805.0, 5.0 ]
 				}
 
 			}
@@ -317,7 +344,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 300.0, 584.0, 237.0, 22.0 ],
+					"patching_rect" : [ 300.0, 646.0, 237.0, 22.0 ],
 					"text" : "https://github.com/valeriorlandini/sonus",
 					"textcolor" : [ 0.0, 0.015686274509804, 0.396078431372549, 1.0 ]
 				}
@@ -332,7 +359,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 598.0, 129.0, 36.0 ],
+					"patching_rect" : [ 10.0, 660.0, 129.0, 36.0 ],
 					"text" : ";\r\nmax launchbrowser $1"
 				}
 
@@ -359,7 +386,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 33.0, 468.0, 136.0, 22.0 ],
+					"patching_rect" : [ 33.0, 530.0, 136.0, 22.0 ],
 					"text" : "sonus.wavesets sample"
 				}
 
@@ -416,7 +443,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 568.0, 805.0, 20.0 ],
+					"patching_rect" : [ 16.0, 630.0, 805.0, 20.0 ],
 					"text" : "handmade in italy by valerio orlandini",
 					"textjustification" : 1
 				}
@@ -547,6 +574,13 @@
 					"destination" : [ "obj-46", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-50", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-9", 0 ]
 				}
 
 			}

@@ -13,10 +13,14 @@ inline TSample cosip(const TSample &a, const TSample &b, const TSample &t)
 template <class TSample>
 std::vector<TSample> resize_chunk(const std::vector<TSample> &chunk, const unsigned int &new_size)
 {
+    if (new_size == chunk.size())
+    {
+        return chunk;
+    }
     TSample ratio = (TSample)std::max((int)chunk.size() - 1, 1) / (TSample)new_size;
     std::vector<TSample> output(new_size, 0.0);
 
-    for (auto i = 0; i < new_size - 1; i++)
+    for (auto i = 1; i < new_size; i++)
     {
         TSample in_pos = (TSample)i * ratio;
         int in_a = (int)floor(in_pos);

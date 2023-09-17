@@ -312,40 +312,59 @@ public:
             analyse();
             buffer_lock<> b(m_buffer);
 
+            int avg_group = 1;
+
+            if (!args.empty())
+            {
+                avg_group = std::max(1, int(args.at(0)));
+            }
+
+
             if (b.valid())
             {
                 for (int ch = 0; ch < b.channel_count(); ch++)
                 {
                     int w = 0;
-                    for (w = 0; w < wavesets_idx_.at(ch).size(); w++)
+                    std::vector<float> new_buffer;
+                    for (w = 0; w < wavesets_idx_.at(ch).size(); w += avg_group)
                     {
                         int start_curr = wavesets_idx_.at(ch).at(w).start;
-                        int end_curr = wavesets_idx_.at(ch).at(w).end;
+                        int end_curr = wavesets_idx_.at(ch).at((w + avg_group - 1) % wavesets_idx_.at(ch).size()).end;
                         
-                        int start_next = wavesets_idx_.at(ch).at((w + 1) % wavesets_idx_.at(ch).size()).start;
-                        int end_next = wavesets_idx_.at(ch).at((w + 1) % wavesets_idx_.at(ch).size()).end;
+                        int start_next = wavesets_idx_.at(ch).at((w + avg_group) % wavesets_idx_.at(ch).size()).start;
+                        int end_next = wavesets_idx_.at(ch).at((w + (avg_group * 2) - 1) % wavesets_idx_.at(ch).size()).end;
                         
                         std::vector<float> curr_waveset;
                         std::vector<float> next_waveset;
 
-                        for (int s = end_curr; s >= start_curr; --s)
+                        if (end_curr < start_curr)
                         {
-                            curr_waveset.push_back((float)b.lookup(s, ch));
+                            end_curr += b.frame_count();
                         }
-                        for (int s = end_next; s >= start_next; --s)
-                        {
-                            next_waveset.push_back((float)b.lookup(s, ch));
-                        }
-     
-                        int pos = 0;
-
-                        std::vector<float> resized_next = resize_chunk(next_waveset, curr_waveset.size());
-
                         for (int s = start_curr; s <= end_curr; ++s)
                         {
-                            b.lookup(s, ch) = (curr_waveset.at(pos) + resized_next.at(pos)) * 0.5;
-                            ++pos;
+                            curr_waveset.push_back((float)b.lookup(s % b.frame_count(), ch));
                         }
+
+                        if (end_next < start_next)
+                        {
+                            end_next += b.frame_count();
+                        }
+                        for (int s = start_next; s <= end_next; ++s)
+                        {
+                            next_waveset.push_back((float)b.lookup(s % b.frame_count(), ch));
+                        }
+     
+                        std::vector<float> resized_next = resize_chunk(next_waveset, curr_waveset.size());
+
+                        for (int s = 0; s < curr_waveset.size(); s++)
+                        {
+                            new_buffer.push_back((curr_waveset.at(s) + resized_next.at(s)) * 0.5);
+                        }
+                    }
+                    for (int s = 0; s < new_buffer.size(); s++)
+                    {
+                        b.lookup(s, ch) = new_buffer.at(s);
                     }
                 }
 
