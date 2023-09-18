@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 99.0, 100.0, 854.0, 622.0 ],
+		"rect" : [ 99.0, 100.0, 854.0, 885.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -43,12 +43,102 @@
 					"bubble" : 1,
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
+					"id" : "obj-38",
+					"linecount" : 6,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 174.194033026695251, 502.0, 214.0, 100.0 ],
+					"presentation_linecount" : 6,
+					"text" : "raise each sample of a group of wavesets with the absolute value of the samples of the next one as exponent (WARNING: very loud!!! lower the volume before apply!!!)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-22",
+					"maxclass" : "gain~",
+					"multichannelvariant" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "signal", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 462.205963671207428, 424.5, 145.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-23",
+					"maxclass" : "ezdac~",
+					"numinlets" : 2,
+					"numoutlets" : 0,
+					"patching_rect" : [ 462.205963671207428, 448.0, 45.0, 45.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-26",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 696.205963671207428, 182.5, 94.0, 22.0 ],
+					"text" : "normalize 0.707"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 98.0, 541.0, 58.0, 22.0 ],
+					"text" : "power 10"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
+					"id" : "obj-25",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 174.194033026695251, 419.0, 214.0, 70.0 ],
+					"text" : "multiply groups of n wavesets with the following one (suggestion: normalize the buffer after this operation)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-15",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 98.0, 443.0, 66.0, 22.0 ],
+					"text" : "multiply 40"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
 					"id" : "obj-10",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 189.194033026695251, 367.0, 198.805966973304749, 40.0 ],
+					"patching_rect" : [ 189.194033026695251, 367.0, 203.0, 40.0 ],
 					"text" : "average groups of n wavesets with the following one"
 				}
 
@@ -88,7 +178,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 189.194033026695251, 416.5, 199.0, 100.0 ],
+					"patching_rect" : [ 189.194033026695251, 609.5, 199.0, 100.0 ],
 					"text" : "each time \"backup 1\" is sent, a copy of the current buffer is stored to memory (replacing any previous one), so that it can be restored with \"restore\" message"
 				}
 
@@ -100,7 +190,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 117.0, 468.0, 46.0, 22.0 ],
+					"patching_rect" : [ 117.0, 661.0, 46.0, 22.0 ],
 					"text" : "restore"
 				}
 
@@ -112,7 +202,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 117.0, 444.0, 57.0, 22.0 ],
+					"patching_rect" : [ 117.0, 637.0, 57.0, 22.0 ],
 					"text" : "backup 1"
 				}
 
@@ -151,16 +241,6 @@
 					"outlettype" : [ "signal", "signal" ],
 					"patching_rect" : [ 462.205963671207428, 390.0, 142.0, 22.0 ],
 					"text" : "groove~ sample @loop 1"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-45",
-					"maxclass" : "ezdac~",
-					"numinlets" : 2,
-					"numoutlets" : 0,
-					"patching_rect" : [ 462.205963671207428, 431.5, 45.0, 45.0 ]
 				}
 
 			}
@@ -218,7 +298,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 33.0, 571.5, 91.0, 22.0 ],
+					"patching_rect" : [ 33.0, 783.5, 91.0, 22.0 ],
 					"text" : "print @popup 1"
 				}
 
@@ -281,7 +361,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 163.194033026695251, 332.0, 224.805966973304749, 25.0 ],
+					"patching_rect" : [ 167.388066053390503, 332.0, 224.805966973304749, 25.0 ],
 					"text" : "reverse each group of n wavesets"
 				}
 
@@ -296,7 +376,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 139.194033026695251, 211.5, 250.0, 40.0 ],
+					"patching_rect" : [ 143.388066053390503, 211.5, 250.0, 40.0 ],
 					"text" : "mute n wavesets after keeping m (n and m are the two arguments)"
 				}
 
@@ -311,7 +391,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 95.194033026695251, 145.5, 294.0, 55.0 ],
+					"patching_rect" : [ 99.388066053390503, 145.5, 294.0, 55.0 ],
 					"text" : "randomly reorder the wavesets or groups of them (in this second case, specify the number of consecutive wavesets for each group)"
 				}
 
@@ -322,7 +402,7 @@
 					"maxclass" : "live.line",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 623.0, 805.0, 5.0 ]
+					"patching_rect" : [ 16.0, 835.0, 805.0, 5.0 ]
 				}
 
 			}
@@ -344,7 +424,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 300.0, 646.0, 237.0, 22.0 ],
+					"patching_rect" : [ 300.0, 858.0, 237.0, 22.0 ],
 					"text" : "https://github.com/valeriorlandini/sonus",
 					"textcolor" : [ 0.0, 0.015686274509804, 0.396078431372549, 1.0 ]
 				}
@@ -359,7 +439,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 660.0, 129.0, 36.0 ],
+					"patching_rect" : [ 10.0, 872.0, 129.0, 36.0 ],
 					"text" : ";\r\nmax launchbrowser $1"
 				}
 
@@ -374,7 +454,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 163.194033026695251, 270.5, 226.0, 40.0 ],
+					"patching_rect" : [ 167.388066053390503, 270.5, 226.0, 40.0 ],
 					"text" : "transform all the wavesets into the desired shape (sin, saw, tri, rect)"
 				}
 
@@ -386,7 +466,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 33.0, 530.0, 136.0, 22.0 ],
+					"patching_rect" : [ 33.0, 742.0, 136.0, 22.0 ],
 					"text" : "sonus.wavesets sample"
 				}
 
@@ -443,7 +523,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 630.0, 805.0, 20.0 ],
+					"patching_rect" : [ 16.0, 842.0, 805.0, 20.0 ],
 					"text" : "handmade in italy by valerio orlandini",
 					"textjustification" : 1
 				}
@@ -483,6 +563,13 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-15", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-16", 0 ]
 				}
 
@@ -506,6 +593,30 @@
 				"patchline" : 				{
 					"destination" : [ "obj-27", 0 ],
 					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-23", 1 ],
+					"order" : 0,
+					"source" : [ "obj-22", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-23", 0 ],
+					"order" : 1,
+					"source" : [ "obj-22", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-26", 0 ]
 				}
 
 			}
@@ -547,16 +658,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-45", 1 ],
-					"order" : 0,
-					"source" : [ "obj-46", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-45", 0 ],
-					"order" : 1,
+					"destination" : [ "obj-22", 0 ],
 					"source" : [ "obj-46", 0 ]
 				}
 
@@ -580,11 +682,31 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-8", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-9", 0 ]
 				}
 
 			}
  ],
+		"parameters" : 		{
+			"parameterbanks" : 			{
+				"0" : 				{
+					"index" : 0,
+					"name" : "",
+					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+				}
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
 		"dependency_cache" : [ 			{
 				"name" : "sonus.wavesets.mxe64",
 				"type" : "mx64"

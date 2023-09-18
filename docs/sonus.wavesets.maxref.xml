@@ -60,14 +60,24 @@
 			<description>Transform all the wavesets in the desired shape (sin, saw, tri, rect) </description>
 		</method>
 
+		<method name='multiply'>
+			<digest>Multiply each group of wavesets with the next one </digest>
+			<description>Multiply each group of wavesets with the next one </description>
+		</method>
+
 		<method name='reverse'>
 			<digest>Reverse each or a group of n wavesets </digest>
 			<description>Reverse each or a group of n wavesets </description>
 		</method>
 
 		<method name='average'>
-			<digest>Average each waveset with the next one </digest>
-			<description>Average each waveset with the next one </description>
+			<digest>Average each group of wavesets with the next one </digest>
+			<description>Average each group of wavesets with the next one </description>
+		</method>
+
+		<method name='power'>
+			<digest>Elevate each sample of a group of wavesets with the absolute value of the samples of the next one as exponent </digest>
+			<description>Elevate each sample of a group of wavesets with the absolute value of the samples of the next one as exponent </description>
 		</method>
 
 	</methodlist>

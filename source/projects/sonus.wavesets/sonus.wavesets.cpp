@@ -306,7 +306,7 @@ public:
     {
         this,
         "average",
-        "Average each waveset with the next one",
+        "Average each group of wavesets with the next one",
         MIN_FUNCTION
         {
             analyse();
@@ -360,6 +360,152 @@ public:
                         for (int s = 0; s < curr_waveset.size(); s++)
                         {
                             new_buffer.push_back((curr_waveset.at(s) + resized_next.at(s)) * 0.5);
+                        }
+                    }
+                    for (int s = 0; s < new_buffer.size(); s++)
+                    {
+                        b.lookup(s, ch) = new_buffer.at(s);
+                    }
+                }
+
+                b.dirty();
+            }            
+
+            return {};
+        }
+    };
+    
+    message<> multiply
+    {
+        this,
+        "multiply",
+        "Multiply each group of wavesets with the next one",
+        MIN_FUNCTION
+        {
+            analyse();
+            buffer_lock<> b(m_buffer);
+
+            int avg_group = 1;
+
+            if (!args.empty())
+            {
+                avg_group = std::max(1, int(args.at(0)));
+            }
+
+
+            if (b.valid())
+            {
+                for (int ch = 0; ch < b.channel_count(); ch++)
+                {
+                    int w = 0;
+                    std::vector<float> new_buffer;
+                    for (w = 0; w < wavesets_idx_.at(ch).size(); w += avg_group)
+                    {
+                        int start_curr = wavesets_idx_.at(ch).at(w).start;
+                        int end_curr = wavesets_idx_.at(ch).at((w + avg_group - 1) % wavesets_idx_.at(ch).size()).end;
+                        
+                        int start_next = wavesets_idx_.at(ch).at((w + avg_group) % wavesets_idx_.at(ch).size()).start;
+                        int end_next = wavesets_idx_.at(ch).at((w + (avg_group * 2) - 1) % wavesets_idx_.at(ch).size()).end;
+                        
+                        std::vector<float> curr_waveset;
+                        std::vector<float> next_waveset;
+
+                        if (end_curr < start_curr)
+                        {
+                            end_curr += b.frame_count();
+                        }
+                        for (int s = start_curr; s <= end_curr; ++s)
+                        {
+                            curr_waveset.push_back((float)b.lookup(s % b.frame_count(), ch));
+                        }
+
+                        if (end_next < start_next)
+                        {
+                            end_next += b.frame_count();
+                        }
+                        for (int s = start_next; s <= end_next; ++s)
+                        {
+                            next_waveset.push_back((float)b.lookup(s % b.frame_count(), ch));
+                        }
+     
+                        std::vector<float> resized_next = resize_chunk(next_waveset, curr_waveset.size());
+
+                        for (int s = 0; s < curr_waveset.size(); s++)
+                        {
+                            new_buffer.push_back(curr_waveset.at(s) * resized_next.at(s));
+                        }
+                    }
+                    for (int s = 0; s < new_buffer.size(); s++)
+                    {
+                        b.lookup(s, ch) = new_buffer.at(s);
+                    }
+                }
+
+                b.dirty();
+            }            
+
+            return {};
+        }
+    };
+    
+    message<> power
+    {
+        this,
+        "power",
+        "Raise each sample of a group of wavesets with the absolute value of the samples of the next one as exponent",
+        MIN_FUNCTION
+        {
+            analyse();
+            buffer_lock<> b(m_buffer);
+
+            int avg_group = 1;
+
+            if (!args.empty())
+            {
+                avg_group = std::max(1, int(args.at(0)));
+            }
+
+
+            if (b.valid())
+            {
+                for (int ch = 0; ch < b.channel_count(); ch++)
+                {
+                    int w = 0;
+                    std::vector<float> new_buffer;
+                    for (w = 0; w < wavesets_idx_.at(ch).size(); w += avg_group)
+                    {
+                        int start_curr = wavesets_idx_.at(ch).at(w).start;
+                        int end_curr = wavesets_idx_.at(ch).at((w + avg_group - 1) % wavesets_idx_.at(ch).size()).end;
+                        
+                        int start_next = wavesets_idx_.at(ch).at((w + avg_group) % wavesets_idx_.at(ch).size()).start;
+                        int end_next = wavesets_idx_.at(ch).at((w + (avg_group * 2) - 1) % wavesets_idx_.at(ch).size()).end;
+                        
+                        std::vector<float> curr_waveset;
+                        std::vector<float> next_waveset;
+
+                        if (end_curr < start_curr)
+                        {
+                            end_curr += b.frame_count();
+                        }
+                        for (int s = start_curr; s <= end_curr; ++s)
+                        {
+                            curr_waveset.push_back((float)b.lookup(s % b.frame_count(), ch));
+                        }
+
+                        if (end_next < start_next)
+                        {
+                            end_next += b.frame_count();
+                        }
+                        for (int s = start_next; s <= end_next; ++s)
+                        {
+                            next_waveset.push_back((float)b.lookup(s % b.frame_count(), ch));
+                        }
+     
+                        std::vector<float> resized_next = resize_chunk(next_waveset, curr_waveset.size());
+
+                        for (int s = 0; s < curr_waveset.size(); s++)
+                        {
+                            new_buffer.push_back(std::copysign(0.5, curr_waveset.at(s)) * std::pow(std::abs(curr_waveset.at(s)), std::abs(resized_next.at(s))));
                         }
                     }
                     for (int s = 0; s < new_buffer.size(); s++)
