@@ -76,8 +76,8 @@
 		</method>
 
 		<method name='power'>
-			<digest>Elevate each sample of a group of wavesets with the absolute value of the samples of the next one as exponent </digest>
-			<description>Elevate each sample of a group of wavesets with the absolute value of the samples of the next one as exponent </description>
+			<digest>Raise each sample of a group of wavesets with the absolute value of the samples of the next one as exponent </digest>
+			<description>Raise each sample of a group of wavesets with the absolute value of the samples of the next one as exponent </description>
 		</method>
 
 	</methodlist>

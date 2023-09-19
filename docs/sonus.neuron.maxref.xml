@@ -31,8 +31,8 @@
 	<methodlist>
 
 		<method name='list'>
-			<digest>Perform calcultation on the list</digest>
-			<description>Perform calcultation on the list. </description>
+			<digest>Perform calculation on the list</digest>
+			<description>Perform calculation on the list. </description>
 		</method>
 
 	</methodlist>

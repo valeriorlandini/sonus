@@ -14,7 +14,7 @@ public:
 	MIN_DESCRIPTION {"Non bandlimited oscillator with changing random shape"};
 	MIN_TAGS {"oscillators"};
 	MIN_AUTHOR {"Valerio Orlandini"};
-	MIN_RELATED {"sonus.vaosc~"};
+	MIN_RELATED {"sonus.nwosc~, sonus.vaosc~"};
 
 	inlet<>  in_f {this, "(signal/float) Frequency"};
 	inlet<>  in_c {this, "(float) Cycles with same shape"};

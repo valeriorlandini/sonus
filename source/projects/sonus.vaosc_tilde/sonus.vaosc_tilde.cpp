@@ -18,7 +18,7 @@ public:
 	MIN_DESCRIPTION {"Virtual bandlimited analog oscillator with classic shapes"};
 	MIN_TAGS {"oscillators"};
 	MIN_AUTHOR {"Valerio Orlandini"};
-	MIN_RELATED {"sonus.rsosc~, saw~, tri~, cycle~, rect~, noise~"};
+	MIN_RELATED {"sonus.nwosc~, sonus.rsosc~, saw~, tri~, cycle~, rect~, noise~"};
 
 	inlet<>  in_f {this, "(signal/float) Frequency"};
 	inlet<>  in_saw {this, "(signal/float) Saw amount (0-1)"};

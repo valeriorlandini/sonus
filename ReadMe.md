@@ -6,6 +6,7 @@ artificial intelligence and weird sounds.
 Currently finished externals are:
 
 ### Generators
+* sonus.nwosc~
 * sonus.rsosc~
 * sonus.vaosc~
 * sonus.window~

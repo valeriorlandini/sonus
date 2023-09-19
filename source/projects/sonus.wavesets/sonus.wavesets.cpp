@@ -41,15 +41,14 @@ public:
     MIN_AUTHOR		{ "Valerio Orlandini" };
     MIN_RELATED		{ "index~, buffer~, wave~" };
 
-    inlet<>  inlet_index	    { this, "Buffer transformation based on wavesets detection" };
-    outlet<> m_outlet_changed	{ this, "(symbol) Notification that the content of the buffer~ changed." };
+    inlet<>  in	    { this, "Buffer transformation based on wavesets detection" };
+    outlet<> out	{ this, "(symbol) Notification that the content of the buffer~ changed." };
 
     buffer_reference m_buffer
     {
         this,
         MIN_FUNCTION
         {
-            m_outlet_changed.send(args);
             return {};
         }
     };
@@ -681,6 +680,11 @@ private:
                 curr_waveset.end = b.frame_count() - 1;
                 curr_channel.push_back(curr_waveset);
                 wavesets_idx_.push_back(curr_channel);
+            }
+
+            for (auto c = 0; c < wavesets_idx_.size(); c++)
+            {
+                out.send("Channel " + std::to_string(c + 1) + " wavesets: " + std::to_string(wavesets_idx_.at(c).size()));
             }
         }
     }
