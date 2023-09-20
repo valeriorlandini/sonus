@@ -20,7 +20,7 @@ class Lorenz
         z_ = z;
         if (!set_t(t))
         {
-            set_t(0.099);
+            set_t(0.00125);
         }
     }
 
@@ -56,7 +56,7 @@ class Lorenz
 
     bool set_t(const TSample &t)
     {
-        if (t > 0.0 && t < 0.1)
+        if (t >= 0.0 && t < 0.025)
         {
             t_ = t;
 
@@ -99,13 +99,16 @@ class Lorenz
 
     inline void step()
     {
-        TSample x_1 = sigma_ * (y_ - x_);
-        TSample y_1 = x_ * (rho_ - z_) - y_;
-        TSample z_1 = x_ * y_ - beta_ * z_;
+        if (t_ > 0.0)
+        {
+            TSample x_1 = sigma_ * (y_ - x_);
+            TSample y_1 = x_ * (rho_ - z_) - y_;
+            TSample z_1 = x_ * y_ - beta_ * z_;
 
-        x_ += t_ * x_1;
-        y_ += t_ * y_1;
-        z_ += t_ * z_1;
+            x_ += t_ * x_1;
+            y_ += t_ * y_1;
+            z_ += t_ * z_1;
+        }
     }
 
     inline void step(TSample &x, TSample &y, TSample &z)

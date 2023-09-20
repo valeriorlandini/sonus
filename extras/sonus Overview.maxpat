@@ -579,7 +579,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 26.0, 194.0, 233.0, 20.0 ],
-					"text" : "Lorenz attractor based oscillator"
+					"text" : "User defined wavetable oscillator"
 				}
 
 			}
@@ -685,8 +685,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 170.0, 84.0, 22.0 ],
-					"text" : "sonus.lorenz~"
+					"patching_rect" : [ 26.0, 170.0, 85.0, 22.0 ],
+					"text" : "sonus.nwosc~"
 				}
 
 			}

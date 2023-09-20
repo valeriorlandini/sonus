@@ -67,6 +67,7 @@
 	<!--RELATED-->
 
 	<seealsolist>
+		<seealso name='sonus.nwosc~' />
 		<seealso name='sonus.vaosc~' />
 	</seealsolist>
 

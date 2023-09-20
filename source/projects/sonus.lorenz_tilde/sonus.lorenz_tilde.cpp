@@ -33,144 +33,115 @@ public:
 
 	lorenz_tilde()
 	{
-		call_next_value();
-		set_frequency(0.0);
+		call_next_values();
 	}
 
-	void set_frequency(const double &freq)
+	void call_next_values()
 	{
-		double hsr = (samplerate() * 0.5);
-
-		if (hsr != 0.0)
-		{
-			step_length_ = std::abs(std::fmod(freq, hsr)) / hsr;
-		}
-		else
-		{
-			step_length_ = 0.0;
-		}
-	}
-
-	void call_next_value()
-	{
-		current_points_ = next_points_;
-
 		lorenz_.step();
 
-		next_points_ = {std::clamp(lorenz_.get_x() * 0.04, -1.0, 1.0),
+		next_values_ = {std::clamp(lorenz_.get_x() * 0.04, -1.0, 1.0),
 		                std::clamp(lorenz_.get_y() * 0.04, -1.0, 1.0),
 						std::clamp((lorenz_.get_z() * 0.04) - 1.0, -1.0, 1.0)};
 	}
 
 	samples<3> operator()(sample freq)
     {	
-		if (freq != frequency)
-		{
-			frequency = freq;
-		}
-		
-		ramp_ += step_length_;
-		if (ramp_ > 1.0)
-		{
-			ramp_ = fmod(ramp_, 1.0);
-			call_next_value();
-		}
+		call_next_values();
 
-		auto x = cosip(current_points_[0], next_points_[0], ramp_);
-		auto y = cosip(current_points_[1], next_points_[1], ramp_);
-		auto z = cosip(current_points_[2], next_points_[2], ramp_);
-
-		return { {x, y, z} };
+		return { {next_values_[0], next_values_[1], next_values_[2]} };
 	}
 
     message<> m_number
 	{
 		this,
 		"number",
-		"Set the frequency in Hz.",
+		"Set the evolution speed (0-1).",
         MIN_FUNCTION
 		{
-            frequency = args;
+            speed = args;
             return {};
         }
     };
 
-	argument<number> frequency_arg
+	argument<number> speed_arg
     {
         this,
-        "frequency",
-        "Frequency in Hz.",
+        "speed",
+        "Evolution speed (0-1).",
         MIN_ARGUMENT_FUNCTION
         {
-            frequency = arg;
+            speed = arg;
         }
     };
 
-	attribute<number> frequency {
+	attribute<number, threadsafe::no, limit::clamp> speed
+	{
 		this,
-		"frequency",
-		0.0,
-        description {"Frequency in Hz"},
+		"speed",
+		0.5,
+		range { 0.0, 1.0 },
+        description {"Evolution speed (0-1)"},
         setter
 		{
 			MIN_FUNCTION
 			{
-				set_frequency(args[0]);
+				lorenz_.set_t(double(args[0]) * 0.02);
 				return args;
         	}
 		}
     };
 
-	attribute<number> rho
+	attribute<number, threadsafe::no, limit::clamp> rho
 	{
         this,
         "rho",
         28.0,
-        title {"Rho parameter"},
+		range { 24.0, 30.0 },
+        title {"Rho parameter (24-30)"},
 		description {"Value for the rho parameter. The standard value is 28.0, when it is greater than 24.74 the system is chaotic."},
 		setter
 		{
 			MIN_FUNCTION
 			{
 				lorenz_.set_rho(args[0]);
-
-				return {};
+				return args;
 			}
 		}
     };
 
-	attribute<number> sigma
+	attribute<number, threadsafe::no, limit::clamp> sigma
 	{
         this,
         "sigma",
         10.0,
-        title {"Sigma parameter"},
+		range { 1.0, 15.0 },
+        title {"Sigma parameter (1-15)"},
 		description {"Value for the sigma parameter. The standard value is 10.0."},
 		setter
 		{
 			MIN_FUNCTION
 			{
 				lorenz_.set_sigma(args[0]);
-
-				return {};
+				return args;
 			}
 		}
     };
 
-	attribute<number> beta
+	attribute<number, threadsafe::no, limit::clamp> beta
 	{
         this,
         "beta",
         2.6667,
-        title {"Beta parameter"},
+		range { 1.0, 5.0 },
+        title {"Beta parameter (1-5)"},
 		description {"Value for the rho parameter. The standard value is 2.6667."},
 		setter
 		{
 			MIN_FUNCTION
 			{
 				lorenz_.set_beta(args[0]);
-
-				return {};
+				return args;
 			}
 		}
     };
@@ -182,13 +153,13 @@ public:
         "Reset parameters and initial values to the defaults",
         MIN_FUNCTION
         {
-			lorenz_.set_beta(2.6667);
-			lorenz_.set_sigma(10.0);
-			lorenz_.set_rho(28.0);
+			beta = 2.6667;
+			sigma = 10.0;
+			rho = 28.0;
+			speed = 0.5;
 			lorenz_.set_x(0.01);
 			lorenz_.set_y(0.0);
 			lorenz_.set_z(0.0);
-			call_next_value();
 
 			return {};
 		}
@@ -196,10 +167,7 @@ public:
 
 private:
 	Lorenz<double> lorenz_;
-	double step_length_;
-	double ramp_ = 0.0;
-	std::vector<double> current_points_ = {0.0, 0.0, 0.0};
-	std::vector<double> next_points_ = {0.0, 0.0, 0.0};
+	std::vector<double> next_values_ = {0.0, 0.0, 0.0};
 };
 
 MIN_EXTERNAL(lorenz_tilde);
