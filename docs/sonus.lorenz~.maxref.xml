@@ -6,8 +6,8 @@
 
 <c74object name='sonus.lorenz~' category='strange attractors,  oscillator'>
 
-	<digest>Lorenz system based oscillator </digest>
-	<description>Lorenz system based oscillator </description>
+	<digest>Lorenz system based generator </digest>
+	<description>Lorenz system based generator </description>
 
 
 	<!--METADATA-->
@@ -58,8 +58,8 @@
 		</attribute>
 
 		<attribute name='speed' get='1' set='1' type='float64' size='1' >
-			<digest>Evolution speed (0-1) </digest>
-			<description>Evolution speed (0-1) </description>
+			<digest>Speed of evolution of the system, normalized between 0 and 1</digest>
+			<description>Speed of evolution of the system, normalized between 0 and 1. </description>
 		</attribute>
 
 		<attribute name='sigma' get='1' set='1' type='float64' size='1' >
@@ -78,7 +78,7 @@
 	<!--RELATED-->
 
 	<seealsolist>
-		<seealso name='sonus.lorenz' />
+		<seealso name='sonus.roessler~' />
 	</seealsolist>
 
 

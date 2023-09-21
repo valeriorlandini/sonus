@@ -6,8 +6,8 @@
 
 <c74object name='sonus.nwosc~' category='oscillators'>
 
-	<digest>Raw wavetable oscillator with user defined table </digest>
-	<description>Raw wavetable oscillator with user defined table </description>
+	<digest>Wavetable oscillator with user defined table </digest>
+	<description>Wavetable oscillator with user defined table </description>
 
 
 	<!--METADATA-->

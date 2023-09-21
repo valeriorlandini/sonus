@@ -5,36 +5,25 @@
 
 #include "c74_min.h"
 #include "../include/lorenz.hpp"
+#include "../include/interp.h"
 #include <algorithm>
 #include <vector>
 
 using namespace c74::min;
 
-template <class TSample>
-inline TSample cosip(const TSample &a, const TSample &b, const TSample &t)
-{
-    TSample interp = (1.0 - cos(t * M_PI)) * 0.5;
 
-    return a * (1.0 - interp) + b * interp;
-}
-
-class lorenz_tilde : public object<lorenz_tilde>, public sample_operator<1, 3>
+class lorenz_tilde : public object<lorenz_tilde>, public sample_operator<0, 3>
 {
 public:
-	MIN_DESCRIPTION {"Lorenz system based oscillator"};
+	MIN_DESCRIPTION {"Lorenz system based generator"};
 	MIN_TAGS {"strange attractors, oscillator"};
 	MIN_AUTHOR {"Valerio Orlandini"};
-	MIN_RELATED {"sonus.lorenz"};
+	MIN_RELATED {"sonus.roessler~"};
 
-	inlet<>  in {this, "(signal) Frequency"};
+	inlet<>  in {this, "(float) Evolution speed"};
 	outlet<> out_x {this, "(signal) x component", "signal"};
 	outlet<> out_y {this, "(signal) y component", "signal"};
 	outlet<> out_z {this, "(signal) z component", "signal"};
-
-	lorenz_tilde()
-	{
-		call_next_values();
-	}
 
 	void call_next_values()
 	{
@@ -45,7 +34,7 @@ public:
 						std::clamp((lorenz_.get_z() * 0.04) - 1.0, -1.0, 1.0)};
 	}
 
-	samples<3> operator()(sample freq)
+	samples<3> operator()()
     {	
 		call_next_values();
 
@@ -81,7 +70,8 @@ public:
 		"speed",
 		0.5,
 		range { 0.0, 1.0 },
-        description {"Evolution speed (0-1)"},
+        title {"Evolution speed (0-1)"},
+        description {"Speed of evolution of the system, normalized between 0 and 1."},
         setter
 		{
 			MIN_FUNCTION
@@ -115,8 +105,8 @@ public:
         this,
         "sigma",
         10.0,
-		range { 1.0, 15.0 },
-        title {"Sigma parameter (1-15)"},
+		range { 5.0, 15.0 },
+        title {"Sigma parameter (5-15)"},
 		description {"Value for the sigma parameter. The standard value is 10.0."},
 		setter
 		{

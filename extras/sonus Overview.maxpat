@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 42.0, 85.0, 1030.0, 796.0 ],
+		"rect" : [ 42.0, 85.0, 1072.0, 825.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,29 @@
 		"showontab" : 0,
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-55",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 26.0, 194.0, 233.0, 20.0 ],
+					"text" : "Lorenz attractor based generator"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-56",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 26.0, 170.0, 84.0, 22.0 ],
+					"text" : "sonus.lorenz~"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-53",
 					"linecount" : 2,
@@ -115,7 +138,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 264.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 334.0, 233.0, 20.0 ],
 					"text" : "Pulsar oscillator"
 				}
 
@@ -127,7 +150,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 240.0, 84.0, 22.0 ],
+					"patching_rect" : [ 26.0, 310.0, 84.0, 22.0 ],
 					"text" : "sonus.pulsar~"
 				}
 
@@ -184,7 +207,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 410.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 480.0, 233.0, 20.0 ],
 					"text" : "Oscillator with random shapes"
 				}
 
@@ -196,7 +219,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 386.0, 80.0, 22.0 ],
+					"patching_rect" : [ 26.0, 456.0, 80.0, 22.0 ],
 					"text" : "sonus.rsosc~"
 				}
 
@@ -207,7 +230,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 480.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 550.0, 233.0, 20.0 ],
 					"text" : "Multishape bandlimited oscillator"
 				}
 
@@ -219,7 +242,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 456.0, 82.0, 22.0 ],
+					"patching_rect" : [ 26.0, 526.0, 82.0, 22.0 ],
 					"text" : "sonus.vaosc~"
 				}
 
@@ -567,8 +590,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 337.0, 233.0, 20.0 ],
-					"text" : "Rössler attractor based oscillator"
+					"patching_rect" : [ 26.0, 407.0, 233.0, 20.0 ],
+					"text" : "Rössler attractor based generator"
 				}
 
 			}
@@ -578,7 +601,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 194.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 264.0, 233.0, 20.0 ],
 					"text" : "User defined wavetable oscillator"
 				}
 
@@ -589,7 +612,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 550.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 620.0, 233.0, 20.0 ],
 					"text" : "Window functions generator"
 				}
 
@@ -673,7 +696,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 313.0, 94.0, 22.0 ],
+					"patching_rect" : [ 26.0, 383.0, 94.0, 22.0 ],
 					"text" : "sonus.roessler~"
 				}
 
@@ -685,7 +708,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 170.0, 85.0, 22.0 ],
+					"patching_rect" : [ 26.0, 240.0, 85.0, 22.0 ],
 					"text" : "sonus.nwosc~"
 				}
 
@@ -745,7 +768,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 526.0, 91.0, 22.0 ],
+					"patching_rect" : [ 26.0, 596.0, 91.0, 22.0 ],
 					"text" : "sonus.window~"
 				}
 
@@ -1005,6 +1028,14 @@
 					"destination" : [ "obj-58", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-54", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-56", 0 ]
 				}
 
 			}

@@ -6,8 +6,8 @@
 
 <c74object name='sonus.roessler~' category='strange attractors,  oscillator'>
 
-	<digest>Roessler system based oscillator </digest>
-	<description>Roessler system based oscillator </description>
+	<digest>Roessler system based generator </digest>
+	<description>Roessler system based generator </description>
 
 
 	<!--METADATA-->
@@ -23,9 +23,9 @@
 
 	<objarglist>
 
-		<objarg name='frequency' optional='1' type='number'>
-			<digest>Frequency in Hz</digest>
-			<description>Frequency in Hz. </description>
+		<objarg name='speed' optional='1' type='number'>
+			<digest>Evolution speed (0-1)</digest>
+			<description>Evolution speed (0-1). </description>
 		</objarg>
 
 	</objarglist>
@@ -36,8 +36,8 @@
 	<methodlist>
 
 		<method name='float'>
-			<digest>Set the frequency in Hz</digest>
-			<description>Set the frequency in Hz. </description>
+			<digest>Set the evolution speed (0-1)</digest>
+			<description>Set the evolution speed (0-1). </description>
 		</method>
 
 		<method name='clear'>
@@ -52,9 +52,9 @@
 
 	<attributelist>
 
-		<attribute name='frequency' get='1' set='1' type='float64' size='1' >
-			<digest>Frequency in Hz </digest>
-			<description>Frequency in Hz </description>
+		<attribute name='speed' get='1' set='1' type='float64' size='1' >
+			<digest>Speed of evolution of the system, normalized between 0 and 1</digest>
+			<description>Speed of evolution of the system, normalized between 0 and 1. </description>
 		</attribute>
 
 		<attribute name='a' get='1' set='1' type='float64' size='1' >
@@ -78,7 +78,7 @@
 	<!--RELATED-->
 
 	<seealsolist>
-		<seealso name='sonus.roessler' />
+		<seealso name='sonus.lorenz~' />
 	</seealsolist>
 
 

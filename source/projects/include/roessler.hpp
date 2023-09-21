@@ -54,7 +54,7 @@ class Roessler
 
     bool set_t(const TSample &t)
     {
-        if (t > 0.0 && t < 0.1)
+        if (t >= 0.0 && t < 0.1)
         {
             t_ = t;
 
@@ -96,13 +96,23 @@ class Roessler
 
     inline void step()
     {
-        TSample x_1 = -1.0 * y_ - z_;
-        TSample y_1 = x_ + (a_ * y_);
-        TSample z_1 = b_ + z_ * (x_ - c_);
+        if (t_ > 0.0)
+        {
+            TSample x_1 = (-1.0 * y_) - z_;
+            TSample y_1 = x_ + (a_ * y_);
+            TSample z_1 = b_ + (z_ * (x_ - c_));
 
-        x_ += t_ * x_1;
-        y_ += t_ * y_1;
-        z_ += t_ * z_1;
+            x_ += t_ * x_1;
+            y_ += t_ * y_1;
+            z_ += t_ * z_1;
+
+            if (isnan(x_) || isnan(y_) || isnan(z_))
+            {
+                x_ = 0.1;
+                y_ = 0.1;
+                z_ = 0.1;
+            }
+        }
     }
 
     inline void step(TSample &x, TSample &y, TSample &z)

@@ -4,129 +4,90 @@
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "c74_min.h"
+#include "../include/interp.h"
 #include "../include/roessler.hpp"
 #include <algorithm>
 #include <vector>
 
 using namespace c74::min;
 
-template <class TSample>
-inline TSample cosip(const TSample &a, const TSample &b, const TSample &t)
-{
-    TSample interp = (1.0 - cos(t * M_PI)) * 0.5;
-
-    return a * (1.0 - interp) + b * interp;
-}
-
-class roessler_tilde : public object<roessler_tilde>, public sample_operator<1, 3>
+class roessler_tilde : public object<roessler_tilde>, public sample_operator<0, 3>
 {
 public:
-	MIN_DESCRIPTION {"Roessler system based oscillator"};
+	MIN_DESCRIPTION {"Roessler system based generator"};
 	MIN_TAGS {"strange attractors, oscillator"};
 	MIN_AUTHOR {"Valerio Orlandini"};
-	MIN_RELATED {"sonus.roessler"};
+	MIN_RELATED {"sonus.lorenz~"};
 
-	inlet<>  in {this, "(signal) Frequency"};
+	inlet<>  in {this, "(float) Evolution speed"};
 	outlet<> out_x {this, "(signal) x component", "signal"};
 	outlet<> out_y {this, "(signal) y component", "signal"};
 	outlet<> out_z {this, "(signal) z component", "signal"};
 
-	roessler_tilde()
+	void call_next_values()
 	{
-		call_next_value();
-		set_frequency(0.0);
-	}
-
-	void set_frequency(const double &freq)
-	{
-		double hsr = (samplerate() * 0.5);
-
-		if (hsr != 0.0)
-		{
-			step_length_ = std::abs(std::fmod(freq, hsr)) / hsr;
-		}
-		else
-		{
-			step_length_ = 0.0;
-		}
-	}
-
-	void call_next_value()
-	{
-		current_points_ = next_points_;
-
 		roessler_.step();
 
-		next_points_ = {std::clamp(roessler_.get_x() * 0.08, -1.0, 1.0),
+		next_values_ = {std::clamp(roessler_.get_x() * 0.08, -1.0, 1.0),
 		                std::clamp(roessler_.get_y() * 0.08, -1.0, 1.0),
-						std::clamp((roessler_.get_z() * 0.04) - 1.0, -100.0, 100.0)};
+						std::clamp((roessler_.get_z() * 0.02), -1.0, 1.0)};
 	}
 
-	samples<3> operator()(sample freq)
+	samples<3> operator()()
     {
-		if (freq != frequency)
-		{
-			frequency = freq;
-		}
-		
-		ramp_ += step_length_;
-		if (ramp_ > 1.0)
-		{
-			ramp_ = fmod(ramp_, 1.0);
-			call_next_value();
-		}
+		call_next_values();
 
-		auto x = cosip(current_points_[0], next_points_[0], ramp_);
-		auto y = cosip(current_points_[1], next_points_[1], ramp_);
-		auto z = cosip(current_points_[2], next_points_[2], ramp_);
-
-		return { {x, y, z} };
+		return { {next_values_[0], next_values_[1], next_values_[2]} };
 	}
 
     message<> m_number
 	{
 		this,
 		"number",
-		"Set the frequency in Hz.",
+		"Set the evolution speed (0-1).",
         MIN_FUNCTION
 		{
-            frequency = args;
+            speed = args;
             return {};
         }
     };
 
-	argument<number> frequency_arg
+	argument<number> speed_arg
     {
         this,
-        "frequency",
-        "Frequency in Hz.",
+        "speed",
+        "Evolution speed (0-1).",
         MIN_ARGUMENT_FUNCTION
         {
-            frequency = arg;
+            speed = arg;
         }
     };
 
-	attribute<number> frequency {
+	attribute<number, threadsafe::no, limit::clamp> speed
+	{
 		this,
-		"frequency",
-		0.0,
-        description {"Frequency in Hz"},
+		"speed",
+		0.5,
+		range { 0.0, 1.0 },
+        title {"Evolution speed (0-1)"},
+        description {"Speed of evolution of the system, normalized between 0 and 1."},
         setter
 		{
 			MIN_FUNCTION
 			{
-				set_frequency(args[0]);
+				roessler_.set_t(double(args[0]) * 0.05);
 				return args;
         	}
 		}
     };
 
-	attribute<number> a
+	attribute<number, threadsafe::no, limit::clamp> a
 	{
         this,
         "a",
         0.2,
-        title {"a parameter"},
+		range { 0.1, 0.3 },
+        title {"a parameter (0.1-0.3)"},
 		description {"Value for the a parameter. The standard value is 0.2."},
 		setter
 		{
@@ -134,17 +95,18 @@ public:
 			{
 				roessler_.set_a(args[0]);
 
-				return {};
+				return args;
 			}
 		}
     };
 
-	attribute<number> b
+	attribute<number, threadsafe::no, limit::clamp> b
 	{
         this,
         "b",
         0.2,
-        title {"b parameter"},
+		range { 0.01, 1.0 },
+        title {"b parameter (0.01-1)"},
 		description {"Value for the b parameter. The standard value is 0.2."},
 		setter
 		{
@@ -152,17 +114,18 @@ public:
 			{
 				roessler_.set_b(args[0]);
 
-				return {};
+				return args;
 			}
 		}
     };
 
-	attribute<number> c
+	attribute<number, threadsafe::no, limit::clamp> c
 	{
         this,
         "c",
         5.7,
-        title {"c parameter"},
+		range { 2.0, 10.0 },
+        title {"c parameter (2-10)"},
 		description {"Value for the c parameter. The standard value is 5.7."},
 		setter
 		{
@@ -170,7 +133,7 @@ public:
 			{
 				roessler_.set_c(args[0]);
 
-				return {};
+				return args;
 			}
 		}
     };
@@ -182,13 +145,13 @@ public:
         "Reset parameters and initial values to the defaults",
         MIN_FUNCTION
         {
-			roessler_.set_a(0.2);
-			roessler_.set_b(0.2);
-			roessler_.set_c(5.7);
+			a = 0.2;
+			b = 0.2;
+			c = 5.7;
+			speed = 0.5;
 			roessler_.set_x(0.1);
 			roessler_.set_y(0.1);
 			roessler_.set_z(0.1);
-			call_next_value();
 
 			return {};
 		}
@@ -196,10 +159,7 @@ public:
 
 private:
 	Roessler<double> roessler_;
-	double step_length_;
-	double ramp_ = 0.0;
-	std::vector<double> current_points_ = {0.0, 0.0, 0.0};
-	std::vector<double> next_points_ = {0.0, 0.0, 0.0};
+	std::vector<double> next_values_ = {0.0, 0.0, 0.0};
 };
 
 MIN_EXTERNAL(roessler_tilde);
