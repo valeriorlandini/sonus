@@ -92,7 +92,7 @@
 					"patching_rect" : [ 33.0, 384.0, 38.5, 50.0 ],
 					"shape" : 1,
 					"size" : 3,
-					"value" : 2
+					"value" : 0
 				}
 
 			}

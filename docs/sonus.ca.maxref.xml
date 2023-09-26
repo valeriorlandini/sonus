@@ -88,8 +88,9 @@
 	<!--RELATED-->
 
 	<seealsolist>
-		<seealso name='neuron' />
-		<seealso name='perceptron' />
+		<seealso name='sonus.neuron' />
+		<seealso name='sonus.perceptron' />
+		<seealso name='sonus.ga' />
 	</seealsolist>
 
 

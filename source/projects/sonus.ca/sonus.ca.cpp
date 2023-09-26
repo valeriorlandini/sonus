@@ -14,7 +14,7 @@ public:
 	MIN_DESCRIPTION {"Cellular automata system"};
 	MIN_TAGS {"ai, math"};
 	MIN_AUTHOR {"Valerio Orlandini"};
-	MIN_RELATED {"neuron, perceptron"};
+	MIN_RELATED {"sonus.neuron, sonus.perceptron, sonus.ga"};
 
 	inlet<>  in {this, "(bang) Evolve matrix"};
 	outlet<> out {this, "(list) Output for matrixctrl", "list"};

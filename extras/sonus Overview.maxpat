@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 42.0, 85.0, 1072.0, 795.0 ],
+		"rect" : [ 627.0, 158.0, 1072.0, 864.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -41,12 +41,48 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-63",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 773.0, 410.0, 233.0, 20.0 ],
+					"text" : "Similar to line, but for list of numbers"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-64",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 773.0, 386.0, 65.0, 22.0 ],
+					"presentation_linecount" : 2,
+					"text" : "sonus.lline"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-62",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 591.0, 386.0, 84.0, 22.0 ],
+					"text" : "sonus.ga.num"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-60",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 530.0, 410.0, 233.0, 20.0 ],
-					"text" : "Genetic algorithm implementation"
+					"text" : "Genetic algorithm implementations"
 				}
 
 			}
@@ -207,7 +243,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 773.0, 477.0, 233.0, 20.0 ],
+					"patching_rect" : [ 773.0, 544.0, 233.0, 20.0 ],
 					"text" : "Mathematical constants"
 				}
 
@@ -219,7 +255,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 773.0, 453.0, 77.0, 22.0 ],
+					"patching_rect" : [ 773.0, 520.0, 77.0, 22.0 ],
 					"text" : "sonus.mathc"
 				}
 
@@ -230,7 +266,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 773.0, 410.0, 233.0, 20.0 ],
+					"patching_rect" : [ 773.0, 477.0, 233.0, 20.0 ],
 					"text" : "Non repeating random sequences"
 				}
 
@@ -242,7 +278,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 773.0, 386.0, 64.0, 22.0 ],
+					"patching_rect" : [ 773.0, 453.0, 64.0, 22.0 ],
 					"text" : "sonus.lurn"
 				}
 
@@ -299,7 +335,7 @@
 					"maxclass" : "live.line",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 731.0, 1000.0, 5.0 ]
+					"patching_rect" : [ 16.0, 796.0, 1000.0, 5.0 ]
 				}
 
 			}
@@ -321,7 +357,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 397.5, 754.0, 237.0, 22.0 ],
+					"patching_rect" : [ 397.5, 819.0, 237.0, 22.0 ],
 					"text" : "https://github.com/valeriorlandini/sonus",
 					"textcolor" : [ 0.0, 0.015686274509804, 0.396078431372549, 1.0 ]
 				}
@@ -336,7 +372,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 768.0, 129.0, 36.0 ],
+					"patching_rect" : [ 10.0, 833.0, 129.0, 36.0 ],
 					"text" : ";\r\nmax launchbrowser $1"
 				}
 
@@ -484,7 +520,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 20.0, 892.734375, 91.0, 22.0 ],
+					"patching_rect" : [ 20.0, 957.734375, 91.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -502,7 +538,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 773.0, 687.0, 233.0, 20.0 ],
+					"patching_rect" : [ 773.0, 754.0, 233.0, 20.0 ],
 					"text" : "Tent map calculator"
 				}
 
@@ -514,7 +550,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 773.0, 663.0, 64.0, 22.0 ],
+					"patching_rect" : [ 773.0, 730.0, 64.0, 22.0 ],
 					"text" : "sonus.tent"
 				}
 
@@ -537,7 +573,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 773.0, 617.0, 233.0, 34.0 ],
+					"patching_rect" : [ 773.0, 684.0, 233.0, 34.0 ],
 					"text" : "Quadraphonic panner coefficients calculator"
 				}
 
@@ -559,7 +595,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 773.0, 550.0, 233.0, 20.0 ],
+					"patching_rect" : [ 773.0, 617.0, 233.0, 20.0 ],
 					"text" : "Signal extremes analyzer"
 				}
 
@@ -670,7 +706,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 773.0, 593.0, 108.0, 22.0 ],
+					"patching_rect" : [ 773.0, 660.0, 108.0, 22.0 ],
 					"text" : "sonus.quadpanner"
 				}
 
@@ -706,7 +742,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 773.0, 526.0, 80.0, 22.0 ],
+					"patching_rect" : [ 773.0, 593.0, 80.0, 22.0 ],
 					"text" : "sonus.mima~"
 				}
 
@@ -886,7 +922,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 738.0, 1000.0, 20.0 ],
+					"patching_rect" : [ 16.0, 803.0, 1000.0, 20.0 ],
 					"text" : "handmade in italy by valerio orlandini",
 					"textjustification" : 1
 				}
@@ -1098,6 +1134,22 @@
 					"destination" : [ "obj-58", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-61", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-62", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-64", 0 ]
 				}
 
 			}

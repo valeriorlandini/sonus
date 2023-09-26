@@ -25,15 +25,16 @@ public:
 	inlet<>  in {this, "(dictionary) System rules"};
 	outlet<> out {this, "(symbol) Output"};
 
-	 message<> dictionary
-	 {
+	message<> dictionary
+	{
 		this,
 		"dictionary",
-        "Dictionary with the system definition",
-        MIN_FUNCTION {
-            try
+       	"Dictionary with the system definition",
+       	MIN_FUNCTION
+		{
+			try
 			{
-                dict system_ = {args[0]};
+				dict system_ = {args[0]};
 				atoms rules = system_["rules"];
 				atoms axiom = system_["axiom"];
 				generation_ = axiom[0];
@@ -56,13 +57,13 @@ public:
 				{
 					cerr << "Rules elements must be even" << endl;
 				}
-            }
-            catch (std::exception& e)
+           	}
+           	catch (std::exception& e)
 			{
-                cerr << e.what() << endl;
-            }
-            return {};
-        }
+            	cerr << e.what() << endl;
+           	}
+        	return {};
+       }
     };
 
 	message<> curr

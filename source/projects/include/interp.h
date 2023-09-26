@@ -3,6 +3,12 @@
 #include <vector>
 
 template <class TSample>
+inline TSample linip(const TSample &a, const TSample &b, const TSample &t)
+{
+    return a * (1.0 - t) + b * t;
+}
+
+template <class TSample>
 inline TSample cosip(const TSample &a, const TSample &b, const TSample &t)
 {
     TSample interp = (1.0 - cos(t * M_PI)) * 0.5;
