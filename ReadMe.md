@@ -6,23 +6,27 @@ artificial intelligence and weird sounds.
 Currently finished externals are:
 
 ### Generators
+* sonus.lorenz~
 * sonus.nwosc~
+* sonus.pulsar~
+* sonus.roessler~
 * sonus.rsosc~
 * sonus.vaosc~
 * sonus.window~
 
-### Effects
+### Effects and Sample Manipulation
 * sonus.8bitinv~
 * sonus.bitman~
 * sonus.quadpan~
-
-### Sample Manipulation
-* sonus.wavesets~
+* sonus.wavesets
 
 ### Neural Networks and AI
 * sonus.acti
 * sonus.acti~
 * sonus.ca
+* sonus.ga
+* sonus.ga.num
+* sonus.linden
 * sonus.neuron
 * sonus.perceptron~
 
@@ -30,6 +34,7 @@ Currently finished externals are:
 * sonus.blist
 * sonus.fselector~
 * sonus.hop
+* sonus.llist
 * sonus.lurn
 * sonus.mathc
 * sonus.mima~

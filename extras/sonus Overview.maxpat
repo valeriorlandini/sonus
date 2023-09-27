@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 627.0, 158.0, 1072.0, 864.0 ],
+		"rect" : [ 169.0, 85.0, 1036.0, 724.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -45,7 +45,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 773.0, 410.0, 233.0, 20.0 ],
+					"patching_rect" : [ 776.0, 390.0, 233.0, 20.0 ],
 					"text" : "Similar to line, but for list of numbers"
 				}
 
@@ -57,8 +57,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 773.0, 386.0, 65.0, 22.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 776.0, 365.0, 65.0, 22.0 ],
 					"text" : "sonus.lline"
 				}
 
@@ -70,7 +69,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 591.0, 386.0, 84.0, 22.0 ],
+					"patching_rect" : [ 587.0, 365.0, 84.0, 22.0 ],
 					"text" : "sonus.ga.num"
 				}
 
@@ -81,7 +80,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 530.0, 410.0, 233.0, 20.0 ],
+					"patching_rect" : [ 526.0, 390.0, 233.0, 20.0 ],
 					"text" : "Genetic algorithm implementations"
 				}
 
@@ -93,7 +92,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 530.0, 386.0, 57.0, 22.0 ],
+					"patching_rect" : [ 526.0, 365.0, 57.0, 22.0 ],
 					"text" : "sonus.ga"
 				}
 
@@ -104,7 +103,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 530.0, 477.0, 233.0, 20.0 ],
+					"patching_rect" : [ 526.0, 455.0, 233.0, 20.0 ],
 					"text" : "Lindenmayer generative system"
 				}
 
@@ -116,7 +115,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 530.0, 453.0, 76.0, 22.0 ],
+					"patching_rect" : [ 526.0, 430.0, 76.0, 22.0 ],
 					"text" : "sonus.linden"
 				}
 
@@ -127,7 +126,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 194.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 195.0, 233.0, 20.0 ],
 					"text" : "Lorenz attractor based generator"
 				}
 
@@ -151,7 +150,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 773.0, 194.0, 233.0, 34.0 ],
+					"patching_rect" : [ 776.0, 195.0, 233.0, 34.0 ],
 					"text" : "Output a different item of a list according to the inlet"
 				}
 
@@ -163,7 +162,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 773.0, 170.0, 65.0, 22.0 ],
+					"patching_rect" : [ 776.0, 170.0, 65.0, 22.0 ],
 					"text" : "sonus.blist"
 				}
 
@@ -174,7 +173,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 278.0, 264.0, 233.0, 20.0 ],
+					"patching_rect" : [ 276.0, 260.0, 233.0, 20.0 ],
 					"text" : "Bit manipulator"
 				}
 
@@ -186,7 +185,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 278.0, 240.0, 87.0, 22.0 ],
+					"patching_rect" : [ 276.0, 235.0, 87.0, 22.0 ],
 					"text" : "sonus.bitman~"
 				}
 
@@ -197,7 +196,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 278.0, 194.0, 233.0, 20.0 ],
+					"patching_rect" : [ 276.0, 195.0, 233.0, 20.0 ],
 					"text" : "Bitcrusher and bit inverter"
 				}
 
@@ -209,7 +208,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 278.0, 170.0, 86.0, 22.0 ],
+					"patching_rect" : [ 276.0, 170.0, 86.0, 22.0 ],
 					"text" : "sonus.8bitinv~"
 				}
 
@@ -220,7 +219,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 334.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 325.0, 233.0, 20.0 ],
 					"text" : "Pulsar oscillator"
 				}
 
@@ -232,7 +231,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 310.0, 84.0, 22.0 ],
+					"patching_rect" : [ 26.0, 300.0, 84.0, 22.0 ],
 					"text" : "sonus.pulsar~"
 				}
 
@@ -243,7 +242,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 773.0, 544.0, 233.0, 20.0 ],
+					"patching_rect" : [ 776.0, 520.0, 233.0, 20.0 ],
 					"text" : "Mathematical constants"
 				}
 
@@ -255,7 +254,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 773.0, 520.0, 77.0, 22.0 ],
+					"patching_rect" : [ 776.0, 495.0, 77.0, 22.0 ],
 					"text" : "sonus.mathc"
 				}
 
@@ -266,7 +265,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 773.0, 477.0, 233.0, 20.0 ],
+					"patching_rect" : [ 776.0, 455.0, 233.0, 20.0 ],
 					"text" : "Non repeating random sequences"
 				}
 
@@ -278,7 +277,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 773.0, 453.0, 64.0, 22.0 ],
+					"patching_rect" : [ 776.0, 430.0, 64.0, 22.0 ],
 					"text" : "sonus.lurn"
 				}
 
@@ -289,7 +288,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 480.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 455.0, 233.0, 20.0 ],
 					"text" : "Oscillator with random shapes"
 				}
 
@@ -301,7 +300,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 456.0, 80.0, 22.0 ],
+					"patching_rect" : [ 26.0, 430.0, 80.0, 22.0 ],
 					"text" : "sonus.rsosc~"
 				}
 
@@ -312,7 +311,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 550.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 520.0, 233.0, 20.0 ],
 					"text" : "Multishape bandlimited oscillator"
 				}
 
@@ -324,7 +323,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 526.0, 82.0, 22.0 ],
+					"patching_rect" : [ 26.0, 495.0, 82.0, 22.0 ],
 					"text" : "sonus.vaosc~"
 				}
 
@@ -335,7 +334,7 @@
 					"maxclass" : "live.line",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 796.0, 1000.0, 5.0 ]
+					"patching_rect" : [ 16.0, 761.0, 1000.0, 5.0 ]
 				}
 
 			}
@@ -357,7 +356,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 397.5, 819.0, 237.0, 22.0 ],
+					"patching_rect" : [ 397.5, 784.0, 237.0, 22.0 ],
 					"text" : "https://github.com/valeriorlandini/sonus",
 					"textcolor" : [ 0.0, 0.015686274509804, 0.396078431372549, 1.0 ]
 				}
@@ -372,7 +371,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 833.0, 129.0, 36.0 ],
+					"patching_rect" : [ 10.0, 798.0, 129.0, 36.0 ],
 					"text" : ";\r\nmax launchbrowser $1"
 				}
 
@@ -383,7 +382,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 530.0, 337.0, 233.0, 20.0 ],
+					"patching_rect" : [ 526.0, 325.0, 233.0, 20.0 ],
 					"text" : "Cellular automata system"
 				}
 
@@ -395,7 +394,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 530.0, 313.0, 57.0, 22.0 ],
+					"patching_rect" : [ 526.0, 300.0, 57.0, 22.0 ],
 					"text" : "sonus.ca"
 				}
 
@@ -520,7 +519,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 20.0, 957.734375, 91.0, 22.0 ],
+					"patching_rect" : [ 26.0, 924.734375, 91.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -538,7 +537,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 773.0, 754.0, 233.0, 20.0 ],
+					"patching_rect" : [ 776.0, 715.0, 233.0, 20.0 ],
 					"text" : "Tent map calculator"
 				}
 
@@ -550,7 +549,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 773.0, 730.0, 64.0, 22.0 ],
+					"patching_rect" : [ 776.0, 690.0, 64.0, 22.0 ],
 					"text" : "sonus.tent"
 				}
 
@@ -561,7 +560,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 530.0, 614.0, 233.0, 20.0 ],
+					"patching_rect" : [ 526.0, 585.0, 233.0, 20.0 ],
 					"text" : "Classic perceptron implementation"
 				}
 
@@ -573,7 +572,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 773.0, 684.0, 233.0, 34.0 ],
+					"patching_rect" : [ 776.0, 650.0, 233.0, 34.0 ],
 					"text" : "Quadraphonic panner coefficients calculator"
 				}
 
@@ -584,7 +583,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 278.0, 337.0, 233.0, 20.0 ],
+					"patching_rect" : [ 276.0, 325.0, 233.0, 20.0 ],
 					"text" : "Quadraphonic panner"
 				}
 
@@ -595,7 +594,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 773.0, 617.0, 233.0, 20.0 ],
+					"patching_rect" : [ 776.0, 585.0, 233.0, 20.0 ],
 					"text" : "Signal extremes analyzer"
 				}
 
@@ -606,7 +605,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 773.0, 337.0, 233.0, 20.0 ],
+					"patching_rect" : [ 776.0, 325.0, 233.0, 20.0 ],
 					"text" : "Hot inlets operations"
 				}
 
@@ -617,7 +616,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 773.0, 264.0, 233.0, 20.0 ],
+					"patching_rect" : [ 776.0, 260.0, 233.0, 20.0 ],
 					"text" : "Continuous selector/mixer"
 				}
 
@@ -628,7 +627,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 530.0, 544.0, 233.0, 20.0 ],
+					"patching_rect" : [ 526.0, 520.0, 233.0, 20.0 ],
 					"text" : "Artificial neuron implementation"
 				}
 
@@ -639,7 +638,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 530.0, 264.0, 233.0, 20.0 ],
+					"patching_rect" : [ 526.0, 260.0, 233.0, 20.0 ],
 					"text" : "Activation functions (signal rate)"
 				}
 
@@ -650,7 +649,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 530.0, 194.0, 233.0, 20.0 ],
+					"patching_rect" : [ 526.0, 195.0, 233.0, 20.0 ],
 					"text" : "Activation functions"
 				}
 
@@ -661,7 +660,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 278.0, 410.0, 233.0, 20.0 ],
+					"patching_rect" : [ 276.0, 390.0, 233.0, 20.0 ],
 					"text" : "Wavesets based sample manipulation"
 				}
 
@@ -672,7 +671,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 407.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 390.0, 233.0, 20.0 ],
 					"text" : "Rössler attractor based generator"
 				}
 
@@ -683,7 +682,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 264.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 260.0, 233.0, 20.0 ],
 					"text" : "User defined wavetable oscillator"
 				}
 
@@ -694,7 +693,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 620.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 585.0, 233.0, 20.0 ],
 					"text" : "Window functions generator"
 				}
 
@@ -706,7 +705,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 773.0, 660.0, 108.0, 22.0 ],
+					"patching_rect" : [ 776.0, 625.0, 108.0, 22.0 ],
 					"text" : "sonus.quadpanner"
 				}
 
@@ -718,7 +717,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 278.0, 313.0, 98.0, 22.0 ],
+					"patching_rect" : [ 276.0, 300.0, 98.0, 22.0 ],
 					"text" : "sonus.quadpan~"
 				}
 
@@ -730,7 +729,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 773.0, 240.0, 96.0, 22.0 ],
+					"patching_rect" : [ 776.0, 235.0, 96.0, 22.0 ],
 					"text" : "sonus.fselector~"
 				}
 
@@ -742,7 +741,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 773.0, 593.0, 80.0, 22.0 ],
+					"patching_rect" : [ 776.0, 560.0, 80.0, 22.0 ],
 					"text" : "sonus.mima~"
 				}
 
@@ -754,7 +753,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 773.0, 313.0, 64.0, 22.0 ],
+					"patching_rect" : [ 776.0, 300.0, 64.0, 22.0 ],
 					"text" : "sonus.hop"
 				}
 
@@ -766,7 +765,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 278.0, 386.0, 94.0, 22.0 ],
+					"patching_rect" : [ 276.0, 365.0, 94.0, 22.0 ],
 					"text" : "sonus.wavesets"
 				}
 
@@ -778,7 +777,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 383.0, 94.0, 22.0 ],
+					"patching_rect" : [ 26.0, 365.0, 94.0, 22.0 ],
 					"text" : "sonus.roessler~"
 				}
 
@@ -790,7 +789,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 240.0, 85.0, 22.0 ],
+					"patching_rect" : [ 26.0, 235.0, 85.0, 22.0 ],
 					"text" : "sonus.nwosc~"
 				}
 
@@ -802,7 +801,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 530.0, 520.0, 81.0, 22.0 ],
+					"patching_rect" : [ 526.0, 495.0, 81.0, 22.0 ],
 					"text" : "sonus.neuron"
 				}
 
@@ -814,7 +813,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 530.0, 590.0, 108.0, 22.0 ],
+					"patching_rect" : [ 526.0, 560.0, 108.0, 22.0 ],
 					"text" : "sonus.perceptron~"
 				}
 
@@ -826,7 +825,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 530.0, 240.0, 70.0, 22.0 ],
+					"patching_rect" : [ 526.0, 235.0, 70.0, 22.0 ],
 					"text" : "sonus.acti~"
 				}
 
@@ -838,7 +837,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 530.0, 170.0, 63.0, 22.0 ],
+					"patching_rect" : [ 526.0, 170.0, 63.0, 22.0 ],
 					"text" : "sonus.acti"
 				}
 
@@ -850,7 +849,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 596.0, 91.0, 22.0 ],
+					"patching_rect" : [ 26.0, 560.0, 91.0, 22.0 ],
 					"text" : "sonus.window~"
 				}
 
@@ -922,7 +921,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 803.0, 1000.0, 20.0 ],
+					"patching_rect" : [ 16.0, 768.0, 1000.0, 20.0 ],
 					"text" : "handmade in italy by valerio orlandini",
 					"textjustification" : 1
 				}

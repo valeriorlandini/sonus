@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 847.0, 573.0 ],
+		"rect" : [ 99.0, 100.0, 847.0, 472.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,138 +40,29 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-7",
-					"maxclass" : "gain~",
-					"multichannelvariant" : 0,
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "signal", "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 33.0, 422.5, 145.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-9",
-					"maxclass" : "ezdac~",
-					"numinlets" : 2,
-					"numoutlets" : 0,
-					"patching_rect" : [ 33.0, 448.0, 45.0, 45.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"bubble" : 1,
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
-					"id" : "obj-29",
-					"linecount" : 4,
+					"id" : "obj-7",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 310.0, 195.0, 357.0, 70.0 ],
-					"text" : "range for inlets can be formatted in two ways:\n0: first to last input from 0.0 to 1.0 (default)\n1: first to last input from 1.0 to last input (e.g. from 1.0 to 4.0 in this patch)"
+					"patching_rect" : [ 300.0, 227.5, 276.5, 25.0 ],
+					"presentation_linecount" : 2,
+					"text" : "update interval of the ramp, in milliseconds"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-28",
-					"maxclass" : "toggle",
+					"attr" : "grain",
+					"id" : "obj-4",
+					"maxclass" : "attrui",
 					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 244.879675716161728, 204.0, 24.0, 24.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-26",
-					"maxclass" : "message",
-					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 244.879675716161728, 240.0, 56.0, 22.0 ],
-					"text" : "range $1"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontface" : 0,
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-23",
-					"maxclass" : "number~",
-					"mode" : 1,
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "signal", "float" ],
-					"patching_rect" : [ 33.0, 156.5, 56.0, 22.0 ],
-					"sig" : 0.0
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-14",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 120.0, 275.0, 44.0, 22.0 ],
-					"text" : "noise~"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-19",
-					"maxclass" : "newobj",
-					"numinlets" : 3,
-					"numoutlets" : 1,
-					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 98.25, 247.0, 59.0, 22.0 ],
-					"text" : "rect~ 100"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-13",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 76.5, 219.0, 60.0, 22.0 ],
-					"text" : "saw~ 100"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-11",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 54.75, 191.0, 66.0, 22.0 ],
-					"text" : "cycle~ 100"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"automatic" : 1,
-					"id" : "obj-8",
-					"maxclass" : "scope~",
-					"numinlets" : 2,
-					"numoutlets" : 0,
-					"patching_rect" : [ 189.0, 384.0, 298.0, 109.0 ]
+					"parameter_enable" : 0,
+					"patching_rect" : [ 140.0, 229.0, 150.0, 22.0 ]
 				}
 
 			}
@@ -184,8 +75,55 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 499.342245161533356, 426.0, 114.139037370681763, 25.0 ],
-					"text" : "output"
+					"patching_rect" : [ 111.5, 308.0, 195.0, 25.0 ],
+					"text" : "bang when target is reached"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-14",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 79.0, 308.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 33.0, 366.5, 70.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 78.0, 178.5, 116.0, 22.0 ],
+					"text" : "2000. 5. 0. 50. -100."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 33.0, 129.5, 125.0, 22.0 ],
+					"text" : "set 0. 5. 10. 100. 100."
 				}
 
 			}
@@ -194,26 +132,12 @@
 					"bubble" : 1,
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
-					"id" : "obj-16",
+					"id" : "obj-8",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 147.0, 337.5, 183.759351432323456, 25.0 ],
-					"text" : "argument: number of inlets"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bubble" : 1,
-					"fontname" : "Arial",
-					"fontsize" : 13.0,
-					"id" : "obj-17",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 105.0, 155.0, 298.0, 25.0 ],
-					"text" : "inlet index, see range message for further info"
+					"patching_rect" : [ 176.0, 128.0, 268.5, 25.0 ],
+					"text" : "set followed by a list sets the current list"
 				}
 
 			}
@@ -223,7 +147,7 @@
 					"maxclass" : "live.line",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 513.0, 805.0, 5.0 ]
+					"patching_rect" : [ 16.0, 424.0, 805.0, 5.0 ]
 				}
 
 			}
@@ -245,7 +169,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 300.0, 536.0, 237.0, 22.0 ],
+					"patching_rect" : [ 300.0, 447.0, 237.0, 22.0 ],
 					"text" : "https://github.com/valeriorlandini/sonus",
 					"textcolor" : [ 0.0, 0.015686274509804, 0.396078431372549, 1.0 ]
 				}
@@ -260,8 +184,37 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 550.0, 129.0, 36.0 ],
+					"patching_rect" : [ 10.0, 461.0, 129.0, 36.0 ],
 					"text" : ";\r\nmax launchbrowser $1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
+					"id" : "obj-19",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 208.0, 162.0, 368.0, 55.0 ],
+					"text" : "ramp time in milliseconds + the target list starts the transition. if less numbers than those of the starting list are specified, the missing values are automatically set to 0.0"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
+					"id" : "obj-28",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 111.5, 365.0, 70.0, 25.0 ],
+					"text" : "output"
 				}
 
 			}
@@ -269,11 +222,11 @@
 				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
-					"numinlets" : 5,
-					"numoutlets" : 1,
-					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 33.0, 339.0, 106.0, 22.0 ],
-					"text" : "sonus.fselector~ 4"
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 33.0, 269.0, 65.0, 22.0 ],
+					"text" : "sonus.lline"
 				}
 
 			}
@@ -294,12 +247,11 @@
 					"fontname" : "Arial",
 					"fontsize" : 16.0,
 					"id" : "obj-1",
-					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 80.0, 805.0, 62.0 ],
-					"text" : "A different flavour of selector~, which allows floating point numbers to mix the input of two contiguous inlets. If you want to have all inlets closed when index is 0 (like in selector~), just leave the first input to choose from unconnected.",
+					"patching_rect" : [ 16.0, 80.0, 805.0, 25.0 ],
+					"text" : "Gradually ramps from a list of numbers to the next one, basically acting like line object but for lists.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 
@@ -315,7 +267,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 55.0, 805.0, 29.0 ],
-					"text" : "continuous selector/mixer"
+					"text" : "similar to line, but for lists of numbers"
 				}
 
 			}
@@ -329,7 +281,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 520.0, 805.0, 20.0 ],
+					"patching_rect" : [ 16.0, 431.0, 805.0, 20.0 ],
 					"text" : "handmade in italy by valerio orlandini",
 					"textjustification" : 1
 				}
@@ -346,73 +298,36 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 12.0, 805.0, 48.0 ],
-					"text" : "sonus.fselector~"
+					"text" : "sonus.lline"
 				}
 
 			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-2", 1 ],
-					"source" : [ "obj-11", 0 ]
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-12", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-2", 2 ],
-					"source" : [ "obj-13", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-2", 4 ],
-					"source" : [ "obj-14", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-2", 3 ],
-					"source" : [ "obj-19", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
-					"order" : 1,
+					"destination" : [ "obj-11", 1 ],
 					"source" : [ "obj-2", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-8", 0 ],
-					"order" : 0,
-					"source" : [ "obj-2", 0 ]
+					"destination" : [ "obj-14", 0 ],
+					"source" : [ "obj-2", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
-					"source" : [ "obj-23", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-2", 0 ],
-					"source" : [ "obj-26", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-26", 0 ],
-					"source" : [ "obj-28", 0 ]
+					"source" : [ "obj-4", 0 ]
 				}
 
 			}
@@ -426,23 +341,14 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-9", 1 ],
-					"order" : 0,
-					"source" : [ "obj-7", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-9", 0 ],
-					"order" : 1,
-					"source" : [ "obj-7", 0 ]
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-9", 0 ]
 				}
 
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "sonus.fselector~.mxe64",
+				"name" : "sonus.lline.mxe64",
 				"type" : "mx64"
 			}
  ],

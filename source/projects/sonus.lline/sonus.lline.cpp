@@ -83,7 +83,7 @@ public:
 		{
 			if (args.size() > 1)
 			{
-				if (ramp_ < 1000000000)
+				if (ramp_ > 0 && ramp_ < 1000000000)
 				{
 					for (auto n = 0; n < current_list_.size(); n++)
 					{
