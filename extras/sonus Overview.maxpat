@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 169.0, 85.0, 1036.0, 724.0 ],
+		"rect" : [ 224.0, 158.0, 1036.0, 833.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,81 @@
 		"showontab" : 0,
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"button" : 1,
+					"htabcolor" : [ 0.694117647058824, 0.23921568627451, 0.203921568627451, 1.0 ],
+					"id" : "obj-69",
+					"maxclass" : "tab",
+					"multiline" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "int", "", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 522.5, 113.0, 240.0, 35.0 ],
+					"tabcolor" : [ 0.694117647058824, 0.23921568627451, 0.203921568627451, 1.0 ],
+					"tabs" : [ "Neural Networks and AI" ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"button" : 1,
+					"htabcolor" : [ 0.113339, 0.606332, 0.609597, 1.0 ],
+					"id" : "obj-68",
+					"maxclass" : "tab",
+					"multiline" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "int", "", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 772.5, 113.0, 240.0, 35.0 ],
+					"tabcolor" : [ 0.113339, 0.606332, 0.609597, 1.0 ],
+					"tabs" : [ "Math and Utilities" ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"button" : 1,
+					"htabcolor" : [ 0.250980392156863, 0.203921568627451, 0.937254901960784, 1.0 ],
+					"id" : "obj-67",
+					"maxclass" : "tab",
+					"multiline" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "int", "", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 272.5, 113.0, 240.0, 35.0 ],
+					"tabcolor" : [ 0.250980392156863, 0.203921568627451, 0.937254901960784, 1.0 ],
+					"tabs" : [ "Effects and Sample Manipulation" ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-65",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 276.0, 325.0, 233.0, 34.0 ],
+					"text" : "Chebyshev polynomials based waveshaper"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-66",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 276.0, 300.0, 83.0, 22.0 ],
+					"text" : "sonus.cheby~"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-63",
 					"maxclass" : "comment",
@@ -583,7 +658,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 276.0, 325.0, 233.0, 20.0 ],
+					"patching_rect" : [ 276.0, 390.0, 233.0, 20.0 ],
 					"text" : "Quadraphonic panner"
 				}
 
@@ -660,7 +735,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 276.0, 390.0, 233.0, 20.0 ],
+					"patching_rect" : [ 276.0, 455.0, 233.0, 20.0 ],
 					"text" : "Wavesets based sample manipulation"
 				}
 
@@ -717,7 +792,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 276.0, 300.0, 98.0, 22.0 ],
+					"patching_rect" : [ 276.0, 365.0, 98.0, 22.0 ],
 					"text" : "sonus.quadpan~"
 				}
 
@@ -765,7 +840,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 276.0, 365.0, 94.0, 22.0 ],
+					"patching_rect" : [ 276.0, 430.0, 94.0, 22.0 ],
 					"text" : "sonus.wavesets"
 				}
 
@@ -857,7 +932,7 @@
 , 			{
 				"box" : 				{
 					"button" : 1,
-					"htabcolor" : [ 0.396078431372549, 0.0, 0.0, 1.0 ],
+					"htabcolor" : [ 0.240323, 0.247547, 0.573641, 1.0 ],
 					"id" : "obj-8",
 					"maxclass" : "tab",
 					"multiline" : 0,
@@ -865,9 +940,9 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 16.0, 112.0, 1000.0, 35.0 ],
-					"tabcolor" : [ 0.396078431372549, 0.0, 0.0, 1.0 ],
-					"tabs" : [ "Generators", "Effects and Sample Manipulation", "Neural Networks and Al", "Math and Utilities" ]
+					"patching_rect" : [ 22.0, 113.0, 240.0, 35.0 ],
+					"tabcolor" : [ 0.240323, 0.247547, 0.573641, 1.0 ],
+					"tabs" : [ "Generators" ]
 				}
 
 			}
@@ -1149,6 +1224,14 @@
 					"destination" : [ "obj-58", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-64", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-66", 0 ]
 				}
 
 			}

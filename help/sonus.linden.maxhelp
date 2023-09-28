@@ -74,7 +74,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 253.0, 160.0, 358.0, 100.0 ],
-					"presentation_linecount" : 22,
 					"text" : "create and send the dictionary, which must have two entries: \"axiom\" with the initial configuration,  and \"rules\", with the evolution rules written as sequence of INPUT OUTPUT pairs (e.g. A->AB and B->A is simply written as A AB B A) - constant values (i.e. which do not evolve) are accepted, just do not specify a rule for their evolution"
 				}
 
@@ -86,8 +85,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 33.0, 498.0, 374.0, 22.0 ],
-					"text" : "A"
+					"patching_rect" : [ 33.0, 498.0, 374.0, 22.0 ]
 				}
 
 			}

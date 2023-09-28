@@ -36,7 +36,18 @@ public:
 			bit_op_.push_back(BitOp::None);
 		}
     }
-
+/*
+	argument<number> bits_arg
+	{
+		this,
+		"bit resolution",
+		"Bit resolution (1-32).",
+        MIN_ARGUMENT_FUNCTION
+		{
+            return {};
+        }
+    };
+*/
 	message<> set
 	{
 		this,
