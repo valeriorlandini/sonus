@@ -23,7 +23,7 @@
 
 	<objarglist>
 
-		<objarg name='order' optional='1' type='int'>
+		<objarg name='order' optional='1' type='number'>
 			<digest>Polynomial order (0-10)</digest>
 			<description>Polynomial order (0-10). </description>
 		</objarg>
@@ -35,7 +35,7 @@
 
 	<methodlist>
 
-		<method name='int'>
+		<method name='float'>
 			<digest>Polynomial order (0-10) </digest>
 			<description>Polynomial order (0-10) </description>
 		</method>
@@ -47,9 +47,9 @@
 
 	<attributelist>
 
-		<attribute name='order' get='1' set='1' type='long' size='1' >
+		<attribute name='order' get='1' set='1' type='float64' size='1' >
 			<digest>Order of the Chebyshev polynomial to use</digest>
-			<description>Order of the Chebyshev polynomial to use. Orders up to 10 are supported. </description>
+			<description>Order of the Chebyshev polynomial to use. Orders up to 10 are supported, non integer number interpolates the two nearest polynomials. </description>
 		</attribute>
 
 	</attributelist>

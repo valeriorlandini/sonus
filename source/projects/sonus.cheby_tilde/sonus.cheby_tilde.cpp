@@ -4,6 +4,8 @@
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "c74_min.h"
+#include "../include/chebyshev.h"
+#include "../include/interp.h"
 #include <algorithm>
 
 using namespace c74::min;
@@ -21,7 +23,7 @@ public:
 	inlet<>  in_o {this, "(int) Order of the polynomial (0-10)"};
 	outlet<> out {this, "(signal) Output", "signal"};
 
-	argument<int> order_arg
+	argument<number> order_arg
 	{
 		this,
 		"order",
@@ -32,14 +34,14 @@ public:
         }
     };
 
-	attribute<int, threadsafe::no, limit::clamp> p_order
+	attribute<number, threadsafe::no, limit::clamp> p_order
 	{
         this,
         "order",
-        1,
-		range { 0, 10 },
+        1.0,
+		range { 0.0, 10.0 },
         title {"Order"},
-        description {"Order of the Chebyshev polynomial to use. Orders up to 10 are supported."},
+        description {"Order of the Chebyshev polynomial to use. Orders up to 10 are supported, non integer number interpolates the two nearest polynomials."},
 		setter
 		{
 			MIN_FUNCTION
@@ -52,7 +54,7 @@ public:
 	message<> m_number
 	{
 		this,
-		"int",
+		"number",
 		"Polynomial order (0-10)",
         MIN_FUNCTION
 		{
@@ -67,45 +69,9 @@ public:
 
 	sample operator()(sample input)
     {
-		sample output;
-
-		switch (p_order)
-    	{
-    		case 0:
-    		    output = 1.0;
-    		    break;
-    		case 1:
-    		    output = input;
-    		    break;
-    		case 2:
-    		    output = 2.0 * pow(input, 2.0) - 1.0;
-    		    break;
-    		case 3:
-    		    output = 4.0 * pow(input, 3.0) - 3.0 * input;
-    		    break;
-    		case 4:
-    		    output = 8.0 * pow(input, 4.0) - 8.0 * pow(input, 2.0) + 1.0;
-    		    break;
-    		case 5:
-    		    output = 16.0 * pow(input, 5.0) - 20.0 * pow(input, 3.0) + 5.0 * input;
-    		    break;
-    		case 6:
-    		    output = 32.0 * pow(input, 6.0) - 48.0 * pow(input, 4.0) + 18.0 * pow(input, 2.0) - 1.0;
-    		    break;
-    		case 7:
-    		    output = 64.0 * pow(input, 7.0) - 112.0 * pow(input, 5.0) + 56.0 * pow(input, 3.0) - 7.0 * input;
-    		    break;
-    		case 8:
-    		    output = 128.0 * pow(input, 8.0) - 256.0 * pow(input, 6.0) + 160.0 * pow(input, 4.0) - 32.0 * pow(input, 2.0) + 1.0;
-    		    break;
-    		case 9:
-    		    output = 256.0 * pow(input, 9.0) - 576.0 * pow(input, 7.0) + 432.0 * pow(input, 5.0) - 120.0 * pow(input, 3.0) + 9.0 * input;
-    		    break;
-    		case 10:
-    		    output = 512.0 * pow(input, 10.0) - 1280.0 * pow(input, 8.0) + 1120.0 * pow(input, 6.0) - 400.0 * pow(input, 4.0) + 50.0 * pow(input, 2.0) - 1.0;
-    		    break;
-    	}
-
+		sample output = cosip(chebyshev(input, (unsigned int)std::floor(p_order)),
+		                      chebyshev(input, (unsigned int)std::ceil(p_order)),
+							  p_order - std::floor(p_order));
 		return { output };
 	}
 };

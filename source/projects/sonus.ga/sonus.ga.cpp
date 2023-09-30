@@ -47,14 +47,21 @@ public:
 					pop_size = 16;
 				}
 				std::string s_target = d_target[0];
-				std::vector<char> target;
-				for (auto c = 0; c < s_target.size(); c++)
+				if (s_target.size() > 1)
 				{
-					target.push_back(s_target.at(c));
+					std::vector<char> target;
+					for (auto c = 0; c < s_target.size(); c++)
+					{
+						target.push_back(s_target.at(c));
+					}
+					unsigned int chromosome_length = target.size();
+					genome_.populate(dictionary, pop_size, chromosome_length);
+					genome_.set_target(target);
 				}
-				unsigned int chromosome_length = target.size();
-				genome_.populate(dictionary, pop_size, chromosome_length);
-				genome_.set_target(target);
+				else
+				{
+					cerr << "Target not set or too short (must be at least two characters)" << endl;
+				}
            	}
            	catch (std::exception& e)
 			{
@@ -129,7 +136,6 @@ public:
 				std::vector<chromosome<char>> population = genome_.get_population();
 				atoms a_population;
 				a_population.reserve(population.size());
-
 				for (auto c = 0; c < population.size(); c++)
 				{
 					std::vector<char> curr_vector = population.at(c).sequence;
@@ -144,7 +150,6 @@ public:
 						out_f.send(curr_symbol);
 					}
 				}
-
 				out_p.send(a_population);
 			}
 

@@ -30,6 +30,7 @@ public:
 		{
 			try
 			{
+				target_reached_ = false;
 				dict system = {args[0]};
 				atoms d_target = system["target"];
 				atoms d_range = system["range"];
@@ -59,20 +60,24 @@ public:
 				{
 					pop_size = 16;
 				}
-
-				std::vector<unsigned int> target;
-				for (auto c = 0; c < d_target.size(); c++)
+				if (d_target.size() > 1)
 				{
-					target.push_back(int(d_target[c]));
+					std::vector<unsigned int> target;
+					for (auto c = 0; c < d_target.size(); c++)
+					{
+						target.push_back(int(d_target[c]));
+					}	
+
+					unsigned int chromosome_length = target.size();
+					genome_.populate(dictionary, pop_size, chromosome_length);
+					genome_.set_target(target);
+
+					set_ = true;
 				}
-
-				unsigned int chromosome_length = target.size();
-				genome_.populate(dictionary, pop_size, chromosome_length);
-				genome_.set_target(target);
-
-				
-				target_reached_ = false;
-				set_ = true;
+				else
+				{
+					cerr << "Target not set or too short (must be at least two numbers)" << endl;
+				}
            	}
            	catch (std::exception& e)
 			{
