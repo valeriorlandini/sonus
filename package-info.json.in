@@ -19,6 +19,6 @@
 		"copyright" : "Copyright (c) 2023 Valerio Orlandini"
 	},
 	"tags" : [ ],
-	"version" : "0.0.1",
-	"website" : "http://www.github.com/valeriorlandini/sonus"
+	"version" : "0.9",
+	"website" : "https://valeriorlandini.github.io/sonus/"
 }

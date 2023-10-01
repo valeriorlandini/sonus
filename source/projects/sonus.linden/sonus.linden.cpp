@@ -23,7 +23,7 @@ public:
 	MIN_RELATED {"sonus.neuron, sonus.ca"};
 
 	inlet<>  in {this, "(dictionary) System rules"};
-	outlet<> out {this, "(symbol) Output"};
+	outlet<> out {this, "(symbol/list) Output"};
 
 	message<> dictionary
 	{
@@ -108,7 +108,9 @@ public:
 				}
 			}
 			generation_ = next_generation;
+
 			out.send(next_generation);
+
             return {};
         }
     };
