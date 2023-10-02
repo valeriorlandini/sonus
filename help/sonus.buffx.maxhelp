@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1011.0, 162.0, 854.0, 885.0 ],
+		"rect" : [ 99.0, 100.0, 854.0, 885.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,16 +40,13 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"bubble" : 1,
-					"fontname" : "Arial",
-					"fontsize" : 13.0,
-					"id" : "obj-38",
-					"linecount" : 6,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 174.194033026695251, 502.0, 214.0, 100.0 ],
-					"text" : "raise each sample of a group of wavesets with the absolute value of the samples of the next one as exponent (WARNING: very loud!!! lower the volume before apply!!!)"
+					"id" : "obj-8",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 64.0, 227.5, 97.0, 22.0 ],
+					"text" : "hipass 5000. 0.9"
 				}
 
 			}
@@ -85,72 +82,6 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 696.205963671207428, 182.5, 94.0, 22.0 ],
 					"text" : "normalize 0.707"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-8",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 98.0, 541.0, 58.0, 22.0 ],
-					"text" : "power 10"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bubble" : 1,
-					"fontname" : "Arial",
-					"fontsize" : 13.0,
-					"id" : "obj-25",
-					"linecount" : 4,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 174.194033026695251, 419.0, 214.0, 70.0 ],
-					"text" : "multiply groups of n wavesets with the following one (suggestion: normalize the buffer after this operation)"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-15",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 98.0, 443.0, 66.0, 22.0 ],
-					"text" : "multiply 40"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bubble" : 1,
-					"fontname" : "Arial",
-					"fontsize" : 13.0,
-					"id" : "obj-10",
-					"linecount" : 2,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 189.194033026695251, 367.0, 203.0, 40.0 ],
-					"text" : "average groups of n wavesets with the following one"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-9",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 98.0, 376.0, 75.0, 22.0 ],
-					"text" : "average 150"
 				}
 
 			}
@@ -245,37 +176,13 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-37",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 98.0, 333.5, 65.0, 22.0 ],
-					"text" : "reverse 50"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-34",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 86.0, 279.5, 71.0, 22.0 ],
-					"text" : "reshape sin"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-32",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 73.5, 220.5, 62.0, 22.0 ],
-					"text" : "mute 20 4"
+					"patching_rect" : [ 64.0, 203.5, 99.0, 22.0 ],
+					"text" : "lowpass 300. 0.9"
 				}
 
 			}
@@ -286,8 +193,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 33.0, 162.0, 60.0, 22.0 ],
-					"text" : "shuffle 60"
+					"patching_rect" : [ 33.0, 162.0, 49.0, 22.0 ],
+					"text" : "reverse"
 				}
 
 			}
@@ -329,7 +236,7 @@
 			}
 , 			{
 				"box" : 				{
-					"buffername" : "1021_sample",
+					"buffername" : "1022_sample",
 					"id" : "obj-7",
 					"maxclass" : "waveform~",
 					"numinlets" : 5,
@@ -356,27 +263,13 @@
 					"bubble" : 1,
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
-					"id" : "obj-20",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 167.388066053390503, 332.0, 224.805966973304749, 25.0 ],
-					"text" : "reverse each group of n wavesets"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bubble" : 1,
-					"fontname" : "Arial",
-					"fontsize" : 13.0,
 					"id" : "obj-12",
-					"linecount" : 2,
+					"linecount" : 4,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 143.388066053390503, 211.5, 250.0, 40.0 ],
-					"text" : "mute n wavesets after keeping m (n and m are the two arguments)"
+					"patching_rect" : [ 170.388066053390503, 192.5, 258.0, 70.0 ],
+					"text" : "apply a second order filter with syntax <filter type> <cutoff> <resonance>, available filters are lowpass, hipass, bandpass, notch and allpass"
 				}
 
 			}
@@ -386,12 +279,11 @@
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
 					"id" : "obj-11",
-					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 99.388066053390503, 145.5, 294.0, 55.0 ],
-					"text" : "randomly reorder the wavesets or groups of them (in this second case, specify the number of consecutive wavesets for each group)"
+					"patching_rect" : [ 98.0, 160.5, 136.0, 25.0 ],
+					"text" : "reverse the buffer"
 				}
 
 			}
@@ -445,28 +337,13 @@
 			}
 , 			{
 				"box" : 				{
-					"bubble" : 1,
-					"fontname" : "Arial",
-					"fontsize" : 13.0,
-					"id" : "obj-28",
-					"linecount" : 2,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 167.388066053390503, 270.5, 226.0, 40.0 ],
-					"text" : "transform all the wavesets into the desired shape (sin, saw, tri, rect)"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 33.0, 742.0, 169.0, 22.0 ],
-					"text" : "sonus.wavesets #0_sample"
+					"patching_rect" : [ 33.0, 742.0, 145.0, 22.0 ],
+					"text" : "sonus.buffx #0_sample"
 				}
 
 			}
@@ -487,12 +364,11 @@
 					"fontname" : "Arial",
 					"fontsize" : 16.0,
 					"id" : "obj-1",
-					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 80.0, 805.0, 43.0 ],
-					"text" : "Transforms a buffer after segmenting it into wavesets, defined by Trevor Wishart as a portion of samples between two zero crossings.",
+					"patching_rect" : [ 16.0, 80.0, 805.0, 25.0 ],
+					"text" : "Transforms a buffer by applying a series of basic effects.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 
@@ -508,7 +384,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 55.0, 805.0, 29.0 ],
-					"text" : "buffer transformation with wavesets"
+					"text" : "apply effects to buffers"
 				}
 
 			}
@@ -539,7 +415,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 12.0, 805.0, 48.0 ],
-					"text" : "sonus.wavesets"
+					"text" : "sonus.buffx"
 				}
 
 			}
@@ -556,13 +432,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-14", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-2", 0 ],
-					"source" : [ "obj-15", 0 ]
 				}
 
 			}
@@ -635,20 +504,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-2", 0 ],
-					"source" : [ "obj-34", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-2", 0 ],
-					"source" : [ "obj-37", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-36", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-40", 0 ]
@@ -685,16 +540,9 @@
 				}
 
 			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-2", 0 ],
-					"source" : [ "obj-9", 0 ]
-				}
-
-			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "sonus.wavesets.mxe64",
+				"name" : "sonus.buffx.mxe64",
 				"type" : "mx64"
 			}
  ],

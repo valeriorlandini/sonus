@@ -6,7 +6,7 @@
 #include "c74_min.h"
 #include <algorithm>
 #include <random>
-#include "../include/interp.h"
+#include "../include/biquad.h"
 
 using namespace c74::min;
 
@@ -108,7 +108,7 @@ public:
             {
                 for (auto ch = 0; ch < b.channel_count(); ch++)
                 {
-                    std::vector<float> reversed_channel(b.frame_count(), 0.0);
+                    std::vector<double> reversed_channel(b.frame_count(), 0.0);
                     
                     for (auto s = 0; s < b.frame_count(); s++)
                     {
@@ -127,12 +127,227 @@ public:
             return {};
         }
     };
+
+    message<> lowpass
+    {
+        this,
+        "lowpass",
+        "Apply a lowpass filter: lowpass freq q",
+        MIN_FUNCTION
+        {
+            if (args.size() < 1)
+            {
+                cerr << "Syntax: lowpass <cutoff frequency> <resonance [optional, defaults to 0.707]>" << endl;
+
+                return {};
+            }
+
+            buffer_lock<> b(m_buffer);
+
+            if (b.valid())
+            {
+                double cutoff = double(args.at(0));
+                double q = 0.707;
+
+                if (args.size() > 1)
+                {
+                    q = double(args.at(1));
+                }
+
+                Biquad<double> filter(b.samplerate(), cutoff, q, LOWPASS);
+
+                for (auto ch = 0; ch < b.channel_count(); ch++)
+                {
+                    for (auto s = 0; s < b.frame_count(); s++)
+                    {
+                        b.lookup(s, ch) = filter.run(b.lookup(s, ch));
+                    }
+                }
+
+                b.dirty();
+            }            
+
+            return {};
+        }
+    };
+    
+    message<> hipass
+    {
+        this,
+        "hipass",
+        "Apply a highpass filter: hipass freq q",
+        MIN_FUNCTION
+        {
+            if (args.size() < 1)
+            {
+                cerr << "Syntax: hipass <cutoff frequency> <resonance [optional, defaults to 0.707]>" << endl;
+
+                return {};
+            }
+
+            buffer_lock<> b(m_buffer);
+
+            if (b.valid())
+            {
+                double cutoff = double(args.at(0));
+                double q = 0.707;
+
+                if (args.size() > 1)
+                {
+                    q = double(args.at(1));
+                }
+
+                Biquad<double> filter(b.samplerate(), cutoff, q, HIPASS);
+
+                for (auto ch = 0; ch < b.channel_count(); ch++)
+                {
+                    for (auto s = 0; s < b.frame_count(); s++)
+                    {
+                        b.lookup(s, ch) = filter.run(b.lookup(s, ch));
+                    }
+                }
+
+                b.dirty();
+            }            
+
+            return {};
+        }
+    };
+
+    message<> bandpass
+    {
+        this,
+        "bandpass",
+        "Apply a bandpass filter: bandpass freq q",
+        MIN_FUNCTION
+        {
+            if (args.size() < 1)
+            {
+                cerr << "Syntax: hipass <cutoff frequency> <resonance [optional, defaults to 0.707]>" << endl;
+
+                return {};
+            }
+
+            buffer_lock<> b(m_buffer);
+
+            if (b.valid())
+            {
+                double cutoff = double(args.at(0));
+                double q = 0.707;
+
+                if (args.size() > 1)
+                {
+                    q = double(args.at(1));
+                }
+
+                Biquad<double> filter(b.samplerate(), cutoff, q, BANDPASS);
+
+                for (auto ch = 0; ch < b.channel_count(); ch++)
+                {
+                    for (auto s = 0; s < b.frame_count(); s++)
+                    {
+                        b.lookup(s, ch) = filter.run(b.lookup(s, ch));
+                    }
+                }
+
+                b.dirty();
+            }            
+
+            return {};
+        }
+    };
+    
+    message<> notch
+    {
+        this,
+        "notch",
+        "Apply a notch filter: notch freq q",
+        MIN_FUNCTION
+        {
+            if (args.size() < 1)
+            {
+                cerr << "Syntax: notch <cutoff frequency> <resonance [optional, defaults to 0.707]>" << endl;
+
+                return {};
+            }
+
+            buffer_lock<> b(m_buffer);
+
+            if (b.valid())
+            {
+                double cutoff = double(args.at(0));
+                double q = 0.707;
+
+                if (args.size() > 1)
+                {
+                    q = double(args.at(1));
+                }
+
+                Biquad<double> filter(b.samplerate(), cutoff, q, BANDREJECT);
+
+                for (auto ch = 0; ch < b.channel_count(); ch++)
+                {
+                    for (auto s = 0; s < b.frame_count(); s++)
+                    {
+                        b.lookup(s, ch) = filter.run(b.lookup(s, ch));
+                    }
+                }
+
+                b.dirty();
+            }            
+
+            return {};
+        }
+    };
+    
+    message<> allpass
+    {
+        this,
+        "allpass",
+        "Apply an allpass filter: notch freq q",
+        MIN_FUNCTION
+        {
+            if (args.size() < 1)
+            {
+                cerr << "Syntax: allpass <cutoff frequency> <resonance [optional, defaults to 0.707]>" << endl;
+
+                return {};
+            }
+
+            buffer_lock<> b(m_buffer);
+
+            if (b.valid())
+            {
+                double cutoff = double(args.at(0));
+                double q = 0.707;
+
+                if (args.size() > 1)
+                {
+                    q = double(args.at(1));
+                }
+
+                Biquad<double> filter(b.samplerate(), cutoff, q, ALLPASS);
+
+                for (auto ch = 0; ch < b.channel_count(); ch++)
+                {
+                    for (auto s = 0; s < b.frame_count(); s++)
+                    {
+                        b.lookup(s, ch) = filter.run(b.lookup(s, ch));
+                    }
+                }
+
+                b.dirty();
+            }            
+
+            return {};
+        }
+    };
     
     
 
 private:
     std::string buffer_name;
-    std::vector<std::vector<float>> original_buffer_;
+    std::vector<std::vector<double>> original_buffer_;
 
     void save_buffer()
     {
@@ -144,7 +359,7 @@ private:
 
             for (int ch = 0; ch < b.channel_count(); ch++)
             {
-                std::vector<float> curr_channel;
+                std::vector<double> curr_channel;
 
                 for (int s = 0; s < b.frame_count(); s++)
                 {

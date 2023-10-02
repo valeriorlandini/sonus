@@ -51,11 +51,6 @@
 
 	<attributelist>
 
-		<attribute name='list' get='1' set='1' type='long' size='1' >
-			<digest>Output a list of elements instead of a single string</digest>
-			<description>Output a list of elements instead of a single string. </description>
-		</attribute>
-
 	</attributelist>
 
 

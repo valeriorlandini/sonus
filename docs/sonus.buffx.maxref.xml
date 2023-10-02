@@ -35,9 +35,24 @@
 
 	<methodlist>
 
+		<method name='hipass'>
+			<digest>Apply a highpass filter: hipass freq q </digest>
+			<description>Apply a highpass filter: hipass freq q </description>
+		</method>
+
 		<method name='set'>
 			<digest>Choose a named buffer~ from which to read</digest>
 			<description>Choose a named buffer~ from which to read. </description>
+		</method>
+
+		<method name='bandpass'>
+			<digest>Apply a bandpass filter: bandpass freq q </digest>
+			<description>Apply a bandpass filter: bandpass freq q </description>
+		</method>
+
+		<method name='lowpass'>
+			<digest>Apply a lowpass filter: lowpass freq q </digest>
+			<description>Apply a lowpass filter: lowpass freq q </description>
 		</method>
 
 		<method name='restore'>
@@ -48,6 +63,16 @@
 		<method name='reverse'>
 			<digest>Reverse the content of the buffer </digest>
 			<description>Reverse the content of the buffer </description>
+		</method>
+
+		<method name='notch'>
+			<digest>Apply a notch filter: notch freq q </digest>
+			<description>Apply a notch filter: notch freq q </description>
+		</method>
+
+		<method name='allpass'>
+			<digest>Apply an allpass filter: notch freq q </digest>
+			<description>Apply an allpass filter: notch freq q </description>
 		</method>
 
 	</methodlist>
