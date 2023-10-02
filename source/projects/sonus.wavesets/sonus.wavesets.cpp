@@ -42,7 +42,7 @@ public:
     MIN_RELATED		{ "index~, buffer~, wave~" };
 
     inlet<>  in	    { this, "Buffer transformation based on wavesets detection" };
-    outlet<> out	{ this, "(symbol) Notification that the content of the buffer~ changed." };
+    outlet<> out	{ this, "(symbol) Information about the detected wavesets" };
 
     buffer_reference m_buffer
     {

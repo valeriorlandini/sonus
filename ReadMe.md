@@ -6,41 +6,41 @@ artificial intelligence and weird sounds.
 Currently finished externals are:
 
 ### Generators
-* sonus.lorenz~
-* sonus.nwosc~
-* sonus.pulsar~
-* sonus.roessler~
-* sonus.rsosc~
-* sonus.vaosc~
-* sonus.window~
+* `sonus.lorenz~`
+* `sonus.nwosc~`
+* `sonus.pulsar~`
+* `sonus.roessler~`
+* `sonus.rsosc~`
+* `sonus.vaosc~`
+* `sonus.window~`
 
 ### Effects and Sample Manipulation
-* sonus.8bitinv~
-* sonus.bitman~
-* sonus.cheby~
-* sonus.quadpan~
-* sonus.wavesets
+* `sonus.8bitinv~`
+* `sonus.bitman~`
+* `sonus.cheby~`
+* `sonus.quadpan~`
+* `sonus.wavesets`
 
 ### Neural Networks and AI
-* sonus.acti
-* sonus.acti~
-* sonus.ca
-* sonus.ga
-* sonus.ga.num
-* sonus.linden
-* sonus.neuron
-* sonus.perceptron~
+* `sonus.acti`
+* `sonus.acti~`
+* `sonus.ca`
+* `sonus.ga`
+* `sonus.ga.num`
+* `sonus.linden`
+* `sonus.neuron`
+* `sonus.perceptron~`
 
 ### Math and Utilities
-* sonus.blist
-* sonus.fselector~
-* sonus.hop
-* sonus.llist
-* sonus.lurn
-* sonus.mathc
-* sonus.mima~
-* sonus.quadpanner
-* sonus.tent
+* `sonus.blist`
+* `sonus.fselector~`
+* `sonus.hop`
+* `sonus.llist`
+* `sonus.lurn`
+* `sonus.mathc`
+* `sonus.mima~`
+* `sonus.quadpanner`
+* `sonus.tent`
 
 
 ## How to build
