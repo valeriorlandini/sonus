@@ -46,7 +46,9 @@ Currently finished externals are:
 ## How to build
 
 Grab the source inside your `Documents/Max 8/Packages` folder with `git clone https://github.com/valeriorlandini/sonus.git --recursive` 
+
 `cd sonus` and then `mkdir build` to create a folder with your various build files
+
 `cd build` to put yourself into that folder
 
 ### Mac 
