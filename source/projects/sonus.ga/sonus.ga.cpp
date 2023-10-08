@@ -37,7 +37,7 @@ public:
 				std::vector<char> dictionary;
 				for (auto c = 0; c < d_dictionary.size(); c++)
 				{
-					std::string item = d_dictionary[c];
+					std::string item = std::string(d_dictionary[c]);
 					dictionary.push_back(item.at(0));
 				}
 				atoms d_pop_size = system["population"];
@@ -46,7 +46,7 @@ public:
 				{
 					pop_size = 16;
 				}
-				std::string s_target = d_target[0];
+				std::string s_target = std::string(d_target[0]);
 				if (s_target.size() > 1)
 				{
 					std::vector<char> target;

@@ -45,14 +45,15 @@ Currently finished externals are:
 
 ## How to build
 
-`mkdir build` to create a folder with your various build files
+Grab the source inside your `Documents/Max 8/Packages` folder with `git clone https://github.com/valeriorlandini/sonus.git --recursive` 
+`cd sonus` and then `mkdir build` to create a folder with your various build files
 `cd build` to put yourself into that folder
 
 ### Mac 
 
 Run `cmake -G Xcode ..`
 
-Next run `cmake --build .` or open the Xcode project from this "build" folder and use the GUI.
+Next run `cmake --build . --config Release` or open the Xcode project from this "build" folder and use the GUI.
 
 Note: you can add the `-j4` option where "4" is the number of cores to use.  This can help to speed up your builds, though sometimes the error output is interleaved in such a way as to make troubleshooting more difficult.
 

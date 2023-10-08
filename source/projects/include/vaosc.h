@@ -27,17 +27,6 @@ SOFTWARE.
 #include <cmath>
 #include <iostream>
 
-// clamp function if the compiler does not support C++17
-#if __cplusplus < 201703L
-template<class T>
-inline T clamp(const T& value, const T& low, const T& high)
-{
-    return (value < low) ? low : (high < value) ? high : value;
-}
-#endif
-
-namespace amtl
-{
 enum VAWaveforms
 {
     SINE,
@@ -61,9 +50,6 @@ public:
     inline bool run();
     inline bool run(TSample &sine_out, TSample &triangle_out, TSample &saw_out,
                     TSample &pulse_out);
-    inline TSample run(const VAWaveforms &wave_1,
-                       const VAWaveforms &wave_2 = -1,
-                       const TSample &mix = 0.0);
 
     inline void get_last_sample(TSample &sine_out, TSample &triangle_out,
                                 TSample &saw_out, TSample &pulse_out);
@@ -217,53 +203,6 @@ inline void VAOsc<TSample>::get_last_sample(TSample &sine_out,
     sine_out = sine_out_;
     triangle_out = triangle_out_;
     pulse_out = pulse_out_;
-}
-
-template <class TSample>
-inline TSample VAOsc<TSample>::run(const VAWaveforms &wave_1,
-                                   const VAWaveforms &wave_2,
-                                   const TSample &mix)
-{
-    run();
-
-    TSample output = 0.0;
-    TSample wave1_mix = sqrt(1.0 - clamp(mix, 0.0, 1.0));
-    TSample wave2_mix = sqrt(clamp(mix, 0.0, 1.0));
-
-    switch (wave_1)
-    {
-    case SINE:
-        output += sine_out_ * wave1_mix;
-        break;
-    case TRIANGLE:
-        output += triangle_out_ * wave1_mix;
-        break;
-    case SAW:
-        output += saw_out_ * wave1_mix;
-        break;
-    case PULSE:
-        output += pulse_out_ * wave1_mix;
-        break;
-    }
-
-    switch (wave_2)
-    {
-    case SINE:
-        output += sine_out_ * wave2_mix;
-        break;
-    case TRIANGLE:
-        output += triangle_out_ * wave2_mix;
-        break;
-    case SAW:
-        output += saw_out_ * wave2_mix;
-        break;
-    case PULSE:
-        output += pulse_out_ * wave2_mix;
-        break;
-    }
-
-    return output;
-}
 }
 
 #endif // VAOSC_H_

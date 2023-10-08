@@ -38,7 +38,6 @@ public:
         MIN_ARGUMENT_FUNCTION
         {
             m_buffer.set(arg);
-            buffer_name = arg;
         }
     };
 
@@ -346,7 +345,6 @@ public:
     
 
 private:
-    std::string buffer_name;
     std::vector<std::vector<double>> original_buffer_;
 
     void save_buffer()

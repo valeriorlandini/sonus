@@ -122,20 +122,20 @@ public:
 
 			if (cycle_ >= cycles)
 			{
-				shape_ = amtl::VAWaveforms(rand() % 4);
+				shape_ = VAWaveforms(rand() % 4);
 				cycle_ = 0;		
 				switch (shape_)
 				{
-					case amtl::SINE:
+					case SINE:
 					out_b.send("sine");
 					break;
-					case amtl::SAW:
+					case SAW:
 					out_b.send("saw");
 					break;
-					case amtl::PULSE:
+					case PULSE:
 					out_b.send("square");
 					break;
-					case amtl::TRIANGLE:
+					case TRIANGLE:
 					out_b.send("triangle");
 					break;
 				}
@@ -144,16 +144,16 @@ public:
 
 		switch (shape_)
 		{
-			case amtl::SINE:
+			case SINE:
 			output = osc_.get_sine();
 			break;
-			case amtl::SAW:
+			case SAW:
 			output = osc_.get_saw();
 			break;
-			case amtl::PULSE:
+			case PULSE:
 			output = osc_.get_pulse();
 			break;
-			case amtl::TRIANGLE:
+			case TRIANGLE:
 			output = osc_.get_triangle();
 			break;
 		}
@@ -162,8 +162,8 @@ public:
 	}
 
 	private:
-	amtl::VAOsc<double> osc_;
-	amtl::VAWaveforms shape_ = amtl::VAWaveforms::SINE;
+	VAOsc<double> osc_;
+	VAWaveforms shape_ = VAWaveforms::SINE;
 	unsigned long cycle_ = 0;
 };
 

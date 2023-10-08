@@ -61,7 +61,6 @@ public:
         MIN_ARGUMENT_FUNCTION
         {
             m_buffer.set(arg);
-            buffer_name = arg;
         }
     };
 
@@ -624,7 +623,6 @@ public:
     };
 
 private:
-    std::string buffer_name;
     std::vector<std::vector<waveset_params<float>>> wavesets_idx_;
     std::vector<std::vector<float>> original_buffer_;
 
@@ -640,7 +638,6 @@ private:
             {
                 std::vector<waveset_params<float>> curr_channel;
                 waveset_params<float> curr_waveset;
-                float last_sample = 0.0;
                 bool sign;
                 Stages stage = BEGIN;
                 curr_waveset.start = 0;

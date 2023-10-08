@@ -37,7 +37,7 @@ public:
 				dict system_ = {args[0]};
 				atoms rules = system_["rules"];
 				atoms axiom = system_["axiom"];
-				generation_ = axiom[0];
+				generation_ = std::string(axiom[0]);
 				rules_.clear();
 
 				if (!(rules.size() % 2))
@@ -47,7 +47,7 @@ public:
 						rule new_rule;
 						std::string in_str = rules[r];
 						new_rule.input = in_str.at(0);
-						new_rule.output = rules[r + 1];
+						new_rule.output = std::string(rules[r + 1]);
 						rules_.push_back(new_rule);
 					}
 
