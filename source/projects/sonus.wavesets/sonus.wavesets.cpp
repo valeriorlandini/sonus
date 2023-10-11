@@ -64,24 +64,50 @@ public:
         }
     };
 
-    attribute<bool> backup
+    message<> backup
     {
         this,
         "backup",
-        false,
-        title {"Backup current buffer"},
-        description {"Whether to save or not a copy of the current buffer content."},
+        "Backup the current buffer content",
         setter
         {
             MIN_FUNCTION
             {
-                bool n = args[0];
-                if (n)
-                {
-                    save_buffer();
-                }
-                return {n};
+                save_buffer();
+                return {};
             }
+        }
+    };
+
+    message<> restore
+    {
+        this,
+        "restore",
+        "Restore the buffer content at the time when backup was set",
+        MIN_FUNCTION
+        {
+            buffer_lock<> b(m_buffer);
+
+            if (b.valid() && original_buffer_.size() > 0)
+            {
+                for (int ch = 0; ch < b.channel_count(); ch++)
+                {
+                    if (original_buffer_.size() > ch)
+                    {
+                        for (int s = 0; s < b.frame_count(); s++)
+                        {
+                            if (original_buffer_.at(ch).size() > s)
+                            {
+                                b.lookup(s, ch) = original_buffer_.at(ch).at(s);
+                            }
+                        }
+                    }
+                }
+
+                b.dirty();
+            }
+            
+            return {};
         }
     };
 
@@ -133,38 +159,6 @@ public:
                 }
             }            
 
-            return {};
-        }
-    };
-
-    message<> restore
-    {
-        this,
-        "restore",
-        "Restore the buffer content at the time when backup was set",
-        MIN_FUNCTION
-        {
-            buffer_lock<> b(m_buffer);
-
-            if (b.valid() && backup && original_buffer_.size() > 0)
-            {
-                for (int ch = 0; ch < b.channel_count(); ch++)
-                {
-                    if (original_buffer_.size() > ch)
-                    {
-                        for (int s = 0; s < b.frame_count(); s++)
-                        {
-                            if (original_buffer_.at(ch).size() > s)
-                            {
-                                b.lookup(s, ch) = original_buffer_.at(ch).at(s);
-                            }
-                        }
-                    }
-                }
-
-                b.dirty();
-            }
-            
             return {};
         }
     };

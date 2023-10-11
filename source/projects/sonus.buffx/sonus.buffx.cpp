@@ -41,23 +41,17 @@ public:
         }
     };
 
-    attribute<bool> backup
+    message<> backup
     {
         this,
         "backup",
-        false,
-        title {"Backup current buffer"},
-        description {"Whether to save or not a copy of the current buffer content."},
+        "Backup the current buffer content",
         setter
         {
             MIN_FUNCTION
             {
-                bool n = args[0];
-                if (n)
-                {
-                    save_buffer();
-                }
-                return {n};
+                save_buffer();
+                return {};
             }
         }
     };
@@ -71,7 +65,7 @@ public:
         {
             buffer_lock<> b(m_buffer);
 
-            if (b.valid() && backup && original_buffer_.size() > 0)
+            if (b.valid() && original_buffer_.size() > 0)
             {
                 for (int ch = 0; ch < b.channel_count(); ch++)
                 {
@@ -303,7 +297,7 @@ public:
     {
         this,
         "allpass",
-        "Apply an allpass filter: notch freq q",
+        "Apply an allpass filter: allpass freq q",
         MIN_FUNCTION
         {
             if (args.size() < 1)

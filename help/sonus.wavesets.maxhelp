@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1011.0, 162.0, 854.0, 885.0 ],
+		"rect" : [ 99.0, 100.0, 854.0, 885.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -178,7 +178,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 189.194033026695251, 609.5, 199.0, 100.0 ],
-					"text" : "each time \"backup 1\" is sent, a copy of the current buffer is stored to memory (replacing any previous one), so that it can be restored with \"restore\" message"
+					"text" : "each time \"backup\" is sent, a copy of the current buffer is stored to memory (replacing any previous one), so that it can be restored with \"restore\" message"
 				}
 
 			}
@@ -201,8 +201,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 117.0, 637.0, 57.0, 22.0 ],
-					"text" : "backup 1"
+					"patching_rect" : [ 117.0, 637.0, 47.0, 22.0 ],
+					"text" : "backup"
 				}
 
 			}
@@ -329,7 +329,7 @@
 			}
 , 			{
 				"box" : 				{
-					"buffername" : "1021_sample",
+					"buffername" : "1005_sample",
 					"id" : "obj-7",
 					"maxclass" : "waveform~",
 					"numinlets" : 5,

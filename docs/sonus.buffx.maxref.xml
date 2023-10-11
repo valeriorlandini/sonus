@@ -45,9 +45,9 @@
 			<description>Choose a named buffer~ from which to read. </description>
 		</method>
 
-		<method name='bandpass'>
-			<digest>Apply a bandpass filter: bandpass freq q </digest>
-			<description>Apply a bandpass filter: bandpass freq q </description>
+		<method name='backup'>
+			<digest>Backup the current buffer content </digest>
+			<description>Backup the current buffer content </description>
 		</method>
 
 		<method name='lowpass'>
@@ -65,14 +65,19 @@
 			<description>Reverse the content of the buffer </description>
 		</method>
 
+		<method name='bandpass'>
+			<digest>Apply a bandpass filter: bandpass freq q </digest>
+			<description>Apply a bandpass filter: bandpass freq q </description>
+		</method>
+
 		<method name='notch'>
 			<digest>Apply a notch filter: notch freq q </digest>
 			<description>Apply a notch filter: notch freq q </description>
 		</method>
 
 		<method name='allpass'>
-			<digest>Apply an allpass filter: notch freq q </digest>
-			<description>Apply an allpass filter: notch freq q </description>
+			<digest>Apply an allpass filter: allpass freq q </digest>
+			<description>Apply an allpass filter: allpass freq q </description>
 		</method>
 
 	</methodlist>
@@ -81,11 +86,6 @@
 	<!--ATTRIBUTES-->
 
 	<attributelist>
-
-		<attribute name='backup' get='1' set='1' type='long' size='1' >
-			<digest>Whether to save or not a copy of the current buffer content</digest>
-			<description>Whether to save or not a copy of the current buffer content. </description>
-		</attribute>
 
 	</attributelist>
 
