@@ -406,14 +406,7 @@ public:
                         }
                         else if (abs_sample >= threshold && abs_sample < (2.0 * threshold))
                         {
-                            if (b.lookup(s, ch) > 0.0)
-                            {
-                                b.lookup(s, ch) = (3.0 - std::pow((2.0 - 3.0 * b.lookup(s, ch)), 2.0)) / 3.0;
-                            }
-                            else
-                            {
-                                b.lookup(s, ch) = (3.0 - std::pow((2.0 - 3.0 * std::abs(b.lookup(s, ch))), 2.0)) / -3.0;
-                            }
+                            b.lookup(s, ch) = (3.0 - std::pow((2.0 - 3.0 * abs_sample), 2.0)) / std::copysign(3.0, b.lookup(s, ch));
                         }
                         else
                         {
