@@ -80,6 +80,16 @@
 			<description>Apply an allpass filter: allpass freq q </description>
 		</method>
 
+		<method name='noise'>
+			<digest>Fill the buffer with noise, optionaly mixing it with current content: noise wet </digest>
+			<description>Fill the buffer with noise, optionaly mixing it with current content: noise wet </description>
+		</method>
+
+		<method name='drive'>
+			<digest>Apply a symmetrical soft clipping: drive threshold </digest>
+			<description>Apply a symmetrical soft clipping: drive threshold </description>
+		</method>
+
 	</methodlist>
 
 

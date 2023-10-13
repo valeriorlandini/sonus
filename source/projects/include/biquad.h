@@ -156,7 +156,7 @@ bool Biquad<TSample>::set_cutoff(const TSample &cutoff)
             b2_ = -1.0 * b0_;
             break;
             case BANDREJECT:
-            b0_ = (q_ * (kkm1 + 2.0)) / (kkq + k_ + q_);
+            b0_ = (q_ * (1.0 + (k_ * k_))) / (kkq + k_ + q_);
             b1_ = (2.0 * q_ * kkm1) / (kkq + k_ + q_);
             b2_ = b0_;
             break;

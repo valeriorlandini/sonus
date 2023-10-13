@@ -336,6 +336,98 @@ public:
         }
     };
     
+    message<> noise
+    {
+        this,
+        "noise",
+        "Fill the buffer with noise, optionaly mixing it with current content: noise wet",
+        MIN_FUNCTION
+        {
+            buffer_lock<> b(m_buffer);
+
+            if (b.valid())
+            {
+                std::default_random_engine generator;
+                std::uniform_real_distribution<double> distribution(-1.0, 1.0);
+                
+                double wet = 1.0;
+
+                if (args.size() > 0)
+                {
+                    wet = std::clamp(double(args.at(0)), 0.0, 1.0);
+                }
+
+                for (auto ch = 0; ch < b.channel_count(); ch++)
+                {
+                    for (auto s = 0; s < b.frame_count(); s++)
+                    {
+                        double number = distribution(generator);
+                        b.lookup(s, ch) = (number * wet) + (b.lookup(s, ch) * (1.0 - wet));
+                    }
+                }
+
+                b.dirty();
+            }            
+
+            return {};
+        }
+    };
+
+    message<> drive
+    {
+        this,
+        "drive",
+        "Apply a symmetrical soft clipping: drive threshold",
+        MIN_FUNCTION
+        {
+            buffer_lock<> b(m_buffer);
+
+            if (b.valid())
+            {
+                std::default_random_engine generator;
+                std::uniform_real_distribution<double> distribution(-1.0, 1.0);
+                
+                double threshold = 1.0 / 3.0;
+
+                if (args.size() > 0)
+                {
+                    threshold = std::clamp(double(args.at(0)), 0.0, 1.0);
+                }
+
+                for (auto ch = 0; ch < b.channel_count(); ch++)
+                {
+                    for (auto s = 0; s < b.frame_count(); s++)
+                    {
+                        double abs_sample = std::abs(b.lookup(s, ch));
+
+                        if (abs_sample < threshold)
+                        {
+                            b.lookup(s, ch) *= 2.0;
+                        }
+                        else if (abs_sample >= threshold && abs_sample < (2.0 * threshold))
+                        {
+                            if (b.lookup(s, ch) > 0.0)
+                            {
+                                b.lookup(s, ch) = (3.0 - std::pow((2.0 - 3.0 * b.lookup(s, ch)), 2.0)) / 3.0;
+                            }
+                            else
+                            {
+                                b.lookup(s, ch) = (3.0 - std::pow((2.0 - 3.0 * std::abs(b.lookup(s, ch))), 2.0)) / -3.0;
+                            }
+                        }
+                        else
+                        {
+                            b.lookup(s, ch) = std::copysign(1.0, b.lookup(s, ch));
+                        }
+                    }
+                }
+
+                b.dirty();
+            }            
+
+            return {};
+        }
+    };    
     
 
 private:

@@ -40,6 +40,61 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"bubble" : 1,
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
+					"id" : "obj-33",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 176.388066053390503, 426.5, 248.0, 55.0 ],
+					"presentation_linecount" : 3,
+					"text" : "overdrive with symmetrical soft clipping, syntax drive <threshold (default 0.3)>"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-31",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 104.0, 443.0, 61.0, 22.0 ],
+					"text" : "drive 0.25"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
+					"id" : "obj-28",
+					"linecount" : 5,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 176.388066053390503, 329.5, 250.0, 85.0 ],
+					"text" : "fill the buffer with white noise, optionally mixing it with current buffer content (using the argument to specify the wet amount), syntax noise <wet (default 1.0)>"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-25",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 104.0, 361.0, 57.0, 22.0 ],
+					"text" : "noise 0.3"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-15",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -57,8 +112,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 64.0, 275.5, 105.0, 22.0 ],
-					"text" : "notch 500. 30000."
+					"patching_rect" : [ 64.0, 275.5, 85.0, 22.0 ],
+					"text" : "notch 1500. 3."
 				}
 
 			}
@@ -300,12 +355,12 @@
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
 					"id" : "obj-12",
-					"linecount" : 4,
+					"linecount" : 5,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 178.388066053390503, 227.5, 247.0, 70.0 ],
-					"text" : "apply a second order filter with syntax <filter type> <cutoff> <resonance>, available filters are lowpass, hipass, bandpass, notch and allpass"
+					"patching_rect" : [ 176.388066053390503, 220.0, 247.0, 85.0 ],
+					"text" : "apply a second order filter with syntax <filter type> <cutoff> <resonance (default 0.707)>, available filters are lowpass, hipass, bandpass, notch and allpass"
 				}
 
 			}
@@ -532,6 +587,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-25", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-7", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-26", 0 ]
@@ -542,6 +604,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-30", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-31", 0 ]
 				}
 
 			}
