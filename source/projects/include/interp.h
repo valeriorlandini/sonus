@@ -1,3 +1,6 @@
+#ifndef INTERP_H_
+#define INTERP_H_
+
 #include <algorithm>
 #include <cmath>
 #include <vector>
@@ -37,3 +40,5 @@ std::vector<TSample> resize_chunk(const std::vector<TSample> &chunk, const unsig
 
     return output;
 }
+
+#endif // INTERP_H_

@@ -40,6 +40,11 @@
 			<description>Choose a named buffer~ from which to read. </description>
 		</method>
 
+		<method name='backup'>
+			<digest>Backup the current buffer content </digest>
+			<description>Backup the current buffer content </description>
+		</method>
+
 		<method name='mute'>
 			<digest>Mute n wavesets after keeping m </digest>
 			<description>Mute n wavesets after keeping m </description>
@@ -86,11 +91,6 @@
 	<!--ATTRIBUTES-->
 
 	<attributelist>
-
-		<attribute name='backup' get='1' set='1' type='long' size='1' >
-			<digest>Whether to save or not a copy of the current buffer content</digest>
-			<description>Whether to save or not a copy of the current buffer content. </description>
-		</attribute>
 
 	</attributelist>
 

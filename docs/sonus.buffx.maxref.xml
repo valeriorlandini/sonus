@@ -36,8 +36,8 @@
 	<methodlist>
 
 		<method name='hipass'>
-			<digest>Apply a highpass filter: hipass freq q </digest>
-			<description>Apply a highpass filter: hipass freq q </description>
+			<digest>Apply a highpass filter: hipass <o>freq</o> <o>q</o> </digest>
+			<description>Apply a highpass filter: hipass <o>freq</o> <o>q</o> </description>
 		</method>
 
 		<method name='set'>
@@ -51,8 +51,8 @@
 		</method>
 
 		<method name='lowpass'>
-			<digest>Apply a lowpass filter: lowpass freq q </digest>
-			<description>Apply a lowpass filter: lowpass freq q </description>
+			<digest>Apply a lowpass filter: lowpass <o>freq</o> <o>q</o> </digest>
+			<description>Apply a lowpass filter: lowpass <o>freq</o> <o>q</o> </description>
 		</method>
 
 		<method name='restore'>
@@ -66,28 +66,33 @@
 		</method>
 
 		<method name='bandpass'>
-			<digest>Apply a bandpass filter: bandpass freq q </digest>
-			<description>Apply a bandpass filter: bandpass freq q </description>
+			<digest>Apply a bandpass filter: bandpass <o>freq</o> <o>q</o> </digest>
+			<description>Apply a bandpass filter: bandpass <o>freq</o> <o>q</o> </description>
 		</method>
 
 		<method name='notch'>
-			<digest>Apply a notch filter: notch freq q </digest>
-			<description>Apply a notch filter: notch freq q </description>
+			<digest>Apply a notch filter: notch <o>freq</o> <o>q</o> </digest>
+			<description>Apply a notch filter: notch <o>freq</o> <o>q</o> </description>
 		</method>
 
 		<method name='allpass'>
-			<digest>Apply an allpass filter: allpass freq q </digest>
-			<description>Apply an allpass filter: allpass freq q </description>
+			<digest>Apply an allpass filter: allpass <o>freq</o> <o>q</o> </digest>
+			<description>Apply an allpass filter: allpass <o>freq</o> <o>q</o> </description>
 		</method>
 
 		<method name='noise'>
-			<digest>Fill the buffer with noise, optionaly mixing it with current content: noise wet </digest>
-			<description>Fill the buffer with noise, optionaly mixing it with current content: noise wet </description>
+			<digest>Fill the buffer with noise, optionaly mixing it with current content: noise <o>mix</o> </digest>
+			<description>Fill the buffer with noise, optionaly mixing it with current content: noise <o>mix</o> </description>
 		</method>
 
 		<method name='drive'>
-			<digest>Apply a symmetrical soft clipping: drive threshold </digest>
-			<description>Apply a symmetrical soft clipping: drive threshold </description>
+			<digest>Apply a symmetrical soft clipping: drive <o>threshold</o> </digest>
+			<description>Apply a symmetrical soft clipping: drive <o>threshold</o> </description>
+		</method>
+
+		<method name='distort'>
+			<digest>Apply an exponential distortion: distort <o>gain</o> <o>wet</o> </digest>
+			<description>Apply an exponential distortion: distort <o>gain</o> <o>wet</o> </description>
 		</method>
 
 	</methodlist>

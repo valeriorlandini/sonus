@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <random>
 #include "../include/biquad.h"
+#include "../include/distortions.h"
 
 using namespace c74::min;
 
@@ -125,7 +126,7 @@ public:
     {
         this,
         "lowpass",
-        "Apply a lowpass filter: lowpass freq q",
+        "Apply a lowpass filter: lowpass [freq] [q]",
         MIN_FUNCTION
         {
             if (args.size() < 1)
@@ -168,7 +169,7 @@ public:
     {
         this,
         "hipass",
-        "Apply a highpass filter: hipass freq q",
+        "Apply a highpass filter: hipass [freq] [q]",
         MIN_FUNCTION
         {
             if (args.size() < 1)
@@ -211,7 +212,7 @@ public:
     {
         this,
         "bandpass",
-        "Apply a bandpass filter: bandpass freq q",
+        "Apply a bandpass filter: bandpass [freq] [q]",
         MIN_FUNCTION
         {
             if (args.size() < 1)
@@ -254,7 +255,7 @@ public:
     {
         this,
         "notch",
-        "Apply a notch filter: notch freq q",
+        "Apply a notch filter: notch [freq] [q]",
         MIN_FUNCTION
         {
             if (args.size() < 1)
@@ -297,7 +298,7 @@ public:
     {
         this,
         "allpass",
-        "Apply an allpass filter: allpass freq q",
+        "Apply an allpass filter: allpass [freq] [q]",
         MIN_FUNCTION
         {
             if (args.size() < 1)
@@ -340,7 +341,7 @@ public:
     {
         this,
         "noise",
-        "Fill the buffer with noise, optionaly mixing it with current content: noise wet",
+        "Fill the buffer with noise, optionaly mixing it with current content: noise [mix]",
         MIN_FUNCTION
         {
             buffer_lock<> b(m_buffer);
@@ -350,11 +351,11 @@ public:
                 std::default_random_engine generator;
                 std::uniform_real_distribution<double> distribution(-1.0, 1.0);
                 
-                double wet = 1.0;
+                double mix = 1.0;
 
                 if (args.size() > 0)
                 {
-                    wet = std::clamp(double(args.at(0)), 0.0, 1.0);
+                    mix = std::clamp(double(args.at(0)), 0.0, 1.0);
                 }
 
                 for (auto ch = 0; ch < b.channel_count(); ch++)
@@ -362,7 +363,7 @@ public:
                     for (auto s = 0; s < b.frame_count(); s++)
                     {
                         double number = distribution(generator);
-                        b.lookup(s, ch) = (number * wet) + (b.lookup(s, ch) * (1.0 - wet));
+                        b.lookup(s, ch) = (number * mix) + (b.lookup(s, ch) * (1.0 - mix));
                     }
                 }
 
@@ -377,16 +378,13 @@ public:
     {
         this,
         "drive",
-        "Apply a symmetrical soft clipping: drive threshold",
+        "Apply a symmetrical soft clipping: drive [threshold]",
         MIN_FUNCTION
         {
             buffer_lock<> b(m_buffer);
 
             if (b.valid())
-            {
-                std::default_random_engine generator;
-                std::uniform_real_distribution<double> distribution(-1.0, 1.0);
-                
+            {                
                 double threshold = 1.0 / 3.0;
 
                 if (args.size() > 0)
@@ -398,20 +396,48 @@ public:
                 {
                     for (auto s = 0; s < b.frame_count(); s++)
                     {
-                        double abs_sample = std::abs(b.lookup(s, ch));
+                        b.lookup(s, ch) = symmetrical_soft_clip(double(b.lookup(s, ch)), threshold);
+                    }
+                }
 
-                        if (abs_sample < threshold)
-                        {
-                            b.lookup(s, ch) *= 2.0;
-                        }
-                        else if (abs_sample >= threshold && abs_sample < (2.0 * threshold))
-                        {
-                            b.lookup(s, ch) = (3.0 - std::pow((2.0 - 3.0 * abs_sample), 2.0)) / std::copysign(3.0, b.lookup(s, ch));
-                        }
-                        else
-                        {
-                            b.lookup(s, ch) = std::copysign(1.0, b.lookup(s, ch));
-                        }
+                b.dirty();
+            }            
+
+            return {};
+        }
+    };    
+    
+    message<> distort
+    {
+        this,
+        "distort",
+        "Apply an exponential distortion: distort [gain] [wet]",
+        MIN_FUNCTION
+        {
+            buffer_lock<> b(m_buffer);
+
+            if (args.size() < 1)
+            {
+                cerr << "Syntax: distort <gain> <wet [optional, defaults to 1.0]>" << endl;
+
+                return {};
+            }
+
+            if (b.valid())
+            {
+                double gain = double(args.at(0));
+                double wet = 1.0;
+
+                if (args.size() > 1)
+                {
+                    wet = std::clamp(double(args.at(0)), 0.0, 1.0);
+                }
+
+                for (auto ch = 0; ch < b.channel_count(); ch++)
+                {
+                    for (auto s = 0; s < b.frame_count(); s++)
+                    {
+                        b.lookup(s, ch) = exponential_distortion(double(b.lookup(s, ch)), gain, wet);
                     }
                 }
 
