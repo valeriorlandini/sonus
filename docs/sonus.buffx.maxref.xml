@@ -70,6 +70,11 @@
 			<description>Apply a bandpass filter: bandpass <o>freq</o> <o>q</o> </description>
 		</method>
 
+		<method name='bits'>
+			<digest>Apply a bitcrusher effect: bits [bit depth] <o>wet</o> </digest>
+			<description>Apply a bitcrusher effect: bits [bit depth] <o>wet</o> </description>
+		</method>
+
 		<method name='notch'>
 			<digest>Apply a notch filter: notch <o>freq</o> <o>q</o> </digest>
 			<description>Apply a notch filter: notch <o>freq</o> <o>q</o> </description>

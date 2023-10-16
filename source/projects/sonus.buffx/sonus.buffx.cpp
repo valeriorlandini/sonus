@@ -430,7 +430,7 @@ public:
 
                 if (args.size() > 1)
                 {
-                    wet = std::clamp(double(args.at(0)), 0.0, 1.0);
+                    wet = std::clamp(double(args.at(1)), 0.0, 1.0);
                 }
 
                 for (auto ch = 0; ch < b.channel_count(); ch++)
@@ -438,6 +438,47 @@ public:
                     for (auto s = 0; s < b.frame_count(); s++)
                     {
                         b.lookup(s, ch) = exponential_distortion(double(b.lookup(s, ch)), gain, wet);
+                    }
+                }
+
+                b.dirty();
+            }            
+
+            return {};
+        }
+    };    
+
+    message<> bits
+    {
+        this,
+        "bits",
+        "Apply a bitcrusher effect: bits [bit depth] [wet]",
+        MIN_FUNCTION
+        {
+            buffer_lock<> b(m_buffer);
+
+            if (args.size() < 1)
+            {
+                cerr << "Syntax: bits <bit depth> <wet [optional, defaults to 1.0]>" << endl;
+
+                return {};
+            }
+
+            if (b.valid())
+            {
+                double bit_depth = std::clamp(double(args.at(0)), 1.0, 64.0);
+                double wet = 1.0;
+
+                if (args.size() > 1)
+                {
+                    wet = std::clamp(double(args.at(1)), 0.0, 1.0);
+                }
+
+                for (auto ch = 0; ch < b.channel_count(); ch++)
+                {
+                    for (auto s = 0; s < b.frame_count(); s++)
+                    {
+                        b.lookup(s, ch) = bitcrush(double(b.lookup(s, ch)), bit_depth, wet);
                     }
                 }
 

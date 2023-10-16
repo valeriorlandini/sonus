@@ -32,4 +32,12 @@ inline TSample exponential_distortion(const TSample &sample, const TSample &gain
     return mix * z + (1.0 - mix) * sample;
 }
 
+template <class TSample>
+inline TSample bitcrush(const TSample &sample, const TSample &bit_depth, const TSample &mix = 1.0)
+{
+    unsigned long in = (unsigned long)std::round((1.0 + std::clamp(sample, -1.0, 1.0)) * 0.5 * (std::pow(2.0, bit_depth) - 1.0));
+
+    return mix * ((((TSample)in / (std::pow(2.0, bit_depth) - 1.0)) * 2.0) - 1.0) + (1.0 - mix) * sample;
+}
+
 #endif // DISTORTIONS_H_

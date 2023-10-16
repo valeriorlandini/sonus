@@ -43,13 +43,40 @@
 					"bubble" : 1,
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
+					"id" : "obj-38",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 188.388066053390503, 516.0, 242.0, 40.0 ],
+					"text" : "bitcrush, syntax: bits <bit depth (1.0-64.0)> <wet (default 1.0)>"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-37",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 104.0, 525.0, 57.0, 22.0 ],
+					"text" : "bits 4 0.5"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
 					"id" : "obj-35",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 188.388066053390503, 464.0, 242.0, 40.0 ],
-					"text" : "distortion, syntax distort <gain> <wet (default 1.0)>"
+					"patching_rect" : [ 188.388066053390503, 464.0, 244.0, 40.0 ],
+					"text" : "distortion, syntax: distort <gain> <wet (default 1.0)>"
 				}
 
 			}
@@ -60,8 +87,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 104.0, 473.0, 81.0, 22.0 ],
-					"text" : "distort 10. 0.8"
+					"patching_rect" : [ 104.0, 473.0, 75.0, 22.0 ],
+					"text" : "distort 7. 0.8"
 				}
 
 			}
@@ -76,7 +103,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 176.388066053390503, 401.0, 254.0, 55.0 ],
-					"text" : "overdrive with symmetrical soft clipping, syntax drive <threshold (default 0.3)>"
+					"text" : "overdrive with symmetrical soft clipping, syntax:drive <threshold (default 0.3)>"
 				}
 
 			}
@@ -102,8 +129,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 176.388066053390503, 330.0, 254.0, 55.0 ],
-					"text" : "fill the buffer with white noise, optionally mixing it with current buffer content, syntax noise <mix (default 1.0)>"
+					"patching_rect" : [ 176.388066053390503, 330.0, 257.0, 55.0 ],
+					"text" : "fill the buffer with white noise, optionally mixing it with current buffer content, syntax: noise <mix (default 1.0)>"
 				}
 
 			}
@@ -353,7 +380,7 @@
 			}
 , 			{
 				"box" : 				{
-					"buffername" : "1004_sample",
+					"buffername" : "1003_sample",
 					"id" : "obj-7",
 					"maxclass" : "waveform~",
 					"numinlets" : 5,
@@ -386,7 +413,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 176.388066053390503, 220.0, 254.0, 85.0 ],
-					"text" : "apply a second order filter with syntax <filter type> <cutoff> <resonance (default 0.707)>, available filters are lowpass, hipass, bandpass, notch and allpass"
+					"text" : "apply a second order filter with syntax: <filter type> <cutoff> <resonance (default 0.707)>, available filters are lowpass, hipass, bandpass, notch and allpass"
 				}
 
 			}
@@ -651,6 +678,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-34", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-37", 0 ]
 				}
 
 			}
