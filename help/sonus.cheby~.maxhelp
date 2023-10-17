@@ -106,7 +106,7 @@
 					"patching_rect" : [ 272.0, 136.5, 116.0, 34.0 ],
 					"shape" : 1,
 					"size" : 2,
-					"value" : 0
+					"value" : 1
 				}
 
 			}
@@ -233,7 +233,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 157.353658616542816, 265.5, 321.0, 40.0 ],
 					"text" : "polynomial order (interpolation between two consecutive orders happens for non integer values)",
-					"textjustification" : 1
+					"textjustification" : 0
 				}
 
 			}

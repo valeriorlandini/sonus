@@ -489,6 +489,50 @@ public:
         }
     };    
     
+    message<> mix
+    {
+        this,
+        "mix",
+        "Mix with other buffers: mix [buffer name] [buffer gain] ... [buffer name] [buffer gain]",
+        MIN_FUNCTION
+        {
+            buffer_lock<> b(m_buffer);
+
+            if (args.size() < 1 || args.size() % 2 != 0)
+            {
+                cerr << "Syntax: mix <buffer name> <buffer gain> ... <buffer name> <buffer gain>" << endl;
+
+                return {};
+            }
+
+            for (auto i = 0; i < args.size(); i += 2)
+            {
+                buffer_reference buffer(this, nullptr, false);
+                buffer.set(args.at(i));
+                buffer_lock bl(buffer);
+                if (bl.valid())
+                {
+                    double gain = double(args.at(i+1));
+                    auto length = std::min(bl.frame_count(), b.frame_count());
+                    auto channels = std::min(bl.channel_count(), b.channel_count());
+                    
+                    for (auto ch = 0; ch < channels; ch++)
+                    {
+                        for (auto s = 0; s < length; s++)
+                        {
+                            b.lookup(s, ch) += bl.lookup(s, ch) * gain;
+                        }
+                    }
+                    
+                }
+            }
+
+            b.dirty();          
+
+            return {};
+        }
+    };    
+    
 
 private:
     std::vector<std::vector<double>> original_buffer_;
