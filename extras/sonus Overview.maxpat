@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 223.0, 85.0, 1036.0, 823.0 ],
+		"rect" : [ 223.0, 85.0, 1036.0, 865.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,29 @@
 		"showontab" : 0,
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-72",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 776.0, 715.0, 233.0, 20.0 ],
+					"text" : "Simple signal mixer"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-73",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 776.0, 690.0, 94.0, 22.0 ],
+					"text" : "sonus.summer~"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-70",
 					"maxclass" : "comment",
@@ -432,7 +455,7 @@
 					"maxclass" : "live.line",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 761.0, 1000.0, 5.0 ]
+					"patching_rect" : [ 16.0, 810.0, 1000.0, 5.0 ]
 				}
 
 			}
@@ -454,7 +477,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 397.5, 784.0, 237.0, 22.0 ],
+					"patching_rect" : [ 397.5, 833.0, 237.0, 22.0 ],
 					"text" : "https://github.com/valeriorlandini/sonus",
 					"textcolor" : [ 0.0, 0.015686274509804, 0.396078431372549, 1.0 ]
 				}
@@ -469,7 +492,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 798.0, 129.0, 36.0 ],
+					"patching_rect" : [ 10.0, 847.0, 129.0, 36.0 ],
 					"text" : ";\r\nmax launchbrowser $1"
 				}
 
@@ -617,7 +640,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 26.0, 924.734375, 91.0, 22.0 ],
+					"patching_rect" : [ 26.0, 973.734375, 91.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -635,7 +658,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 776.0, 715.0, 233.0, 20.0 ],
+					"patching_rect" : [ 776.0, 780.0, 233.0, 20.0 ],
 					"text" : "Tent map calculator"
 				}
 
@@ -647,7 +670,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 776.0, 690.0, 64.0, 22.0 ],
+					"patching_rect" : [ 776.0, 755.0, 64.0, 22.0 ],
 					"text" : "sonus.tent"
 				}
 
@@ -1019,7 +1042,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 768.0, 1000.0, 20.0 ],
+					"patching_rect" : [ 16.0, 817.0, 1000.0, 20.0 ],
 					"text" : "handmade in italy by valerio orlandini",
 					"textjustification" : 1
 				}
@@ -1263,6 +1286,14 @@
 					"destination" : [ "obj-58", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-71", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-73", 0 ]
 				}
 
 			}

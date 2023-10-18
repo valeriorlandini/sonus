@@ -100,6 +100,11 @@
 			<description>Apply an exponential distortion: distort <o>gain</o> <o>wet</o> </description>
 		</method>
 
+		<method name='delay'>
+			<digest>Apply a delay: delay [time in milliseconds] <o>feedback</o> </digest>
+			<description>Apply a delay: delay [time in milliseconds] <o>feedback</o> </description>
+		</method>
+
 		<method name='mix'>
 			<digest>Mix with other buffers: mix [buffer name] [buffer gain] ..</digest>
 			<description>Mix with other buffers: mix [buffer name] [buffer gain] ... [buffer name] [buffer gain] </description>

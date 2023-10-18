@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <random>
 #include "../include/biquad.h"
+#include "../include/delay.h"
 #include "../include/distortions.h"
 
 using namespace c74::min;
@@ -489,6 +490,56 @@ public:
         }
     };    
     
+    message<> delay
+    {
+        this,
+        "delay",
+        "Apply a delay: delay [time in milliseconds] [feedback]",
+        MIN_FUNCTION
+        {
+            buffer_lock<> b(m_buffer);
+
+            if (args.size() < 1)
+            {
+                cerr << "Syntax: mix <time in milliseconds> <feedback [optional, defaults to 0.0]>" << endl;
+
+                return {};
+            }
+
+            double time = std::clamp(double(args.at(0)), 0.0, 30000.0);
+            double feedback = 0.0;
+            if (args.size() > 1)
+            {
+                feedback = std::clamp(double(args.at(1)), -1.0, 1.0);
+            }
+
+            if (b.valid())
+            {
+                for (auto ch = 0; ch < b.channel_count(); ch++)
+                {
+                    Delay<double> delay(b.samplerate(), time + 1.0);
+                    delay.set_time(time);
+                    delay.set_feedback(feedback);
+
+                    cout << time << endl;
+                    cout << feedback << endl;
+                    cout << delay.delay_time_ << endl;
+                    cout << delay.feedback_ << endl;
+                    cout << delay.delay_samples_ << endl;
+                    
+                    for (auto s = 0; s < b.frame_count(); s++)
+                    {
+                        b.lookup(s, ch) += delay.run(double(b.lookup(s, ch)));
+                    }
+                }
+
+                b.dirty();
+            }        
+
+            return {};
+        }
+    };
+
     message<> mix
     {
         this,
@@ -505,29 +556,33 @@ public:
                 return {};
             }
 
-            for (auto i = 0; i < args.size(); i += 2)
-            {
-                buffer_reference buffer(this, nullptr, false);
-                buffer.set(args.at(i));
-                buffer_lock bl(buffer);
-                if (bl.valid())
-                {
-                    double gain = double(args.at(i+1));
-                    auto length = std::min(bl.frame_count(), b.frame_count());
-                    auto channels = std::min(bl.channel_count(), b.channel_count());
-                    
-                    for (auto ch = 0; ch < channels; ch++)
-                    {
-                        for (auto s = 0; s < length; s++)
-                        {
-                            b.lookup(s, ch) += bl.lookup(s, ch) * gain;
-                        }
-                    }
-                    
-                }
-            }
 
-            b.dirty();          
+            if (b.valid())
+            {
+                for (auto i = 0; i < args.size(); i += 2)
+                {
+                    buffer_reference buffer(this, nullptr, false);
+                    buffer.set(args.at(i));
+                    buffer_lock bl(buffer);
+                    if (bl.valid())
+                    {
+                        double gain = double(args.at(i+1));
+                        auto length = std::min(bl.frame_count(), b.frame_count());
+                        auto channels = std::min(bl.channel_count(), b.channel_count());
+
+                        for (auto ch = 0; ch < channels; ch++)
+                        {
+                            for (auto s = 0; s < length; s++)
+                            {
+                                b.lookup(s, ch) += bl.lookup(s, ch) * gain;
+                            }
+                        }
+
+                    }
+                }
+
+                b.dirty();  
+            }        
 
             return {};
         }
