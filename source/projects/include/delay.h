@@ -3,7 +3,7 @@
 
 #include <algorithm>
 #include <cmath>
-#include <deque>
+#include <vector>
 #include <iostream>
 
 template <class TSample>
@@ -20,27 +20,31 @@ public:
     bool set_feedback(const TSample &feedback);
     void clear();
 
+    TSample get_time();
+    int get_samples();
+    TSample get_max_time();
+    TSample get_feedback();
+
     inline TSample run(const TSample &input);
     inline void run(const TSample &input, TSample &output);
 
     inline TSample get_last_sample();
 
-//private:
+private:
     TSample max_delay_time_;
     TSample sample_rate_;
     TSample delay_time_;
-    TSample interp_;
 
-    TSample delay_samples_;
+    int delay_samples_;
 
     TSample feedback_;
 
     TSample output_;
 
-    unsigned int read_pos_;
-    unsigned int write_pos_;
+    int read_pos_;
+    int write_pos_;
 
-    std::deque<TSample> buffer_;
+    std::vector<TSample> buffer_;
 };
 
 template <class TSample>
@@ -64,7 +68,7 @@ Delay<TSample>::Delay(const TSample &sample_rate, const TSample &max_delay_time)
         buffer_.assign((unsigned int)ceil(5.0 * sample_rate_) + 1, 0.0);
     }
 
-    read_pos_ = 0;
+    read_pos_ = 0.0;
     write_pos_ = 0;
 
     set_time(max_delay_time_);
@@ -124,12 +128,13 @@ bool Delay<TSample>::set_time(const TSample &delay_time)
     {
         delay_time_ = delay_time;
 
-        delay_samples_ = sample_rate_ * delay_time_ * 0.001;
+        delay_samples_ = (int)floor(sample_rate_ * delay_time_ * 0.001);
 
-        read_pos_ = fmod((write_pos_ - delay_samples_), buffer_.size());
-
-        interp_ = read_pos_ - floor(read_pos_);
-        interp_ = (1.0 - cos(interp_ * M_PI)) * 0.5;
+        read_pos_ = write_pos_ - delay_samples_;
+        if (read_pos_ < 0)
+        {
+            read_pos_ = buffer_.size() + read_pos_;
+        }
 
         return true;
     }
@@ -148,6 +153,30 @@ bool Delay<TSample>::set_feedback(const TSample &feedback)
 }
 
 template <class TSample>
+TSample Delay<TSample>::get_time()
+{
+    return delay_time_;
+}
+
+template <class TSample>
+int Delay<TSample>::get_samples()
+{
+    return delay_samples_;
+}
+
+template <class TSample>
+TSample Delay<TSample>::get_max_time()
+{
+    return max_delay_time_;
+}
+
+template <class TSample>
+TSample Delay<TSample>::get_feedback()
+{
+    return feedback_;
+}
+
+template <class TSample>
 void Delay<TSample>::clear()
 {
     buffer_.assign(buffer_.size(), 0.0);
@@ -156,9 +185,7 @@ void Delay<TSample>::clear()
 template <class TSample>
 inline TSample Delay<TSample>::run(const TSample &input)
 {
-    output_ = (buffer_.at((unsigned int)floor(read_pos_)) * (1.0 - interp_)) + 
-              (buffer_.at((unsigned int)(ceil(read_pos_)) % buffer_.size()) *
-              interp_);
+    output_ = (buffer_.at(read_pos_));
 
     buffer_.at(write_pos_) = input + (output_ * feedback_);
 
@@ -169,7 +196,7 @@ inline TSample Delay<TSample>::run(const TSample &input)
 
     if (++read_pos_ >= buffer_.size())
     {
-        read_pos_ = fmod(read_pos_, buffer_.size());
+        read_pos_ = 0;
     }
 
     return output_;

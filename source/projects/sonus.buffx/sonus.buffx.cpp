@@ -506,7 +506,7 @@ public:
                 return {};
             }
 
-            double time = std::clamp(double(args.at(0)), 0.0, 30000.0);
+            double delay_time = 1000.0;//std::clamp(double(args.at(0)), 0.0, 30000.0);
             double feedback = 0.0;
             if (args.size() > 1)
             {
@@ -517,15 +517,10 @@ public:
             {
                 for (auto ch = 0; ch < b.channel_count(); ch++)
                 {
-                    Delay<double> delay(b.samplerate(), time + 1.0);
-                    delay.set_time(time);
+                    Delay<double> delay(b.samplerate(), delay_time);
+                    //delay.set_time(delay_time);
                     delay.set_feedback(feedback);
-
-                    cout << time << endl;
-                    cout << feedback << endl;
-                    cout << delay.delay_time_ << endl;
-                    cout << delay.feedback_ << endl;
-                    cout << delay.delay_samples_ << endl;
+                    cout << args.at(0) << " and " << delay_time << " and " << delay.get_samples() << endl;
                     
                     for (auto s = 0; s < b.frame_count(); s++)
                     {

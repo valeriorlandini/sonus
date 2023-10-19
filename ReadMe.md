@@ -17,7 +17,7 @@ Currently finished externals are:
 ### Effects and Sample Manipulation
 * `sonus.8bitinv~`
 * `sonus.bitman~`
-* `sonus.buffx~`
+* `sonus.buffx`
 * `sonus.cheby~`
 * `sonus.quadpan~`
 * `sonus.wavesets`
