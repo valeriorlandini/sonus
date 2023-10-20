@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 99.0, 100.0, 854.0, 885.0 ],
+		"rect" : [ 99.0, 100.0, 854.0, 776.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -43,12 +43,26 @@
 					"bubble" : 1,
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
+					"id" : "obj-48",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 204.194033026695251, 647.5, 173.0, 25.0 ],
+					"text" : "argument: buffer name"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
 					"id" : "obj-38",
 					"linecount" : 6,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 174.194033026695251, 502.0, 214.0, 100.0 ],
+					"patching_rect" : [ 178.194033026695251, 427.5, 214.0, 100.0 ],
 					"text" : "raise each sample of a group of wavesets with the absolute value of the samples of the next one as exponent (WARNING: very loud!!! lower the volume before apply!!!)"
 				}
 
@@ -95,7 +109,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 98.0, 541.0, 58.0, 22.0 ],
+					"patching_rect" : [ 102.0, 466.5, 58.0, 22.0 ],
 					"text" : "power 10"
 				}
 
@@ -110,7 +124,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 174.194033026695251, 419.0, 214.0, 70.0 ],
+					"patching_rect" : [ 178.194033026695251, 355.5, 214.0, 70.0 ],
 					"text" : "multiply groups of n wavesets with the following one (suggestion: normalize the buffer after this operation)"
 				}
 
@@ -122,7 +136,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 98.0, 443.0, 66.0, 22.0 ],
+					"patching_rect" : [ 102.0, 379.5, 66.0, 22.0 ],
 					"text" : "multiply 40"
 				}
 
@@ -137,7 +151,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 189.194033026695251, 367.0, 203.0, 40.0 ],
+					"patching_rect" : [ 189.194033026695251, 313.5, 203.0, 40.0 ],
 					"text" : "average groups of n wavesets with the following one"
 				}
 
@@ -149,7 +163,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 98.0, 376.0, 75.0, 22.0 ],
+					"patching_rect" : [ 98.0, 322.5, 75.0, 22.0 ],
 					"text" : "average 150"
 				}
 
@@ -177,7 +191,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 189.194033026695251, 609.5, 199.0, 100.0 ],
+					"patching_rect" : [ 193.194033026695251, 529.5, 199.0, 100.0 ],
 					"text" : "each time \"backup\" is sent, a copy of the current buffer is stored to memory (replacing any previous one), so that it can be restored with \"restore\" message"
 				}
 
@@ -189,7 +203,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 117.0, 661.0, 46.0, 22.0 ],
+					"patching_rect" : [ 121.0, 581.0, 46.0, 22.0 ],
 					"text" : "restore"
 				}
 
@@ -201,7 +215,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 117.0, 637.0, 47.0, 22.0 ],
+					"patching_rect" : [ 121.0, 557.0, 47.0, 22.0 ],
 					"text" : "backup"
 				}
 
@@ -250,7 +264,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 98.0, 333.5, 65.0, 22.0 ],
+					"patching_rect" : [ 98.0, 288.0, 65.0, 22.0 ],
 					"text" : "reverse 50"
 				}
 
@@ -262,7 +276,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 86.0, 279.5, 71.0, 22.0 ],
+					"patching_rect" : [ 86.0, 253.5, 71.0, 22.0 ],
 					"text" : "reshape sin"
 				}
 
@@ -274,7 +288,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 73.5, 220.5, 62.0, 22.0 ],
+					"patching_rect" : [ 73.5, 211.5, 62.0, 22.0 ],
 					"text" : "mute 20 4"
 				}
 
@@ -297,7 +311,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 33.0, 783.5, 91.0, 22.0 ],
+					"patching_rect" : [ 33.0, 690.5, 91.0, 22.0 ],
 					"text" : "print @popup 1"
 				}
 
@@ -329,7 +343,7 @@
 			}
 , 			{
 				"box" : 				{
-					"buffername" : "1005_sample",
+					"buffername" : "1010_sample",
 					"id" : "obj-7",
 					"maxclass" : "waveform~",
 					"numinlets" : 5,
@@ -360,7 +374,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 167.388066053390503, 332.0, 224.805966973304749, 25.0 ],
+					"patching_rect" : [ 167.388066053390503, 286.5, 224.805966973304749, 25.0 ],
 					"text" : "reverse each group of n wavesets"
 				}
 
@@ -375,7 +389,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 143.388066053390503, 211.5, 250.0, 40.0 ],
+					"patching_rect" : [ 143.388066053390503, 202.5, 250.0, 40.0 ],
 					"text" : "mute n wavesets after keeping m (n and m are the two arguments)"
 				}
 
@@ -401,7 +415,7 @@
 					"maxclass" : "live.line",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 835.0, 805.0, 5.0 ]
+					"patching_rect" : [ 16.0, 742.0, 805.0, 5.0 ]
 				}
 
 			}
@@ -423,7 +437,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 300.0, 858.0, 237.0, 22.0 ],
+					"patching_rect" : [ 300.0, 765.0, 237.0, 22.0 ],
 					"text" : "https://github.com/valeriorlandini/sonus",
 					"textcolor" : [ 0.0, 0.015686274509804, 0.396078431372549, 1.0 ]
 				}
@@ -438,7 +452,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 872.0, 129.0, 36.0 ],
+					"patching_rect" : [ 10.0, 779.0, 129.0, 36.0 ],
 					"text" : ";\r\nmax launchbrowser $1"
 				}
 
@@ -453,7 +467,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 167.388066053390503, 270.5, 226.0, 40.0 ],
+					"patching_rect" : [ 167.388066053390503, 244.5, 226.0, 40.0 ],
 					"text" : "transform all the wavesets into the desired shape (sin, saw, tri, rect)"
 				}
 
@@ -465,7 +479,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 33.0, 742.0, 169.0, 22.0 ],
+					"patching_rect" : [ 33.0, 649.0, 169.0, 22.0 ],
 					"text" : "sonus.wavesets #0_sample"
 				}
 
@@ -522,7 +536,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 842.0, 805.0, 20.0 ],
+					"patching_rect" : [ 16.0, 749.0, 805.0, 20.0 ],
 					"text" : "handmade in italy by valerio orlandini",
 					"textjustification" : 1
 				}

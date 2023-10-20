@@ -506,11 +506,18 @@ public:
                 return {};
             }
 
-            double delay_time = 1000.0;//std::clamp(double(args.at(0)), 0.0, 30000.0);
+            double delay_time = std::clamp(double(args.at(0)), 0.0, 30000.0);
             double feedback = 0.0;
+            double wet = 0.25;
+
             if (args.size() > 1)
             {
                 feedback = std::clamp(double(args.at(1)), -1.0, 1.0);
+            }
+
+            if (args.size() > 2)
+            {
+                wet = std::clamp(double(args.at(2)), 0.0, 1.0);
             }
 
             if (b.valid())
@@ -518,13 +525,11 @@ public:
                 for (auto ch = 0; ch < b.channel_count(); ch++)
                 {
                     Delay<double> delay(b.samplerate(), delay_time);
-                    //delay.set_time(delay_time);
                     delay.set_feedback(feedback);
-                    cout << args.at(0) << " and " << delay_time << " and " << delay.get_samples() << endl;
                     
                     for (auto s = 0; s < b.frame_count(); s++)
                     {
-                        b.lookup(s, ch) += delay.run(double(b.lookup(s, ch)));
+                        b.lookup(s, ch) += delay.run(double(b.lookup(s, ch))) * wet;// + b.lookup(s, ch) * (1.0 - wet);
                     }
                 }
 

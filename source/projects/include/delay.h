@@ -59,14 +59,16 @@ Delay<TSample>::Delay(const TSample &sample_rate, const TSample &max_delay_time)
         sample_rate_ = 44100.0;
     }
 
-    if (max_delay_time_ > 0.0)
+    if (max_delay_time > 0.0)
     {
-        buffer_.assign((unsigned int)ceil(max_delay_time_ * sample_rate_ * 0.001) + 1, 0.0);
+        max_delay_time_ = max_delay_time;
     }
     else
     {
-        buffer_.assign((unsigned int)ceil(5.0 * sample_rate_) + 1, 0.0);
+        max_delay_time_ = 5000.0;
     }
+
+    buffer_.assign((unsigned int)ceil(max_delay_time_ * sample_rate_ * 0.001) + 1, 0.0);
 
     read_pos_ = 0.0;
     write_pos_ = 0;
