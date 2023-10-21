@@ -1,5 +1,5 @@
 /******************************************************************************
-Copyright (c) 2020-2023 Sonus Dept.
+Copyright (c) 2023 Valerio Orlandini
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -27,8 +27,6 @@ SOFTWARE.
 #include <algorithm>
 #include <cmath>
 
-namespace amtl
-{
 enum BLWaveforms
 {
     SINE,
@@ -215,7 +213,6 @@ inline void BLOsc<TSample>::get_last_sample(TSample &sine_out,
     sine_out = sine_out_;
     triangle_out = triangle_out_;
     square_out = square_out_;
-}
 }
 
 #endif // BLOSC_H_

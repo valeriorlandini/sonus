@@ -19,13 +19,15 @@ public:
 	inlet<>  in {this, "(bang) Output value"};
 	outlet<> out {this, "(float) Requested constant value"};
 
-	enum class constants : int { pi, pi2, e, sqrt2, sqrt3, golden, ln2,
-	                             connective, wallis, lemniscate, euler,
-								 omega, apery, catalan, dottie, enum_count };
+	enum class constants : int { pi, pi2, e, sqrt2, sqrt3, golden,
+	                            ln2, apery, catalan, cahen,
+								connective, euler, dottie, laplace,
+								lemniscate, omega, wallis, enum_count };
 
     enum_map constants_range = {"pi", "pi2", "e", "sqrt2", "sqrt3", "golden",
-	                            "ln2", "connective", "wallis", "lemniscate",
-								"euler", "omega", "apery", "catalan", "dottie"};
+	                            "ln2", "apery", "catalan", "cahen",
+								"connective", "euler", "dottie", "laplace",
+								"lemniscate", "omega", "wallis"};
 
     message<> m_bang
 	{
@@ -104,6 +106,12 @@ public:
 			break;
 			case constants::dottie:
 			out.send(0.7390851332);
+			break;
+			case constants::laplace:
+			out.send(0.6627434193);
+			break;
+			case constants::cahen:
+			out.send(0.6434105462);
 			break;
 		}
 	}

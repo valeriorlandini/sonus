@@ -166,7 +166,7 @@ public:
 	}
 
 	private:
-	amtl::BLOsc<double> osc_;
+	BLOsc<double> osc_;
 	double sine_amt_ = 1.0;
 	double saw_amt_ = 0.0;
 	double noise_amt_ = 0.0;

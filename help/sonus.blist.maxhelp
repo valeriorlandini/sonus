@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 731.0, 418.0, 847.0, 474.0 ],
+		"rect" : [ 99.0, 100.0, 847.0, 474.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -183,7 +183,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 450.0, 209.5, 282.0, 55.0 ],
+					"patching_rect" : [ 450.0, 209.5, 284.0, 55.0 ],
 					"text" : "if checked, the output is a number instead of a symbol. if the item cannot be represented as a number, it is converted to 0.0"
 				}
 
@@ -252,7 +252,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 55.0, 805.0, 29.0 ],
-					"text" : "output a different item of a list according to the inlet"
+					"text" : "output a different item from a list according to the inlet"
 				}
 
 			}

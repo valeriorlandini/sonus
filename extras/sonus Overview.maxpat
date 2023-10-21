@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 208.0, 85.0, 1032.0, 733.0 ],
+		"rect" : [ 375.0, 292.0, 1032.0, 733.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -270,7 +270,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 776.0, 195.0, 233.0, 20.0 ],
-					"text" : "Output a different item of a list"
+					"text" : "Output different items from a list"
 				}
 
 			}

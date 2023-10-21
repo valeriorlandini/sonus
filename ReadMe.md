@@ -6,43 +6,43 @@ artificial intelligence and weird sounds.
 Currently finished externals are:
 
 ### Generators
-* `sonus.lorenz~`
-* `sonus.nwosc~`
-* `sonus.pulsar~`
-* `sonus.roessler~`
-* `sonus.rsosc~`
-* `sonus.vaosc~`
-* `sonus.window~`
+* `sonus.lorenz~` Lorenz attractor based generator
+* `sonus.nwosc~` User defined wavetable oscillator
+* `sonus.pulsar~` Pulsar oscillator
+* `sonus.roessler~` Rössler attractor based generator
+* `sonus.rsosc~` Oscillator with random shapes
+* `sonus.vaosc~` Multishape bandlimited oscillator
+* `sonus.window~` Window functions generator
 
 ### Effects and Sample Manipulation
-* `sonus.8bitinv~`
-* `sonus.bitman~`
-* `sonus.buffx`
-* `sonus.cheby~`
-* `sonus.quadpan~`
-* `sonus.wavesets`
+* `sonus.8bitinv~` Bitcrusher and bit inverter
+* `sonus.bitman~` Bit manipulator
+* `sonus.buffx` Apply effects to buffers
+* `sonus.cheby~` Chebyshev waveshaper
+* `sonus.quadpan~` Quadraphonic panner
+* `sonus.wavesets` Wavesets based sample manipulation
 
 ### Neural Networks and AI
-* `sonus.acti`
-* `sonus.acti~`
-* `sonus.ca`
-* `sonus.ga`
-* `sonus.ga.num`
-* `sonus.linden`
-* `sonus.neuron`
-* `sonus.perceptron~`
+* `sonus.acti` Activation functions
+* `sonus.acti~` Activation functions (signal rate)
+* `sonus.ca` Cellular automata system
+* `sonus.ga` Genetic algorithm implementation
+* `sonus.ga.num` Genetic algorithm implementation (numbers version)
+* `sonus.linden` Lindenmayer generative system
+* `sonus.neuron` Artificial neuron implementation
+* `sonus.perceptron~` Classic perceptron implementation
 
 ### Math and Utilities
-* `sonus.blist`
-* `sonus.fselector~`
-* `sonus.hop`
-* `sonus.llist`
-* `sonus.lurn`
-* `sonus.mathc`
-* `sonus.mima~`
-* `sonus.quadpanner`
-* `sonus.summer~`
-* `sonus.tent`
+* `sonus.blist` Output different items from a list
+* `sonus.fselector~` Continuous selector/mixer
+* `sonus.hop` Hot inlets operations
+* `sonus.llist` Similar to line, but for list of numbers
+* `sonus.lurn` Non repeating random sequences
+* `sonus.mathc` Mathematical constants
+* `sonus.mima~` Signal extremes analyzer
+* `sonus.quadpanner` Quadraphonic panner coefficients
+* `sonus.summer~` Simple signal mixer
+* `sonus.tent` Tent map calculator
 
 
 ## How to build
