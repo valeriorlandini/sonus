@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 99.0, 90.0, 854.0, 844.0 ],
+		"rect" : [ 485.0, 140.0, 838.0, 843.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,45 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"bubble" : 1,
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
+					"id" : "obj-53",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 582.388066053390503, 618.5, 217.0, 55.0 ],
+					"text" : "apply fade in or out, syntax: fade <in /out> <time> <unit: ms / % (default ms)>"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-52",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 480.5, 649.5, 95.0, 22.0 ],
+					"text" : "fade out 750 ms"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-51",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 480.5, 625.5, 75.0, 22.0 ],
+					"text" : "fade in 33 %"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"bubble" : 1,
 					"fontname" : "Arial",
@@ -107,7 +146,7 @@
 			}
 , 			{
 				"box" : 				{
-					"buffername" : "1001_tomix",
+					"buffername" : "1000_tomix",
 					"id" : "obj-43",
 					"maxclass" : "waveform~",
 					"numinlets" : 5,
@@ -498,7 +537,7 @@
 			}
 , 			{
 				"box" : 				{
-					"buffername" : "1001_sample",
+					"buffername" : "1000_sample",
 					"id" : "obj-7",
 					"maxclass" : "waveform~",
 					"numinlets" : 5,
@@ -864,6 +903,20 @@
 					"destination" : [ "obj-46", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-50", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-51", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-52", 0 ]
 				}
 
 			}

@@ -1,5 +1,5 @@
 # sonus
-A collection of various Max/MSP objects for creative patching. This package was born as a collection of some custom externals
+A collection of various Max/MSP objects for creative patching coded in C++. This package was born as a collection of some custom externals
 I made for different projects, so they are not really linked by a common thread. They anyway more or less deal with math,
 artificial intelligence and weird sounds.
 

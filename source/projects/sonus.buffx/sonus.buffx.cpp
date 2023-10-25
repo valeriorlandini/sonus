@@ -132,7 +132,7 @@ public:
         {
             if (args.size() < 1)
             {
-                cerr << "Syntax: lowpass <cutoff frequency> <resonance [optional, defaults to 0.707]>" << endl;
+                cerr << "Syntax: lowpass <cutoff frequency> <resonance [optional, default 0.707]>" << endl;
 
                 return {};
             }
@@ -175,7 +175,7 @@ public:
         {
             if (args.size() < 1)
             {
-                cerr << "Syntax: hipass <cutoff frequency> <resonance [optional, defaults to 0.707]>" << endl;
+                cerr << "Syntax: hipass <cutoff frequency> <resonance [optional, default 0.707]>" << endl;
 
                 return {};
             }
@@ -218,7 +218,7 @@ public:
         {
             if (args.size() < 1)
             {
-                cerr << "Syntax: hipass <cutoff frequency> <resonance [optional, defaults to 0.707]>" << endl;
+                cerr << "Syntax: hipass <cutoff frequency> <resonance [optional, default 0.707]>" << endl;
 
                 return {};
             }
@@ -261,7 +261,7 @@ public:
         {
             if (args.size() < 1)
             {
-                cerr << "Syntax: notch <cutoff frequency> <resonance [optional, defaults to 0.707]>" << endl;
+                cerr << "Syntax: notch <cutoff frequency> <resonance [optional, default 0.707]>" << endl;
 
                 return {};
             }
@@ -304,7 +304,7 @@ public:
         {
             if (args.size() < 1)
             {
-                cerr << "Syntax: allpass <cutoff frequency> <resonance [optional, defaults to 0.707]>" << endl;
+                cerr << "Syntax: allpass <cutoff frequency> <resonance [optional, default 0.707]>" << endl;
 
                 return {};
             }
@@ -419,7 +419,7 @@ public:
 
             if (args.size() < 1)
             {
-                cerr << "Syntax: distort <gain> <wet [optional, defaults to 1.0]>" << endl;
+                cerr << "Syntax: distort <gain> <wet [optional, default 1.0]>" << endl;
 
                 return {};
             }
@@ -460,7 +460,7 @@ public:
 
             if (args.size() < 1)
             {
-                cerr << "Syntax: bits <bit depth> <wet [optional, defaults to 1.0]>" << endl;
+                cerr << "Syntax: bits <bit depth> <wet [optional, default 1.0]>" << endl;
 
                 return {};
             }
@@ -501,7 +501,7 @@ public:
 
             if (args.size() < 1)
             {
-                cerr << "Syntax: mix <time in milliseconds> <feedback [optional, defaults to 0.0]>" << endl;
+                cerr << "Syntax: mix <time in milliseconds> <feedback [optional, default 0.0]>" << endl;
 
                 return {};
             }
@@ -539,6 +539,77 @@ public:
             return {};
         }
     };
+
+    message<> fade
+    {
+        this,
+        "fade",
+        "Fade in or out: fade [in / out] [time] [ms / %]",
+        MIN_FUNCTION
+        {
+            buffer_lock<> b(m_buffer);
+
+            if (args.size() < 2)
+            {
+                cerr << "Syntax: fade <in / out> <time> <time unit: ms or %, default ms>" << endl;
+
+                return {};
+            }
+
+            bool fade_out = (args.at(0) == "out");
+            double fade_time = double(args.at(1));
+            bool ms = true;
+
+            if (args.size() > 2)
+            {
+                ms = (args.at(2) == "ms");
+            }
+
+            if (b.valid())
+            {
+                unsigned int fade_samples = 0;
+
+                if (ms)
+                {
+                    fade_time = std::clamp(fade_time, 0.0, 1000.0 * b.frame_count() / b.samplerate());
+                    fade_samples = (unsigned int)(floor(fade_time * b.samplerate() * 0.001));
+                }
+                else
+                {
+                    fade_time = std::clamp(fade_time, 0.0, 100.0);
+                    fade_samples = (unsigned int)(floor(b.frame_count() * fade_time * 0.01));
+                }
+
+                fade_samples = std::clamp(fade_samples, (unsigned int)0, (unsigned int)(b.frame_count() - 1));
+
+                for (auto ch = 0; ch < b.channel_count(); ch++)
+                {
+                    if (fade_samples > 0)
+                    {
+                        if (!fade_out)
+                        {
+                            for (auto s = 0; s < fade_samples; s++)
+                            {
+                                b.lookup(s, ch) *= std::pow((double)s / (double)fade_samples, 2.0);
+                            }
+                        }
+                        else
+                        {
+                            double target = (double)(b.frame_count() - 1 - fade_samples);
+                            for (auto s = b.frame_count() - 1; s > b.frame_count() - 1 - fade_samples; s--)
+                            {
+                                b.lookup(s, ch) *= std::pow((double)(b.frame_count() - 1 - s) / (double)fade_samples, 2.0);
+                            }
+                        }
+                    }    
+                }
+
+                b.dirty();
+            }        
+
+            return {};
+        }
+    };    
 
     message<> mix
     {
