@@ -28,6 +28,8 @@ SOFTWARE.
 #include <vector>
 #include <iostream>
 
+#include "interp.h"
+
 template <class TSample>
 class Delay
 {
@@ -57,13 +59,14 @@ private:
     TSample sample_rate_;
     TSample delay_time_;
 
-    int delay_samples_;
+    int delay_samples_[2];
+    TSample delay_interp_;
 
     TSample feedback_;
 
     TSample output_;
 
-    int read_pos_;
+    int read_pos_[2];
     int write_pos_;
 
     std::vector<TSample> buffer_;
@@ -92,7 +95,6 @@ Delay<TSample>::Delay(const TSample &sample_rate, const TSample &max_delay_time)
 
     buffer_.assign((unsigned int)ceil(max_delay_time_ * sample_rate_ * 0.001) + 1, 0.0);
 
-    read_pos_ = 0.0;
     write_pos_ = 0;
 
     set_time(max_delay_time_);
@@ -152,12 +154,17 @@ bool Delay<TSample>::set_time(const TSample &delay_time)
     {
         delay_time_ = delay_time;
 
-        delay_samples_ = (int)floor(sample_rate_ * delay_time_ * 0.001);
+        delay_samples_[0] = (int)floor(sample_rate_ * delay_time_ * 0.001);
+        delay_samples_[1] = (int)ceil(sample_rate_ * delay_time_ * 0.001) % buffer_.size();
+        delay_interp_ = (sample_rate_ * delay_time_ * 0.001) - floor(sample_rate_ * delay_time_ * 0.001);
 
-        read_pos_ = write_pos_ - delay_samples_;
-        if (read_pos_ < 0)
+        for (int p = 0; p <= 1; p++)
         {
-            read_pos_ = buffer_.size() + read_pos_;
+            read_pos_[p] = write_pos_ - delay_samples_[p];
+            if (read_pos_[p] < 0)
+            {
+                read_pos_[p] = buffer_.size() + read_pos_[p];
+            }
         }
 
         return true;
@@ -209,7 +216,7 @@ void Delay<TSample>::clear()
 template <class TSample>
 inline TSample Delay<TSample>::run(const TSample &input)
 {
-    output_ = (buffer_.at(read_pos_));
+    output_ = cosip(buffer_.at(read_pos_[0]), buffer_.at(read_pos_[1]), delay_interp_);
 
     buffer_.at(write_pos_) = input + (output_ * feedback_);
 
@@ -218,9 +225,12 @@ inline TSample Delay<TSample>::run(const TSample &input)
         write_pos_ = 0;
     }
 
-    if (++read_pos_ >= buffer_.size())
+    for (int p = 0; p <= 1; p++)
     {
-        read_pos_ = 0;
+        if (++read_pos_[p] >= buffer_.size())
+        {
+            read_pos_[p] = 0;
+        }
     }
 
     return output_;
