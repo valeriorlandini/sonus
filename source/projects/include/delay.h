@@ -147,7 +147,7 @@ bool Delay<TSample>::set_max_time(const TSample &max_delay_time, bool clear)
 
         if (delay_time_ > max_delay_time_)
         {
-            set_delay_time(max_delay_time_);
+            set_time(max_delay_time_);
         }
 
         return true;
