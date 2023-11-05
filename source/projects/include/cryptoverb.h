@@ -46,7 +46,7 @@ struct block_one
         Comb<TSample>(44100.0, 300.0, 233.0, 0.53, 0.33, 0.45),
         Comb<TSample>(44100.0, 30.0, 29.0, 0.67, 0.57, -0.77),
         Comb<TSample>(44100.0, 30.0, 5.0, 0.13, 0.71, -0.65),
-        Comb<TSample>(44100.0, 300.0, 289.0, 0.64, -0.76, 0.75)
+        Comb<TSample>(44100.0, 300.0, 283.0, 0.64, -0.76, 0.75)
     };
 
     Biquad<TSample> lowpass_l{Biquad<TSample>(44100.0, 15000.0)};
@@ -80,7 +80,7 @@ struct block_three
     std::array<Allpass<TSample>, 4> left = {
         Allpass<TSample>(44100.0, 10.0, 7.0, 0.67),
         Allpass<TSample>(44100.0, 100.0, 97.0, -0.7),
-        Allpass<TSample>(44100.0, 100.0, 91.0, 0.7),
+        Allpass<TSample>(44100.0, 100.0, 89.0, 0.7),
         Allpass<TSample>(44100.0, 20.0, 19.0, 0.7)
     };
 
@@ -101,10 +101,10 @@ struct block_four
     std::array<Allpass<TSample>, 6> left = {
         Allpass<TSample>(44100.0, 300.0, 233.0, -0.67),
         Allpass<TSample>(44100.0, 300.0, 239.0, -0.7),
-        Allpass<TSample>(44100.0, 100.0, 91.0, 0.7),
+        Allpass<TSample>(44100.0, 100.0, 89.0, 0.7),
         Allpass<TSample>(44100.0, 100.0, 97.0, 0.7),
         Allpass<TSample>(44100.0, 100.0, 31.0, 0.7),
-        Allpass<TSample>(44100.0, 300.0, 111.0, 0.7)
+        Allpass<TSample>(44100.0, 300.0, 113.0, 0.7)
     };
 
     std::array<Randsig<TSample>, 2> left_mod = {
@@ -116,9 +116,9 @@ struct block_four
         Allpass<TSample>(44100.0, 300.0, 239.0, 0.67),
         Allpass<TSample>(44100.0, 300.0, 233.0, 0.7),
         Allpass<TSample>(44100.0, 100.0, 97.0, 0.7),
-        Allpass<TSample>(44100.0, 100.0, 91.0, 0.7),
+        Allpass<TSample>(44100.0, 100.0, 89.0, 0.7),
         Allpass<TSample>(44100.0, 100.0, 31.0, 0.7),
-        Allpass<TSample>(44100.0, 300.0, 111.0, -0.7)
+        Allpass<TSample>(44100.0, 300.0, 113.0, -0.7)
     };
 
     std::array<Randsig<TSample>, 2> right_mod = {
@@ -126,8 +126,8 @@ struct block_four
         Randsig<TSample>(44100.0, 0.09)
     };
     
-    Biquad<TSample> lowpass_l{Biquad<TSample>(44100.0, 13000.0)};
-    Biquad<TSample> lowpass_r{Biquad<TSample>(44100.0, 13000.0)};
+    Biquad<TSample> lowpass_l{Biquad<TSample>(44100.0, 6000.0)};
+    Biquad<TSample> lowpass_r{Biquad<TSample>(44100.0, 6000.0)};
 };
 
 template <class TSample>
