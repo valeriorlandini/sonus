@@ -29,6 +29,7 @@ SOFTWARE.
 #include "allpass.h"
 #include "biquad.h"
 #include "comb.h"
+#include "randsig.h"
 #include "vaosc.h"
 
 template <class TSample>
@@ -95,6 +96,41 @@ struct block_three
 };
 
 template <class TSample>
+struct block_four
+{
+    std::array<Allpass<TSample>, 6> left = {
+        Allpass<TSample>(44100.0, 300.0, 233.0, -0.67),
+        Allpass<TSample>(44100.0, 300.0, 239.0, -0.7),
+        Allpass<TSample>(44100.0, 100.0, 91.0, 0.7),
+        Allpass<TSample>(44100.0, 100.0, 97.0, 0.7),
+        Allpass<TSample>(44100.0, 100.0, 31.0, 0.7),
+        Allpass<TSample>(44100.0, 300.0, 111.0, 0.7)
+    };
+
+    std::array<Randsig<TSample>, 2> left_mod = {
+        Randsig<TSample>(44100.0, 0.091),
+        Randsig<TSample>(44100.0, 0.11)
+    };
+
+    std::array<Allpass<TSample>, 6> right = {
+        Allpass<TSample>(44100.0, 300.0, 239.0, 0.67),
+        Allpass<TSample>(44100.0, 300.0, 233.0, 0.7),
+        Allpass<TSample>(44100.0, 100.0, 97.0, 0.7),
+        Allpass<TSample>(44100.0, 100.0, 91.0, 0.7),
+        Allpass<TSample>(44100.0, 100.0, 31.0, 0.7),
+        Allpass<TSample>(44100.0, 300.0, 111.0, -0.7)
+    };
+
+    std::array<Randsig<TSample>, 2> right_mod = {
+        Randsig<TSample>(44100.0, 0.097),
+        Randsig<TSample>(44100.0, 0.09)
+    };
+    
+    Biquad<TSample> lowpass_l{Biquad<TSample>(44100.0, 13000.0)};
+    Biquad<TSample> lowpass_r{Biquad<TSample>(44100.0, 13000.0)};
+};
+
+template <class TSample>
 class Cryptoverb
 {
     public:
@@ -107,6 +143,10 @@ class Cryptoverb
     bool set_sample_rate(const TSample &sample_rate = 44100.0);
     bool set_block_wet(const TSample &wet = 1.0, const unsigned int &block = 1);
 
+    TSample get_sample_rate();
+    TSample get_block_wet(const unsigned int &block = 1);
+    std::array<TSample, 2> get_outputs();
+
     inline std::array<TSample, 2> run(const TSample &input_l, const TSample &input_r);
 
     private:
@@ -117,6 +157,7 @@ class Cryptoverb
     block_one<TSample> block_one_;
     block_two<TSample> block_two_;
     block_three<TSample> block_three_;
+    block_four<TSample> block_four_;
 
     TSample block_one_wet_;
     TSample block_two_wet_;
@@ -126,7 +167,7 @@ class Cryptoverb
     std::array<TSample, 2> run_block_one_(const TSample &input_l, const TSample &input_r);
     std::array<TSample, 2> run_block_two_(const TSample &input_l, const TSample &input_r);
     std::array<TSample, 2> run_block_three_(const TSample &input_l, const TSample &input_r);
-
+    std::array<TSample, 2> run_block_four_(const TSample &input_l, const TSample &input_r);
 };
 
 template <class TSample>
@@ -160,16 +201,28 @@ bool Cryptoverb<TSample>::set_sample_rate(const TSample &sample_rate)
     {
         sample_rate_ = sample_rate;
 
-        for (auto i = 0; i < 4; i++)
+        for (auto i = 0; i < 6; i++)
         {
-            block_one_.left[i].set_sample_rate(sample_rate_);
-            block_one_.right[i].set_sample_rate(sample_rate_);
+            if (i < 2)
+            {
+                block_four_.left_mod[i].set_sample_rate(sample_rate_);
+                block_four_.right_mod[i].set_sample_rate(sample_rate_);
+            }
 
-            block_two_.left[i].set_sample_rate(sample_rate_);
-            block_two_.right[i].set_sample_rate(sample_rate_);
+            if (i < 4)
+            {
+                block_one_.left[i].set_sample_rate(sample_rate_);
+                block_one_.right[i].set_sample_rate(sample_rate_);
 
-            block_three_.left[i].set_sample_rate(sample_rate_);
-            block_three_.right[i].set_sample_rate(sample_rate_);
+                block_two_.left[i].set_sample_rate(sample_rate_);
+                block_two_.right[i].set_sample_rate(sample_rate_);
+
+                block_three_.left[i].set_sample_rate(sample_rate_);
+                block_three_.right[i].set_sample_rate(sample_rate_);
+            }
+
+            block_four_.left[i].set_sample_rate(sample_rate_);
+            block_four_.right[i].set_sample_rate(sample_rate_);
         }
 
         block_one_.lowpass_l.set_sample_rate(sample_rate_);
@@ -178,6 +231,8 @@ bool Cryptoverb<TSample>::set_sample_rate(const TSample &sample_rate)
         block_two_.lowpass_r.set_sample_rate(sample_rate_);
         block_three_.lfo_l.set_sample_rate(sample_rate_);
         block_three_.lfo_r.set_sample_rate(sample_rate_);
+        block_four_.lowpass_l.set_sample_rate(sample_rate_);
+        block_four_.lowpass_r.set_sample_rate(sample_rate_);
 
         return true;
     }
@@ -209,6 +264,41 @@ bool Cryptoverb<TSample>::set_block_wet(const TSample &wet, const unsigned int &
     return true;
 }
 
+template <class TSample>
+TSample Cryptoverb<TSample>::get_sample_rate()
+{
+    return sample_rate_;
+}
+
+template <class TSample>
+TSample Cryptoverb<TSample>::get_block_wet(const unsigned int &block)
+{
+    switch (block)
+    {
+        case 1:
+        return block_one_wet_ = std::clamp(wet, 0.0, 1.0);
+        break;
+        case 2:
+        return block_two_wet_ = std::clamp(wet, 0.0, 1.0);
+        break;
+        case 3:
+        return block_three_wet_ = std::clamp(wet, 0.0, 1.0);
+        break;
+        case 4:
+        return block_four_wet_ = std::clamp(wet, 0.0, 1.0);
+        break;
+        default:
+        return 0.0;
+    }
+}
+
+template <class TSample>
+std::array<TSample, 2> Cryptoverb<TSample>::get_outputs()
+{
+    std::array<TSample, 2> outputs = {output_l_, output_r_};
+
+    return outputs;
+}
 
 template <class TSample>
 inline std::array<TSample, 2> Cryptoverb<TSample>::run(const TSample &input_l, const TSample &input_r)
@@ -216,13 +306,18 @@ inline std::array<TSample, 2> Cryptoverb<TSample>::run(const TSample &input_l, c
     std::array<TSample, 2> output_1 = run_block_one_(input_l, input_r);
     TSample input_l2 = output_1[0] * block_one_wet_ + (1.0 - block_one_wet_) * input_l;
     TSample input_r2 = output_1[1] * block_one_wet_ + (1.0 - block_one_wet_) * input_r;
+
     std::array<TSample, 2> output_2 = run_block_two_(input_l2, input_r2);
     TSample input_l3 = output_2[0] * block_two_wet_ + (1.0 - block_two_wet_) * input_l2;
     TSample input_r3 = output_2[1] * block_two_wet_ + (1.0 - block_two_wet_) * input_r2;
-    std::array<TSample, 2> output_3 = run_block_three_(input_l3, input_r3);
 
-    output_l_ = output_3[0] * block_three_wet_ + (1.0 - block_three_wet_) * input_l3;
-    output_r_ = output_3[1] * block_three_wet_ + (1.0 - block_three_wet_) * input_r3;
+    std::array<TSample, 2> output_3 = run_block_three_(input_l3, input_r3);
+    TSample input_l4 = output_3[0] * block_three_wet_ + (1.0 - block_three_wet_) * input_l3;
+    TSample input_r4 = output_3[1] * block_three_wet_ + (1.0 - block_three_wet_) * input_r3;
+
+    std::array<TSample, 2> output_4 = run_block_four_(input_l4, input_r4);
+    output_l_ = output_4[0] * block_four_wet_ + (1.0 - block_four_wet_) * input_l4;
+    output_r_ = output_4[1] * block_four_wet_ + (1.0 - block_four_wet_) * input_r4;
 
     std::array<TSample, 2> outputs = {output_l_, output_r_};
 
@@ -288,11 +383,13 @@ std::array<TSample, 2> Cryptoverb<TSample>::run_block_three_(const TSample &inpu
     out_l = block_three_.left[1].run(out_l);
     out_l = block_three_.left[2].run(out_l);
     out_l = block_three_.left[3].run(out_l);
+    out_l *= 1.3;
 
     TSample out_r = block_three_.right[0].run(input_r);
     out_r = block_three_.right[1].run(out_r);
     out_r = block_three_.right[2].run(out_r);
     out_r = block_three_.right[3].run(out_r);
+    out_r *= 1.3;
     
     block_three_.lfo_l.run();
     TSample lfo_l_out = block_three_.lfo_l.get_sine();
@@ -303,6 +400,44 @@ std::array<TSample, 2> Cryptoverb<TSample>::run_block_three_(const TSample &inpu
     TSample lfo_r_out = block_three_.lfo_r.get_sine();
     lfo_r_out = ((lfo_r_out + 1.0) * 10.0) + 76.0;
     block_three_.right[2].set_time(lfo_r_out);
+
+    return std::array<TSample, 2> {out_l, out_r};  
+}
+
+template <class TSample>
+std::array<TSample, 2> Cryptoverb<TSample>::run_block_four_(const TSample &input_l, const TSample &input_r)
+{
+    TSample out_l = block_four_.left[0].run(input_l);
+    out_l = block_four_.left[1].run(out_l);
+    out_l = block_four_.left[2].run(out_l);
+    out_l = block_four_.left[3].run(out_l);
+    out_l = block_four_.left[4].run(out_l);
+    out_l = block_four_.left[5].run(out_l);
+    out_l = block_four_.lowpass_l.run(out_l);  
+
+    TSample out_r = block_four_.right[0].run(input_r);
+    out_r = block_four_.right[1].run(out_r);
+    out_r = block_four_.right[2].run(out_r);
+    out_r = block_four_.right[3].run(out_r);
+    out_r = block_four_.right[4].run(out_r);
+    out_r = block_four_.right[5].run(out_r);
+    out_r = block_four_.lowpass_r.run(out_r);  
+    
+    TSample lm1 = block_four_.left_mod[0].run();
+    lm1 = ((lm1 + 1.0) * 9.0) + 78.0;
+    block_four_.left[2].set_time(lm1);
+
+    TSample lm2 = block_four_.left_mod[1].run();
+    lm2 = ((lm2 + 1.0) * 91.0) + 111.0;
+    block_four_.left[5].set_time(lm2);
+
+    TSample rm1 = block_four_.right_mod[0].run();
+    rm1 = ((rm1 + 1.0) * 9.0) + 81.0;
+    block_four_.right[2].set_time(rm1);
+
+    TSample rm2 = block_four_.right_mod[1].run();
+    rm2 = ((rm2 + 1.0) * 86.0) + 111.0;
+    block_four_.right[5].set_time(rm2);
 
     return std::array<TSample, 2> {out_l, out_r};  
 }
