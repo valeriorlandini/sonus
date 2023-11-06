@@ -19,6 +19,7 @@ Currently finished externals are:
 * `sonus.bitman~` Bit manipulator
 * `sonus.buffx` Apply effects to buffers
 * `sonus.cheby~` Chebyshev waveshaper
+* `sonus.cryptoverb~` Eerie stereo reverberator
 * `sonus.quadpan~` Quadraphonic panner
 * `sonus.wavesets` Wavesets based sample manipulation
 

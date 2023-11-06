@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 99.0, 100.0, 840.0, 684.0 ],
+		"rect" : [ 99.0, 100.0, 840.0, 669.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,19 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"hidden" : 1,
+					"id" : "obj-7",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 60.0, 224.5, 70.0, 22.0 ],
+					"text" : "loadmess 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"bubble" : 1,
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
@@ -47,7 +60,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 206.5, 283.0, 206.0, 25.0 ],
+					"patching_rect" : [ 206.5, 270.0, 206.0, 25.0 ],
 					"text" : "wet amount of the whole effect"
 				}
 
@@ -63,7 +76,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 151.75, 284.5, 50.0, 22.0 ]
+					"patching_rect" : [ 151.75, 271.5, 50.0, 22.0 ]
 				}
 
 			}
@@ -75,8 +88,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 151.75, 205.5, 100.0, 22.0 ],
-					"text" : "loadmess 15000."
+					"patching_rect" : [ 151.75, 192.5, 100.0, 22.0 ],
+					"text" : "loadmess 12500."
 				}
 
 			}
@@ -89,7 +102,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 225.5, 237.5, 187.0, 25.0 ],
+					"patching_rect" : [ 225.5, 224.5, 187.0, 25.0 ],
 					"text" : "master lowpass filter cutoff"
 				}
 
@@ -105,7 +118,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 151.75, 404.5, 50.0, 22.0 ]
+					"patching_rect" : [ 151.75, 391.5, 50.0, 22.0 ]
 				}
 
 			}
@@ -120,7 +133,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 151.75, 380.5, 50.0, 22.0 ]
+					"patching_rect" : [ 151.75, 367.5, 50.0, 22.0 ]
 				}
 
 			}
@@ -135,7 +148,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 151.75, 356.5, 50.0, 22.0 ]
+					"patching_rect" : [ 151.75, 343.5, 50.0, 22.0 ]
 				}
 
 			}
@@ -148,8 +161,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 182.75, 440.0, 321.0, 25.0 ],
-					"text" : "switch between serial and parallel mode"
+					"patching_rect" : [ 182.75, 427.0, 321.0, 25.0 ],
+					"text" : "switch between serial (0) and parallel (1) mode"
 				}
 
 			}
@@ -162,7 +175,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 33.0, 527.0, 145.0, 22.0 ]
+					"patching_rect" : [ 33.0, 514.0, 145.0, 22.0 ]
 				}
 
 			}
@@ -176,7 +189,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 33.0, 527.0, 145.0, 22.0 ]
+					"patching_rect" : [ 33.0, 514.0, 145.0, 22.0 ]
 				}
 
 			}
@@ -188,7 +201,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 151.75, 440.0, 24.0, 24.0 ]
+					"patching_rect" : [ 151.75, 427.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -203,7 +216,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 151.75, 237.5, 67.0, 22.0 ]
+					"patching_rect" : [ 151.75, 224.5, 67.0, 22.0 ]
 				}
 
 			}
@@ -218,7 +231,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 151.75, 332.5, 50.0, 22.0 ]
+					"patching_rect" : [ 151.75, 319.5, 50.0, 22.0 ]
 				}
 
 			}
@@ -230,16 +243,29 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 151.75, 308.5, 80.0, 22.0 ],
-					"text" : "loadmess 0.5"
+					"patching_rect" : [ 60.0, 271.5, 87.0, 22.0 ],
+					"text" : "loadmess 0.75"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"basictuning" : 440,
+					"clipheight" : 32.0,
 					"data" : 					{
 						"clips" : [ 							{
+								"absolutepath" : "voice.wav",
+								"filename" : "voice.wav",
+								"filekind" : "audiofile",
+								"id" : "u880000399",
+								"selection" : [ 0.0, 1.0 ],
+								"loop" : 1,
+								"content_state" : 								{
+									"loop" : 1
+								}
+
+							}
+, 							{
 								"absolutepath" : "sample.wav",
 								"filename" : "sample.wav",
 								"filekind" : "audiofile",
@@ -265,7 +291,7 @@
 					"originaltempo" : 120.0,
 					"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 33.0, 124.0, 150.0, 30.0 ],
+					"patching_rect" : [ 33.0, 124.0, 145.0, 66.0 ],
 					"pitchcorrection" : 0,
 					"quality" : "basic",
 					"timestretch" : [ 0 ]
@@ -278,7 +304,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 33.0, 567.5, 45.0, 45.0 ]
+					"patching_rect" : [ 33.0, 554.5, 45.0, 45.0 ]
 				}
 
 			}
@@ -292,7 +318,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 212.5, 344.0, 291.25, 70.0 ],
+					"patching_rect" : [ 212.5, 331.0, 291.25, 70.0 ],
 					"text" : "wet amount for each of the four blocks of the effects. when they are all 0.0, it is the same that sending a 0.0 to the global wet, except that the lowpass is not bypassed"
 				}
 
@@ -306,7 +332,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 190.0, 126.5, 101.0, 25.0 ],
+					"patching_rect" : [ 189.0, 144.5, 101.0, 25.0 ],
 					"text" : "input"
 				}
 
@@ -317,7 +343,7 @@
 					"maxclass" : "live.line",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 628.0, 805.0, 5.0 ]
+					"patching_rect" : [ 16.0, 615.0, 805.0, 5.0 ]
 				}
 
 			}
@@ -339,7 +365,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 300.0, 651.0, 237.0, 22.0 ],
+					"patching_rect" : [ 300.0, 638.0, 237.0, 22.0 ],
 					"text" : "https://github.com/valeriorlandini/sonus",
 					"textcolor" : [ 0.0, 0.015686274509804, 0.396078431372549, 1.0 ]
 				}
@@ -354,7 +380,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 665.0, 129.0, 36.0 ],
+					"patching_rect" : [ 10.0, 652.0, 129.0, 36.0 ],
 					"text" : ";\r\nmax launchbrowser $1"
 				}
 
@@ -366,7 +392,7 @@
 					"numinlets" : 9,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 33.0, 490.0, 107.0, 22.0 ],
+					"patching_rect" : [ 33.0, 477.0, 107.0, 22.0 ],
 					"text" : "sonus.cryptoverb~"
 				}
 
@@ -422,7 +448,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 635.0, 805.0, 20.0 ],
+					"patching_rect" : [ 16.0, 622.0, 805.0, 20.0 ],
 					"text" : "handmade in italy by valerio orlandini",
 					"textjustification" : 1
 				}
@@ -584,6 +610,24 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-14", 0 ],
+					"hidden" : 1,
+					"order" : 0,
+					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-29", 0 ],
+					"hidden" : 1,
+					"order" : 1,
+					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-2", 2 ],
 					"source" : [ "obj-8", 0 ]
 				}
@@ -607,6 +651,13 @@
 , 			{
 				"name" : "sonus.cryptoverb~.mxe64",
 				"type" : "mx64"
+			}
+, 			{
+				"name" : "voice.wav",
+				"bootpath" : "~/Documents/Max 8/Packages/sonus/help",
+				"patcherrelativepath" : ".",
+				"type" : "WAVE",
+				"implicit" : 1
 			}
  ],
 		"autosave" : 0,
