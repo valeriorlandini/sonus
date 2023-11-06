@@ -42,6 +42,11 @@
 
 	<attributelist>
 
+		<attribute name='wet' get='1' set='1' type='float64' size='1' >
+			<digest></digest>
+			<description></description>
+		</attribute>
+
 	</attributelist>
 
 
