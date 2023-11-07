@@ -17,6 +17,7 @@ Currently finished externals are:
 ### Effects and Sample Manipulation
 * `sonus.8bitinv~` Bitcrusher and bit inverter
 * `sonus.bitman~` Bit manipulator
+* `sonus.biquads~` Parallel biquad filters
 * `sonus.buffx` Apply effects to buffers
 * `sonus.cheby~` Chebyshev waveshaper
 * `sonus.cryptoverb~` Eerie stereo reverberator
