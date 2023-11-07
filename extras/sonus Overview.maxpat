@@ -41,11 +41,35 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-76",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 276.0, 295.0, 233.0, 20.0 ],
+					"text" : "Parallel biquad filters"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-77",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 276.0, 270.0, 93.0, 22.0 ],
+					"presentation_linecount" : 2,
+					"text" : "sonus.biquads~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-74",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 276.0, 395.0, 233.0, 20.0 ],
+					"patching_rect" : [ 276.0, 445.0, 233.0, 20.0 ],
 					"text" : "Eerie stereo reverberator"
 				}
 
@@ -57,8 +81,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 276.0, 370.0, 107.0, 22.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 276.0, 420.0, 107.0, 22.0 ],
 					"text" : "sonus.cryptoverb~"
 				}
 
@@ -92,7 +115,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 276.0, 295.0, 233.0, 20.0 ],
+					"patching_rect" : [ 276.0, 345.0, 233.0, 20.0 ],
 					"text" : "Apply effects to buffers"
 				}
 
@@ -104,7 +127,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 276.0, 270.0, 70.0, 22.0 ],
+					"patching_rect" : [ 276.0, 320.0, 70.0, 22.0 ],
 					"text" : "sonus.buffx"
 				}
 
@@ -166,7 +189,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 276.0, 345.0, 233.0, 20.0 ],
+					"patching_rect" : [ 276.0, 395.0, 233.0, 20.0 ],
 					"text" : "Chebyshev waveshaper"
 				}
 
@@ -178,7 +201,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 276.0, 320.0, 83.0, 22.0 ],
+					"patching_rect" : [ 276.0, 370.0, 83.0, 22.0 ],
 					"text" : "sonus.cheby~"
 				}
 
@@ -725,7 +748,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 276.0, 445.0, 233.0, 20.0 ],
+					"patching_rect" : [ 276.0, 495.0, 233.0, 20.0 ],
 					"text" : "Quadraphonic panner"
 				}
 
@@ -802,7 +825,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 276.0, 495.0, 233.0, 20.0 ],
+					"patching_rect" : [ 276.0, 545.0, 233.0, 20.0 ],
 					"text" : "Wavesets based sample manipulation"
 				}
 
@@ -859,7 +882,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 276.0, 420.0, 98.0, 22.0 ],
+					"patching_rect" : [ 276.0, 470.0, 98.0, 22.0 ],
 					"text" : "sonus.quadpan~"
 				}
 
@@ -907,7 +930,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 276.0, 470.0, 94.0, 22.0 ],
+					"patching_rect" : [ 276.0, 520.0, 94.0, 22.0 ],
 					"text" : "sonus.wavesets"
 				}
 
@@ -1323,6 +1346,14 @@
 					"destination" : [ "obj-58", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-75", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-77", 0 ]
 				}
 
 			}

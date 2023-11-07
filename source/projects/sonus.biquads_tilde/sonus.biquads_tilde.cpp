@@ -125,6 +125,22 @@ public:
 		}
     };
 
+	message<> clear
+    {
+        this,
+        "clear",
+        "Clear the memory of the filters",
+        MIN_FUNCTION
+        {
+            lowpass_.clear();
+            highpass_.clear();
+            bandpass_.clear();
+            bandreject_.clear();
+
+			return {};
+		}
+	};
+
 	samples<4> operator()(sample input, sample sig_cutoff, sample sig_q)
     {
 		if (in_c.has_signal_connection())
