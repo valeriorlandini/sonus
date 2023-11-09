@@ -148,12 +148,12 @@ class Cryptoverb
     bool set_sample_rate(const TSample &sample_rate = 44100.0);
     bool set_block_wet(const TSample &wet = 1.0, const unsigned int &block = 1);
     bool set_lowpass_cutoff(const TSample &cutoff = 16000.0);
-    void set_mode(const bool &parallel_mode = false);
+    bool set_mode(const unsigned int &mode = 0);
 
     TSample get_sample_rate();
     TSample get_block_wet(const unsigned int &block = 1);
     TSample get_lowpass_cutoff();
-    bool get_mode();
+    unsigned int get_mode();
     std::array<TSample, 2> get_outputs();
 
     inline std::array<TSample, 2> run(const TSample &input_l, const TSample &input_r);
@@ -163,7 +163,7 @@ class Cryptoverb
     TSample output_l_;
     TSample output_r_;
 
-    bool parallel_mode_;
+    unsigned int mode_;
 
     block_one<TSample> block_one_;
     block_two<TSample> block_two_;
@@ -296,9 +296,18 @@ bool Cryptoverb<TSample>::set_lowpass_cutoff(const TSample &cutoff)
 }
 
 template <class TSample>
-void Cryptoverb<TSample>::set_mode(const bool &parallel_mode)
+bool Cryptoverb<TSample>::set_mode(const unsigned int &mode)
 {
-    parallel_mode_ = parallel_mode;
+    if (mode <= 2)
+    {
+        mode_ = mode;
+
+        return true;
+    }
+
+    std::cerr << "Cryptoverb::mode_ can be 0, 1 or 2\n";
+
+    return false;
 }
 
 template <class TSample>
@@ -336,9 +345,9 @@ TSample Cryptoverb<TSample>::get_lowpass_cutoff()
 }
 
 template <class TSample>
-bool Cryptoverb<TSample>::get_mode()
+unsigned int Cryptoverb<TSample>::get_mode()
 {
-    return parallel_mode_;
+    return mode_;
 }
 
 template <class TSample>
@@ -352,7 +361,7 @@ std::array<TSample, 2> Cryptoverb<TSample>::get_outputs()
 template <class TSample>
 inline std::array<TSample, 2> Cryptoverb<TSample>::run(const TSample &input_l, const TSample &input_r)
 {
-    if (parallel_mode_)
+    if (mode_ == 0)
     {
         std::array<TSample, 2> output_1 = run_block_one_(input_l, input_r);
         TSample output_l1 = output_1[0] * block_one_wet_ + (1.0 - block_one_wet_) * input_l;
@@ -373,7 +382,7 @@ inline std::array<TSample, 2> Cryptoverb<TSample>::run(const TSample &input_l, c
         output_l_ = (output_l1 + output_l2 + output_l3 + output_l4) * 0.25;
         output_r_ = (output_r1 + output_r2 + output_r3 + output_r4) * 0.25;
     }
-    else
+    else if (mode_ == 1)
     {
         std::array<TSample, 2> output_1 = run_block_one_(input_l, input_r);
         TSample input_l2 = output_1[0] * block_one_wet_ + (1.0 - block_one_wet_) * input_l;
@@ -390,6 +399,27 @@ inline std::array<TSample, 2> Cryptoverb<TSample>::run(const TSample &input_l, c
         std::array<TSample, 2> output_4 = run_block_four_(input_l4, input_r4);
         output_l_ = output_4[0] * block_four_wet_ + (1.0 - block_four_wet_) * input_l4;
         output_r_ = output_4[1] * block_four_wet_ + (1.0 - block_four_wet_) * input_r4;
+    }
+    else if (mode_ == 2)
+    {
+        std::array<TSample, 2> output_3 = run_block_three_(input_l, input_r);
+        TSample input_l4 = output_3[0] * block_three_wet_ + (1.0 - block_three_wet_) * input_l;
+        TSample input_r4 = output_3[1] * block_three_wet_ + (1.0 - block_three_wet_) * input_r;
+
+        std::array<TSample, 2> output_4 = run_block_four_(input_l4, input_r4);
+        TSample input_lc = output_4[0] * block_four_wet_ + (1.0 - block_four_wet_) * input_l4;
+        TSample input_rc = output_4[1] * block_four_wet_ + (1.0 - block_four_wet_) * input_r4;
+
+        std::array<TSample, 2> output_1 = run_block_one_(input_lc, input_rc);
+        TSample output_l1 = output_1[0] * block_one_wet_ + (1.0 - block_one_wet_) * input_lc;
+        TSample output_r1 = output_1[1] * block_one_wet_ + (1.0 - block_one_wet_) * input_rc;
+
+        std::array<TSample, 2> output_2 = run_block_two_(input_lc, input_rc);
+        TSample output_l2 = output_2[0] * block_two_wet_ + (1.0 - block_two_wet_) * input_lc;
+        TSample output_r2 = output_2[1] * block_two_wet_ + (1.0 - block_two_wet_) * input_rc;
+
+        output_l_ = (output_l1 + output_l2) * 0.5;
+        output_r_ = (output_r1 + output_r2) * 0.5;
     }
 
     output_l_ = lowpass_l_.run(output_l_);

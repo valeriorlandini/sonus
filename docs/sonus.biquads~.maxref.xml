@@ -45,6 +45,11 @@
 			<description>Depends on the inlet </description>
 		</method>
 
+		<method name='clear'>
+			<digest>Clear the memory of the filters </digest>
+			<description>Clear the memory of the filters </description>
+		</method>
+
 	</methodlist>
 
 

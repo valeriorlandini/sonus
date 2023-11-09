@@ -31,8 +31,8 @@
 	<methodlist>
 
 		<method name='float'>
-			<digest>Block wet </digest>
-			<description>Block wet </description>
+			<digest>Depends on the inlet </digest>
+			<description>Depends on the inlet </description>
 		</method>
 
 	</methodlist>
@@ -45,6 +45,11 @@
 		<attribute name='wet' get='1' set='1' type='float64' size='1' >
 			<digest></digest>
 			<description></description>
+		</attribute>
+
+		<attribute name='mode' get='1' set='1' type='long' size='1' >
+			<digest>Mode changes the way the four internal blocks are arranged</digest>
+			<description>Mode changes the way the four internal blocks are arranged. </description>
 		</attribute>
 
 	</attributelist>

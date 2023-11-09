@@ -24,7 +24,7 @@ public:
 	inlet<> in_w2 {this, "(float) Block 2 wet (0-1)"};
 	inlet<> in_w3 {this, "(float) Block 3 wet (0-1)"};
 	inlet<> in_w4 {this, "(float) Block 4 wet (0-1)"};
-	inlet<> in_pm {this, "(int) Serial or parallel mode (0/1)"};
+	inlet<> in_pm {this, "(int) Blocks arrangement mode (0-2)"};
 	outlet<> out_l {this, "(signal) Left channel output", "signal"};
 	outlet<> out_r {this, "(signal) Right channel output", "signal"};
 
@@ -48,11 +48,29 @@ public:
         title {"Global wet"}
     };
 
+	attribute<int, threadsafe::no, limit::clamp> mode
+	{
+        this,
+        "mode",
+        0,
+		range { 0, 2 },
+        title {"Mode"},
+		description {"Mode changes the way the four internal blocks are arranged."},
+        setter
+		{
+			MIN_FUNCTION
+			{
+				cryptoverb_.set_mode(int(args[0]));
+				return args;
+        	}
+		}
+    };
+
 	message<> m_number
 	{
 		this,
 		"number",
-		"Block wet",
+		"Depends on the inlet",
         MIN_FUNCTION
 		{
 			switch (inlet)
@@ -70,7 +88,7 @@ public:
 				cryptoverb_.set_block_wet(args[0], inlet - 3);
 				break;
 				case 8:
-				cryptoverb_.set_mode(bool(args[0]));
+				mode = int(args[0]);
 				break;
 			}
 
