@@ -143,7 +143,7 @@ class Cryptoverb
                const TSample &block_three_wet = 1.0,
                const TSample &block_four_wet = 1.0,
                const TSample &lowpass_cutoff = 16000.0,
-               const bool &parallel_mode = false);
+               const unsigned int &mode = 0);
 
     bool set_sample_rate(const TSample &sample_rate = 44100.0);
     bool set_block_wet(const TSample &wet = 1.0, const unsigned int &block = 1);
@@ -191,7 +191,7 @@ Cryptoverb<TSample>::Cryptoverb(const TSample &sample_rate,
                                 const TSample &block_three_wet,
                                 const TSample &block_four_wet,
                                 const TSample &lowpass_cutoff,
-                                const bool &parallel_mode)
+                                const unsigned int &mode)
 {
     if (sample_rate > 0.0)
     {
@@ -207,8 +207,9 @@ Cryptoverb<TSample>::Cryptoverb(const TSample &sample_rate,
     set_block_wet(block_two_wet, 2);
     set_block_wet(block_three_wet, 3);
     set_block_wet(block_four_wet, 4);
-
-    set_mode(parallel_mode);
+    
+    mode_ = 0;
+    set_mode(mode);
 }
 
 template <class TSample>

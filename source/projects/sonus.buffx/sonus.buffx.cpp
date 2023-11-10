@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <random>
 #include "../include/biquad.h"
+#include "../include/cryptoverb.h"
 #include "../include/delay.h"
 #include "../include/distortions.h"
 
@@ -529,7 +530,7 @@ public:
                     
                     for (auto s = 0; s < b.frame_count(); s++)
                     {
-                        b.lookup(s, ch) += delay.run(double(b.lookup(s, ch))) * wet;// + b.lookup(s, ch) * (1.0 - wet);
+                        b.lookup(s, ch) += delay.run(double(b.lookup(s, ch))) * wet;
                     }
                 }
 

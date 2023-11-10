@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 485.0, 140.0, 838.0, 843.0 ],
+		"rect" : [ 99.0, 100.0, 838.0, 843.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -146,7 +146,7 @@
 			}
 , 			{
 				"box" : 				{
-					"buffername" : "1000_tomix",
+					"buffername" : "1002_tomix",
 					"id" : "obj-43",
 					"maxclass" : "waveform~",
 					"numinlets" : 5,
@@ -537,7 +537,7 @@
 			}
 , 			{
 				"box" : 				{
-					"buffername" : "1000_sample",
+					"buffername" : "1002_sample",
 					"id" : "obj-7",
 					"maxclass" : "waveform~",
 					"numinlets" : 5,
