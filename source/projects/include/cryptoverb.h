@@ -271,16 +271,16 @@ bool Cryptoverb<TSample>::set_block_wet(const TSample &wet, const unsigned int &
     switch (block)
     {
         case 1:
-        block_one_wet_ = std::clamp(wet, 0.0, 1.0);
+        block_one_wet_ = std::clamp(wet, (TSample)0.0, (TSample)1.0);
         break;
         case 2:
-        block_two_wet_ = std::clamp(wet, 0.0, 1.0);
+        block_two_wet_ = std::clamp(wet, (TSample)0.0, (TSample)1.0);
         break;
         case 3:
-        block_three_wet_ = std::clamp(wet, 0.0, 1.0);
+        block_three_wet_ = std::clamp(wet, (TSample)0.0, (TSample)1.0);
         break;
         case 4:
-        block_four_wet_ = std::clamp(wet, 0.0, 1.0);
+        block_four_wet_ = std::clamp(wet, (TSample)0.0, (TSample)1.0);
         break;
     }
 
@@ -323,16 +323,16 @@ TSample Cryptoverb<TSample>::get_block_wet(const unsigned int &block)
     switch (block)
     {
         case 1:
-        return block_one_wet_ = std::clamp(wet, 0.0, 1.0);
+        return block_one_wet_;
         break;
         case 2:
-        return block_two_wet_ = std::clamp(wet, 0.0, 1.0);
+        return block_two_wet_;
         break;
         case 3:
-        return block_three_wet_ = std::clamp(wet, 0.0, 1.0);
+        return block_three_wet_;
         break;
         case 4:
-        return block_four_wet_ = std::clamp(wet, 0.0, 1.0);
+        return block_four_wet_;
         break;
         default:
         return 0.0;
@@ -342,7 +342,7 @@ TSample Cryptoverb<TSample>::get_block_wet(const unsigned int &block)
 template <class TSample>
 TSample Cryptoverb<TSample>::get_lowpass_cutoff()
 {
-    return lowpass_l.get_cutoff();
+    return lowpass_l_.get_cutoff();
 }
 
 template <class TSample>

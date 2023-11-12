@@ -17,6 +17,10 @@ OTHER DEALINGS IN THE SOFTWARE.
 #include <cmath>
 #include <vector>
 
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+
 template <class TSample>
 inline TSample linip(const TSample &a, const TSample &b, const TSample &t)
 {

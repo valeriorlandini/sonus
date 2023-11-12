@@ -6,6 +6,14 @@
 #include "c74_min.h"
 #include <cmath>
 
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+
+#ifndef M_PI_2
+#define M_PI_2 (M_PI * 0.5)
+#endif
+
 using namespace c74::min;
 
 class quadpan_tilde : public object<quadpan_tilde>, public sample_operator<3, 4>
