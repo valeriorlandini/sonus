@@ -21,7 +21,9 @@ Currently finished externals are:
 * `sonus.buffx` Apply effects to buffers
 * `sonus.cheby~` Chebyshev waveshaper
 * `sonus.cryptoverb~` Eerie stereo reverberator
+* `sonus.fselector~` Continuous selector/mixer
 * `sonus.quadpan~` Quadraphonic panner
+* `sonus.summer~` Simple signal mixer
 * `sonus.wavesets` Wavesets based sample manipulation
 
 ### Neural Networks and AI
@@ -36,14 +38,13 @@ Currently finished externals are:
 
 ### Math and Utilities
 * `sonus.blist` Output different items from a list
-* `sonus.fselector~` Continuous selector/mixer
 * `sonus.hop` Hot inlets operations
 * `sonus.llist` Similar to line, but for list of numbers
 * `sonus.lurn` Non repeating random sequences
 * `sonus.mathc` Mathematical constants
 * `sonus.mima~` Signal extremes analyzer
+* `sonus.mbox` Pop up dialogs generator
 * `sonus.quadpanner` Quadraphonic panner coefficients
-* `sonus.summer~` Simple signal mixer
 * `sonus.tent` Tent map calculator
 
 
