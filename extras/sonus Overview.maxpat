@@ -41,6 +41,29 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-78",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 776.0, 495.0, 233.0, 20.0 ],
+					"text" : "Pop up dialogs generator"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-79",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 776.0, 470.0, 73.0, 22.0 ],
+					"text" : "sonus.mbox"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-76",
 					"maxclass" : "comment",
 					"numinlets" : 1,
@@ -58,7 +81,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 276.0, 270.0, 93.0, 22.0 ],
-					"presentation_linecount" : 2,
 					"text" : "sonus.biquads~"
 				}
 
@@ -92,7 +114,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 776.0, 595.0, 233.0, 20.0 ],
+					"patching_rect" : [ 276.0, 645.0, 233.0, 20.0 ],
 					"text" : "Simple signal mixer"
 				}
 
@@ -104,7 +126,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 776.0, 570.0, 94.0, 22.0 ],
+					"patching_rect" : [ 276.0, 620.0, 94.0, 22.0 ],
 					"text" : "sonus.summer~"
 				}
 
@@ -212,7 +234,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 776.0, 345.0, 233.0, 20.0 ],
+					"patching_rect" : [ 776.0, 295.0, 233.0, 20.0 ],
 					"text" : "Similar to line, but for list of numbers"
 				}
 
@@ -224,7 +246,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 776.0, 320.0, 65.0, 22.0 ],
+					"patching_rect" : [ 776.0, 270.0, 65.0, 22.0 ],
 					"text" : "sonus.lline"
 				}
 
@@ -408,7 +430,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 776.0, 445.0, 233.0, 20.0 ],
+					"patching_rect" : [ 776.0, 395.0, 233.0, 20.0 ],
 					"text" : "Mathematical constants"
 				}
 
@@ -420,7 +442,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 776.0, 420.0, 77.0, 22.0 ],
+					"patching_rect" : [ 776.0, 370.0, 77.0, 22.0 ],
 					"text" : "sonus.mathc"
 				}
 
@@ -431,7 +453,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 776.0, 395.0, 233.0, 20.0 ],
+					"patching_rect" : [ 776.0, 345.0, 233.0, 20.0 ],
 					"text" : "Non repeating random sequences"
 				}
 
@@ -443,7 +465,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 776.0, 370.0, 64.0, 22.0 ],
+					"patching_rect" : [ 776.0, 320.0, 64.0, 22.0 ],
 					"text" : "sonus.lurn"
 				}
 
@@ -703,7 +725,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 776.0, 645.0, 233.0, 20.0 ],
+					"patching_rect" : [ 776.0, 595.0, 233.0, 20.0 ],
 					"text" : "Tent map calculator"
 				}
 
@@ -715,7 +737,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 776.0, 620.0, 64.0, 22.0 ],
+					"patching_rect" : [ 776.0, 570.0, 64.0, 22.0 ],
 					"text" : "sonus.tent"
 				}
 
@@ -748,7 +770,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 276.0, 495.0, 233.0, 20.0 ],
+					"patching_rect" : [ 276.0, 545.0, 233.0, 20.0 ],
 					"text" : "Quadraphonic panner"
 				}
 
@@ -759,7 +781,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 776.0, 495.0, 233.0, 20.0 ],
+					"patching_rect" : [ 776.0, 445.0, 233.0, 20.0 ],
 					"text" : "Signal extremes analyzer"
 				}
 
@@ -770,7 +792,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 776.0, 295.0, 233.0, 20.0 ],
+					"patching_rect" : [ 776.0, 245.0, 233.0, 20.0 ],
 					"text" : "Hot inlets operations"
 				}
 
@@ -781,7 +803,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 776.0, 245.0, 233.0, 20.0 ],
+					"patching_rect" : [ 276.0, 495.0, 233.0, 20.0 ],
 					"text" : "Continuous selector/mixer"
 				}
 
@@ -825,7 +847,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 276.0, 545.0, 233.0, 20.0 ],
+					"patching_rect" : [ 276.0, 595.0, 233.0, 20.0 ],
 					"text" : "Wavesets based sample manipulation"
 				}
 
@@ -882,7 +904,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 276.0, 470.0, 98.0, 22.0 ],
+					"patching_rect" : [ 276.0, 520.0, 98.0, 22.0 ],
 					"text" : "sonus.quadpan~"
 				}
 
@@ -894,7 +916,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 776.0, 220.0, 96.0, 22.0 ],
+					"patching_rect" : [ 276.0, 470.0, 96.0, 22.0 ],
 					"text" : "sonus.fselector~"
 				}
 
@@ -906,7 +928,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 776.0, 470.0, 80.0, 22.0 ],
+					"patching_rect" : [ 776.0, 420.0, 80.0, 22.0 ],
 					"text" : "sonus.mima~"
 				}
 
@@ -918,7 +940,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 776.0, 270.0, 64.0, 22.0 ],
+					"patching_rect" : [ 776.0, 220.0, 64.0, 22.0 ],
 					"text" : "sonus.hop"
 				}
 
@@ -930,7 +952,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 276.0, 520.0, 94.0, 22.0 ],
+					"patching_rect" : [ 276.0, 570.0, 94.0, 22.0 ],
 					"text" : "sonus.wavesets"
 				}
 
@@ -1354,6 +1376,14 @@
 					"destination" : [ "obj-58", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-77", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-79", 0 ]
 				}
 
 			}

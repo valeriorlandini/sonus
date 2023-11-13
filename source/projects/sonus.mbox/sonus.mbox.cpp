@@ -38,9 +38,11 @@ public:
 			#endif
 
 			#ifdef __APPLE__
+            NSString *titleNSString = [NSString stringWithUTF8String:message_title_.c_str()];
+            NSString *textNSString = [NSString stringWithUTF8String:message_text_.c_str()];
     		NSAlert *alert = [[NSAlert alloc] init];
-    		[alert setMessageText:message_title_.c_str()];
-    		[alert setInformativeText:message_text_.c_str()];
+    		[alert setMessageText:titleNSString];
+    		[alert setInformativeText:textNSString];
     		[alert runModal];
     		#endif
 
