@@ -42,8 +42,8 @@ Currently finished externals are:
 * `sonus.llist` Similar to line, but for list of numbers
 * `sonus.lurn` Non repeating random sequences
 * `sonus.mathc` Mathematical constants
-* `sonus.mima~` Signal extremes analyzer
 * `sonus.mbox` Pop up dialogs generator
+* `sonus.mima~` Signal extremes analyzer
 * `sonus.quadpanner` Quadraphonic panner coefficients
 * `sonus.tent` Tent map calculator
 

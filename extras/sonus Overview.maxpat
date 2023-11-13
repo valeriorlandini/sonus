@@ -45,7 +45,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 776.0, 495.0, 233.0, 20.0 ],
+					"patching_rect" : [ 776.0, 445.0, 233.0, 20.0 ],
 					"text" : "Pop up dialogs generator"
 				}
 
@@ -57,7 +57,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 776.0, 470.0, 73.0, 22.0 ],
+					"patching_rect" : [ 776.0, 420.0, 73.0, 22.0 ],
 					"text" : "sonus.mbox"
 				}
 
@@ -114,7 +114,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 276.0, 645.0, 233.0, 20.0 ],
+					"patching_rect" : [ 276.0, 595.0, 233.0, 20.0 ],
 					"text" : "Simple signal mixer"
 				}
 
@@ -126,7 +126,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 276.0, 620.0, 94.0, 22.0 ],
+					"patching_rect" : [ 276.0, 570.0, 94.0, 22.0 ],
 					"text" : "sonus.summer~"
 				}
 
@@ -781,7 +781,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 776.0, 445.0, 233.0, 20.0 ],
+					"patching_rect" : [ 776.0, 495.0, 233.0, 20.0 ],
 					"text" : "Signal extremes analyzer"
 				}
 
@@ -847,7 +847,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 276.0, 595.0, 233.0, 20.0 ],
+					"patching_rect" : [ 276.0, 645.0, 233.0, 20.0 ],
 					"text" : "Wavesets based sample manipulation"
 				}
 
@@ -928,7 +928,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 776.0, 420.0, 80.0, 22.0 ],
+					"patching_rect" : [ 776.0, 470.0, 80.0, 22.0 ],
 					"text" : "sonus.mima~"
 				}
 
@@ -952,7 +952,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 276.0, 570.0, 94.0, 22.0 ],
+					"patching_rect" : [ 276.0, 620.0, 94.0, 22.0 ],
 					"text" : "sonus.wavesets"
 				}
 
