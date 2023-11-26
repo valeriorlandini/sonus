@@ -8,7 +8,6 @@
 
 using namespace c74::min;
 
-
 class bitman_tilde : public object<bitman_tilde>, public sample_operator<1, 1>
 {
 public:

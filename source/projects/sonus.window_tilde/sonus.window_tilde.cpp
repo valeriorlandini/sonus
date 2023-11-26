@@ -6,9 +6,10 @@
 #include "c74_min.h"
 #include <algorithm>
 #include <cmath>
-#include "../include/window_functions.h"
+#include "window_functions.h"
 
 using namespace c74::min;
+using namespace soutel;
 
 class window_tilde : public object<window_tilde>, public sample_operator<1, 1>
 {

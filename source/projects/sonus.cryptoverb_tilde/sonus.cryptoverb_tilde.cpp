@@ -4,9 +4,10 @@
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "c74_min.h"
-#include "../include/cryptoverb.h"
+#include "cryptoverb.h"
 
 using namespace c74::min;
+using namespace soutel;
 
 class cryptoverb_tilde : public object<cryptoverb_tilde>, public sample_operator<2, 2>
 {

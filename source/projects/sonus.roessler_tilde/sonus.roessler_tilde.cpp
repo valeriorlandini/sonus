@@ -4,12 +4,13 @@
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "c74_min.h"
-#include "../include/interp.h"
-#include "../include/roessler.hpp"
 #include <algorithm>
 #include <vector>
+#include "interp.h"
+#include "roessler.h"
 
 using namespace c74::min;
+using namespace soutel;
 
 class roessler_tilde : public object<roessler_tilde>, public sample_operator<0, 3>
 {

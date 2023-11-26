@@ -4,9 +4,10 @@
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "c74_min.h"
-#include "../include/vaosc.h"
+#include "vaosc.h"
 
 using namespace c74::min;
+using namespace soutel;
 
 class rsosc_tilde : public object<rsosc_tilde>, public sample_operator<1, 1>
 {
@@ -122,20 +123,20 @@ public:
 
 			if (cycle_ >= cycles)
 			{
-				shape_ = VAWaveforms(rand() % 4);
+				shape_ = Waveforms(rand() % 4);
 				cycle_ = 0;		
 				switch (shape_)
 				{
-					case SINE:
+					case Waveforms::SINE:
 					out_b.send("sine");
 					break;
-					case SAW:
+					case Waveforms::SAW:
 					out_b.send("saw");
 					break;
-					case PULSE:
+					case Waveforms::PULSE:
 					out_b.send("square");
 					break;
-					case TRIANGLE:
+					case Waveforms::TRIANGLE:
 					out_b.send("triangle");
 					break;
 				}
@@ -144,16 +145,16 @@ public:
 
 		switch (shape_)
 		{
-			case SINE:
+			case Waveforms::SINE:
 			output = osc_.get_sine();
 			break;
-			case SAW:
+			case Waveforms::SAW:
 			output = osc_.get_saw();
 			break;
-			case PULSE:
+			case Waveforms::PULSE:
 			output = osc_.get_pulse();
 			break;
-			case TRIANGLE:
+			case Waveforms::TRIANGLE:
 			output = osc_.get_triangle();
 			break;
 		}
@@ -162,8 +163,16 @@ public:
 	}
 
 	private:
+	enum class Waveforms
+	{
+    	SINE,
+		SAW,
+		PULSE,
+    	TRIANGLE
+	};
+
 	VAOsc<double> osc_;
-	VAWaveforms shape_ = VAWaveforms::SINE;
+	Waveforms shape_ = Waveforms::SINE;
 	unsigned long cycle_ = 0;
 };
 

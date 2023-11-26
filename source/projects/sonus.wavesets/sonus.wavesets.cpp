@@ -6,9 +6,10 @@
 #include "c74_min.h"
 #include <algorithm>
 #include <random>
-#include "../include/interp.h"
+#include "interp.h"
 
 using namespace c74::min;
+using namespace soutel;
 
 template <class TSample>
 struct waveset_params

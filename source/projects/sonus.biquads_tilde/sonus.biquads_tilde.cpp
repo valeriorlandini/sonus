@@ -4,10 +4,10 @@
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "c74_min.h"
-#include "../include/biquad.h"
+#include "biquad.h"
 
 using namespace c74::min;
-
+using namespace soutel;
 
 class biquads_tilde : public object<biquads_tilde>, public sample_operator<3, 4>
 {

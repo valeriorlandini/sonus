@@ -4,9 +4,10 @@
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "c74_min.h"
-#include "../include/pulsar.h"
+#include "pulsar.h"
 
 using namespace c74::min;
+using namespace soutel;
 
 class pulsar_tilde : public object<pulsar_tilde>, public sample_operator<2, 1>
 {

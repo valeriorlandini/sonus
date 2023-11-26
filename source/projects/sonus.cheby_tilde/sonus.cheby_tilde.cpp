@@ -4,12 +4,12 @@
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "c74_min.h"
-#include "../include/chebyshev.h"
-#include "../include/interp.h"
 #include <algorithm>
+#include "chebyshev.h"
+#include "interp.h"
 
 using namespace c74::min;
-
+using namespace soutel;
 
 class cheby_tilde : public object<cheby_tilde>, public sample_operator<1, 1>
 {

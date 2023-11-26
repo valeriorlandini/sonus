@@ -4,13 +4,13 @@
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "c74_min.h"
-#include "../include/lorenz.hpp"
-#include "../include/interp.h"
 #include <algorithm>
 #include <vector>
+#include "interp.h"
+#include "lorenz.h"
 
 using namespace c74::min;
-
+using namespace soutel;
 
 class lorenz_tilde : public object<lorenz_tilde>, public sample_operator<0, 3>
 {

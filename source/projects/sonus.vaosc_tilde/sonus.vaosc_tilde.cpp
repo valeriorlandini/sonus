@@ -3,14 +3,15 @@
 ///	@copyright	Copyright 2023 Valerio Orlandini. All rights reserved.
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
+#include "c74_min.h"
 #include <cstdlib>
 #include <ctime>
-#include "c74_min.h"
-#include "../include/blosc.h"
+#include "blosc.h"
 
 #define INV_RAND_MAX_2 (2.0 * (1.0 / RAND_MAX))
 
 using namespace c74::min;
+using namespace soutel;
 
 class vaosc_tilde : public object<vaosc_tilde>, public sample_operator<6, 6>
 {

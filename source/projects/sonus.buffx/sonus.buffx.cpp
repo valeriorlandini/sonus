@@ -6,12 +6,13 @@
 #include "c74_min.h"
 #include <algorithm>
 #include <random>
-#include "../include/biquad.h"
-#include "../include/cryptoverb.h"
-#include "../include/delay.h"
-#include "../include/distortions.h"
+#include "biquad.h"
+#include "cryptoverb.h"
+#include "delay.h"
+#include "distortions.h"
 
 using namespace c74::min;
+using namespace soutel;
 
 class buffx : public object<buffx>
 {

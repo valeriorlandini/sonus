@@ -4,10 +4,11 @@
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "c74_min.h"
-#include "../include/interp.h"
 #include <vector>
+#include "interp.h"
 
 using namespace c74::min;
+using namespace soutel;
 
 class lline : public object<lline>
 {
