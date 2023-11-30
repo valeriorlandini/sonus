@@ -158,10 +158,10 @@ public:
 	}
 
 	private:
-	Biquad<double> lowpass_{Biquad<double>(44100.0, 20000.0, 0.707, LOWPASS)};
-	Biquad<double> highpass_{Biquad<double>(44100.0, 20000.0, 0.707, HIPASS)};
-	Biquad<double> bandpass_{Biquad<double>(44100.0, 20000.0, 0.707, BANDPASS)};
-	Biquad<double> bandreject_{Biquad<double>(44100.0, 20000.0, 0.707, BANDREJECT)};
+	Biquad<double> lowpass_{Biquad<double>(44100.0, 20000.0, 0.707, BQFilters::LOWPASS)};
+	Biquad<double> highpass_{Biquad<double>(44100.0, 20000.0, 0.707, BQFilters::HIPASS)};
+	Biquad<double> bandpass_{Biquad<double>(44100.0, 20000.0, 0.707, BQFilters::BANDPASS)};
+	Biquad<double> bandreject_{Biquad<double>(44100.0, 20000.0, 0.707, BQFilters::BANDREJECT)};
 };
 
 MIN_EXTERNAL(biquads_tilde);

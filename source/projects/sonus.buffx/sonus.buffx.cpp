@@ -151,7 +151,7 @@ public:
                     q = double(args.at(1));
                 }
 
-                Biquad<double> filter(b.samplerate(), cutoff, q, LOWPASS);
+                Biquad<double> filter(b.samplerate(), cutoff, q, BQFilters::LOWPASS);
 
                 for (auto ch = 0; ch < b.channel_count(); ch++)
                 {
@@ -194,7 +194,7 @@ public:
                     q = double(args.at(1));
                 }
 
-                Biquad<double> filter(b.samplerate(), cutoff, q, HIPASS);
+                Biquad<double> filter(b.samplerate(), cutoff, q, BQFilters::HIPASS);
 
                 for (auto ch = 0; ch < b.channel_count(); ch++)
                 {
@@ -237,7 +237,7 @@ public:
                     q = double(args.at(1));
                 }
 
-                Biquad<double> filter(b.samplerate(), cutoff, q, BANDPASS);
+                Biquad<double> filter(b.samplerate(), cutoff, q, BQFilters::BANDPASS);
 
                 for (auto ch = 0; ch < b.channel_count(); ch++)
                 {
@@ -280,7 +280,7 @@ public:
                     q = double(args.at(1));
                 }
 
-                Biquad<double> filter(b.samplerate(), cutoff, q, BANDREJECT);
+                Biquad<double> filter(b.samplerate(), cutoff, q, BQFilters::BANDREJECT);
 
                 for (auto ch = 0; ch < b.channel_count(); ch++)
                 {
@@ -323,7 +323,7 @@ public:
                     q = double(args.at(1));
                 }
 
-                Biquad<double> filter(b.samplerate(), cutoff, q, ALLPASS);
+                Biquad<double> filter(b.samplerate(), cutoff, q, BQFilters::ALLPASS);
 
                 for (auto ch = 0; ch < b.channel_count(); ch++)
                 {

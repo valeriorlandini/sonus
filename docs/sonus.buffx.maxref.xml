@@ -60,11 +60,6 @@
 			<description>Restore the buffer content at the time when backup was set </description>
 		</method>
 
-		<method name='reverb'>
-			<digest>Apply a reverb: reverb [wet amount] [master lowpass frequency] </digest>
-			<description>Apply a reverb: reverb [wet amount] [master lowpass frequency] </description>
-		</method>
-
 		<method name='reverse'>
 			<digest>Reverse the content of the buffer </digest>
 			<description>Reverse the content of the buffer </description>
