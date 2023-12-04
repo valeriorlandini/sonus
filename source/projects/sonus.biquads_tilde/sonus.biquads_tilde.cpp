@@ -9,7 +9,7 @@
 using namespace c74::min;
 using namespace soutel;
 
-class biquads_tilde : public object<biquads_tilde>, public sample_operator<3, 4>
+class biquads_tilde : public object<biquads_tilde>, public sample_operator<4, 7>
 {
 public:
 	MIN_DESCRIPTION {"Parallel biquad filters"};
@@ -20,10 +20,14 @@ public:
 	inlet<>  in {this, "(signal) Input"};
 	inlet<>  in_c {this, "(signal/float) Cutoff"};
 	inlet<>  in_q {this, "(signal/float) Q factor"};
+	inlet<>  in_g {this, "(signal/float) Shelving and peak gain"};
 	outlet<> out_lp {this, "(signal) Lowpass output", "signal"};
 	outlet<> out_hp {this, "(signal) Highpass output", "signal"};
 	outlet<> out_bp {this, "(signal) Bandpass output", "signal"};
 	outlet<> out_br {this, "(signal) Bandreject output", "signal"};
+	outlet<> out_ls {this, "(signal) Low shelf output", "signal"};
+	outlet<> out_hs {this, "(signal) High shelf output", "signal"};
+	outlet<> out_pk {this, "(signal) Peak output", "signal"};
 
 	message<> dspsetup
 	{
@@ -35,6 +39,9 @@ public:
 			highpass_.set_sample_rate(args[0]);
 			bandpass_.set_sample_rate(args[0]);
 			bandreject_.set_sample_rate(args[0]);
+			lowshelf_.set_sample_rate(args[0]);
+			highshelf_.set_sample_rate(args[0]);
+			peak_.set_sample_rate(args[0]);
 			return {};
 		}
 	};
@@ -61,6 +68,17 @@ public:
         }
     };
 
+	argument<number> gain_arg
+	{
+		this,
+		"gain",
+		"Gain in dB for shelving and peak filters.",
+        MIN_ARGUMENT_FUNCTION
+		{
+            gain = arg;
+        }
+    };
+
 	attribute<number, threadsafe::no, limit::clamp> cutoff
 	{
         this,
@@ -77,6 +95,9 @@ public:
 				highpass_.set_cutoff((double)args[0]);
 				bandpass_.set_cutoff((double)args[0]);
 				bandreject_.set_cutoff((double)args[0]);
+				lowshelf_.set_cutoff((double)args[0]);
+				highshelf_.set_cutoff((double)args[0]);
+				peak_.set_cutoff((double)args[0]);
 
 				return args;
 			}
@@ -99,6 +120,34 @@ public:
 				highpass_.set_q((double)args[0]);
 				bandpass_.set_q((double)args[0]);
 				bandreject_.set_q((double)args[0]);
+				lowshelf_.set_q((double)args[0]);
+				highshelf_.set_q((double)args[0]);
+				peak_.set_q((double)args[0]);
+
+				return args;
+			}
+		}
+    };
+
+	attribute<number, threadsafe::no, limit::clamp> gain
+	{
+        this,
+        "gain",
+        0.0,
+		range { -48.0, 48.0 },
+        title {"Gain (dB)"},
+        description {"Gain in dB for shelving and peak filters."},
+		setter
+		{
+			MIN_FUNCTION
+			{
+				lowpass_.set_gain((double)args[0]);
+				highpass_.set_gain((double)args[0]);
+				bandpass_.set_gain((double)args[0]);
+				bandreject_.set_gain((double)args[0]);
+				lowshelf_.set_gain((double)args[0]);
+				highshelf_.set_gain((double)args[0]);
+				peak_.set_gain((double)args[0]);
 
 				return args;
 			}
@@ -120,6 +169,10 @@ public:
 			{
 				q = args;
 			}
+			if (inlet == 3)
+			{
+				gain = args;
+			}
 
 			return {};
 		}
@@ -136,12 +189,15 @@ public:
             highpass_.clear();
             bandpass_.clear();
             bandreject_.clear();
+            lowshelf_.clear();
+            highshelf_.clear();
+            peak_.clear();
 
 			return {};
 		}
 	};
 
-	samples<4> operator()(sample input, sample sig_cutoff, sample sig_q)
+	samples<7> operator()(sample input, sample sig_cutoff, sample sig_q, sample sig_gain)
     {
 		if (in_c.has_signal_connection())
 			cutoff = (double)sig_cutoff;
@@ -149,19 +205,28 @@ public:
 		if (in_q.has_signal_connection())
 			q = (double)sig_q;
 
+		if (in_g.has_signal_connection())
+			gain = (double)sig_gain;
+
 		sample lp = lowpass_.run(input);
 		sample hp = highpass_.run(input);
 		sample bp = bandpass_.run(input);
 		sample br = bandreject_.run(input);
+		sample ls = lowshelf_.run(input);
+		sample hs = highshelf_.run(input);
+		sample pk = peak_.run(input);
 	
-		return { {lp, hp, bp, br} };
+		return { {lp, hp, bp, br, ls, hs, pk} };
 	}
 
 	private:
-	Biquad<double> lowpass_{Biquad<double>(44100.0, 20000.0, 0.707, BQFilters::LOWPASS)};
-	Biquad<double> highpass_{Biquad<double>(44100.0, 20000.0, 0.707, BQFilters::HIPASS)};
-	Biquad<double> bandpass_{Biquad<double>(44100.0, 20000.0, 0.707, BQFilters::BANDPASS)};
-	Biquad<double> bandreject_{Biquad<double>(44100.0, 20000.0, 0.707, BQFilters::BANDREJECT)};
+	Biquad<double> lowpass_{Biquad<double>(44100.0, 20000.0, 0.707, 0.0, BQFilters::LOWPASS)};
+	Biquad<double> highpass_{Biquad<double>(44100.0, 20000.0, 0.707, 0.0, BQFilters::HIPASS)};
+	Biquad<double> bandpass_{Biquad<double>(44100.0, 20000.0, 0.707, 0.0, BQFilters::BANDPASS)};
+	Biquad<double> bandreject_{Biquad<double>(44100.0, 20000.0, 0.707, 0.0, BQFilters::BANDREJECT)};
+	Biquad<double> lowshelf_{Biquad<double>(44100.0, 20000.0, 0.707, 0.0, BQFilters::LOWSHELF)};
+	Biquad<double> highshelf_{Biquad<double>(44100.0, 20000.0, 0.707, 0.0, BQFilters::HISHELF)};
+	Biquad<double> peak_{Biquad<double>(44100.0, 20000.0, 0.707, 0.0, BQFilters::PEAK)};
 };
 
 MIN_EXTERNAL(biquads_tilde);

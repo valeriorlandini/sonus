@@ -40,12 +40,40 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"bubble" : 1,
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
+					"id" : "obj-12",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 400.342245161533356, 220.5, 230.139037370681763, 55.0 ],
+					"presentation_linecount" : 3,
+					"text" : "initial population of the cells (any number of cells is allowed, 0: dead, 1: alive)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 269.0, 237.0, 123.0, 22.0 ],
+					"text" : "cells 1 0 1 0 1 0 1 0 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-10",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 268.0, 192.0, 49.0, 22.0 ],
+					"patching_rect" : [ 268.0, 182.0, 49.0, 22.0 ],
 					"text" : "random"
 				}
 
@@ -92,12 +120,11 @@
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
 					"id" : "obj-7",
-					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 334.342245161533356, 183.0, 230.139037370681763, 40.0 ],
-					"text" : "randomize initial configuration of the cells"
+					"patching_rect" : [ 334.342245161533356, 180.5, 296.139037370681763, 25.0 ],
+					"text" : "randomize initial population of the cells"
 				}
 
 			}
@@ -304,6 +331,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-10", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-11", 0 ]
 				}
 
 			}
