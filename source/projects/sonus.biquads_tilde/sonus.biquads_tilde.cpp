@@ -220,13 +220,13 @@ public:
 	}
 
 	private:
-	Biquad<double> lowpass_{Biquad<double>(44100.0, 20000.0, 0.707, 0.0, BQFilters::LOWPASS)};
-	Biquad<double> highpass_{Biquad<double>(44100.0, 20000.0, 0.707, 0.0, BQFilters::HIPASS)};
-	Biquad<double> bandpass_{Biquad<double>(44100.0, 20000.0, 0.707, 0.0, BQFilters::BANDPASS)};
-	Biquad<double> bandreject_{Biquad<double>(44100.0, 20000.0, 0.707, 0.0, BQFilters::BANDREJECT)};
-	Biquad<double> lowshelf_{Biquad<double>(44100.0, 20000.0, 0.707, 0.0, BQFilters::LOWSHELF)};
-	Biquad<double> highshelf_{Biquad<double>(44100.0, 20000.0, 0.707, 0.0, BQFilters::HISHELF)};
-	Biquad<double> peak_{Biquad<double>(44100.0, 20000.0, 0.707, 0.0, BQFilters::PEAK)};
+	Biquad<double> lowpass_{Biquad<double>(44100.0, 20000.0, 0.707, 0.0, BQFilters::lowpass)};
+	Biquad<double> highpass_{Biquad<double>(44100.0, 20000.0, 0.707, 0.0, BQFilters::hipass)};
+	Biquad<double> bandpass_{Biquad<double>(44100.0, 20000.0, 0.707, 0.0, BQFilters::bandpass)};
+	Biquad<double> bandreject_{Biquad<double>(44100.0, 20000.0, 0.707, 0.0, BQFilters::bandreject)};
+	Biquad<double> lowshelf_{Biquad<double>(44100.0, 20000.0, 0.707, 0.0, BQFilters::lowshelf)};
+	Biquad<double> highshelf_{Biquad<double>(44100.0, 20000.0, 0.707, 0.0, BQFilters::hishelf)};
+	Biquad<double> peak_{Biquad<double>(44100.0, 20000.0, 0.707, 0.0, BQFilters::peak)};
 };
 
 MIN_EXTERNAL(biquads_tilde);

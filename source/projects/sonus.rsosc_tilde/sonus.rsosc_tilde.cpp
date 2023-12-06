@@ -4,7 +4,7 @@
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "c74_min.h"
-#include "vaosc.h"
+#include "simpleosc.h"
 
 using namespace c74::min;
 using namespace soutel;
@@ -127,16 +127,16 @@ public:
 				cycle_ = 0;		
 				switch (shape_)
 				{
-					case Waveforms::SINE:
+					case Waveforms::sine:
 					out_b.send("sine");
 					break;
-					case Waveforms::SAW:
+					case Waveforms::saw:
 					out_b.send("saw");
 					break;
-					case Waveforms::PULSE:
+					case Waveforms::pulse:
 					out_b.send("square");
 					break;
-					case Waveforms::TRIANGLE:
+					case Waveforms::triangle:
 					out_b.send("triangle");
 					break;
 				}
@@ -145,16 +145,16 @@ public:
 
 		switch (shape_)
 		{
-			case Waveforms::SINE:
+			case Waveforms::sine:
 			output = osc_.get_sine();
 			break;
-			case Waveforms::SAW:
+			case Waveforms::saw:
 			output = osc_.get_saw();
 			break;
-			case Waveforms::PULSE:
+			case Waveforms::pulse:
 			output = osc_.get_pulse();
 			break;
-			case Waveforms::TRIANGLE:
+			case Waveforms::triangle:
 			output = osc_.get_triangle();
 			break;
 		}
@@ -165,14 +165,14 @@ public:
 	private:
 	enum class Waveforms
 	{
-    	SINE,
-		SAW,
-		PULSE,
-    	TRIANGLE
+    	sine,
+		saw,
+		pulse,
+    	triangle
 	};
 
-	VAOsc<double> osc_;
-	Waveforms shape_ = Waveforms::SINE;
+	SimpleOsc<double> osc_;
+	Waveforms shape_ = Waveforms::sine;
 	unsigned long cycle_ = 0;
 };
 
