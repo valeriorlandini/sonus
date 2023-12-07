@@ -220,7 +220,7 @@ public:
         {
             if (args.size() < 1)
             {
-                cerr << "Syntax: hipass <cutoff frequency> <resonance [optional, default 0.707]>" << endl;
+                cerr << "Syntax: hipass <center frequency> <resonance [optional, default 0.707]>" << endl;
 
                 return {};
             }
@@ -263,7 +263,7 @@ public:
         {
             if (args.size() < 1)
             {
-                cerr << "Syntax: notch <cutoff frequency> <resonance [optional, default 0.707]>" << endl;
+                cerr << "Syntax: notch <center frequency> <resonance [optional, default 0.707]>" << endl;
 
                 return {};
             }
@@ -339,7 +339,136 @@ public:
             return {};
         }
     };
-    
+ 
+    message<> lowshelf
+    {
+        this,
+        "lowshelf",
+        "Apply a low shelving filter: lowshelf [freq] [gain]",
+        MIN_FUNCTION
+        {
+            if (args.size() < 1)
+            {
+                cerr << "Syntax: lowshelf <cutoff frequency> <gain [optional, default 6.0]>" << endl;
+
+                return {};
+            }
+
+            buffer_lock<> b(m_buffer);
+
+            if (b.valid())
+            {
+                double cutoff = double(args.at(0));
+                double gain = 6.0;
+
+                if (args.size() > 1)
+                {
+                    gain = double(args.at(1));
+                }
+
+                Biquad<double> filter(b.samplerate(), cutoff, 0.707, gain, BQFilters::lowshelf);
+
+                for (auto ch = 0; ch < b.channel_count(); ch++)
+                {
+                    for (auto s = 0; s < b.frame_count(); s++)
+                    {
+                        b.lookup(s, ch) = filter.run(b.lookup(s, ch));
+                    }
+                }
+
+                b.dirty();
+            }            
+
+            return {};
+        }
+    };
+ 
+    message<> hishelf
+    {
+        this,
+        "hishelf",
+        "Apply a high shelving filter: hishelf [freq] [gain]",
+        MIN_FUNCTION
+        {
+            if (args.size() < 1)
+            {
+                cerr << "Syntax: hishelf <cutoff frequency> <gain [optional, default 6.0]>" << endl;
+
+                return {};
+            }
+
+            buffer_lock<> b(m_buffer);
+
+            if (b.valid())
+            {
+                double cutoff = double(args.at(0));
+                double gain = 6.0;
+
+                if (args.size() > 1)
+                {
+                    gain = double(args.at(1));
+                }
+
+                Biquad<double> filter(b.samplerate(), cutoff, 0.707, gain, BQFilters::hishelf);
+
+                for (auto ch = 0; ch < b.channel_count(); ch++)
+                {
+                    for (auto s = 0; s < b.frame_count(); s++)
+                    {
+                        b.lookup(s, ch) = filter.run(b.lookup(s, ch));
+                    }
+                }
+
+                b.dirty();
+            }            
+
+            return {};
+        }
+    };
+ 
+    message<> peak
+    {
+        this,
+        "peak",
+        "Apply a peak filter: peak [freq] [gain]",
+        MIN_FUNCTION
+        {
+            if (args.size() < 1)
+            {
+                cerr << "Syntax: peak <center frequency> <gain [optional, default 6.0]>" << endl;
+
+                return {};
+            }
+
+            buffer_lock<> b(m_buffer);
+
+            if (b.valid())
+            {
+                double cutoff = double(args.at(0));
+                double gain = 6.0;
+
+                if (args.size() > 1)
+                {
+                    gain = double(args.at(1));
+                }
+
+                Biquad<double> filter(b.samplerate(), cutoff, 0.707, gain, BQFilters::peak);
+
+                for (auto ch = 0; ch < b.channel_count(); ch++)
+                {
+                    for (auto s = 0; s < b.frame_count(); s++)
+                    {
+                        b.lookup(s, ch) = filter.run(b.lookup(s, ch));
+                    }
+                }
+
+                b.dirty();
+            }            
+
+            return {};
+        }
+    };
+
     message<> noise
     {
         this,

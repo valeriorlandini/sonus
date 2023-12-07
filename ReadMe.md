@@ -6,7 +6,9 @@ artificial intelligence and weird sounds.
 Currently finished externals are:
 
 ### Generators
+* `sonus.ecaosc~` Elementary cellular automata oscillator
 * `sonus.lorenz~` Lorenz attractor based generator
+* `sonus.neurosc~` Neural network based oscillator
 * `sonus.nwosc~` User defined wavetable oscillator
 * `sonus.pulsar~` Pulsar oscillator
 * `sonus.roessler~` Rössler attractor based generator

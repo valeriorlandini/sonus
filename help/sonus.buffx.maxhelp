@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -39,6 +39,42 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-58",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 141.388066053390503, 190.5, 101.0, 22.0 ],
+					"text" : "hishelf 5000. -12."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-57",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 141.388066053390503, 166.5, 92.0, 22.0 ],
+					"text" : "lowshelf 400. 3."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-56",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 141.388066053390503, 214.5, 88.0, 22.0 ],
+					"text" : "peak 1500. 12."
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"bubble" : 1,
 					"fontname" : "Arial",
@@ -146,7 +182,7 @@
 			}
 , 			{
 				"box" : 				{
-					"buffername" : "1002_tomix",
+					"buffername" : "1001_tomix",
 					"id" : "obj-43",
 					"maxclass" : "waveform~",
 					"numinlets" : 5,
@@ -310,7 +346,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 64.0, 271.5, 93.0, 22.0 ],
+					"patching_rect" : [ 33.0, 262.5, 93.0, 22.0 ],
 					"text" : "allpass 4000. 1."
 				}
 
@@ -322,7 +358,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 64.0, 247.5, 85.0, 22.0 ],
+					"patching_rect" : [ 33.0, 238.5, 85.0, 22.0 ],
 					"text" : "notch 1500. 3."
 				}
 
@@ -334,7 +370,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 64.0, 223.5, 107.0, 22.0 ],
+					"patching_rect" : [ 33.0, 214.5, 107.0, 22.0 ],
 					"text" : "bandpass 1000. 2."
 				}
 
@@ -346,7 +382,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 64.0, 199.5, 97.0, 22.0 ],
+					"patching_rect" : [ 33.0, 190.5, 97.0, 22.0 ],
 					"text" : "hipass 5000. 0.9"
 				}
 
@@ -482,7 +518,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 64.0, 175.5, 99.0, 22.0 ],
+					"patching_rect" : [ 33.0, 166.5, 99.0, 22.0 ],
 					"text" : "lowpass 300. 0.7"
 				}
 
@@ -537,7 +573,7 @@
 			}
 , 			{
 				"box" : 				{
-					"buffername" : "1002_sample",
+					"buffername" : "1001_sample",
 					"id" : "obj-7",
 					"maxclass" : "waveform~",
 					"numinlets" : 5,
@@ -565,12 +601,12 @@
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
 					"id" : "obj-12",
-					"linecount" : 5,
+					"linecount" : 10,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 176.388066053390503, 192.0, 254.0, 85.0 ],
-					"text" : "apply a second order filter with syntax: <filter type> <cutoff> <resonance (default 0.707)>, available filters are lowpass, hipass, bandpass, notch and allpass"
+					"patching_rect" : [ 254.388066053390503, 122.0, 182.0, 160.0 ],
+					"text" : "apply a second order filter with syntax: <filter type> <cutoff> <resonance (default 0.707) / gain in dB (default 6.0) for shelving and peak filters>, available filters are lowpass, hipass, bandpass, notch and allpass, lowshelf, hishelf, peak"
 				}
 
 			}
@@ -917,6 +953,27 @@
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-52", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-56", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-57", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-58", 0 ]
 				}
 
 			}
