@@ -27,11 +27,16 @@ SOFTWARE.
 #include <cmath>
 #include <vector>
 
+#include "window_functions.h"
+
+using namespace soutel;
+
 template <class TSample>
 class Neurowave
 {
 public:
-    inline void generate_wave(const bool &normalize = true);
+    Neurowave();
+    inline void generate_wave(const bool &audio_range = true);
 
     void set_latent_parameter(const double &value, const int &index);
     void set_latent_space(const std::array<double, 8> &latent_space);
@@ -5473,10 +5478,14 @@ private:
 };
 
 template <class TSample>
-inline void Neurowave<TSample>::generate_wave(const bool &normalize)
+Neurowave<TSample>::Neurowave()
 {
-    wavetable_.clear();
-    
+    wavetable_.assign(600, (TSample)0.0);
+}
+
+template <class TSample>
+inline void Neurowave<TSample>::generate_wave(const bool &audio_range)
+{
     for (auto s = 0; s < 600; s++)
     {
         double output = biases_[s];
@@ -5488,13 +5497,13 @@ inline void Neurowave<TSample>::generate_wave(const bool &normalize)
 
         output = std::exp(output) / (1.0 + std::exp(output));
 
-        if (normalize)
+        if (audio_range)
         {
             output *= 2.0;
             output -= 1.0;
         }
 
-        wavetable_.push_back((TSample)output);
+        wavetable_.at(s) = hann((TSample)s / (TSample)599) * (TSample)output;
     }
 }
 

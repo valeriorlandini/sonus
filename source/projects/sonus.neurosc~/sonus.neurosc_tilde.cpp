@@ -96,6 +96,22 @@ public:
 		}
     };
 
+	message<> list
+	{
+		this,
+		"list",
+		"Sets the latent space parameters.",
+        MIN_FUNCTION
+		{
+			for (auto n = 0; n < std::min(8, int(args.size())); n++)
+			{
+				latent_.at(n - 1) = double(args[n]);
+			}
+			changed_ = true;
+			return {};
+		}
+    };	
+
 	sample operator()(sample freq, sample l1, sample l2, sample l3, sample l4, sample l5, sample l6, sample l7, sample l8)
     {	
 		double output = 0.0;
@@ -172,16 +188,15 @@ public:
 			elapsed_ = 0;
 			if (changed_)
 			{
-				
-				std::vector<double> wt = oscillator_.get_wavetable();
 				waveform_.set_latent_space(latent_);
 				waveform_.generate_wave();
 				oscillator_.set_wavetable(waveform_.get_wavetable());
+				oscillator_.normalize(0.707);
 				changed_ = false;
 			}
 		}
 
-		return lowpass_.run(oscillator_.run() * 0.707);
+		return lowpass_.run(oscillator_.run());
 	}
 
 	private:

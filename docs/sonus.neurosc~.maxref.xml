@@ -39,6 +39,11 @@
 			<description>Depends on the inlet </description>
 		</method>
 
+		<method name='list'>
+			<digest>Sets the latent space parameters</digest>
+			<description>Sets the latent space parameters. </description>
+		</method>
+
 	</methodlist>
 
 

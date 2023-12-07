@@ -41,6 +41,30 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-82",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 26.0, 295.0, 233.0, 20.0 ],
+					"text" : "Neural network based oscillator"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-83",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 26.0, 270.0, 94.0, 22.0 ],
+					"presentation_linecount" : 2,
+					"text" : "sonus.neurosc~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-80",
 					"maxclass" : "comment",
 					"numinlets" : 1,
@@ -58,7 +82,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 26.0, 170.0, 89.0, 22.0 ],
-					"presentation_linecount" : 2,
 					"text" : "sonus.ecaosc~"
 				}
 
@@ -431,7 +454,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 345.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 395.0, 233.0, 20.0 ],
 					"text" : "Pulsar oscillator"
 				}
 
@@ -443,7 +466,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 320.0, 84.0, 22.0 ],
+					"patching_rect" : [ 26.0, 370.0, 84.0, 22.0 ],
 					"text" : "sonus.pulsar~"
 				}
 
@@ -500,7 +523,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 445.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 495.0, 233.0, 20.0 ],
 					"text" : "Oscillator with random shapes"
 				}
 
@@ -512,7 +535,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 420.0, 80.0, 22.0 ],
+					"patching_rect" : [ 26.0, 470.0, 80.0, 22.0 ],
 					"text" : "sonus.rsosc~"
 				}
 
@@ -523,7 +546,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 495.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 545.0, 233.0, 20.0 ],
 					"text" : "Multishape bandlimited oscillator"
 				}
 
@@ -535,7 +558,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 470.0, 82.0, 22.0 ],
+					"patching_rect" : [ 26.0, 520.0, 82.0, 22.0 ],
 					"text" : "sonus.vaosc~"
 				}
 
@@ -882,7 +905,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 395.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 445.0, 233.0, 20.0 ],
 					"text" : "Rössler attractor based generator"
 				}
 
@@ -893,7 +916,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 295.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 345.0, 233.0, 20.0 ],
 					"text" : "User defined wavetable oscillator"
 				}
 
@@ -904,7 +927,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 545.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 595.0, 233.0, 20.0 ],
 					"text" : "Window functions generator"
 				}
 
@@ -988,7 +1011,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 370.0, 94.0, 22.0 ],
+					"patching_rect" : [ 26.0, 420.0, 94.0, 22.0 ],
 					"text" : "sonus.roessler~"
 				}
 
@@ -1000,7 +1023,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 270.0, 85.0, 22.0 ],
+					"patching_rect" : [ 26.0, 320.0, 85.0, 22.0 ],
 					"text" : "sonus.nwosc~"
 				}
 
@@ -1060,7 +1083,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 520.0, 91.0, 22.0 ],
+					"patching_rect" : [ 26.0, 570.0, 91.0, 22.0 ],
 					"text" : "sonus.window~"
 				}
 
@@ -1416,6 +1439,14 @@
 					"destination" : [ "obj-58", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-81", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-83", 0 ]
 				}
 
 			}
