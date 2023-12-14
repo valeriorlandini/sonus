@@ -40,6 +40,57 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-59",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 446.023861289024353, 659.0, 117.0, 22.0 ],
+					"text" : "length 90000 samps"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-55",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 446.023861289024353, 635.0, 79.0, 22.0 ],
+					"text" : "length 150 %"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
+					"id" : "obj-41",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 569.0, 611.0, 196.0, 70.0 ],
+					"text" : "change the length (with pitch alteration), syntax: length <amount> <unit: ms, % or samps, default ms>"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-54",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 446.023861289024353, 611.0, 91.0, 22.0 ],
+					"text" : "length 5000 ms"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-58",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -84,7 +135,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 582.388066053390503, 618.5, 217.0, 55.0 ],
+					"patching_rect" : [ 548.0, 554.0, 217.0, 55.0 ],
 					"text" : "apply fade in or out, syntax: fade <in /out> <time> <unit: ms / % (default ms)>"
 				}
 
@@ -96,7 +147,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 480.5, 649.5, 95.0, 22.0 ],
+					"patching_rect" : [ 446.111933946609497, 585.0, 95.0, 22.0 ],
 					"text" : "fade out 750 ms"
 				}
 
@@ -108,7 +159,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 480.5, 625.5, 75.0, 22.0 ],
+					"patching_rect" : [ 446.111933946609497, 561.0, 75.0, 22.0 ],
 					"text" : "fade in 33 %"
 				}
 
@@ -182,7 +233,7 @@
 			}
 , 			{
 				"box" : 				{
-					"buffername" : "1001_tomix",
+					"buffername" : "1009_tomix",
 					"id" : "obj-43",
 					"maxclass" : "waveform~",
 					"numinlets" : 5,
@@ -573,7 +624,7 @@
 			}
 , 			{
 				"box" : 				{
-					"buffername" : "1001_sample",
+					"buffername" : "1009_sample",
 					"id" : "obj-7",
 					"maxclass" : "waveform~",
 					"numinlets" : 5,
@@ -605,7 +656,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 254.388066053390503, 122.0, 182.0, 160.0 ],
+					"patching_rect" : [ 254.388066053390503, 122.0, 183.0, 160.0 ],
 					"text" : "apply a second order filter with syntax: <filter type> <cutoff> <resonance (default 0.707) / gain in dB (default 6.0) for shelving and peak filters>, available filters are lowpass, hipass, bandpass, notch and allpass, lowshelf, hishelf, peak"
 				}
 
@@ -959,6 +1010,20 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-54", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-55", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-56", 0 ]
 				}
 
@@ -974,6 +1039,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-58", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-59", 0 ]
 				}
 
 			}

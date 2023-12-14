@@ -125,6 +125,11 @@
 			<description>Fade in or out: fade [in / out] <o>time</o> [ms / %] </description>
 		</method>
 
+		<method name='length'>
+			<digest>Change buffer length (changes pitch, too): length <o>amount</o> [ms / % / samps] </digest>
+			<description>Change buffer length (changes pitch, too): length <o>amount</o> [ms / % / samps] </description>
+		</method>
+
 		<method name='mix'>
 			<digest>Mix with other buffers: mix [buffer name] [buffer gain] ..</digest>
 			<description>Mix with other buffers: mix [buffer name] [buffer gain] ... [buffer name] [buffer gain] </description>

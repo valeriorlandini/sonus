@@ -742,6 +742,88 @@ public:
         }
     };    
 
+    message<> length
+    {
+        this,
+        "length",
+        "Change buffer length (changes pitch, too): length [amount] [ms / % / samps]",
+        MIN_FUNCTION
+        {
+            buffer_lock<false> b(m_buffer);
+
+            if (args.size() < 1)
+            {
+                cerr << "Syntax: length <amount> <unit: ms, % or samps, default ms>" << endl;
+
+                return {};
+            }
+
+            std::vector<std::vector<double>> current_buffer;
+
+            if (b.valid())
+            {
+                double amount = double(args.at(0));
+
+                if (amount <= 0.0)
+                {
+                    cerr << "Amount must be greater than 0.0" << endl;
+                    
+                    return {};            
+                }
+
+                if (args.size() > 1)
+                {
+                    if (args.at(1) == "samps")
+                    {
+                        amount *= 1000.0;
+                        amount /= b.samplerate();
+                    }
+                    if (args.at(1) == "%")
+                    {
+                        amount *= b.length_in_seconds() * 10.0;
+                    }
+                }
+
+                amount = std::ceil(amount);
+
+                for (auto ch = 0; ch < b.channel_count(); ch++)
+                {    
+                    std::vector<double> current_channel;
+
+                    for (auto s = 0; s < b.frame_count(); s++)
+                    {
+                        current_channel.push_back((double)b.lookup(s, ch));
+                    }
+
+                    current_buffer.push_back(current_channel);
+                }
+
+                b.resize(amount);
+                
+                b.dirty();
+            }
+                
+            buffer_lock<> b_new(m_buffer);
+
+            if (b_new.valid())
+            {
+                for (auto ch = 0; ch < b_new.channel_count(); ch++)
+                {
+                    std::vector<double> new_channel = resize_chunk(current_buffer.at(ch), (unsigned int)b_new.frame_count());
+
+                    for (auto s = 0; s < b_new.frame_count(); s++)
+                    {
+                        b_new.lookup(s, ch) = new_channel.at(s);
+                    }   
+                }
+
+                b.dirty();
+            }        
+
+            return {};
+        }
+    };    
+
     message<> mix
     {
         this,
