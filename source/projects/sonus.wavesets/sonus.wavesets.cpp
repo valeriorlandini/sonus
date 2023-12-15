@@ -87,25 +87,34 @@ public:
         "Restore the buffer content at the time when backup was set",
         MIN_FUNCTION
         {
-            buffer_lock<> b(m_buffer);
+            buffer_lock<false> b(m_buffer);
 
             if (b.valid() && original_buffer_.size() > 0)
             {
-                for (int ch = 0; ch < b.channel_count(); ch++)
+                b.resize_in_samples(original_buffer_.at(0).size());
+
+                b.dirty();
+
+                buffer_lock<> b_new(m_buffer);
+
+                if (b_new.valid())
                 {
-                    if (original_buffer_.size() > ch)
+                    for (auto ch = 0; ch < b_new.channel_count(); ch++)
                     {
-                        for (int s = 0; s < b.frame_count(); s++)
+                        if (original_buffer_.size() > ch)
                         {
-                            if (original_buffer_.at(ch).size() > s)
+                            for (auto s = 0; s < b_new.frame_count(); s++)
                             {
-                                b.lookup(s, ch) = original_buffer_.at(ch).at(s);
+                                if (original_buffer_.at(ch).size() > s)
+                                {
+                                    b_new.lookup(s, ch) = original_buffer_.at(ch).at(s);
+                                }
                             }
                         }
                     }
-                }
 
-                b.dirty();
+                    b_new.dirty();
+                }
             }
             
             return {};
