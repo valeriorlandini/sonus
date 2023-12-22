@@ -7,9 +7,11 @@ set(C74_MIN_API_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../../min-api)
 set(SOUTEL_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../../soutel/include/soutel")
 include(${C74_MIN_API_DIR}/script/min-pretarget.cmake)
 
-file(GLOB PARSER_SOURCE_FILES
-    "${CMAKE_CURRENT_SOURCE_DIR}/parser/*.cpp"
-)
+if(MSVC)
+    add_compile_options(/W0) 
+elseif(APPLE)
+    add_compile_options(-Wno-all)
+endif()
 
 #############################################################
 # MAX EXTERNAL
@@ -24,7 +26,6 @@ include_directories(
 
 set( SOURCE_FILES
 	${PROJECT_NAME}.cpp
-	${PARSER_SOURCE_FILES}
 )
 
 

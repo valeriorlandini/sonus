@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 375.0, 292.0, 1032.0, 733.0 ],
+		"rect" : [ 221.0, 238.0, 1032.0, 733.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -41,11 +41,46 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-86",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 127.0, 170.0, 96.0, 22.0 ],
+					"text" : "sonus.byteplay~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-84",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 26.0, 195.0, 233.0, 20.0 ],
+					"text" : "Bytebeat generator and player"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-85",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 26.0, 170.0, 97.0, 22.0 ],
+					"text" : "sonus.bytebeat~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-82",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 295.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 345.0, 233.0, 20.0 ],
 					"text" : "Neural network based oscillator"
 				}
 
@@ -57,8 +92,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 270.0, 94.0, 22.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 26.0, 320.0, 94.0, 22.0 ],
 					"text" : "sonus.neurosc~"
 				}
 
@@ -69,7 +103,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 195.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 245.0, 233.0, 20.0 ],
 					"text" : "Elementary cellular automata oscillator"
 				}
 
@@ -81,7 +115,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 170.0, 89.0, 22.0 ],
+					"patching_rect" : [ 26.0, 220.0, 89.0, 22.0 ],
 					"text" : "sonus.ecaosc~"
 				}
 
@@ -362,7 +396,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 245.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 295.0, 233.0, 20.0 ],
 					"text" : "Lorenz attractor based generator"
 				}
 
@@ -374,7 +408,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 220.0, 84.0, 22.0 ],
+					"patching_rect" : [ 26.0, 270.0, 84.0, 22.0 ],
 					"text" : "sonus.lorenz~"
 				}
 
@@ -454,7 +488,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 395.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 445.0, 233.0, 20.0 ],
 					"text" : "Pulsar oscillator"
 				}
 
@@ -466,7 +500,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 370.0, 84.0, 22.0 ],
+					"patching_rect" : [ 26.0, 420.0, 84.0, 22.0 ],
 					"text" : "sonus.pulsar~"
 				}
 
@@ -523,7 +557,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 495.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 545.0, 233.0, 20.0 ],
 					"text" : "Oscillator with random shapes"
 				}
 
@@ -535,7 +569,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 470.0, 80.0, 22.0 ],
+					"patching_rect" : [ 26.0, 520.0, 80.0, 22.0 ],
 					"text" : "sonus.rsosc~"
 				}
 
@@ -546,7 +580,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 545.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 595.0, 233.0, 20.0 ],
 					"text" : "Multishape bandlimited oscillator"
 				}
 
@@ -558,7 +592,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 520.0, 82.0, 22.0 ],
+					"patching_rect" : [ 26.0, 570.0, 82.0, 22.0 ],
 					"text" : "sonus.vaosc~"
 				}
 
@@ -905,7 +939,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 445.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 495.0, 233.0, 20.0 ],
 					"text" : "Rössler attractor based generator"
 				}
 
@@ -916,7 +950,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 345.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 395.0, 233.0, 20.0 ],
 					"text" : "User defined wavetable oscillator"
 				}
 
@@ -927,7 +961,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 595.0, 233.0, 20.0 ],
+					"patching_rect" : [ 26.0, 645.0, 233.0, 20.0 ],
 					"text" : "Window functions generator"
 				}
 
@@ -1011,7 +1045,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 420.0, 94.0, 22.0 ],
+					"patching_rect" : [ 26.0, 470.0, 94.0, 22.0 ],
 					"text" : "sonus.roessler~"
 				}
 
@@ -1023,7 +1057,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 320.0, 85.0, 22.0 ],
+					"patching_rect" : [ 26.0, 370.0, 85.0, 22.0 ],
 					"text" : "sonus.nwosc~"
 				}
 
@@ -1083,7 +1117,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 570.0, 91.0, 22.0 ],
+					"patching_rect" : [ 26.0, 620.0, 91.0, 22.0 ],
 					"text" : "sonus.window~"
 				}
 
@@ -1447,6 +1481,22 @@
 					"destination" : [ "obj-58", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-83", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-85", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-86", 0 ]
 				}
 
 			}

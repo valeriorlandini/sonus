@@ -6,6 +6,8 @@ artificial intelligence and weird sounds.
 Currently finished externals are:
 
 ### Generators
+* `sonus.bytebeat~` A bytebeat parser and generator
+* `sonus.byteplay~` An efficient player of many bytebeat formulas
 * `sonus.ecaosc~` Elementary cellular automata oscillator
 * `sonus.lorenz~` Lorenz attractor based generator
 * `sonus.neurosc~` Neural network based oscillator

@@ -3,33 +3,137 @@
 ///	@copyright	Copyright 2023 Valerio Orlandini. All rights reserved.
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
-#include "bytebeat_parser.h"
+#include "parser/mpParser.h"
 #include "c74_min.h"
+#include <cstdint>
 #include <string>
 
 using namespace c74::min;
+using namespace mup;
+
+class OprtMod : public IOprtBin    
+{
+public:
+    OprtMod() 
+        :IOprtBin(_T("%"), (int)prMUL_DIV, oaLEFT) 
+    {}
+
+    virtual void Eval(ptr_val_type &ret, const ptr_val_type *a_pArg, int)
+    {
+        const IValue *arg1 = a_pArg[0].Get();
+        const IValue *arg2 = a_pArg[1].Get();
+
+        if (arg2->GetInteger() != 0)
+        {
+            *ret = arg1->GetInteger() % arg2->GetInteger();
+        }
+        else
+        {
+            *ret = arg2->GetInteger();
+        }
+    }
+
+    virtual const char_type* GetDesc() const
+    { 
+        return _T("x%y - Modulo operator"); 
+    }
+  
+    virtual IToken* Clone() const
+    { 
+        return new OprtMod(*this); 
+    }
+};
+
+class OprtDiv : public IOprtBin    
+{
+public:
+    OprtDiv() 
+        :IOprtBin(_T("/"), (int)prMUL_DIV, oaLEFT) 
+    {}
+
+    virtual void Eval(ptr_val_type &ret, const ptr_val_type *a_pArg, int)
+    {
+        const IValue *arg1 = a_pArg[0].Get();
+        const IValue *arg2 = a_pArg[1].Get();
+
+        if (arg2->GetInteger() != 0)
+        {
+            *ret = arg1->GetInteger() / arg2->GetInteger();
+        }
+        else
+        {
+            *ret = arg2->GetInteger();
+        }
+    }
+
+    virtual const char_type* GetDesc() const
+    { 
+        return _T("x/y - Integer division"); 
+    }
+  
+    virtual IToken* Clone() const
+    { 
+        return new OprtDiv(*this); 
+    }
+};
+
+class OprtXor : public IOprtBin    
+{
+public:
+    OprtXor() 
+        :IOprtBin(_T("^"), (int)prBIT_OR, oaLEFT) 
+    {}
+
+    virtual void Eval(ptr_val_type &ret, const ptr_val_type *a_pArg, int)
+    {
+        const IValue *arg1 = a_pArg[0].Get();
+        const IValue *arg2 = a_pArg[1].Get();
+
+        *ret = arg1->GetInteger() ^ arg2->GetInteger(); 
+    }
+
+    virtual const char_type* GetDesc() const
+    { 
+        return _T("x^y - Xor bitwise operator"); 
+    }
+  
+    virtual IToken* Clone() const
+    { 
+        return new OprtXor(*this); 
+    }
+};
 
 class bytebeat_tilde : public object<bytebeat_tilde>, public sample_operator<0, 1>
 {
 public:
-	MIN_DESCRIPTION {"Bytebeat music generator"};
+	MIN_DESCRIPTION {"Bytebeat music parser and generator"};
 	MIN_TAGS {"algorithmic, generator"};
 	MIN_AUTHOR {"Valerio Orlandini"};
-	MIN_RELATED {""};
+	MIN_RELATED {"sonus.byteplay~"};
 
-	inlet<>  in {this, "(signal) Input"};
+	inlet<>  in {this, "(symbol) Formula"};
 	inlet<>  in_sr {this, "(int) Sample rate reduction factor (1-10)"};
 	outlet<> out {this, "(signal) Output", "signal"};
 
-	message<> dspsetup
+	bytebeat_tilde()
 	{
-		this,
-		"dspsetup", 
-		MIN_FUNCTION
+		t_ = (MUP_INT_TYPE)0;
+		p.DefineVar("t", Variable(&t_));
+		p.DefineOprt(new OprtMod);
+		p.RemoveOprt("/");
+		p.DefineOprt(new OprtDiv);
+		p.RemoveOprt("^");
+		p.DefineOprt(new OprtXor);
+		p.SetExpr("0");
+		try
 		{
-			return {};
+			p.Eval();
 		}
-	};
+		catch (mup::ParserError &e)
+		{
+			cout << e.GetMsg() << endl;
+		}
+	}
 
 	attribute<int, threadsafe::no, limit::clamp> sr_red
 	{
@@ -48,38 +152,41 @@ public:
 		}
     };
 
-	attribute<symbol, threadsafe::no> formula
+	message<> eval
 	{
-        this,
-        "formula",
-        "t",
-        title {"Formula"},
-        description {"Formula for the bytebeat generation. Time variable must be named t, check help file for allowed operators."},
+		this,
+		"eval",
+		"Formula to be evaluated. Variable name must be 't'",
 		setter
 		{
 			MIN_FUNCTION
 			{
-				formula_ = "";
+				if (args.size() == 0)
+				{
+					return {};
+				}
+				std::string new_formula = "";
 				for (auto a = 0; a < args.size(); a++)
 				{
-					formula_ += args[a];
+					new_formula += args[a];
 				}
-				for (auto t = 0; t < values_.size(); t++)
+				MUP_INT_TYPE old_t = t_.GetInteger();
+				t_ = (MUP_INT_TYPE)0;
+				p.SetExpr(new_formula);
+				try
 				{
-					std::string formula_t = formula_;
-					replace_t(formula_t, t);
-					int value = 0;
-					if (bb_parser_.parse(formula_t, value))
-					{
-						values_.at(t) = int(uint8_t(value));
-					}
-					else
-					{
-						values_.at(t) = 0;
-					}
+					p.Eval();
+				}
+				catch (mup::ParserError &e)
+				{
+					cout << "Expression error: " << e.GetMsg() << endl;
+					p.SetExpr(formula_);
+					t_ = old_t;
+					return {};
 				}
 
-				return {symbol(formula_)};
+				formula_ = new_formula;
+				return {};
 			}
 		}
     };
@@ -106,13 +213,15 @@ public:
 
 		if (sample_count_ >= sr_red)
 		{
-			++t_;
-			if (t_ >= values_.size())
+			t_ = t_.GetInteger() + (MUP_INT_TYPE)1;
+			try
 			{
-				t_ = 0;
+				out_ = p.Eval().GetInteger();
 			}
-
-			output_ = ((sample)values_.at(t_) - 127.5) / 127.5;
+			catch (mup::ParserError &e)
+			{
+			}
+			output_ = ((sample)out_ - 127.5) / 127.5;
 			sample_count_ = 0;
 		}
 
@@ -120,24 +229,13 @@ public:
 	}
 
 	private:
-	int t_ = 0;
 	int sample_count_ = 0;
 	std::string formula_;
+	uint8_t out_ = 0;
 	sample output_ = 0.0;
-	std::array<int, 44100*4> values_;
-	parser bb_parser_ = generate_parse<int>();
 
-	inline void replace_t(std::string &input, const int &number)
-	{
-		size_t pos = 0;
-		std::string target = "t";
-
-		while ((pos = input.find(target, pos)) != std::string::npos)
-		{
-			input.replace(pos, target.length(), std::to_string(number));
-        	pos += std::to_string(number).length();
-	    }
-	}
+	Value t_;
+	ParserX p;
 };
 
 MIN_EXTERNAL(bytebeat_tilde);
