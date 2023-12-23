@@ -17,7 +17,7 @@ public:
 	MIN_DESCRIPTION {"Window functions"};
 	MIN_TAGS {"math"};
 	MIN_AUTHOR {"Valerio Orlandini"};
-	MIN_RELATED {"sonus.window"};
+	MIN_RELATED {""};
 
 	inlet<>  in {this, "(signal) Window Position (from 0 to 1)"};
 	outlet<> out {this, "(signal) Result", "signal"};

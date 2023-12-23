@@ -14,7 +14,7 @@ public:
 	MIN_DESCRIPTION {"Reports the minimum and maximum value ever received"};
 	MIN_TAGS {"audio"};
 	MIN_AUTHOR {"Valerio Orlandini"};
-	MIN_RELATED {""};
+	MIN_RELATED {"minimum~, maximum~"};
 
 	inlet<>  in1 {this, "(signal) Input"};
 	outlet<> out_amax {this, "(signal) Maximum (absolute value)", "signal"};

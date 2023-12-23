@@ -15,7 +15,7 @@ public:
 	MIN_DESCRIPTION {"Multistage (sort of) reverb"};
 	MIN_TAGS {"effects, reverb"};
 	MIN_AUTHOR {"Valerio Orlandini"};
-	MIN_RELATED {""};
+	MIN_RELATED {"cverb~"};
 
 	inlet<> in_l {this, "(signal) Left channel input"};
 	inlet<> in_r {this, "(signal) Right channel input"};

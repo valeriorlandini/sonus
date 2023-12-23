@@ -14,7 +14,7 @@ public:
 	MIN_DESCRIPTION {"Tent map generator"};
 	MIN_TAGS {"maps, math"};
 	MIN_AUTHOR {"Valerio Orlandini"};
-	MIN_RELATED {"expr, pow"};
+	MIN_RELATED {""};
 
 	inlet<>  in {this, "(bang) Next value"};
 	inlet<>  in_mu {this, "(float) mu parameter"};

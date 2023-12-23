@@ -40,7 +40,7 @@ public:
     MIN_DESCRIPTION	{ "Make wavesets operations a buffer~." };
     MIN_TAGS		{ "audio, sampling" };
     MIN_AUTHOR		{ "Valerio Orlandini" };
-    MIN_RELATED		{ "index~, buffer~, wave~" };
+    MIN_RELATED		{ "index~, buffer~, wave~, sonus.buffx" };
 
     inlet<>  in	    { this, "Buffer transformation based on wavesets detection" };
     outlet<> out	{ this, "(symbol) Information about the detected wavesets" };

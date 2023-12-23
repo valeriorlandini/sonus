@@ -15,7 +15,7 @@ public:
 	MIN_DESCRIPTION {"Wavetable oscillator with user defined table"};
 	MIN_TAGS {"oscillators"};
 	MIN_AUTHOR {"Valerio Orlandini"};
-	MIN_RELATED {"sonus.rsosc~, sonus.vaosc~"};
+	MIN_RELATED {"sonus.rsosc~, sonus.vaosc~, sonus.ca"};
 
 	inlet<>  in {this, "(signal/float) Frequency"};
 	outlet<> out {this, "(signal) Output", "signal"};

@@ -20,7 +20,7 @@ public:
     MIN_DESCRIPTION	{ "Apply effects to a buffer~." };
     MIN_TAGS		{ "audio, sampling" };
     MIN_AUTHOR		{ "Valerio Orlandini" };
-    MIN_RELATED		{ "index~, buffer~" };
+    MIN_RELATED		{ "index~, buffer~, sonus.wavesets" };
 
     inlet<>  in	    { this, "Effect to apply with the requested parameters" };
     outlet<> out	{ this, "(symbol) Notification that the content of the buffer~ changed" };

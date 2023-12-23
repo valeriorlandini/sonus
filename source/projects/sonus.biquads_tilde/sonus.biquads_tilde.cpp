@@ -15,7 +15,7 @@ public:
 	MIN_DESCRIPTION {"Parallel biquad filters"};
 	MIN_TAGS {"effects, filter"};
 	MIN_AUTHOR {"Valerio Orlandini"};
-	MIN_RELATED {"lores~"};
+	MIN_RELATED {"biquad~, lores~, reson~, svf~"};
 
 	inlet<>  in {this, "(signal) Input"};
 	inlet<>  in_c {this, "(signal/float) Cutoff"};
