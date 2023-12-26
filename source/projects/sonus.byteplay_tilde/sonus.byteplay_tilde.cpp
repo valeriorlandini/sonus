@@ -12,20 +12,26 @@ using namespace c74::min;
 class byteplay_tilde : public object<byteplay_tilde>, public sample_operator<0, 1>
 {
 public:
-	MIN_DESCRIPTION {"Bytebeat music generator"};
-	MIN_TAGS {"algorithmic, generator"};
+	MIN_DESCRIPTION {"Bytebeat music player"};
+	MIN_TAGS {"algorithmic, player"};
 	MIN_AUTHOR {"Valerio Orlandini"};
-	MIN_RELATED {""};
+	MIN_RELATED {"sonus.bytebeat~"};
 
-	inlet<>  in_f {this, "(int) Formula preset index (0-20)"};
+	inlet<>  in_f {this, "(int) Formula preset index (0-15)"};
 	inlet<>  in_sr {this, "(int) Sample rate reduction factor (1-10)"};
 	outlet<> out {this, "(signal) Output", "signal"};
 
-	enum class formulas : int { zero, one, two, three, four, five, six, seven, eight, enum_count };
+	enum class formulas : int { zero, one, two, three, four, five, six, seven,
+	                            eight, nine, ten, eleven, twelve, thirteen,
+								fourteen, fifteen, enum_count };
 
 	enum_map formulas_range = {"t", "t*5\&t>>7", "(t*9\&t>>4)|(t*5\&t>>7)|(t*3\&t>>10))-1",
-	                           "(t>>8\&t)*(t>>15\&t)", "(t%(t>>8|t>>16))^t", "(t%255\&t)-(t>>13\&t)",
-							   "(t-(t>>4\&t>>8)\&t>>12)-1", "((t*t)/(t^t>>8))\&t", "((2*(t&1)-1)*t)-(t>>8)"};
+	                           "(t>>8\&t)*(t>>15\&t)", "(t%(t>>8|t>>16))^t",
+							   "(t%255\&t)-(t>>13\&t)", "(t-(t>>4\&t>>8)\&t>>12)-1",
+							   "((t*t)/(t^t>>8))\&t", "((2*(t&1)-1)*t)-(t>>8)",
+							   "t/(t%(t>>8|t>>16))", "(t*t/(1+(t>>9\&t>>8)))&128",
+							   "(t*(-(t>>8|t|t>>9|t>>13)))^t", "(t/(t%(t>>8|t>>16)))|(t*t/(t>>8|t>>16))",
+							   "(t\&t>>4)-(t>>13\&t)", "((t/1000)^(t/1001))*t", "t/((t%(t>>13\&t)))"};
 
 	attribute<formulas> formula
 	{
@@ -119,6 +125,27 @@ public:
 				break;
 				case 8:
 				out = ((2*(t_&1)-1)*t_)-(t_>>8);
+				break;
+				case 9:
+				out = 0;//t_/(t_%(t_>>8|t_>>16));
+				break;
+				case 10:
+				out = (t_*t_/(1+(t_>>9&t_>>8)))&128;
+				break;
+				case 11:
+				out = (t_*(-(t_>>8|t_|t_>>9|t_>>13)))^t_;
+				break;
+				case 12:
+				out = 0;//(t_/(t_%(t_>>8|t_>>16)))|(t_*t_/(t_>>8|t_>>16));
+				break;
+				case 13:
+				out = (t_&t_>>4)-(t_>>13&t_);
+				break;
+				case 14:
+				out = ((t_/1000)^(t_/1001))*t_;
+				break;
+				case 15:
+				out = 0;//t_/((t_%(t_>>13&t_)));
 				break;
 			}
 

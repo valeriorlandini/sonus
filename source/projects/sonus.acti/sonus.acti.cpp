@@ -9,19 +9,6 @@
 
 using namespace c74::min;
 
-enum Activations
-{
-	RELU,
-	SIGMOID,
-	TANH,
-	SOFTPLUS,
-	SELU,
-	LEAKYRELU,
-	SILU,
-	GAUSS,
-	BINARY
-};
-
 class acti : public object<acti>
 {
 public:
