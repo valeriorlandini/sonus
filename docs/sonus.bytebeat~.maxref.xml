@@ -40,6 +40,11 @@
 			<description>In inlet 1, sample rate reduction factor </description>
 		</method>
 
+		<method name='reset'>
+			<digest>Reset t variable to 0 </digest>
+			<description>Reset t variable to 0 </description>
+		</method>
+
 	</methodlist>
 
 

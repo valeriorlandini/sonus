@@ -207,6 +207,19 @@ public:
 		}
     };
 
+	message<> reset
+    {
+        this,
+        "reset",
+        "Reset t variable to 0",
+        MIN_FUNCTION
+        {
+            t_ = (MUP_INT_TYPE)0;
+
+			return {};
+		}
+	};
+
 	sample operator()()
     {
 		++sample_count_;

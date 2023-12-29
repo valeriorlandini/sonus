@@ -35,6 +35,11 @@
 			<description>Depends on inlet </description>
 		</method>
 
+		<method name='reset'>
+			<digest>Reset t variable to 0 </digest>
+			<description>Reset t variable to 0 </description>
+		</method>
+
 	</methodlist>
 
 

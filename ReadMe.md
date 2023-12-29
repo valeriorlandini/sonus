@@ -34,6 +34,7 @@ Currently finished externals are:
 * `sonus.acti` Activation functions
 * `sonus.acti~` Activation functions (signal rate)
 * `sonus.ca` Cellular automata system
+* `sonus.dnn` Deep neural network implementation
 * `sonus.ga` Genetic algorithm implementation
 * `sonus.ga.num` Genetic algorithm implementation (numbers version)
 * `sonus.linden` Lindenmayer generative system
@@ -43,7 +44,7 @@ Currently finished externals are:
 ### Math and Utilities
 * `sonus.blist` Output different items from a list
 * `sonus.hop` Hot inlets operations
-* `sonus.llist` Similar to line, but for list of numbers
+* `sonus.lline` Similar to line, but for list of numbers
 * `sonus.lurn` Non repeating random sequences
 * `sonus.mathc` Mathematical constants
 * `sonus.mbox` Pop up dialogs generator

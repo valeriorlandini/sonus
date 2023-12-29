@@ -101,6 +101,7 @@
 		<seealso name='index~' />
 		<seealso name='buffer~' />
 		<seealso name='wave~' />
+		<seealso name='sonus.buffx' />
 	</seealsolist>
 
 

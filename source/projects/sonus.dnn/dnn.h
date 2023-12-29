@@ -25,9 +25,10 @@ SOFTWARE.
 
 #include <cmath>
 #include <functional>
+#include <string>
 #include <vector>
 
-namespace dnn
+namespace deepnn
 {
 
 template <typename T>
@@ -66,7 +67,8 @@ inline T selu(const T& x)
     if (x > static_cast<T>(0.0))
     {
         return static_cast<T>(1.050701) * x;
-    } else
+    }
+    else
     {
         return static_cast<T>(1.7581) * (std::exp(x) - static_cast<T>(1.0));
     }
@@ -99,19 +101,66 @@ struct Neuron
 
     inline T run(std::vector<T> inputs)
     {
-        if (input.size() < weights.size())
+        if (inputs.size() < weights.size())
         {
-            input.resize(weights.size(), static_cast<T>0.0);
+            inputs.resize(weights.size(), static_cast<T>(0.0));
         }
 
         T output = bias;
 
         for (auto i = 0; i < weights.size(); i++)
         {
-            output += input.at(i) * weights.at(i);
+            output += inputs.at(i) * weights.at(i);
         }
 
         return activation(output);
+    }
+
+    void set_activation(const std::string &activationName)
+    {
+        if (activationName == "relu")
+        {
+            activation = &relu<T>;
+        }
+        else if (activationName == "leakyrelu")
+        {
+            activation = &leakyrelu<T>;
+        }
+        else if (activationName == "sigmoid")
+        {
+            activation = &sigmoid<T>;
+        }
+        else if (activationName == "tanh")
+        {
+            activation = &tanh<T>;
+        }
+        else if (activationName == "softplus")
+        {
+            activation = &softplus<T>;
+        }
+        else if (activationName == "selu")
+        {
+            activation = &selu<T>;
+        }
+        else if (activationName == "silu")
+        {
+            activation = &silu<T>;
+        }
+        else if (activationName == "binary")
+        {
+            activation = &binary<T>;
+        }
+        else if (activationName == "gauss")
+        {
+            activation = &gauss<T>;
+        }
+        else
+        {
+            activation = [](T x)
+            {
+                return x;
+            };
+        }
     }
 };
 
@@ -121,25 +170,40 @@ using Layer = std::vector<Neuron<T>>;
 template <class T>
 class DNN
 {
-    DNN();
-    ~DNN();
+public:
+    void push_layer(const Layer<T> &layer)
+    {
+        layers_.push_back(layer);
+    }
 
-    bool push_layer(const Layer &layer);
-    bool pop_layer();
+    void pop_layer()
+    {
+        layers_.pop_back();
+    }
+
+    void clear()
+    {
+        layers_.clear();
+    }
 
     inline std::vector<T> run(const std::vector<T> input)
     {
-        if (input.size() < layers_.at(0).size())
+        if (input.empty() || layers_.empty())
         {
-            input.resize(layers_.at(0).size(), static_cast<T>0.0);
+            return {0.0};
+        }
+
+        std::vector<T> in = input;
+
+        if (in.size() < layers_.at(0).size())
+        {
+            in.resize(layers_.at(0).size(), static_cast<T>(0.0));
         }
 
         std::vector<T> out;
 
         for (auto l = 0; l < layers_.size(); l++)
         {
-            std::vector<T> in;
-
             if (l > 0)
             {
                 in = out;
@@ -150,7 +214,7 @@ class DNN
             {
                 if (l == 0)
                 {
-                    in = {input.at(n)};
+                    in = input;
                 }
 
                 out.push_back(layers_.at(l).at(n).run(in));
@@ -160,8 +224,8 @@ class DNN
         return out;
     }
 
-    private:
-    std::vector<Layer> layers_;
+private:
+    std::vector<Layer<T>> layers_;
     std::vector<T> output_;
 };
 

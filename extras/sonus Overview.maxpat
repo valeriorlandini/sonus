@@ -41,6 +41,30 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-87",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 526.0, 345.0, 233.0, 20.0 ],
+					"text" : "Deep neural network implementation"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-88",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 526.0, 320.0, 64.0, 22.0 ],
+					"presentation_linecount" : 2,
+					"text" : "sonus.dnn"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-86",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -339,7 +363,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 587.0, 320.0, 84.0, 22.0 ],
+					"patching_rect" : [ 587.0, 370.0, 84.0, 22.0 ],
 					"text" : "sonus.ga.num"
 				}
 
@@ -350,7 +374,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 526.0, 345.0, 233.0, 20.0 ],
+					"patching_rect" : [ 526.0, 395.0, 233.0, 20.0 ],
 					"text" : "Genetic algorithm implementations"
 				}
 
@@ -362,7 +386,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 526.0, 320.0, 57.0, 22.0 ],
+					"patching_rect" : [ 526.0, 370.0, 57.0, 22.0 ],
 					"text" : "sonus.ga"
 				}
 
@@ -373,7 +397,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 526.0, 395.0, 233.0, 20.0 ],
+					"patching_rect" : [ 526.0, 445.0, 233.0, 20.0 ],
 					"text" : "Lindenmayer generative system"
 				}
 
@@ -385,7 +409,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 526.0, 370.0, 76.0, 22.0 ],
+					"patching_rect" : [ 526.0, 420.0, 76.0, 22.0 ],
 					"text" : "sonus.linden"
 				}
 
@@ -829,7 +853,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 526.0, 495.0, 233.0, 20.0 ],
+					"patching_rect" : [ 526.0, 545.0, 233.0, 20.0 ],
 					"text" : "Classic perceptron implementation"
 				}
 
@@ -895,7 +919,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 526.0, 445.0, 233.0, 20.0 ],
+					"patching_rect" : [ 526.0, 495.0, 233.0, 20.0 ],
 					"text" : "Artificial neuron implementation"
 				}
 
@@ -1069,7 +1093,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 526.0, 420.0, 81.0, 22.0 ],
+					"patching_rect" : [ 526.0, 470.0, 81.0, 22.0 ],
 					"text" : "sonus.neuron"
 				}
 
@@ -1081,7 +1105,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 526.0, 470.0, 108.0, 22.0 ],
+					"patching_rect" : [ 526.0, 520.0, 108.0, 22.0 ],
 					"text" : "sonus.perceptron~"
 				}
 
@@ -1497,6 +1521,14 @@
 					"destination" : [ "obj-58", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-86", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-88", 0 ]
 				}
 
 			}

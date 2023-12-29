@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 99.0, 100.0, 847.0, 608.0 ],
+		"rect" : [ 488.0, 251.0, 847.0, 683.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,156 +40,138 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"bubble" : 1,
-					"fontname" : "Arial",
-					"fontsize" : 13.0,
-					"id" : "obj-8",
-					"maxclass" : "comment",
+					"id" : "obj-48",
+					"maxclass" : "button",
 					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 152.342245161533356, 278.5, 247.139037370681763, 25.0 ],
-					"text" : "reset t variable to 0"
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 42.0, 160.0, 24.0, 24.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-9",
+					"id" : "obj-46",
+					"maxclass" : "dict.view",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 390.0, 395.5, 308.0, 227.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-42",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 111.0, 280.0, 35.0, 22.0 ],
-					"text" : "reset"
+					"patching_rect" : [ 390.0, 327.0, 83.0, 22.0 ],
+					"text" : "read $1, bang"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"hidden" : 1,
-					"id" : "obj-7",
+					"id" : "obj-39",
 					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 4,
+					"outlettype" : [ "dictionary", "", "", "" ],
+					"patching_rect" : [ 390.0, 360.5, 50.5, 22.0 ],
+					"saved_object_attributes" : 					{
+						"embed" : 0,
+						"parameter_enable" : 0,
+						"parameter_mappable" : 0
+					}
+,
+					"text" : "dict"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
+					"id" : "obj-32",
+					"maxclass" : "comment",
 					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 247.0, 354.0, 131.0, 25.0 ],
+					"text" : "input values"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-28",
+					"maxclass" : "message",
+					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 111.0, 309.0, 70.0, 22.0 ],
-					"text" : "loadmess 4"
+					"patching_rect" : [ 42.0, 206.0, 79.0, 22.0 ],
+					"text" : "example.json"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-25",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 33.0, 163.0, 180.0, 22.0 ],
-					"text" : "(t*9&t>>4|t*5&t>>7|t*3&t>>10)-1"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-22",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 218.0, 163.0, 106.0, 22.0 ],
-					"text" : "(t&t>>4)-(t>>13&t)"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-18",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 83.0, 190.0, 130.0, 22.0 ],
-					"text" : "t<<((t>>8&t)|(t>>14&t))"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bubble" : 1,
-					"fontname" : "Arial",
-					"fontsize" : 13.0,
-					"id" : "obj-17",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 115.342245161533356, 242.5, 359.0, 25.0 ],
-					"text" : "prepend the message name 'eval' before the formula"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-16",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 218.0, 190.0, 124.0, 22.0 ],
-					"text" : "t*(t>>10&((t>>16)+1))"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-12",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 33.0, 244.0, 78.0, 22.0 ],
-					"text" : "prepend eval"
+					"patching_rect" : [ 42.0, 236.5, 77.0, 22.0 ],
+					"text" : "absolutepath"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"bubble" : 1,
-					"fontname" : "Arial",
-					"fontsize" : 13.0,
-					"id" : "obj-13",
-					"linecount" : 2,
-					"maxclass" : "comment",
+					"candycane" : 3,
+					"id" : "obj-18",
+					"maxclass" : "multislider",
 					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 170.342245161533356, 327.5, 304.0, 40.0 ],
-					"text" : "sample rate reduction factor: the higher it is, the lower the pitch of the sound is"
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 42.0, 483.0, 150.0, 79.0 ],
+					"setminmax" : [ 0.0, 2.0 ],
+					"setstyle" : 1,
+					"signed" : 1,
+					"size" : 2
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"candycane" : 3,
+					"contdata" : 1,
+					"id" : "obj-17",
+					"maxclass" : "multislider",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 84.0, 327.0, 150.0, 79.0 ],
+					"setminmax" : [ -10.0, 10.0 ],
+					"setstyle" : 1,
+					"signed" : 1,
+					"size" : 3
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-11",
-					"maxclass" : "number",
-					"maximum" : 10,
-					"minimum" : 1,
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 111.0, 336.5, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-10",
-					"maxclass" : "gain~",
-					"multichannelvariant" : 0,
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "signal", "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 33.0, 468.0, 145.0, 22.0 ]
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 42.0, 288.0, 48.0, 22.0 ],
+					"text" : "load $1"
 				}
 
 			}
@@ -198,34 +180,51 @@
 					"bubble" : 1,
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
-					"id" : "obj-20",
-					"linecount" : 3,
+					"id" : "obj-34",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 351.930481314659119, 163.0, 385.139037370681763, 55.0 ],
-					"text" : "formula to be evaluated. the time variable must be named 't', allowed operators are: *, /, %, +, -, >>, <<, |, &, ^, spaces are automatically trimmed"
+					"patching_rect" : [ 211.0, 510.0, 131.0, 25.0 ],
+					"text" : "output values"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"automatic" : 1,
-					"id" : "obj-14",
-					"maxclass" : "scope~",
-					"numinlets" : 2,
+					"bubble" : 1,
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
+					"id" : "obj-33",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 201.342245161533356, 437.5, 307.0, 99.0 ]
+					"patching_rect" : [ 77.0, 152.0, 361.0, 40.0 ],
+					"text" : "load a JSON properly formatted, see example.json file or the dict.view below for the specification"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-4",
-					"maxclass" : "ezdac~",
-					"numinlets" : 2,
-					"numoutlets" : 0,
-					"patching_rect" : [ 33.0, 491.5, 45.0, 45.0 ]
+					"id" : "obj-29",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"patching_rect" : [ 136.0, 236.5, 67.0, 22.0 ],
+					"text" : "opendialog"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-27",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 136.0, 204.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -235,7 +234,7 @@
 					"maxclass" : "live.line",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 553.0, 805.0, 5.0 ]
+					"patching_rect" : [ 16.0, 630.0, 805.0, 5.0 ]
 				}
 
 			}
@@ -257,7 +256,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 300.0, 576.0, 237.0, 22.0 ],
+					"patching_rect" : [ 300.0, 653.0, 237.0, 22.0 ],
 					"text" : "https://github.com/valeriorlandini/sonus",
 					"textcolor" : [ 0.0, 0.015686274509804, 0.396078431372549, 1.0 ]
 				}
@@ -272,7 +271,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 590.0, 129.0, 36.0 ],
+					"patching_rect" : [ 10.0, 667.0, 129.0, 36.0 ],
 					"text" : ";\r\nmax launchbrowser $1"
 				}
 
@@ -281,11 +280,11 @@
 				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
+					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 33.0, 381.0, 97.0, 22.0 ],
-					"text" : "sonus.bytebeat~"
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 42.0, 445.0, 64.0, 22.0 ],
+					"text" : "sonus.dnn"
 				}
 
 			}
@@ -310,8 +309,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 80.0, 805.0, 62.0 ],
-					"text" : "A generator for bytebeat music, which outputs audio from expressions where a variable is manipulated with bit and math operators. If you want to use ready to go formulas, check sonus.byteplay~.\nThis external uses muparserx to parse the formulas (https://github.com/beltoforion/muparserx)",
+					"patching_rect" : [ 16.0, 80.0, 808.0, 62.0 ],
+					"text" : "This object allows to load a custom deep dense neural network with an arbitrary number of layers and neurons (as long as your memory can handle them). The neural network structure, with weights, biases and activation functions should be specified in a JSON with a specific formatting (see example.json for a reference).",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 
@@ -327,7 +326,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 55.0, 805.0, 29.0 ],
-					"text" : "bytebeat generator"
+					"text" : "deep neural network implementation"
 				}
 
 			}
@@ -341,7 +340,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 560.0, 805.0, 20.0 ],
+					"patching_rect" : [ 16.0, 637.0, 805.0, 20.0 ],
 					"text" : "handmade in italy by valerio orlandini",
 					"textjustification" : 1
 				}
@@ -358,30 +357,14 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 12.0, 805.0, 48.0 ],
-					"text" : "sonus.bytebeat~"
+					"text" : "sonus.dnn"
 				}
 
 			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-4", 1 ],
-					"order" : 0,
-					"source" : [ "obj-10", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-4", 0 ],
-					"order" : 1,
-					"source" : [ "obj-10", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-2", 1 ],
+					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-11", 0 ]
 				}
 
@@ -389,51 +372,58 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
-					"source" : [ "obj-12", 0 ]
+					"source" : [ "obj-17", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-12", 0 ],
-					"source" : [ "obj-16", 0 ]
+					"destination" : [ "obj-18", 0 ],
+					"source" : [ "obj-2", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-12", 0 ],
-					"source" : [ "obj-18", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-10", 0 ],
+					"destination" : [ "obj-11", 0 ],
 					"order" : 1,
-					"source" : [ "obj-2", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-14", 0 ],
-					"order" : 0,
-					"source" : [ "obj-2", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-12", 0 ],
-					"source" : [ "obj-22", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-12", 0 ],
 					"source" : [ "obj-25", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-42", 0 ],
+					"order" : 0,
+					"source" : [ "obj-25", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-29", 0 ],
+					"source" : [ "obj-27", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-25", 0 ],
+					"source" : [ "obj-28", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"source" : [ "obj-29", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-46", 0 ],
+					"source" : [ "obj-39", 0 ]
 				}
 
 			}
@@ -447,22 +437,21 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-11", 0 ],
-					"hidden" : 1,
-					"source" : [ "obj-7", 0 ]
+					"destination" : [ "obj-39", 0 ],
+					"source" : [ "obj-42", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-2", 0 ],
-					"source" : [ "obj-9", 0 ]
+					"destination" : [ "obj-28", 0 ],
+					"source" : [ "obj-48", 0 ]
 				}
 
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "sonus.bytebeat~.mxe64",
+				"name" : "sonus.dnn.mxe64",
 				"type" : "mx64"
 			}
  ],
