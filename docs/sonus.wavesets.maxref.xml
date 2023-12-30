@@ -85,6 +85,11 @@
 			<description>Raise each sample of a group of wavesets with the absolute value of the samples of the next one as exponent </description>
 		</method>
 
+		<method name='stretch'>
+			<digest>Adjust the length of each group of n wavesets according to m stretch factor, the sequence can be of arbitrary length (i.e</digest>
+			<description>Adjust the length of each group of n wavesets according to m stretch factor, the sequence can be of arbitrary length (i.e. n1 m1 n2 m2 n3 m3...) </description>
+		</method>
+
 	</methodlist>
 
 

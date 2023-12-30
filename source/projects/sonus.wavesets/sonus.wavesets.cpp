@@ -523,6 +523,113 @@ public:
         }
     };
 
+    message<> stretch
+    {
+        this,
+        "stretch",
+        "Adjust the length of each group of n wavesets according to m stretch factor, the sequence can be of arbitrary length (i.e. n1 m1 n2 m2 n3 m3...)",
+        MIN_FUNCTION
+        {
+            analyse();
+            buffer_lock<false> b(m_buffer);
+
+            if (args.empty() || (args.size() % 2))
+            {
+                cout << "Syntax: stretch n1 m1 n2 m2 n3 m3 ..." << endl;
+                return {};
+            }
+
+            if (b.valid())
+            {
+                struct block
+                {
+                    int length;
+                    double stretch;
+                };
+
+                std::vector<block> seq;
+
+                for (auto a = 0; a < args.size(); a+=2)
+                {
+                    block curr_block;
+                    curr_block.length = std::max(0, int(args.at(a)));
+                    curr_block.stretch = std::clamp(double(args.at(a+1)), 0.01, 100.0);
+                    seq.push_back(curr_block);
+                }
+
+                std::vector<std::vector<double>> new_buffer; 
+                int max_length = 0;
+
+                for (int ch = 0; ch < b.channel_count(); ch++)
+                {
+                    std::vector<double> new_channel;
+
+                    int w = 0;
+                    int seq_pos = 0;
+
+                    for (w = 0; w < wavesets_idx_.at(ch).size(); w += seq.at(seq_pos).length)
+                    {
+                        int start = wavesets_idx_.at(ch).at(w).start;
+                        int end = wavesets_idx_.at(ch).at(std::min(int(wavesets_idx_.at(ch).size()) - 1, w + seq.at(seq_pos).length - 1)).end;
+                        
+                        std::vector<double> curr_waveset;
+
+                        for (auto s = start; s <= end; s++)
+                        {
+                            curr_waveset.push_back((double)b.lookup(s, ch));
+                        }
+
+                        auto res_waveset = resize_chunk(curr_waveset, (unsigned int)(std::ceil((double)curr_waveset.size() * seq.at(seq_pos).stretch)));
+                        
+                        new_channel.insert(new_channel.end(), res_waveset.begin(), res_waveset.end());
+
+                        ++seq_pos;
+                        seq_pos %= seq.size();
+                    }
+
+                    new_buffer.push_back(new_channel);
+
+                    if (new_channel.size() > max_length)
+                    {
+                        max_length = new_channel.size();
+                    }
+                }
+
+                for (auto ch = 0; ch < b.channel_count(); ch++)
+                {
+                    if (new_buffer.at(ch).size() < max_length)
+                    {
+                        new_buffer.at(ch).resize(max_length, 0.0);
+                    }
+                }
+
+                b.resize_in_samples(max_length);
+
+                b.dirty();
+
+                buffer_lock<> b_new(m_buffer);
+
+                if (b_new.valid())
+                {
+                    for (auto ch = 0; ch < b_new.channel_count(); ch++)
+                    {
+                        for (auto s = 0; s < b_new.frame_count(); s++)
+                        {
+                            if (new_buffer.at(ch).size() > s)
+                            {
+                                b_new.lookup(s, ch) = new_buffer.at(ch).at(s);
+                            }
+                        }
+                    }
+
+                    b_new.dirty();
+                }
+            }
+
+            return {};
+        }
+    };
+
     message<> reshape
     {
         this,

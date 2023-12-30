@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 99.0, 100.0, 854.0, 776.0 ],
+		"rect" : [ 503.0, 175.0, 854.0, 797.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,33 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"bubble" : 1,
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
+					"id" : "obj-29",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 588.194033026695251, 517.0, 202.0, 70.0 ],
+					"text" : "resize groups of n wavesets (with pitch change) by the m amount. any number of n m pairs can be specified"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-31",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 417.205963671207428, 541.0, 161.0, 22.0 ],
+					"text" : "stretch 200 1.5 100 0.8 10 3."
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"bubble" : 1,
 					"fontname" : "Arial",
@@ -125,7 +152,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 178.194033026695251, 355.5, 214.0, 70.0 ],
-					"text" : "multiply groups of n wavesets with the following one (suggestion: normalize the buffer after this operation)"
+					"text" : "multiply each group of n wavesets with the next one (suggestion: normalize the buffer after this operation)"
 				}
 
 			}
@@ -152,7 +179,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 189.194033026695251, 313.5, 203.0, 40.0 ],
-					"text" : "average groups of n wavesets with the following one"
+					"text" : "average each group of n wavesets with the next one"
 				}
 
 			}
@@ -343,7 +370,7 @@
 			}
 , 			{
 				"box" : 				{
-					"buffername" : "1010_sample",
+					"buffername" : "#0_sample",
 					"id" : "obj-7",
 					"maxclass" : "waveform~",
 					"numinlets" : 5,
@@ -637,6 +664,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-30", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-31", 0 ]
 				}
 
 			}
