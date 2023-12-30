@@ -23,6 +23,7 @@ Currently finished externals are:
 * `sonus.bitman~` Bit manipulator
 * `sonus.biquads~` Parallel biquad filters
 * `sonus.buffx` Apply effects to buffers
+* `sonus.bufsnap` Save snapshots of a buffer
 * `sonus.cheby~` Chebyshev waveshaper
 * `sonus.cryptoverb~` Eerie stereo reverberator
 * `sonus.fselector~` Continuous selector/mixer
