@@ -75,7 +75,17 @@ public:
         {
             MIN_FUNCTION
             {
-                save_buffer(inlet);
+                int slot = inlet;
+
+                if (inlet == 0 && !args.empty())
+                {
+                    if (int(args[0]) >= 1 && int(args[0]) <= m_inlets_.size())
+                    {
+                        slot = int(args[0]) - 1;
+                    }
+                }
+
+                save_buffer(slot);
                 return {};
             }
         }
@@ -88,11 +98,21 @@ public:
         "Restore the selected snapshot",
         MIN_FUNCTION
         {
+            int slot = inlet;
+
+            if (inlet == 0 && !args.empty())
+            {
+                if (int(args[0]) >= 1 && int(args[0]) <= m_inlets_.size())
+                {
+                    slot = int(args[0]) - 1;
+                }
+            }
+
             buffer_lock<false> b(m_buffer);
 
-            if (b.valid() && snapshots_.at(inlet).size() > 0)
+            if (b.valid() && snapshots_.at(slot).size() > 0)
             {
-                b.resize_in_samples(snapshots_.at(inlet).at(0).size());
+                b.resize_in_samples(snapshots_.at(slot).at(0).size());
 
                 b.dirty();
 
@@ -102,13 +122,13 @@ public:
                 {
                     for (auto ch = 0; ch < b_new.channel_count(); ch++)
                     {
-                        if (snapshots_.at(inlet).size() > ch)
+                        if (snapshots_.at(slot).size() > ch)
                         {
                             for (auto s = 0; s < b_new.frame_count(); s++)
                             {
-                                if (snapshots_.at(inlet).at(ch).size() > s)
+                                if (snapshots_.at(slot).at(ch).size() > s)
                                 {
-                                    b_new.lookup(s, ch) = snapshots_.at(inlet).at(ch).at(s);
+                                    b_new.lookup(s, ch) = snapshots_.at(slot).at(ch).at(s);
                                 }
                             }
                         }

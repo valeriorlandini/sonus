@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 99.0, 100.0, 838.0, 531.0 ],
+		"rect" : [ 99.0, 100.0, 838.0, 614.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,153 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-57",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 125.0, 141.0, 150.0, 20.0 ],
+					"text" : "recall snapshot"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-56",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 125.0, 117.5, 150.0, 20.0 ],
+					"text" : "store snapshot"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"appearance" : 1,
+					"id" : "obj-52",
+					"lcdcolor" : [ 0.427450980392157, 0.843137254901961, 1.0, 1.0 ],
+					"maxclass" : "live.tab",
+					"num_lines_patching" : 1,
+					"num_lines_presentation" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 16.0, 117.5, 100.0, 20.0 ],
+					"saved_attribute_attributes" : 					{
+						"lcdcolor" : 						{
+							"expression" : "themecolor.live_lcd_control_fg_alt"
+						}
+,
+						"valueof" : 						{
+							"parameter_enum" : [ "1", "2", "3", "4" ],
+							"parameter_longname" : "live.tab[1]",
+							"parameter_mmax" : 3,
+							"parameter_shortname" : "live.tab",
+							"parameter_type" : 2,
+							"parameter_unitstyle" : 9
+						}
+
+					}
+,
+					"varname" : "live.tab[1]"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"appearance" : 1,
+					"id" : "obj-51",
+					"maxclass" : "live.tab",
+					"num_lines_patching" : 1,
+					"num_lines_presentation" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 16.0, 141.0, 100.0, 20.0 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_enum" : [ "1", "2", "3", "4" ],
+							"parameter_longname" : "live.tab",
+							"parameter_mmax" : 3,
+							"parameter_shortname" : "live.tab",
+							"parameter_type" : 2,
+							"parameter_unitstyle" : 9
+						}
+
+					}
+,
+					"varname" : "live.tab"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
+					"id" : "obj-45",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 97.5, 184.0, 347.888066053390503, 55.0 ],
+					"presentation_linecount" : 6,
+					"text" : "you can send to the first inlet a message specifying the slot (starting from 1) which you want to use for the operation (\"snap\" to save, \"restore\" to recall)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-43",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 16.0, 169.0, 29.5, 22.0 ],
+					"text" : "+ 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-42",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 16.0, 169.0, 29.5, 22.0 ],
+					"text" : "+ 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-31",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 16.0, 224.5, 63.0, 22.0 ],
+					"text" : "restore $1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-28",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 16.0, 200.5, 51.0, 22.0 ],
+					"text" : "snap $1"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"bubble" : 1,
 					"bubbleside" : 2,
 					"fontname" : "Arial",
@@ -49,7 +196,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 13.0, 311.0, 284.0, 70.0 ],
+					"patching_rect" : [ 13.0, 399.5, 284.0, 70.0 ],
 					"text" : "save a snapshot and then apply different effects to the buffer (or replace it entirely with a new file), and then recall the saved snapshots"
 				}
 
@@ -61,7 +208,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 250.0, 386.0, 41.0, 22.0 ],
+					"patching_rect" : [ 250.0, 474.5, 41.0, 22.0 ],
 					"text" : "bits 3."
 				}
 
@@ -73,7 +220,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 167.333333333333343, 386.0, 75.0, 22.0 ],
+					"patching_rect" : [ 167.333333333333371, 474.5, 75.0, 22.0 ],
 					"text" : "fade in 50 %"
 				}
 
@@ -85,7 +232,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 72.666666666666671, 386.0, 87.0, 22.0 ],
+					"patching_rect" : [ 72.666666666666629, 474.5, 87.0, 22.0 ],
 					"text" : "hipass 5000 2."
 				}
 
@@ -97,7 +244,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 16.0, 386.0, 49.0, 22.0 ],
+					"patching_rect" : [ 16.0, 474.5, 49.0, 22.0 ],
 					"text" : "reverse"
 				}
 
@@ -109,7 +256,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 16.0, 436.0, 145.0, 22.0 ],
+					"patching_rect" : [ 16.0, 524.5, 145.0, 22.0 ],
 					"text" : "sonus.buffx #0_sample"
 				}
 
@@ -121,7 +268,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 181.5, 169.0, 46.0, 22.0 ],
+					"patching_rect" : [ 187.5, 291.5, 46.0, 22.0 ],
 					"text" : "restore"
 				}
 
@@ -133,7 +280,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 163.0, 141.0, 35.0, 22.0 ],
+					"patching_rect" : [ 169.0, 263.5, 35.0, 22.0 ],
 					"text" : "snap"
 				}
 
@@ -145,7 +292,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 130.5, 169.0, 46.0, 22.0 ],
+					"patching_rect" : [ 136.5, 291.5, 46.0, 22.0 ],
 					"text" : "restore"
 				}
 
@@ -157,7 +304,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 112.0, 141.0, 35.0, 22.0 ],
+					"patching_rect" : [ 118.0, 263.5, 35.0, 22.0 ],
 					"text" : "snap"
 				}
 
@@ -169,7 +316,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 80.5, 169.0, 46.0, 22.0 ],
+					"patching_rect" : [ 86.5, 291.5, 46.0, 22.0 ],
 					"text" : "restore"
 				}
 
@@ -181,7 +328,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 61.0, 141.0, 35.0, 22.0 ],
+					"patching_rect" : [ 67.0, 263.5, 35.0, 22.0 ],
 					"text" : "snap"
 				}
 
@@ -196,7 +343,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 195.388066053390503, 251.5, 244.0, 40.0 ],
+					"patching_rect" : [ 201.388066053390503, 348.5, 244.0, 40.0 ],
 					"text" : "arguments: buffer name and number of snapshot slots (up to 16)"
 				}
 
@@ -259,7 +406,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 237.388066053390503, 117.5, 202.0, 100.0 ],
+					"patching_rect" : [ 243.388066053390503, 244.5, 202.0, 100.0 ],
 					"text" : "each inlet receives the messages \"snap\" to save the current buffer content and \"restore\", to replace the current buffer content with the saved content"
 				}
 
@@ -271,7 +418,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 28.5, 169.0, 46.0, 22.0 ],
+					"patching_rect" : [ 34.5, 291.5, 46.0, 22.0 ],
 					"text" : "restore"
 				}
 
@@ -283,7 +430,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 141.0, 35.0, 22.0 ],
+					"patching_rect" : [ 16.0, 263.5, 35.0, 22.0 ],
 					"text" : "snap"
 				}
 
@@ -352,7 +499,7 @@
 			}
 , 			{
 				"box" : 				{
-					"buffername" : "1007_sample",
+					"buffername" : "1000_sample",
 					"id" : "obj-7",
 					"maxclass" : "waveform~",
 					"numinlets" : 5,
@@ -380,7 +527,7 @@
 					"maxclass" : "live.line",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 484.0, 805.0, 5.0 ]
+					"patching_rect" : [ 16.0, 561.0, 805.0, 5.0 ]
 				}
 
 			}
@@ -402,7 +549,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 300.0, 507.0, 237.0, 22.0 ],
+					"patching_rect" : [ 300.0, 584.0, 237.0, 22.0 ],
 					"text" : "https://github.com/valeriorlandini/sonus",
 					"textcolor" : [ 0.0, 0.015686274509804, 0.396078431372549, 1.0 ]
 				}
@@ -417,7 +564,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 521.0, 129.0, 36.0 ],
+					"patching_rect" : [ 10.0, 598.0, 129.0, 36.0 ],
 					"text" : ";\r\nmax launchbrowser $1"
 				}
 
@@ -428,7 +575,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 4,
 					"numoutlets" : 0,
-					"patching_rect" : [ 10.0, 260.5, 172.0, 22.0 ],
+					"patching_rect" : [ 16.0, 357.5, 172.0, 22.0 ],
 					"text" : "sonus.bufsnap #0_sample 4"
 				}
 
@@ -484,7 +631,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 491.0, 805.0, 20.0 ],
+					"patching_rect" : [ 16.0, 568.0, 805.0, 20.0 ],
 					"text" : "handmade in italy by valerio orlandini",
 					"textjustification" : 1
 				}
@@ -604,8 +751,22 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-28", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-20", 0 ],
 					"source" : [ "obj-29", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-31", 0 ]
 				}
 
 			}
@@ -628,6 +789,20 @@
 					"destination" : [ "obj-36", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-40", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-28", 0 ],
+					"source" : [ "obj-42", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-31", 0 ],
+					"source" : [ "obj-43", 0 ]
 				}
 
 			}
@@ -656,6 +831,20 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-43", 0 ],
+					"source" : [ "obj-51", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-42", 0 ],
+					"source" : [ "obj-52", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-2", 1 ],
 					"source" : [ "obj-8", 0 ]
 				}
@@ -669,6 +858,21 @@
 
 			}
  ],
+		"parameters" : 		{
+			"obj-51" : [ "live.tab", "live.tab", 0 ],
+			"obj-52" : [ "live.tab[1]", "live.tab", 0 ],
+			"parameterbanks" : 			{
+				"0" : 				{
+					"index" : 0,
+					"name" : "",
+					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+				}
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
 		"dependency_cache" : [ 			{
 				"name" : "sonus.buffx.mxe64",
 				"type" : "mx64"
