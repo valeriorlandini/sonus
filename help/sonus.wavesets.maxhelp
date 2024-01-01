@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 503.0, 175.0, 854.0, 797.0 ],
+		"rect" : [ 318.0, 152.0, 854.0, 797.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -43,12 +43,40 @@
 					"bubble" : 1,
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
-					"id" : "obj-29",
-					"linecount" : 4,
+					"id" : "obj-39",
+					"linecount" : 5,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 588.194033026695251, 517.0, 202.0, 70.0 ],
+					"patching_rect" : [ 578.0, 557.0, 246.0, 85.0 ],
+					"text" : "filter groups of n wavesets with a filter (lp, hp, bp, no for no filter) with the m cutoff. any number of n filter m tuples can be specified, if no filter use any  value for cutoff (it will be ignored)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-35",
+					"linecount" : 3,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 413.205963671207428, 574.5, 140.0, 50.0 ],
+					"text" : "filter 100 bp 1200 200 hp 4000 300 lp 1000 150 no 20"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
+					"id" : "obj-29",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 578.0, 497.0, 243.0, 55.0 ],
 					"text" : "resize groups of n wavesets (with pitch change) by the m amount. any number of n m pairs can be specified"
 				}
 
@@ -60,7 +88,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 417.205963671207428, 541.0, 161.0, 22.0 ],
+					"patching_rect" : [ 413.205963671207428, 513.5, 161.0, 22.0 ],
 					"text" : "stretch 200 1.5 100 0.8 10 3."
 				}
 
@@ -685,6 +713,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-34", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-35", 0 ]
 				}
 
 			}

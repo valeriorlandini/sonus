@@ -47,6 +47,8 @@
 	<!--RELATED-->
 
 	<seealsolist>
+		<seealso name='minimum~' />
+		<seealso name='maximum~' />
 	</seealsolist>
 
 

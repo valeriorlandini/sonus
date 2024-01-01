@@ -6,6 +6,7 @@
 #include "c74_min.h"
 #include <algorithm>
 #include <random>
+#include "biquad.h"
 #include "interp.h"
 
 using namespace c74::min;
@@ -625,6 +626,94 @@ public:
                     b_new.dirty();
                 }
             }
+
+            return {};
+        }
+    };
+
+    message<> filter
+    {
+        this,
+        "filter",
+        "Apply to n wavesets a filter (lp, hp, bp, or no for no filter) with a m cutoff, the sequence can be of arbitrary length (e.g. n1 lp m1 n2 no m2...)",
+        MIN_FUNCTION
+        {
+            analyse();
+            buffer_lock<> b(m_buffer);
+
+            if (args.empty() || (args.size() % 3))
+            {
+                cout << "Syntax: filter n1 <filter type (lp, hp, bp, no)> <cutoff> n2 <filter type (lp, hp, bp, no)> <cutoff> ..." << endl;
+                return {};
+            }
+
+            if (b.valid())
+            {
+                struct block
+                {
+                    int length;
+                    Biquad<double> filter;
+                    bool apply = false;
+                };
+
+                std::vector<block> seq;
+
+                for (auto a = 0; a < args.size(); a+=3)
+                {
+                    block curr_block;
+                    curr_block.length = std::max(0, int(args.at(a)));
+                    curr_block.filter.set_sample_rate(b.samplerate());
+                    if (std::string(args.at(a+1)) == "lp")
+                    {
+                        curr_block.apply = true;
+                        curr_block.filter.set_type(BQFilters::lowpass);
+                        curr_block.filter.set_cutoff(double(args.at(a+2)));
+                    }
+                    if (std::string(args.at(a+1)) == "hp")
+                    {
+                        curr_block.apply = true;
+                        curr_block.filter.set_type(BQFilters::hipass);
+                        curr_block.filter.set_cutoff(double(args.at(a+2)));
+                    }
+                    if (std::string(args.at(a+1)) == "bp")
+                    {
+                        curr_block.apply = true;
+                        curr_block.filter.set_type(BQFilters::bandpass);
+                        curr_block.filter.set_cutoff(double(args.at(a+2)));
+                    }
+                    seq.push_back(curr_block);
+                }
+
+                std::vector<std::vector<double>> new_buffer;
+                for (int ch = 0; ch < b.channel_count(); ch++)
+                {
+                    std::vector<double> new_channel;
+
+                    int w = 0;
+                    int seq_pos = 0;
+
+                    for (w = 0; w < wavesets_idx_.at(ch).size(); w += seq.at(seq_pos).length)
+                    {
+                        if (seq.at(seq_pos).apply)
+                        {
+                            int start = wavesets_idx_.at(ch).at(w).start;
+                            int end = wavesets_idx_.at(ch).at(std::min(int(wavesets_idx_.at(ch).size()) - 1, w + seq.at(seq_pos).length - 1)).end;
+                            
+                            seq.at(seq_pos).filter.clear();
+
+                            for (auto s = start; s <= end; s++)
+                            {
+                                b.lookup(s, ch) = seq.at(seq_pos).filter.run(b.lookup(s, ch));
+                            }
+                        }
+
+                        ++seq_pos;
+                        seq_pos %= seq.size();
+                    }
+                }
+
+                b.dirty();
+            }            
 
             return {};
         }

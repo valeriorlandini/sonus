@@ -90,6 +90,11 @@
 			<description>Adjust the length of each group of n wavesets according to m stretch factor, the sequence can be of arbitrary length (i.e. n1 m1 n2 m2 n3 m3...) </description>
 		</method>
 
+		<method name='filter'>
+			<digest>Apply to n wavesets a filter (lp, hp, bp, or no for no filter) with a m cutoff, the sequence can be of arbitrary length (e.g</digest>
+			<description>Apply to n wavesets a filter (lp, hp, bp, or no for no filter) with a m cutoff, the sequence can be of arbitrary length (e.g. n1 lp m1 n2 no m2...) </description>
+		</method>
+
 	</methodlist>
 
 
