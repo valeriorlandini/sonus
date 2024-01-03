@@ -55,6 +55,11 @@
 			<description>Apply a lowpass filter: lowpass <o>freq</o> <o>q</o> </description>
 		</method>
 
+		<method name='glue'>
+			<digest>Extend the buffer with the content from another buffer: glue [buffer name] [b(efore) / a(fter), default a(fter)] </digest>
+			<description>Extend the buffer with the content from another buffer: glue [buffer name] [b(efore) / a(fter), default a(fter)] </description>
+		</method>
+
 		<method name='restore'>
 			<digest>Restore the buffer content at the time when backup was set </digest>
 			<description>Restore the buffer content at the time when backup was set </description>

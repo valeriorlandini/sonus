@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 99.0, 100.0, 838.0, 843.0 ],
+		"rect" : [ 99.0, 100.0, 838.0, 809.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,34 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"bubble" : 1,
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
+					"id" : "obj-61",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 562.0, 682.5, 203.0, 55.0 ],
+					"presentation_linecount" : 4,
+					"text" : "add a new buffer before (b) or after (a) the current one: glue <buffer> <b/a (default a)>"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-60",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 446.023861289024353, 699.0, 107.0, 22.0 ],
+					"text" : "glue #0_tomix a"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-59",
 					"maxclass" : "message",
@@ -173,7 +201,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 187.388066053390503, 692.5, 173.0, 25.0 ],
+					"patching_rect" : [ 187.388066053390503, 680.5, 173.0, 25.0 ],
 					"text" : "argument: buffer name"
 				}
 
@@ -188,7 +216,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 176.388066053390503, 554.0, 254.0, 55.0 ],
+					"patching_rect" : [ 176.388066053390503, 542.0, 254.0, 55.0 ],
 					"text" : "delay, syntax: delay <time in ms> <feedback (default 0.0> <level (default 0.25>"
 				}
 
@@ -200,7 +228,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 58.388066053390503, 570.5, 111.0, 22.0 ],
+					"patching_rect" : [ 58.388066053390503, 558.5, 111.0, 22.0 ],
 					"text" : "delay 500. 0.5 0.33"
 				}
 
@@ -213,7 +241,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 435.411927342414856, 464.0, 159.0, 22.0 ],
+					"patching_rect" : [ 438.111933946609497, 456.00000011920929, 159.0, 22.0 ],
 					"text" : "loadmess replace tomix.wav"
 				}
 
@@ -226,20 +254,20 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 544.205963671207428, 494.99999988079071, 145.0, 22.0 ],
+					"patching_rect" : [ 546.905970275402069, 487.0, 145.0, 22.0 ],
 					"text" : "loadmess set #0_tomix"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"buffername" : "1009_tomix",
+					"buffername" : "1000_tomix",
 					"id" : "obj-43",
 					"maxclass" : "waveform~",
 					"numinlets" : 5,
 					"numoutlets" : 6,
 					"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-					"patching_rect" : [ 435.411927342414856, 518.923729836940765, 111.0, 27.813557982444763 ]
+					"patching_rect" : [ 438.111933946609497, 510.923729956150055, 111.0, 27.813557982444763 ]
 				}
 
 			}
@@ -250,7 +278,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 435.411927342414856, 492.99999988079071, 111.0, 22.0 ],
+					"patching_rect" : [ 438.111933946609497, 485.0, 111.0, 22.0 ],
 					"text" : "buffer~ #0_tomix"
 				}
 
@@ -265,7 +293,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 176.388066053390503, 497.0, 256.0, 55.0 ],
+					"patching_rect" : [ 176.388066053390503, 485.0, 256.0, 55.0 ],
 					"text" : "mix with one or more other buffers, syntax: mix <buffer> <gain> ... <buffer> <gain>"
 				}
 
@@ -277,7 +305,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 51.0, 513.5, 119.0, 22.0 ],
+					"patching_rect" : [ 51.0, 501.5, 119.0, 22.0 ],
 					"text" : "mix #0_tomix 0.75"
 				}
 
@@ -292,7 +320,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 176.388066053390503, 455.0, 254.0, 40.0 ],
+					"patching_rect" : [ 176.388066053390503, 443.0, 254.0, 40.0 ],
 					"text" : "bitcrush, syntax: bits <bit depth (1.0-64.0)> <wet (default 1.0)>"
 				}
 
@@ -304,7 +332,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 110.0, 464.0, 57.0, 22.0 ],
+					"patching_rect" : [ 110.0, 452.0, 57.0, 22.0 ],
 					"text" : "bits 4 0.5"
 				}
 
@@ -319,7 +347,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 176.388066053390503, 413.0, 254.0, 40.0 ],
+					"patching_rect" : [ 176.388066053390503, 401.0, 254.0, 40.0 ],
 					"text" : "distortion, syntax: distort <gain> <wet (default 1.0)>"
 				}
 
@@ -331,7 +359,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 92.0, 422.0, 75.0, 22.0 ],
+					"patching_rect" : [ 92.0, 410.0, 75.0, 22.0 ],
 					"text" : "distort 7. 0.8"
 				}
 
@@ -346,7 +374,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 176.388066053390503, 356.0, 254.0, 55.0 ],
+					"patching_rect" : [ 176.388066053390503, 344.0, 254.0, 55.0 ],
 					"text" : "overdrive with symmetrical soft clipping, syntax:drive <threshold (default 0.3)>"
 				}
 
@@ -358,7 +386,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 104.0, 372.5, 61.0, 22.0 ],
+					"patching_rect" : [ 104.0, 360.5, 61.0, 22.0 ],
 					"text" : "drive 0.25"
 				}
 
@@ -373,7 +401,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 176.388066053390503, 299.0, 257.0, 55.0 ],
+					"patching_rect" : [ 176.388066053390503, 287.0, 257.0, 55.0 ],
 					"text" : "fill the buffer with white noise, optionally mixing it with current buffer content, syntax: noise <mix (default 1.0)>"
 				}
 
@@ -385,7 +413,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 110.0, 315.5, 57.0, 22.0 ],
+					"patching_rect" : [ 110.0, 303.5, 57.0, 22.0 ],
 					"text" : "noise 0.3"
 				}
 
@@ -496,7 +524,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 176.388066053390503, 611.0, 254.0, 70.0 ],
+					"patching_rect" : [ 176.388066053390503, 599.0, 254.0, 70.0 ],
 					"text" : "each time \"backup\" is sent, a copy of the current buffer is stored to memory (replacing any previous one), so that it can be restored with \"restore\" message"
 				}
 
@@ -508,7 +536,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 122.388066053390503, 649.5, 46.0, 22.0 ],
+					"patching_rect" : [ 122.388066053390503, 637.5, 46.0, 22.0 ],
 					"text" : "restore"
 				}
 
@@ -520,7 +548,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 122.388066053390503, 625.5, 47.0, 22.0 ],
+					"patching_rect" : [ 122.388066053390503, 613.5, 47.0, 22.0 ],
 					"text" : "backup"
 				}
 
@@ -592,7 +620,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 33.0, 735.5, 91.0, 22.0 ],
+					"patching_rect" : [ 33.0, 717.5, 91.0, 22.0 ],
 					"text" : "print @popup 1"
 				}
 
@@ -624,7 +652,7 @@
 			}
 , 			{
 				"box" : 				{
-					"buffername" : "1009_sample",
+					"buffername" : "1000_sample",
 					"id" : "obj-7",
 					"maxclass" : "waveform~",
 					"numinlets" : 5,
@@ -681,7 +709,7 @@
 					"maxclass" : "live.line",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 787.0, 805.0, 5.0 ]
+					"patching_rect" : [ 16.0, 772.0, 805.0, 5.0 ]
 				}
 
 			}
@@ -703,7 +731,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 300.0, 810.0, 237.0, 22.0 ],
+					"patching_rect" : [ 300.0, 795.0, 237.0, 22.0 ],
 					"text" : "https://github.com/valeriorlandini/sonus",
 					"textcolor" : [ 0.0, 0.015686274509804, 0.396078431372549, 1.0 ]
 				}
@@ -718,7 +746,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 824.0, 129.0, 36.0 ],
+					"patching_rect" : [ 10.0, 809.0, 129.0, 36.0 ],
 					"text" : ";\r\nmax launchbrowser $1"
 				}
 
@@ -730,7 +758,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 33.0, 694.0, 145.0, 22.0 ],
+					"patching_rect" : [ 33.0, 682.0, 145.0, 22.0 ],
 					"text" : "sonus.buffx #0_sample"
 				}
 
@@ -786,7 +814,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 794.0, 805.0, 20.0 ],
+					"patching_rect" : [ 16.0, 779.0, 805.0, 20.0 ],
 					"text" : "handmade in italy by valerio orlandini",
 					"textjustification" : 1
 				}
@@ -1046,6 +1074,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-59", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-60", 0 ]
 				}
 
 			}

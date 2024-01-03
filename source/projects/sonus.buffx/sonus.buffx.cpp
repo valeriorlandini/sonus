@@ -881,6 +881,104 @@ public:
         }
     };    
     
+    message<> glue
+    {
+        this,
+        "glue",
+        "Extend the buffer with the content from another buffer: glue [buffer name] [b(efore) / a(fter), default a(fter)]",
+        MIN_FUNCTION
+        {
+            buffer_lock<false> b(m_buffer);
+            bool after = true;
+
+            if (args.size() < 1)
+            {
+                cerr << "Syntax: glue <buffer name> <b / a, default a (place the buffer after the current data)>" << endl;
+
+                return {};
+            }
+
+            if (args.size() > 1)
+            {
+                if (std::string(args.at(1)) == "b" || std::string(args.at(1)) == "before")
+                {
+                    after = false;
+                }
+            }
+
+            if (b.valid())
+            {                
+                buffer_reference buffer(this, nullptr, false);
+                buffer.set(args.at(0));
+                buffer_lock bl(buffer);
+                std::vector<std::vector<double>> new_buffer;
+                
+                if (bl.valid())
+                {
+                    auto new_size = bl.frame_count() + b.frame_count();
+
+                    for (auto ch = 0; ch < b.channel_count(); ch++)
+                    {
+                        std::vector<double> new_channel(new_size, 0.0);
+
+                        for (auto s = 0; s < new_size; s++)
+                        {
+                            if (after)
+                            {
+                                if (s < b.frame_count())
+                                {
+                                    new_channel.at(s) = b.lookup(s, ch);
+                                }
+                                else
+                                {
+                                    if (ch < bl.channel_count())
+                                    {
+                                        new_channel.at(s) = bl.lookup(s - b.frame_count(), ch);
+                                    }
+                                }
+                            }
+                            else
+                            {   
+                                if (s < bl.frame_count() && ch < bl.channel_count())
+                                {
+                                    new_channel.at(s) = bl.lookup(s, ch);
+                                }
+                                else
+                                {
+                                    new_channel.at(s) = b.lookup(s - bl.frame_count(), ch);
+                                }
+                            }
+
+                        }
+
+                        new_buffer.push_back(new_channel);
+                    }
+
+                    b.resize_in_samples(new_size);
+                    bl.dirty();
+                    b.dirty();
+                }
+
+                buffer_lock<> b_new(m_buffer);
+
+                if (b_new.valid())
+                {
+                    for (auto ch = 0; ch < b_new.channel_count(); ch++)
+                    {
+                        for (auto s = 0; s < b_new.frame_count(); s++)
+                        {
+                            b_new.lookup(s, ch) = new_buffer.at(ch).at(s);
+                        }
+                    }
+
+                    b_new.dirty();
+                }
+            }        
+
+            return {};
+        }
+    };    
+    
 
 private:
     std::vector<std::vector<double>> original_buffer_;
