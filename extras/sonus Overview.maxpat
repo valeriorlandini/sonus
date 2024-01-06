@@ -45,7 +45,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 276.0, 335.0, 233.0, 20.0 ],
+					"patching_rect" : [ 273.0, 336.0, 233.0, 20.0 ],
 					"text" : "Save snapshots of a buffer"
 				}
 
@@ -68,7 +68,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 526.0, 290.0, 233.0, 20.0 ],
+					"patching_rect" : [ 523.0, 291.0, 233.0, 20.0 ],
 					"text" : "Deep neural network implementation"
 				}
 
@@ -103,7 +103,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 155.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 156.0, 233.0, 20.0 ],
 					"text" : "Bytebeat generator and player"
 				}
 
@@ -126,7 +126,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 290.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 291.0, 233.0, 20.0 ],
 					"text" : "Neural network based oscillator"
 				}
 
@@ -149,7 +149,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 200.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 201.0, 233.0, 20.0 ],
 					"text" : "Elementary cellular automata oscillator"
 				}
 
@@ -172,7 +172,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 776.0, 380.0, 233.0, 20.0 ],
+					"patching_rect" : [ 773.0, 381.0, 233.0, 20.0 ],
 					"text" : "Pop up dialogs generator"
 				}
 
@@ -195,7 +195,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 276.0, 245.0, 233.0, 20.0 ],
+					"patching_rect" : [ 273.0, 246.0, 233.0, 20.0 ],
 					"text" : "Parallel biquad filters"
 				}
 
@@ -218,7 +218,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 276.0, 425.0, 233.0, 20.0 ],
+					"patching_rect" : [ 273.0, 426.0, 233.0, 20.0 ],
 					"text" : "Eerie stereo reverberator"
 				}
 
@@ -241,7 +241,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 276.0, 560.0, 233.0, 20.0 ],
+					"patching_rect" : [ 273.0, 561.0, 233.0, 20.0 ],
 					"text" : "Simple signal mixer"
 				}
 
@@ -264,7 +264,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 276.0, 290.0, 233.0, 20.0 ],
+					"patching_rect" : [ 273.0, 291.0, 233.0, 20.0 ],
 					"text" : "Apply effects to buffers"
 				}
 
@@ -338,7 +338,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 276.0, 380.0, 233.0, 20.0 ],
+					"patching_rect" : [ 273.0, 381.0, 233.0, 20.0 ],
 					"text" : "Chebyshev waveshaper"
 				}
 
@@ -361,7 +361,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 776.0, 245.0, 233.0, 20.0 ],
+					"patching_rect" : [ 773.0, 246.0, 233.0, 20.0 ],
 					"text" : "Similar to line, but for list of numbers"
 				}
 
@@ -396,7 +396,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 526.0, 335.0, 233.0, 20.0 ],
+					"patching_rect" : [ 523.0, 336.0, 233.0, 20.0 ],
 					"text" : "Genetic algorithm implementations"
 				}
 
@@ -419,7 +419,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 526.0, 380.0, 233.0, 20.0 ],
+					"patching_rect" : [ 523.0, 381.0, 233.0, 20.0 ],
 					"text" : "Lindenmayer generative system"
 				}
 
@@ -442,7 +442,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 245.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 246.0, 233.0, 20.0 ],
 					"text" : "Lorenz attractor based generator"
 				}
 
@@ -465,7 +465,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 776.0, 155.0, 233.0, 20.0 ],
+					"patching_rect" : [ 773.0, 156.0, 233.0, 20.0 ],
 					"text" : "Output different items from a list"
 				}
 
@@ -488,7 +488,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 276.0, 200.0, 233.0, 20.0 ],
+					"patching_rect" : [ 273.0, 201.0, 233.0, 20.0 ],
 					"text" : "Bit manipulator"
 				}
 
@@ -511,7 +511,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 276.0, 155.0, 233.0, 20.0 ],
+					"patching_rect" : [ 273.0, 156.0, 233.0, 20.0 ],
 					"text" : "Bitcrusher and bit inverter"
 				}
 
@@ -534,7 +534,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 380.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 381.0, 233.0, 20.0 ],
 					"text" : "Pulsar oscillator"
 				}
 
@@ -557,7 +557,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 776.0, 335.0, 233.0, 20.0 ],
+					"patching_rect" : [ 773.0, 336.0, 233.0, 20.0 ],
 					"text" : "Mathematical constants"
 				}
 
@@ -580,7 +580,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 776.0, 290.0, 233.0, 20.0 ],
+					"patching_rect" : [ 773.0, 291.0, 233.0, 20.0 ],
 					"text" : "Non repeating random sequences"
 				}
 
@@ -603,7 +603,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 470.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 471.0, 233.0, 20.0 ],
 					"text" : "Oscillator with random shapes"
 				}
 
@@ -626,7 +626,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 515.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 516.0, 233.0, 20.0 ],
 					"text" : "Multishape bandlimited oscillator"
 				}
 
@@ -697,7 +697,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 526.0, 245.0, 233.0, 20.0 ],
+					"patching_rect" : [ 523.0, 246.0, 233.0, 20.0 ],
 					"text" : "Cellular automata system"
 				}
 
@@ -852,7 +852,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 776.0, 515.0, 233.0, 20.0 ],
+					"patching_rect" : [ 773.0, 516.0, 233.0, 20.0 ],
 					"text" : "Tent map calculator"
 				}
 
@@ -875,7 +875,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 526.0, 470.0, 233.0, 20.0 ],
+					"patching_rect" : [ 523.0, 471.0, 233.0, 20.0 ],
 					"text" : "Classic perceptron implementation"
 				}
 
@@ -886,7 +886,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 776.0, 470.0, 233.0, 20.0 ],
+					"patching_rect" : [ 773.0, 471.0, 233.0, 20.0 ],
 					"text" : "Quadraphonic panner coefficients"
 				}
 
@@ -897,7 +897,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 276.0, 515.0, 233.0, 20.0 ],
+					"patching_rect" : [ 273.0, 516.0, 233.0, 20.0 ],
 					"text" : "Quadraphonic panner"
 				}
 
@@ -908,7 +908,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 776.0, 425.0, 233.0, 20.0 ],
+					"patching_rect" : [ 773.0, 426.0, 233.0, 20.0 ],
 					"text" : "Signal extremes analyzer"
 				}
 
@@ -919,7 +919,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 776.0, 200.0, 233.0, 20.0 ],
+					"patching_rect" : [ 773.0, 201.0, 233.0, 20.0 ],
 					"text" : "Hot inlets operations"
 				}
 
@@ -930,7 +930,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 276.0, 470.0, 233.0, 20.0 ],
+					"patching_rect" : [ 273.0, 471.0, 233.0, 20.0 ],
 					"text" : "Continuous selector/mixer"
 				}
 
@@ -941,7 +941,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 526.0, 425.0, 233.0, 20.0 ],
+					"patching_rect" : [ 523.0, 426.0, 233.0, 20.0 ],
 					"text" : "Artificial neuron implementation"
 				}
 
@@ -952,7 +952,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 526.0, 200.0, 233.0, 20.0 ],
+					"patching_rect" : [ 523.0, 201.0, 233.0, 20.0 ],
 					"text" : "Activation functions (signal rate)"
 				}
 
@@ -963,7 +963,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 526.0, 155.0, 233.0, 20.0 ],
+					"patching_rect" : [ 523.0, 156.0, 233.0, 20.0 ],
 					"text" : "Activation functions"
 				}
 
@@ -974,7 +974,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 276.0, 605.0, 233.0, 20.0 ],
+					"patching_rect" : [ 273.0, 606.0, 233.0, 20.0 ],
 					"text" : "Wavesets based sample manipulation"
 				}
 
@@ -985,7 +985,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 425.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 426.0, 233.0, 20.0 ],
 					"text" : "Rössler attractor based generator"
 				}
 
@@ -996,7 +996,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 335.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 336.0, 233.0, 20.0 ],
 					"text" : "User defined wavetable oscillator"
 				}
 
@@ -1007,7 +1007,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 560.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 561.0, 233.0, 20.0 ],
 					"text" : "Window functions generator"
 				}
 

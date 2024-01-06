@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 99.0, 100.0, 838.0, 809.0 ],
+		"rect" : [ 99.0, 100.0, 838.0, 826.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -49,7 +49,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 562.0, 682.5, 203.0, 55.0 ],
-					"presentation_linecount" : 4,
 					"text" : "add a new buffer before (b) or after (a) the current one: glue <buffer> <b/a (default a)>"
 				}
 
@@ -261,7 +260,7 @@
 			}
 , 			{
 				"box" : 				{
-					"buffername" : "1000_tomix",
+					"buffername" : "1040_tomix",
 					"id" : "obj-43",
 					"maxclass" : "waveform~",
 					"numinlets" : 5,
@@ -652,7 +651,7 @@
 			}
 , 			{
 				"box" : 				{
-					"buffername" : "1000_sample",
+					"buffername" : "1040_sample",
 					"id" : "obj-7",
 					"maxclass" : "waveform~",
 					"numinlets" : 5,
@@ -784,7 +783,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 805.0, 25.0 ],
-					"text" : "Transforms a buffer by applying a series of basic effects.",
+					"text" : "This object facilitates buffer transformations by enabling the application of a sequence of effects.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 

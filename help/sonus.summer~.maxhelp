@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 99.0, 100.0, 847.0, 517.0 ],
+		"rect" : [ 99.0, 100.0, 847.0, 514.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -268,7 +268,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 805.0, 25.0 ],
-					"text" : "A straight and ready to use mixer, that sums the incoming signals, optionally scaling them.",
+					"text" : "A straightforward and pre-configured mixer that sums incoming signals, offering optional scaling capabilities.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 

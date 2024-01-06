@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -232,8 +232,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 157.353658616542816, 265.5, 321.0, 40.0 ],
-					"text" : "polynomial order (interpolation between two consecutive orders happens for non integer values)",
-					"textjustification" : 0
+					"text" : "polynomial order (interpolation between two consecutive orders happens for non integer values)"
 				}
 
 			}

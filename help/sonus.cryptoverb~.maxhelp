@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -48,7 +48,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 151.75, 428.0, 50.0, 22.0 ]
+					"patching_rect" : [ 151.75, 437.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -60,7 +60,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 60.0, 224.5, 70.0, 22.0 ],
+					"patching_rect" : [ 60.0, 233.5, 70.0, 22.0 ],
 					"text" : "loadmess 1"
 				}
 
@@ -74,7 +74,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 206.5, 270.0, 206.0, 25.0 ],
+					"patching_rect" : [ 206.5, 279.0, 206.0, 25.0 ],
 					"text" : "wet amount of the whole effect"
 				}
 
@@ -90,7 +90,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 151.75, 271.5, 50.0, 22.0 ]
+					"patching_rect" : [ 151.75, 280.5, 50.0, 22.0 ]
 				}
 
 			}
@@ -102,7 +102,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 151.75, 192.5, 100.0, 22.0 ],
+					"patching_rect" : [ 151.75, 201.5, 100.0, 22.0 ],
 					"text" : "loadmess 12500."
 				}
 
@@ -116,7 +116,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 225.5, 224.5, 187.0, 25.0 ],
+					"patching_rect" : [ 225.5, 233.5, 187.0, 25.0 ],
 					"text" : "master lowpass filter cutoff"
 				}
 
@@ -132,7 +132,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 151.75, 391.5, 50.0, 22.0 ]
+					"patching_rect" : [ 151.75, 400.5, 50.0, 22.0 ]
 				}
 
 			}
@@ -147,7 +147,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 151.75, 367.5, 50.0, 22.0 ]
+					"patching_rect" : [ 151.75, 376.5, 50.0, 22.0 ]
 				}
 
 			}
@@ -162,7 +162,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 151.75, 343.5, 50.0, 22.0 ]
+					"patching_rect" : [ 151.75, 352.5, 50.0, 22.0 ]
 				}
 
 			}
@@ -176,7 +176,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 212.5, 419.0, 321.0, 40.0 ],
+					"patching_rect" : [ 212.5, 428.0, 321.0, 40.0 ],
 					"text" : "switch between three different modes of internal blocks arrangement"
 				}
 
@@ -219,7 +219,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 151.75, 224.5, 67.0, 22.0 ]
+					"patching_rect" : [ 151.75, 233.5, 67.0, 22.0 ]
 				}
 
 			}
@@ -234,7 +234,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 151.75, 319.5, 50.0, 22.0 ]
+					"patching_rect" : [ 151.75, 328.5, 50.0, 22.0 ]
 				}
 
 			}
@@ -246,7 +246,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 60.0, 271.5, 87.0, 22.0 ],
+					"patching_rect" : [ 60.0, 280.5, 87.0, 22.0 ],
 					"text" : "loadmess 0.75"
 				}
 
@@ -294,7 +294,7 @@
 					"originaltempo" : 120.0,
 					"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 33.0, 124.0, 145.0, 66.0 ],
+					"patching_rect" : [ 33.0, 133.0, 145.0, 66.0 ],
 					"pitchcorrection" : 0,
 					"quality" : "basic",
 					"timestretch" : [ 0 ]
@@ -321,8 +321,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 212.5, 331.0, 291.25, 70.0 ],
-					"text" : "wet amount for each of the four blocks of the effects. when they are all 0.0, it is the same that sending a 0.0 to the global wet, except that the lowpass is not bypassed"
+					"patching_rect" : [ 212.5, 340.0, 291.25, 70.0 ],
+					"text" : "wet amount for each of the four blocks of the effect. when they are all 0.0, it is the same that sending a 0.0 to the global wet, except that the lowpass is not bypassed"
 				}
 
 			}
@@ -335,7 +335,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 189.0, 144.5, 101.0, 25.0 ],
+					"patching_rect" : [ 189.0, 153.5, 101.0, 25.0 ],
 					"text" : "input"
 				}
 
@@ -417,11 +417,12 @@
 					"fontname" : "Arial",
 					"fontsize" : 16.0,
 					"id" : "obj-1",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 80.0, 805.0, 25.0 ],
-					"text" : "Reverberator made up of four blocks, ideal to create an instant atmosphere around any kind of sound.",
+					"patching_rect" : [ 16.0, 80.0, 805.0, 43.0 ],
+					"text" : "A reverberator composed of four blocks, ideal for swiftly creating an instant atmospheric effect around any type of sound.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 

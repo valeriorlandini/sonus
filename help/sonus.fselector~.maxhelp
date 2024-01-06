@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 847.0, 573.0 ],
+		"rect" : [ 99.0, 100.0, 847.0, 573.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -299,7 +299,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 805.0, 62.0 ],
-					"text" : "A different flavour of selector~, which allows floating point numbers to mix the input of two contiguous inlets. If you want to have all inlets closed when index is 0 (like in selector~), just leave the first input to choose from unconnected.",
+					"text" : "This variant of selector~ enables the use of floating-point numbers to blend the input of two consecutive inlets. To have all inlets closed when the index is 0 (similar to selector~ behavior), leave the first input, which determines the selection, unconnected.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 

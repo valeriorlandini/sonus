@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 847.0, 658.0 ],
+		"rect" : [ 99.0, 100.0, 847.0, 653.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -46,8 +46,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 50.399999999999999, 202.5, 212.999999999999972, 20.0 ],
-					"text" : "   saw     sqr        sin        tri        noi",
-					"textjustification" : 0
+					"text" : "   saw     sqr        sin        tri        noi"
 				}
 
 			}
@@ -413,12 +412,12 @@
 					"fontname" : "Arial",
 					"fontsize" : 16.0,
 					"id" : "obj-1",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 80.0, 805.0, 43.0 ],
-					"text" : "A bandlimited oscillator with classic shapes (saw, square, sine, triangle) and noise generator. The different shapes can be mixed to obtain complex waveforms. Further outlets output the single waves.",
+					"patching_rect" : [ 16.0, 80.0, 805.0, 62.0 ],
+					"text" : "An oscillator featuring bandlimited classic shapes (saw, square, sine, triangle) along with a noise generator. These different shapes can be combined to create complex waveforms. Additionally, separate outputs are available for each individual waveform.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 

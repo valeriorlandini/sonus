@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 516.0, 362.0, 847.0, 582.0 ],
+		"rect" : [ 99.0, 100.0, 847.0, 582.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -92,7 +92,7 @@
 					"patching_rect" : [ 33.0, 384.0, 38.5, 50.0 ],
 					"shape" : 1,
 					"size" : 3,
-					"value" : 0
+					"value" : 2
 				}
 
 			}
@@ -132,8 +132,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 253.166666388511658, 218.5, 144.0, 55.0 ],
-					"presentation_linecount" : 7,
+					"patching_rect" : [ 253.166666388511658, 218.5, 146.0, 55.0 ],
 					"text" : "attractor parameters (clamped inside optimal ranges)"
 				}
 
@@ -353,7 +352,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 805.0, 43.0 ],
-					"text" : "An implementation, at signal rate, of a Lorenz attractor. The output values are adjusted between -1 and 1, so that it can be used as modulation source or sound generator with ease.",
+					"text" : "An implementation, at signal rate, of a Lorenz attractor. The output values are adjusted between -1 and 1, so that they can be used as modulation sources or sound generators with ease.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 

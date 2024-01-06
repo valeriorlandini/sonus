@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -420,7 +420,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 808.0, 43.0 ],
-					"text" : "An implementation of a genetic algorithm, with customizable parameters. This version generates list of numbers, check sonus.ga to generate symbols.",
+					"text" : "An implementation of a genetic algorithm, with customizable parameters. This version generates lists of numbers, check sonus.ga to generate symbols.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 

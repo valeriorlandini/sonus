@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 99.0, 100.0, 847.0, 582.0 ],
+		"rect" : [ 99.0, 100.0, 847.0, 578.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -352,7 +352,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 805.0, 43.0 ],
-					"text" : "An implementation, at signal rate, of a Rössler attractor. The output values are adjusted between -1 and 1, so that it can be used as modulation source or sound generator with ease.",
+					"text" : "An implementation, at signal rate, of a Rössler attractor. The output values are adjusted between -1 and 1, so that they can be used as modulation sources or sound generators with ease.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 

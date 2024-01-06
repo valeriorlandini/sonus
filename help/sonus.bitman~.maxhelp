@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 99.0, 100.0, 831.0, 638.0 ],
+		"rect" : [ 99.0, 100.0, 831.0, 637.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -321,7 +321,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 805.0, 43.0 ],
-					"text" : "This effect allows the manipulation of the single bits of a signal, with 3 possible operations: bit toggle (inversion of the value of the bit), bit set (bit set to 1) and bit clear (bit set to 0).",
+					"text" : "This effect enables the manipulation of individual bits within a signal, offering three distinct operations: bit toggle (inverting the bit value), bit set (setting the bit to 1), and bit clear (setting the bit to 0).",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 

@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 41.0, 514.0, 854.0, 549.0 ],
+		"rect" : [ 41.0, 100.0, 854.0, 545.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -337,7 +337,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 805.0, 43.0 ],
-					"text" : "Quadraphonic panner, with each speaker positioned at a corner of the room. This object calculates the gain coefficients for each speaker. To directly pan a signal in a quadraphonic space, check sonus.quadpan~.",
+					"text" : "Quadraphonic panner, assuming that each speaker is positioned at a corner of the room. This object calculates the gain coefficients for each speaker. To directly pan a signal in a quadraphonic space, check sonus.quadpan~.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 

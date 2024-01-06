@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 458.0, 138.0, 831.0, 638.0 ],
+		"rect" : [ 99.0, 100.0, 831.0, 638.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -99,7 +99,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 329.353658616542816, 248.5, 185.805966973304749, 55.0 ],
-					"presentation_linecount" : 3,
 					"text" : "...or as single numbers (0: leave untouched, 1: invert bit) to the 8 dedicated inlets",
 					"textjustification" : 1
 				}
@@ -116,7 +115,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 420.353658616542816, 134.5, 185.805966973304749, 55.0 ],
-					"presentation_linecount" : 3,
 					"text" : "the bits to invert can either be sent as a list to the first outlet with set message...",
 					"textjustification" : 1
 				}
@@ -353,8 +351,8 @@
 					"id" : "obj-2",
 					"maxclass" : "newobj",
 					"numinlets" : 9,
-					"numoutlets" : 2,
-					"outlettype" : [ "signal", "" ],
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 33.0, 322.0, 103.0, 22.0 ],
 					"text" : "sonus.8bitinv~"
 				}
@@ -382,7 +380,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 805.0, 43.0 ],
-					"text" : "This effect reduces the resolution of the incoming audio to 8 bits, and then allows to invert the single bits of the signal, allowing to obtain interesting effects. For more complex bits operations, see also sonus.bitman~",
+					"text" : "This effect decreases the resolution of the incoming audio to 8 bits and provides the ability to invert individual bits within the signal. For more complex bit operations, see sonus.bitman~.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 

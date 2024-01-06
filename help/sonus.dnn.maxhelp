@@ -324,7 +324,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 808.0, 62.0 ],
-					"text" : "This object allows to load a custom deep dense neural network with an arbitrary number of layers and neurons (as long as your memory can handle them). The neural network structure, with weights, biases and activation functions should be specified in a JSON with a specific formatting (see example.json for a reference).",
+					"text" : "This object loads a custom deep dense neural network, accommodating an arbitrary number of layers and neurons (limited by available memory). The neural network structure, with weights, biases, and activation functions, must be specified in a JSON format (refer to example.json for formatting reference).",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 

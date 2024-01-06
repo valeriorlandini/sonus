@@ -83,7 +83,10 @@
 	<!--RELATED-->
 
 	<seealsolist>
+		<seealso name='biquad~' />
 		<seealso name='lores~' />
+		<seealso name='reson~' />
+		<seealso name='svf~' />
 	</seealsolist>
 
 

@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -47,7 +47,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 33.0, 390.0, 145.0, 22.0 ]
+					"patching_rect" : [ 33.0, 414.0, 145.0, 22.0 ]
 				}
 
 			}
@@ -57,7 +57,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 33.0, 413.5, 45.0, 45.0 ]
+					"patching_rect" : [ 33.0, 437.5, 45.0, 45.0 ]
 				}
 
 			}
@@ -71,7 +71,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 174.342245161533356, 239.0, 230.139037370681763, 40.0 ],
+					"patching_rect" : [ 174.342245161533356, 263.0, 230.139037370681763, 40.0 ],
 					"text" : "arguments: frequency and cycles with the same shape"
 				}
 
@@ -86,7 +86,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 201.342245161533356, 187.0, 203.139037370681763, 40.0 ],
+					"patching_rect" : [ 201.342245161533356, 211.0, 203.139037370681763, 40.0 ],
 					"text" : "how many cycles the same shape should be kept"
 				}
 
@@ -101,7 +101,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 94.342245161533356, 128.0, 153.139037370681763, 40.0 ],
+					"patching_rect" : [ 94.342245161533356, 152.0, 153.139037370681763, 40.0 ],
 					"text" : "oscillator frequency (can be also a signal)"
 				}
 
@@ -115,7 +115,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 134.0, 196.0, 50.0, 22.0 ]
+					"patching_rect" : [ 134.0, 220.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -128,7 +128,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 33.0, 137.0, 50.0, 22.0 ]
+					"patching_rect" : [ 33.0, 161.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -139,7 +139,7 @@
 					"maxclass" : "scope~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 196.342245161533356, 359.5, 307.0, 99.0 ]
+					"patching_rect" : [ 196.342245161533356, 383.5, 307.0, 99.0 ]
 				}
 
 			}
@@ -150,7 +150,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 33.0, 306.342236399650574, 54.0, 22.0 ],
+					"patching_rect" : [ 33.0, 330.342236399650574, 54.0, 22.0 ],
 					"text" : "*~ 0.707"
 				}
 
@@ -162,8 +162,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 103.0, 306.342236399650574, 50.0, 22.0 ],
-					"text" : "sine"
+					"patching_rect" : [ 103.0, 330.342236399650574, 50.0, 22.0 ],
+					"text" : "square"
 				}
 
 			}
@@ -176,7 +176,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 174.342245161533356, 304.842236399650574, 307.139037370681763, 25.0 ],
+					"patching_rect" : [ 174.342245161533356, 328.842236399650574, 307.139037370681763, 25.0 ],
 					"text" : "current shape (sent only when shape changes)"
 				}
 
@@ -187,7 +187,7 @@
 					"maxclass" : "live.line",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 475.0, 805.0, 5.0 ]
+					"patching_rect" : [ 16.0, 499.0, 805.0, 5.0 ]
 				}
 
 			}
@@ -209,7 +209,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 300.0, 498.0, 237.0, 22.0 ],
+					"patching_rect" : [ 300.0, 522.0, 237.0, 22.0 ],
 					"text" : "https://github.com/valeriorlandini/sonus",
 					"textcolor" : [ 0.0, 0.015686274509804, 0.396078431372549, 1.0 ]
 				}
@@ -224,7 +224,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 512.0, 129.0, 36.0 ],
+					"patching_rect" : [ 10.0, 536.0, 129.0, 36.0 ],
 					"text" : ";\r\nmax launchbrowser $1"
 				}
 
@@ -236,7 +236,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "" ],
-					"patching_rect" : [ 33.0, 248.0, 120.0, 22.0 ],
+					"patching_rect" : [ 33.0, 272.0, 120.0, 22.0 ],
 					"text" : "sonus.rsosc~ 440 55"
 				}
 
@@ -258,12 +258,12 @@
 					"fontname" : "Arial",
 					"fontsize" : 16.0,
 					"id" : "obj-1",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 80.0, 805.0, 43.0 ],
-					"text" : "A classic oscillator but with a shape randomly changing among sine, triangle, square and saw. The oscillator is non bandlimited by choice, so it works better as LFO or as glitchy sound source.",
+					"patching_rect" : [ 16.0, 80.0, 805.0, 62.0 ],
+					"text" : "An oscillator cycling through sine, triangle, square, and saw wave shapes at defined intervals, with the shape randomly selected for each interval. The oscillator is not bandlimited by design, making it particularly suitable for use as either a LFO or as a source for producing glitchy sounds.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 
@@ -293,7 +293,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 482.0, 805.0, 20.0 ],
+					"patching_rect" : [ 16.0, 506.0, 805.0, 20.0 ],
 					"text" : "handmade in italy by valerio orlandini",
 					"textjustification" : 1
 				}

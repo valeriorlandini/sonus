@@ -74,6 +74,7 @@
 	<seealsolist>
 		<seealso name='sonus.rsosc~' />
 		<seealso name='sonus.vaosc~' />
+		<seealso name='sonus.ca' />
 	</seealsolist>
 
 

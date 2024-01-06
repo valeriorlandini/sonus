@@ -200,7 +200,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 805.0, 43.0 ],
-					"text" : "Create a pop up message box using the operating system API that appears on the screen, with customizable title and text.",
+					"text" : "This external creates a customizable pop-up message box using the operating system's API. It displays on the screen with user-defined title and text.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 

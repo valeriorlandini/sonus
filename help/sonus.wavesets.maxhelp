@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 318.0, 152.0, 854.0, 797.0 ],
+		"rect" : [ 99.0, 100.0, 854.0, 797.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -561,7 +561,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 805.0, 43.0 ],
-					"text" : "Transforms a buffer after segmenting it into wavesets, defined by Trevor Wishart as a portion of samples between two zero crossings.",
+					"text" : "This object transforms a buffer after segmenting it into wavesets, defined by Trevor Wishart as portions of samples between two zero crossings.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 

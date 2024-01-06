@@ -91,6 +91,7 @@
 		<seealso name='sonus.neuron' />
 		<seealso name='sonus.perceptron' />
 		<seealso name='sonus.ga' />
+		<seealso name='sonus.ecaosc~' />
 	</seealsolist>
 
 

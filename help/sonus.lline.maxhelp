@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 99.0, 100.0, 847.0, 472.0 ],
+		"rect" : [ 99.0, 100.0, 847.0, 477.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -47,8 +47,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 300.0, 227.5, 276.5, 25.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 300.0, 227.5, 281.0, 25.0 ],
 					"text" : "update interval of the ramp, in milliseconds"
 				}
 
@@ -199,8 +198,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 208.0, 162.0, 368.0, 55.0 ],
-					"text" : "ramp time in milliseconds + the target list starts the transition. if less numbers than those of the starting list are specified, the missing values are automatically set to 0.0"
+					"patching_rect" : [ 208.0, 162.0, 373.0, 55.0 ],
+					"text" : "ramp time in milliseconds followed by the target list starts the transition. if less numbers than those of the starting list are specified, the missing values are automatically set to 0.0"
 				}
 
 			}
@@ -251,7 +250,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 805.0, 25.0 ],
-					"text" : "Gradually ramps from a list of numbers to the next one, basically acting like line object but for lists.",
+					"text" : "Gradually ramps from a list of numbers to the next one, basically acting like the line object but for lists.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 

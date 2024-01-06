@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 98.0, 100.0, 847.0, 541.0 ],
+		"rect" : [ 98.0, 100.0, 847.0, 531.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -269,7 +269,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 805.0, 43.0 ],
-					"text" : "Generator of sequences using the tent map function: f(x) := μ * min{x, 1 - x}. When μ (mu) value approaches to 2, the sequence becomes unstable (i.e. chaotic). Outputs are always inside [0, 1] interval.",
+					"text" : "This generator creates sequences using the tent map function: f(x) := μ * min{x, 1 - x}. As the μ (mu) value approaches 2, the sequence becomes unstable (i.e., chaotic). The outputs are always within the [0, 1] interval.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 

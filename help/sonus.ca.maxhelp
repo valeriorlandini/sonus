@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -307,7 +307,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 805.0, 43.0 ],
-					"text" : "A 2D cellular automata system, with customizable born and survival rules. The output of the system is formatted so that it can be visualized and edited on a matrixctrl object.",
+					"text" : "A 2D cellular automata system featuring customizable born and survival rules. The system outputs data formatted to allow visualization and editing via a matrixctrl object.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 

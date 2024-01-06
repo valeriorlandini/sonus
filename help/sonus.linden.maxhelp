@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -74,7 +74,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 253.0, 160.0, 358.0, 100.0 ],
-					"text" : "create and send the dictionary, which must have two entries: \"axiom\" with the initial configuration,  and \"rules\", with the evolution rules written as sequence of INPUT OUTPUT pairs (e.g. A->AB and B->A is simply written as A AB B A) - constant values (i.e. which do not evolve) are accepted, just do not specify a rule for their evolution"
+					"text" : "create and send the dictionary, which must have two entries: \"axiom\" with the initial configuration, and \"rules\", with the evolution rules written as sequence of INPUT OUTPUT pairs (e.g. A->AB and B->A are simply written as A AB B A) - constant values (i.e. which do not evolve) are accepted, just do not specify a rule for their evolution"
 				}
 
 			}

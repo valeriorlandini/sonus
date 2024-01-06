@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 99.0, 100.0, 847.0, 536.0 ],
+		"rect" : [ 99.0, 100.0, 847.0, 529.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -49,7 +49,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 388.930481314659119, 235.0, 343.139037370681763, 40.0 ],
-					"text" : "message 'wavetable' followed by an arbitrary number of values determines the oscillator wavetable"
+					"text" : "message 'wavetable' followed by an arbitrary number of values defines the oscillator wavetable"
 				}
 
 			}
@@ -79,7 +79,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 4,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -465,7 +465,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 805.0, 25.0 ],
-					"text" : "A wavetable oscillator with a user defineable wavetable, made of an arbitrary number of values.",
+					"text" : "A wavetable oscillator with a user defineable wavetable, made of an arbitrary number of points.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 

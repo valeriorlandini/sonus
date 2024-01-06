@@ -49,7 +49,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 215.402983486652374, 286.0, 229.0, 40.0 ],
-					"presentation_linecount" : 3,
 					"text" : "gain in dB for shelving and peak filters (can also be a signal)"
 				}
 
@@ -378,8 +377,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 80.0, 805.0, 43.0 ],
-					"text" : "This object implements seven separate second order filters (lowpass, highpass, bandpass, bandreject, low shelf, high shelf and peak), each with its own output but sharing the same parameters.",
+					"patching_rect" : [ 16.0, 80.0, 809.0, 43.0 ],
+					"text" : "This object incorporates seven distinct second-order filters (lowpass, highpass, bandpass, bandreject, low shelf, high shelf, and peak), each with its individual output but sharing the same set of parameters.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 
