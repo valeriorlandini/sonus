@@ -37,11 +37,15 @@ public:
 			std::string filename;
 			for (auto a = 0; a < args.size(); a++)
 			{
-				filename += args[a];
+				filename += std::string(args[a]);
 				if (a < args.size() - 1)
 				{
 					filename += " ";
 				}
+			}
+			if (filename.find("OSX:") == 0)
+			{
+				filename = filename.substr(4);
 			}
 
 			std::ifstream json_file(filename);
