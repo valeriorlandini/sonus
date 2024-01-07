@@ -25,14 +25,14 @@ public:
 	                            eight, nine, ten, eleven, twelve, thirteen,
 								fourteen, fifteen, enum_count };
 
-	enum_map formulas_range = {"t", "t*5\&t>>7", "(t*9\&t>>4)|(t*5\&t>>7)|(t*3\&t>>10))-1",
-	                           "(t>>8\&t)*(t>>15\&t)", "(t%(t>>8|t>>16))^t",
-							   "(t%255\&t)-(t>>13\&t)", "(t-(t>>4\&t>>8)\&t>>12)-1",
-							   "((t*t)/(t^t>>8))\&t", "((2*(t&1)-1)*t)-(t>>8)",
-							   "t*(t>>(t>>13\&t))", "(t*t/(1+(t>>9\&t>>8)))&128",
+	enum_map formulas_range = {"t", "t*5&t>>7", "(t*9&t>>4)|(t*5&t>>7)|(t*3&t>>10))-1",
+	                           "(t>>8&t)*(t>>15&t)", "(t%(t>>8|t>>16))^t",
+							   "(t%255&t)-(t>>13&t)", "(t-(t>>4&t>>8)&t>>12)-1",
+							   "((t*t)/(t^t>>8))&t", "((2*(t&1)-1)*t)-(t>>8)",
+							   "t*(t>>(t>>13&t))", "(t*t/(1+(t>>9&t>>8)))&128",
 							   "(t*(-(t>>8|t|t>>9|t>>13)))^t", "(t<<13)|(t&t>>3)*(t>>11&t)-(t>>(t^17))-2",
-							   "(t\&t>>4)-(t>>13\&t)", "((t/1000)^(t/1001))*t",
-							   "(((t\&t>>8)-(t>>13\&t))&((t\&t>>8)-(t>>13)))^(t>>8\&t)"};
+							   "(t&t>>4)-(t>>13&t)", "((t/1000)^(t/1001))*t",
+							   "(((t&t>>8)-(t>>13&t))&((t&t>>8)-(t>>13)))^(t>>8&t)"};
 
 	attribute<formulas> formula
 	{
@@ -46,6 +46,7 @@ public:
 		{
 			MIN_FUNCTION
 			{
+                formula_idx_ = int(args[0]);
 				return args;
 			}
 		}
@@ -111,7 +112,7 @@ public:
 			++t_;
 			uint8_t out = 0;
 
-			switch (formula)
+			switch (formula_idx_)
 			{
 				case 0:
 				out = t_;
@@ -174,6 +175,7 @@ public:
 	unsigned int t_ = 0;
 	int sample_count_ = 0;
 	sample output_ = 0.0;
+    int formula_idx_ = 1;
 };
 
 MIN_EXTERNAL(byteplay_tilde);

@@ -168,7 +168,7 @@ public:
 				std::string new_formula = "";
 				for (auto a = 0; a < args.size(); a++)
 				{
-					new_formula += args[a];
+					new_formula += std::string(args[a]);
 				}
 				MUP_INT_TYPE old_t = t_.GetInteger();
 				t_ = (MUP_INT_TYPE)0;

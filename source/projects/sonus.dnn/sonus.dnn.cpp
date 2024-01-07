@@ -34,7 +34,17 @@ public:
 				return {};
 			}
 
-			std::ifstream json_file(args.at(0));
+			std::string filename;
+			for (auto a = 0; a < args.size(); a++)
+			{
+				filename += args[a];
+				if (a < args.size() - 1)
+				{
+					filename += " ";
+				}
+			}
+
+			std::ifstream json_file(filename);
 
     		if (!json_file.is_open())
 			{
