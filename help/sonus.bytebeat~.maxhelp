@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 7,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 99.0, 100.0, 847.0, 608.0 ],
+		"rect" : [ 99.0, 100.0, 847.0, 629.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -49,9 +49,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 495.0, 261.0, 304.0, 70.0 ],
-					"presentation_linecount" : 3,
-					"text" : "if active, the frequency is reduced by 50x and the output is lowpassed, making it suitable for modulations."
+					"patching_rect" : [ 489.0, 242.5, 332.0, 70.0 ],
+					"text" : "if active, the frequency is reduced by 50x and the output is lowpassed, making it suitable for modulations. tip: apply a limi~ with DC filter on to the output"
 				}
 
 			}
@@ -64,7 +63,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 572.0, 336.5, 150.0, 22.0 ]
+					"patching_rect" : [ 566.0, 318.0, 150.0, 22.0 ]
 				}
 
 			}
@@ -77,7 +76,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 152.342245161533356, 278.5, 247.139037370681763, 25.0 ],
+					"patching_rect" : [ 115.342245161533356, 275.0, 247.139037370681763, 25.0 ],
 					"text" : "reset t variable to 0"
 				}
 
@@ -89,7 +88,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 111.0, 280.0, 35.0, 22.0 ],
+					"patching_rect" : [ 74.0, 276.5, 35.0, 22.0 ],
 					"text" : "reset"
 				}
 
@@ -102,7 +101,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 111.0, 309.0, 70.0, 22.0 ],
+					"patching_rect" : [ 111.0, 307.5, 70.0, 22.0 ],
 					"text" : "loadmess 4"
 				}
 
@@ -191,7 +190,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 170.342245161533356, 327.5, 304.0, 40.0 ],
+					"patching_rect" : [ 170.342245161533356, 326.0, 304.0, 40.0 ],
 					"text" : "sample rate reduction factor: the higher it is, the lower the pitch of the sound is"
 				}
 
@@ -206,7 +205,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 111.0, 336.5, 50.0, 22.0 ]
+					"patching_rect" : [ 111.0, 335.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -219,7 +218,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 33.0, 468.0, 145.0, 22.0 ]
+					"patching_rect" : [ 33.0, 494.0, 145.0, 22.0 ]
 				}
 
 			}
@@ -245,7 +244,7 @@
 					"maxclass" : "scope~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 201.342245161533356, 437.5, 307.0, 99.0 ]
+					"patching_rect" : [ 201.342245161533356, 463.5, 307.0, 99.0 ]
 				}
 
 			}
@@ -255,7 +254,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 33.0, 491.5, 45.0, 45.0 ]
+					"patching_rect" : [ 33.0, 517.5, 45.0, 45.0 ]
 				}
 
 			}
@@ -265,7 +264,7 @@
 					"maxclass" : "live.line",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 553.0, 805.0, 5.0 ]
+					"patching_rect" : [ 16.0, 579.0, 805.0, 5.0 ]
 				}
 
 			}
@@ -287,7 +286,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 300.0, 576.0, 237.0, 22.0 ],
+					"patching_rect" : [ 300.0, 602.0, 237.0, 22.0 ],
 					"text" : "https://github.com/valeriorlandini/sonus",
 					"textcolor" : [ 0.0, 0.015686274509804, 0.396078431372549, 1.0 ]
 				}
@@ -302,7 +301,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 590.0, 129.0, 36.0 ],
+					"patching_rect" : [ 10.0, 616.0, 129.0, 36.0 ],
 					"text" : ";\r\nmax launchbrowser $1"
 				}
 
@@ -314,7 +313,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 33.0, 381.0, 97.0, 22.0 ],
+					"patching_rect" : [ 33.0, 418.0, 97.0, 22.0 ],
 					"text" : "sonus.bytebeat~"
 				}
 
@@ -371,7 +370,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 560.0, 805.0, 20.0 ],
+					"patching_rect" : [ 16.0, 586.0, 805.0, 20.0 ],
 					"text" : "handmade in italy by valerio orlandini",
 					"textjustification" : 1
 				}

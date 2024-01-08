@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.19)
-project(Min-DevKit)
+project(sonus)
 
 enable_testing()
 

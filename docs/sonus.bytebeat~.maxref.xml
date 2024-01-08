@@ -58,8 +58,8 @@
 		</attribute>
 
 		<attribute name='lfo' get='1' set='1' type='long' size='1' >
-			<digest>When activated, the frequency is reduced by 10x and the values are interpolated, making the output suitable for modulations</digest>
-			<description>When activated, the frequency is reduced by 10x and the values are interpolated, making the output suitable for modulations. </description>
+			<digest>When activated, the frequency is reduced by 50x and the output is lowpassed, making it suitable for modulations</digest>
+			<description>When activated, the frequency is reduced by 50x and the output is lowpassed, making it suitable for modulations. </description>
 		</attribute>
 
 	</attributelist>

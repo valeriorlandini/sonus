@@ -144,8 +144,7 @@ public:
 		MIN_FUNCTION
 		{
 			lfo_lowpass_.set_sample_rate((double)args[0]);
-			lfo_lowpass_.set_cutoff(100.0);
-			lfo_lowpass_.set_q(1.0);
+			lfo_lowpass_.set_cutoff(70.0);
 			return {};
 		}
 	};
@@ -290,6 +289,7 @@ public:
 		{
 			return { lfo_lowpass_.run(output_) };
 		}
+		
 		return { output_ };
 	}
 
