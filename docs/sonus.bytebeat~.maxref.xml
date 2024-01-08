@@ -30,14 +30,14 @@
 
 	<methodlist>
 
-		<method name='eval'>
-			<digest>Formula to be evaluated</digest>
-			<description>Formula to be evaluated. Variable name must be 't' </description>
-		</method>
-
 		<method name='float'>
 			<digest>In inlet 1, sample rate reduction factor </digest>
 			<description>In inlet 1, sample rate reduction factor </description>
+		</method>
+
+		<method name='eval'>
+			<digest>Formula to be evaluated</digest>
+			<description>Formula to be evaluated. Variable name must be 't' </description>
 		</method>
 
 		<method name='reset'>
@@ -55,6 +55,11 @@
 		<attribute name='red' get='1' set='1' type='long' size='1' >
 			<digest>Factor for sample rate reduction</digest>
 			<description>Factor for sample rate reduction. The lower it is, the higher the pitch of the sound is. </description>
+		</attribute>
+
+		<attribute name='lfo' get='1' set='1' type='long' size='1' >
+			<digest>When activated, the frequency is reduced by 10x and the values are interpolated, making the output suitable for modulations</digest>
+			<description>When activated, the frequency is reduced by 10x and the values are interpolated, making the output suitable for modulations. </description>
 		</attribute>
 
 	</attributelist>

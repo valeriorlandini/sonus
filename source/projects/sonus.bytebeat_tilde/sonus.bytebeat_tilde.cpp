@@ -7,9 +7,11 @@
 #include "c74_min.h"
 #include <cstdint>
 #include <string>
+#include "biquad.h"
 
 using namespace c74::min;
 using namespace mup;
+using namespace soutel;
 
 class OprtMod : public IOprtBin    
 {
@@ -135,6 +137,19 @@ public:
 		}
 	}
 
+	message<> dspsetup
+	{
+		this,
+		"dspsetup", 
+		MIN_FUNCTION
+		{
+			lfo_lowpass_.set_sample_rate((double)args[0]);
+			lfo_lowpass_.set_cutoff(100.0);
+			lfo_lowpass_.set_q(1.0);
+			return {};
+		}
+	};
+
 	attribute<int, threadsafe::no, limit::clamp> sr_red
 	{
         this,
@@ -147,6 +162,39 @@ public:
 		{
 			MIN_FUNCTION
 			{
+				if (bool(lfo))
+				{
+					update_factor_ = int(args[0]) * 50;
+				}
+				else
+				{
+					update_factor_ = int(args[0]);
+				}
+				return args;
+			}
+		}
+    };
+
+	attribute<bool> lfo
+	{
+        this,
+        "lfo",
+        false,
+        title {"LFO Mode"},
+        description {"When activated, the frequency is reduced by 50x and the output is lowpassed, making it suitable for modulations."},
+		setter
+		{
+			MIN_FUNCTION
+			{
+				if (bool(args[0]))
+				{
+					update_factor_ = int(sr_red) * 50;
+					lfo_lowpass_.clear();
+				}
+				else
+				{
+					update_factor_ = int(sr_red);
+				}
 				return args;
 			}
 		}
@@ -224,7 +272,7 @@ public:
     {
 		++sample_count_;
 
-		if (sample_count_ >= sr_red)
+		if (sample_count_ >= update_factor_)
 		{
 			t_ = t_.GetInteger() + (MUP_INT_TYPE)1;
 			try
@@ -234,10 +282,14 @@ public:
 			catch (mup::ParserError &e)
 			{
 			}
-			output_ = ((sample)out_ - 127.5) / 127.5;
+			output_ = ((double)out_ - 127.5) / 127.5;
 			sample_count_ = 0;
 		}
 
+		if (bool(lfo))
+		{
+			return { lfo_lowpass_.run(output_) };
+		}
 		return { output_ };
 	}
 
@@ -245,7 +297,9 @@ public:
 	int sample_count_ = 0;
 	std::string formula_;
 	uint8_t out_ = 0;
-	sample output_ = 0.0;
+	int update_factor_ = 4;
+	double output_ = 0.0;
+	Biquad<double> lfo_lowpass_;
 
 	Value t_;
 	ParserX p;
