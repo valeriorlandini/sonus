@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 6,
+			"revision" : 7,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -45,11 +45,11 @@
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
 					"id" : "obj-28",
-					"linecount" : 3,
+					"linecount" : 4,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 489.0, 242.5, 332.0, 70.0 ],
+					"patching_rect" : [ 490.5, 242.5, 283.0, 85.0 ],
 					"text" : "if active, the frequency is reduced by 50x and the output is lowpassed, making it suitable for modulations. tip: apply a limi~ with DC filter on to the output"
 				}
 
@@ -63,7 +63,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 566.0, 318.0, 150.0, 22.0 ]
+					"patching_rect" : [ 557.0, 335.0, 150.0, 22.0 ]
 				}
 
 			}

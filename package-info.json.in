@@ -1,6 +1,6 @@
 {
 	"author" : "Valerio Orlandini",
-	"description" : "A collection of various objects for creative patching.",
+	"description" : "A collection of various objects for creative patching, mostly dealing with math, artificial intelligence, weird sounds and sound manipulation.",
 	"homepatcher" : "sonus Overview.maxpat",
 	"max_version_min" : "8.0", "max_version_max" : "none",
 	"name" : "sonus",
@@ -11,7 +11,7 @@
 		},
 		"windows" : {
 			"platform" : [ "x64" ],
-			"min_version" : "none"
+			"min_version" : "10"
 		}
 	},
 	"package_extra" : {
@@ -19,6 +19,6 @@
 		"copyright" : "Copyright (c) 2023-2024 Valerio Orlandini"
 	},
 	"tags" : [ "autonomous systems", "generative", "synthesis", "ai", "sample manipulation" ],
-	"version" : "0.9",
+	"version" : "0.3",
 	"website" : "https://valeriorlandini.github.io/sonus/"
 }
