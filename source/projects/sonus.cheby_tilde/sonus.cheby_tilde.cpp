@@ -20,7 +20,7 @@ public:
 	MIN_RELATED {"lookup~"};
 
 	inlet<>  in {this, "(signal) Input"};
-	inlet<>  in_o {this, "(int) Order of the polynomial (0-10)"};
+	inlet<>  in_o {this, "(number) Order of the polynomial (0-10)"};
 	outlet<> out {this, "(signal) Output", "signal"};
 
 	argument<number> order_arg
