@@ -105,7 +105,7 @@ public:
 		{
 			for (auto n = 0; n < std::min(8, int(args.size())); n++)
 			{
-				latent_.at(n - 1) = double(args[n]);
+				latent_.at(n) = double(args[n]);
 			}
 			changed_ = true;
 			return {};

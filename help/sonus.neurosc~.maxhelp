@@ -76,7 +76,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 272.535714285714278, 327.0, 60.0, 22.0 ],
-					"text" : "rand~ 0.5"
+					"text" : "rand~ 1.5"
 				}
 
 			}
@@ -163,8 +163,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 501.0, 303.0, 325.0, 70.0 ],
-					"text" : "the eight parameters can be also controlled individually, with numbers or signals: best values are inside [-10, 10] range, but there are no limitations",
-					"textjustification" : 0
+					"text" : "the eight parameters can be also controlled individually, with numbers or signals: best values are inside [-10, 10] range, but there are no limitations"
 				}
 
 			}
