@@ -43,10 +43,13 @@ public:
 					filename += " ";
 				}
 			}
-			if (filename.find("OSX:") == 0)
+			#ifdef __APPLE__
+    		size_t pos = filename.find(":");
+    		if (pos != std::string::npos)
 			{
-				filename = filename.substr(4);
-			}
+        		filename = filename.substr(pos + 1);
+    		}
+    		#endif
 
 			std::ifstream json_file(filename);
 
