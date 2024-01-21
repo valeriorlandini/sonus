@@ -44,6 +44,7 @@ Currently finished externals are:
 
 ### Math and Utilities
 * `sonus.blist` Output different items from a list
+* `sonus.bozo` Output a 1 and then a 0 when a bang is received
 * `sonus.hop` Hot inlets operations
 * `sonus.lline` Similar to line, but for list of numbers
 * `sonus.lurn` Non repeating random sequences

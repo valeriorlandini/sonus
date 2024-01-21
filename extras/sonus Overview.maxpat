@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 7,
+			"minor" : 6,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -40,6 +40,29 @@
 		"showontab" : 0,
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-91",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 769.5, 201.0, 233.0, 20.0 ],
+					"text" : "Bang to 1-interval-0 sequence"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-92",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 772.5, 180.0, 70.0, 22.0 ],
+					"text" : "sonus.bozo"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-89",
 					"maxclass" : "comment",
@@ -172,7 +195,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 773.0, 381.0, 233.0, 20.0 ],
+					"patching_rect" : [ 770.0, 426.0, 233.0, 20.0 ],
 					"text" : "Pop up dialogs generator"
 				}
 
@@ -184,7 +207,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 776.0, 360.0, 73.0, 22.0 ],
+					"patching_rect" : [ 773.0, 405.0, 73.0, 22.0 ],
 					"text" : "sonus.mbox"
 				}
 
@@ -361,7 +384,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 773.0, 246.0, 233.0, 20.0 ],
+					"patching_rect" : [ 770.0, 291.0, 233.0, 20.0 ],
 					"text" : "Similar to line, but for list of numbers"
 				}
 
@@ -373,7 +396,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 776.0, 225.0, 65.0, 22.0 ],
+					"patching_rect" : [ 773.0, 270.0, 65.0, 22.0 ],
 					"text" : "sonus.lline"
 				}
 
@@ -557,7 +580,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 773.0, 336.0, 233.0, 20.0 ],
+					"patching_rect" : [ 770.0, 381.0, 233.0, 20.0 ],
 					"text" : "Mathematical constants"
 				}
 
@@ -569,7 +592,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 776.0, 315.0, 77.0, 22.0 ],
+					"patching_rect" : [ 773.0, 360.0, 77.0, 22.0 ],
 					"text" : "sonus.mathc"
 				}
 
@@ -580,7 +603,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 773.0, 291.0, 233.0, 20.0 ],
+					"patching_rect" : [ 770.0, 336.0, 233.0, 20.0 ],
 					"text" : "Non repeating random sequences"
 				}
 
@@ -592,7 +615,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 776.0, 270.0, 64.0, 22.0 ],
+					"patching_rect" : [ 773.0, 315.0, 64.0, 22.0 ],
 					"text" : "sonus.lurn"
 				}
 
@@ -686,7 +709,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 669.0, 129.0, 36.0 ],
+					"patching_rect" : [ 10.0, 669.0, 129.0, 35.0 ],
 					"text" : ";\r\nmax launchbrowser $1"
 				}
 
@@ -725,8 +748,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 7,
+							"minor" : 6,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -852,7 +875,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 773.0, 516.0, 233.0, 20.0 ],
+					"patching_rect" : [ 770.0, 561.0, 233.0, 20.0 ],
 					"text" : "Tent map calculator"
 				}
 
@@ -864,7 +887,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 776.0, 495.0, 64.0, 22.0 ],
+					"patching_rect" : [ 773.0, 540.0, 64.0, 22.0 ],
 					"text" : "sonus.tent"
 				}
 
@@ -886,7 +909,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 773.0, 471.0, 233.0, 20.0 ],
+					"patching_rect" : [ 770.0, 516.0, 233.0, 20.0 ],
 					"text" : "Quadraphonic panner coefficients"
 				}
 
@@ -908,7 +931,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 773.0, 426.0, 233.0, 20.0 ],
+					"patching_rect" : [ 770.0, 471.0, 233.0, 20.0 ],
 					"text" : "Signal extremes analyzer"
 				}
 
@@ -919,7 +942,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 773.0, 201.0, 233.0, 20.0 ],
+					"patching_rect" : [ 770.0, 246.0, 233.0, 20.0 ],
 					"text" : "Hot inlets operations"
 				}
 
@@ -1019,7 +1042,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 776.0, 450.0, 108.0, 22.0 ],
+					"patching_rect" : [ 773.0, 495.0, 108.0, 22.0 ],
 					"text" : "sonus.quadpanner"
 				}
 
@@ -1055,7 +1078,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 776.0, 405.0, 80.0, 22.0 ],
+					"patching_rect" : [ 773.0, 450.0, 80.0, 22.0 ],
 					"text" : "sonus.mima~"
 				}
 
@@ -1067,7 +1090,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 776.0, 180.0, 64.0, 22.0 ],
+					"patching_rect" : [ 773.0, 225.0, 64.0, 22.0 ],
 					"text" : "sonus.hop"
 				}
 
@@ -1220,7 +1243,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 12.0, 153.0, 48.0 ],
+					"patching_rect" : [ 16.0, 12.0, 153.0, 47.0 ],
 					"text" : "sonus"
 				}
 
@@ -1567,6 +1590,14 @@
 					"destination" : [ "obj-58", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-90", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-92", 0 ]
 				}
 
 			}

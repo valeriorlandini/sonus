@@ -137,7 +137,6 @@ public:
 	std::vector<double> next_list_ = {0.0};
 	unsigned long ramp_ = 0;
 	unsigned long step_ = 0;
-	bool timer_on = false;
 };
 
 MIN_EXTERNAL(lline);
