@@ -110,12 +110,14 @@ public:
     };
 
 
-	sample operator()(sample x)
+	sample operator()(sample freq)
     {	
 		double output = 0.0;
 
 		if (in_f.has_signal_connection())
-			frequency = x;
+		{
+			frequency = freq;
+		}
 
 		if (osc_.run())
 		{
