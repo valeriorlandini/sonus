@@ -46,11 +46,6 @@
 
 	<attributelist>
 
-		<attribute name='frequency' get='1' set='1' type='float64' size='1' >
-			<digest>Oscillator frequency</digest>
-			<description>Oscillator frequency. </description>
-		</attribute>
-
 		<attribute name='wavetable' get='1' set='1' type='float64' size='1' >
 			<digest>The values of the wavetable</digest>
 			<description>The values of the wavetable. </description>

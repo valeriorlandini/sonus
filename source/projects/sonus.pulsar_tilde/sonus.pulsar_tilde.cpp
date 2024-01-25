@@ -45,7 +45,7 @@ public:
 		"Oscillator frequency.",
         MIN_ARGUMENT_FUNCTION
 		{
-            frequency = arg;
+            pulsar_.set_frequency(double(arg));
         }
     };
 
@@ -56,7 +56,7 @@ public:
 		"Duty cycle (0-1).",
         MIN_ARGUMENT_FUNCTION
 		{
-            duty_cycle = arg;
+			pulsar_.set_duty_cycle(double(arg));
         }
     };
 
@@ -96,41 +96,6 @@ public:
 		}
     };
 
-	attribute<number, threadsafe::no> frequency
-	{
-        this,
-        "frequency",
-        0,
-        title {"Frequency"},
-        description {"Oscillator frequency."},
-		setter
-		{
-			MIN_FUNCTION
-			{
-				pulsar_.set_frequency(args[0]);
-				return args;
-			}
-		}
-    };
-
-	attribute<number, threadsafe::no, limit::clamp> duty_cycle
-	{
-        this,
-        "duty",
-        0.5,
-		range {0.0, 1.0},
-        title {"Duty cycle"},
-        description {"Duty cycle of the wave (0-1)."},
-		setter
-		{
-			MIN_FUNCTION
-			{
-				pulsar_.set_duty_cycle(args[0]);
-				return args;
-			}
-		}
-    };
-
 	message<> m_number
 	{
 		this,
@@ -141,10 +106,10 @@ public:
 			switch (inlet)
 			{
 				case 0:
-				frequency = args;
+				pulsar_.set_frequency(double(args[0]));
 				break;
 				case 1:
-				duty_cycle = args;
+				pulsar_.set_duty_cycle(double(args[0]));
 				break;
 			}
 
@@ -155,10 +120,14 @@ public:
 	sample operator()(sample freq, sample dc)
     {	
 		if (in_f.has_signal_connection())
-			frequency = freq;
+		{
+			pulsar_.set_frequency(freq);
+		}
 
 		if (in_dc.has_signal_connection())
-			duty_cycle = dc;
+		{
+			pulsar_.set_duty_cycle(dc);
+		}
 
 		return pulsar_.run();
 	}

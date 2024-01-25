@@ -53,7 +53,7 @@ public:
 		"Cutoff frequency in Hz.",
         MIN_ARGUMENT_FUNCTION
 		{
-            cutoff = arg;
+			set_cutoffs(double(arg));
         }
     };
 
@@ -64,7 +64,7 @@ public:
 		"Q factor (filter resonance).",
         MIN_ARGUMENT_FUNCTION
 		{
-            q = arg;
+			set_qs(double(arg));
         }
     };
 
@@ -75,83 +75,8 @@ public:
 		"Gain in dB for shelving and peak filters.",
         MIN_ARGUMENT_FUNCTION
 		{
-            gain = arg;
+            set_gains(double(arg));
         }
-    };
-
-	attribute<number, threadsafe::no, limit::clamp> cutoff
-	{
-        this,
-        "cutoff",
-        20000.0,
-		range { 0.0, samplerate() * 0.5 },
-        title {"Cutoff"},
-        description {"Filter cutoff in Hz."},
-		setter
-		{
-			MIN_FUNCTION
-			{
-				lowpass_.set_cutoff((double)args[0]);
-				highpass_.set_cutoff((double)args[0]);
-				bandpass_.set_cutoff((double)args[0]);
-				bandreject_.set_cutoff((double)args[0]);
-				lowshelf_.set_cutoff((double)args[0]);
-				highshelf_.set_cutoff((double)args[0]);
-				peak_.set_cutoff((double)args[0]);
-
-				return args;
-			}
-		}
-    };
-
-	attribute<number, threadsafe::no, limit::clamp> q
-	{
-        this,
-        "q",
-        0.707,
-		range { 0.0, 100.0 },
-        title {"Q factor"},
-        description {"Q factor of the filter."},
-		setter
-		{
-			MIN_FUNCTION
-			{
-				lowpass_.set_q((double)args[0]);
-				highpass_.set_q((double)args[0]);
-				bandpass_.set_q((double)args[0]);
-				bandreject_.set_q((double)args[0]);
-				lowshelf_.set_q((double)args[0]);
-				highshelf_.set_q((double)args[0]);
-				peak_.set_q((double)args[0]);
-
-				return args;
-			}
-		}
-    };
-
-	attribute<number, threadsafe::no, limit::clamp> gain
-	{
-        this,
-        "gain",
-        0.0,
-		range { -48.0, 48.0 },
-        title {"Gain (dB)"},
-        description {"Gain in dB for shelving and peak filters."},
-		setter
-		{
-			MIN_FUNCTION
-			{
-				lowpass_.set_gain((double)args[0]);
-				highpass_.set_gain((double)args[0]);
-				bandpass_.set_gain((double)args[0]);
-				bandreject_.set_gain((double)args[0]);
-				lowshelf_.set_gain((double)args[0]);
-				highshelf_.set_gain((double)args[0]);
-				peak_.set_gain((double)args[0]);
-
-				return args;
-			}
-		}
     };
 
 	message<> m_number
@@ -163,15 +88,15 @@ public:
 		{
 			if (inlet == 1)
 			{
-				cutoff = args;
+				set_cutoffs(double(args[0]));
 			}
 			if (inlet == 2)
-			{
-				q = args;
+			{	
+				set_qs(double(args[0]));
 			}
 			if (inlet == 3)
 			{
-				gain = args;
+				set_gains(double(args[0]));
 			}
 
 			return {};
@@ -200,13 +125,19 @@ public:
 	samples<7> operator()(sample input, sample sig_cutoff, sample sig_q, sample sig_gain)
     {
 		if (in_c.has_signal_connection())
-			cutoff = (double)sig_cutoff;
+		{
+			set_cutoffs(sig_cutoff);
+		}
 
 		if (in_q.has_signal_connection())
-			q = (double)sig_q;
+		{
+			set_qs(sig_q);
+		}
 
 		if (in_g.has_signal_connection())
-			gain = (double)sig_gain;
+		{
+			set_gains(sig_gain);
+		}
 
 		sample lp = lowpass_.run(input);
 		sample hp = highpass_.run(input);
@@ -227,6 +158,45 @@ public:
 	Biquad<double> lowshelf_{Biquad<double>(44100.0, 20000.0, 0.707, 0.0, BQFilters::lowshelf)};
 	Biquad<double> highshelf_{Biquad<double>(44100.0, 20000.0, 0.707, 0.0, BQFilters::hishelf)};
 	Biquad<double> peak_{Biquad<double>(44100.0, 20000.0, 0.707, 0.0, BQFilters::peak)};
+
+	inline void set_cutoffs(const double &cutoff_value)
+	{
+		double cutoff = std::clamp(cutoff_value, 0.0, samplerate() * 0.5);
+
+		lowpass_.set_cutoff(cutoff);
+		highpass_.set_cutoff(cutoff);
+		bandpass_.set_cutoff(cutoff);
+		bandreject_.set_cutoff(cutoff);
+		lowshelf_.set_cutoff(cutoff);
+		highshelf_.set_cutoff(cutoff);
+		peak_.set_cutoff(cutoff);
+	}
+
+	inline void set_qs(const double &q_value)
+	{
+		double q = std::clamp(q_value, 0.0, 100.0);
+		
+		lowpass_.set_q(q);
+		highpass_.set_q(q);
+		bandpass_.set_q(q);
+		bandreject_.set_q(q);
+		lowshelf_.set_q(q);
+		highshelf_.set_q(q);
+		peak_.set_q(q);
+	}
+
+	inline void set_gains(const double &gain_value)
+	{
+		double gain = std::clamp(gain_value, -48.0, 48.0);
+
+		lowpass_.set_gain(gain);
+		highpass_.set_gain(gain);
+		bandpass_.set_gain(gain);
+		bandreject_.set_gain(gain);
+		lowshelf_.set_gain(gain);
+		highshelf_.set_gain(gain);
+		peak_.set_gain(gain);
+	}
 };
 
 MIN_EXTERNAL(biquads_tilde);

@@ -40,7 +40,7 @@ public:
 		"Oscillator frequency.",
         MIN_ARGUMENT_FUNCTION
 		{
-            frequency = arg;
+            osc_.set_frequency(double(arg));
         }
     };
 
@@ -53,23 +53,6 @@ public:
 		{
             cycles = arg;
         }
-    };
-
-	attribute<number, threadsafe::no> frequency
-	{
-        this,
-        "frequency",
-        0,
-        title {"Frequency"},
-        description {"Oscillator frequency."},
-		setter
-		{
-			MIN_FUNCTION
-			{
-				osc_.set_frequency(args[0]);
-				return args;
-			}
-		}
     };
 
 	attribute<number, threadsafe::no, limit::clamp> cycles
@@ -98,7 +81,7 @@ public:
 		{
 			if (inlet == 0)
 			{
-				frequency = args;
+				osc_.set_frequency(double(args[0]));
 			}
 			else
 			{
@@ -116,7 +99,7 @@ public:
 
 		if (in_f.has_signal_connection())
 		{
-			frequency = freq;
+			osc_.set_frequency(freq);
 		}
 
 		if (osc_.run())

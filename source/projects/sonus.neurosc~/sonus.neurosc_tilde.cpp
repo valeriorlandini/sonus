@@ -55,25 +55,8 @@ public:
 		"Oscillator frequency.",
         MIN_ARGUMENT_FUNCTION
 		{
-            frequency = arg;
+            oscillator_.set_frequency((double)arg);
         }
-    };
-
-	attribute<number, threadsafe::no> frequency
-	{
-        this,
-        "frequency",
-        0,
-        title {"Frequency"},
-        description {"Oscillator frequency."},
-		setter
-		{
-			MIN_FUNCTION
-			{
-				oscillator_.set_frequency((double)args[0]);
-				return args;
-			}
-		}
     };
 
 	message<> m_number
@@ -85,7 +68,7 @@ public:
 		{
 			if (inlet == 0)
 			{
-				frequency = args;
+				oscillator_.set_frequency((double)args[0]);
 			}
 			else
 			{
@@ -117,7 +100,9 @@ public:
 		double output = 0.0;
 
 		if (in_f.has_signal_connection())
-			frequency = freq;
+		{
+			oscillator_.set_frequency(freq);
+		}
 
 		if (in_l1.has_signal_connection()) {
 		    if ((double)l1 != latent_.at(0))

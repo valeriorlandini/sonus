@@ -38,26 +38,10 @@ public:
 		"Oscillator frequency.",
         MIN_ARGUMENT_FUNCTION
 		{
-            frequency = arg;
+            step_ = double(arg) / sample_rate_;
         }
     };
 
-	attribute<number, threadsafe::no> frequency
-	{
-        this,
-        "frequency",
-        0,
-        title {"Frequency"},
-        description {"Oscillator frequency."},
-		setter
-		{
-			MIN_FUNCTION
-			{
-				step_ = (double)args[0] / sample_rate_;
-				return args;
-			}
-		}
-    };
 
 	attribute<std::vector<double>> wavetable
 	{
@@ -75,7 +59,7 @@ public:
 		"Oscillator frequency",
         MIN_FUNCTION
 		{
-			frequency = args;
+			step_ = double(args[0]) / sample_rate_;
 			return {};
 		}
     };
@@ -87,7 +71,9 @@ public:
 		const std::vector<double>& wt = this->wavetable;
 
 		if (in.has_signal_connection())
-			frequency = x;
+		{
+            step_ = x / sample_rate_;
+		}
 
 		ramp_ += step_;
 		while (ramp_ >= 1.0)

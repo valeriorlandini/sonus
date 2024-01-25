@@ -53,25 +53,8 @@ public:
 		"Oscillator frequency.",
         MIN_ARGUMENT_FUNCTION
 		{
-            frequency = arg;
+            osc_.set_frequency(double(arg));
         }
-    };
-
-	attribute<number, threadsafe::no> frequency
-	{
-        this,
-        "frequency",
-        0,
-        title {"Frequency"},
-        description {"Oscillator frequency."},
-		setter
-		{
-			MIN_FUNCTION
-			{
-				osc_.set_frequency(args[0]);
-				return args;
-			}
-		}
     };
 
 	attribute<bool, threadsafe::no> normalize
@@ -100,7 +83,7 @@ public:
 			switch (inlet)
 			{
 				case 0:
-				frequency = args;
+				osc_.set_frequency(double(args[0]));
 				break;
 				case 1:
 				saw_amt_ = std::clamp((double)args[0], 0.0, 1.0);
@@ -130,22 +113,34 @@ public:
 		osc_.run();
 
 		if (in_f.has_signal_connection())
-			frequency = freq;
+		{
+		    osc_.set_frequency(freq);
+		}
 
 		if (in_saw.has_signal_connection())
-			saw_amt_ = std::clamp((double)saw_amt, 0.0, 1.0);
+		{
+		    saw_amt_ = std::clamp((double)saw_amt, 0.0, 1.0);
+		}
 
 		if (in_square.has_signal_connection())
-			square_amt_ = std::clamp((double)square_amt, 0.0, 1.0);
+		{
+		    square_amt_ = std::clamp((double)square_amt, 0.0, 1.0);
+		}
 
 		if (in_sine.has_signal_connection())
-			sine_amt_ = std::clamp((double)sine_amt, 0.0, 1.0);
+		{
+		    sine_amt_ = std::clamp((double)sine_amt, 0.0, 1.0);
+		}
 
 		if (in_tri.has_signal_connection())
-			tri_amt_ = std::clamp((double)tri_amt, 0.0, 1.0);
+		{
+		    tri_amt_ = std::clamp((double)tri_amt, 0.0, 1.0);
+		}
 
 		if (in_noise.has_signal_connection())
-			noise_amt_ = std::clamp((double)noise_amt, 0.0, 1.0);
+		{
+		    noise_amt_ = std::clamp((double)noise_amt, 0.0, 1.0);
+		}
 
 		double sine, tri, saw, square;
 		osc_.get_last_sample(sine, tri, saw, square);

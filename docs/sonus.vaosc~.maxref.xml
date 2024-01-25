@@ -46,11 +46,6 @@
 
 	<attributelist>
 
-		<attribute name='frequency' get='1' set='1' type='float64' size='1' >
-			<digest>Oscillator frequency</digest>
-			<description>Oscillator frequency. </description>
-		</attribute>
-
 		<attribute name='normalize' get='1' set='1' type='long' size='1' >
 			<digest>Whether or not normalize amounts of various shapes so that they always sum to 1 (unless they are all 0)</digest>
 			<description>Whether or not normalize amounts of various shapes so that they always sum to 1 (unless they are all 0). </description>
