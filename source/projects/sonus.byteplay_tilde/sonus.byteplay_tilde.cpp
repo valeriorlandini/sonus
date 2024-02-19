@@ -5,7 +5,6 @@
 
 #include "c74_min.h"
 #include <cstdint>
-#include <string>
 
 using namespace c74::min;
 

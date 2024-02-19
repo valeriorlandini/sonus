@@ -67,6 +67,24 @@ public:
 		}
     };
 
+	attribute<double, threadsafe::no, limit::clamp> lowpass
+	{
+        this,
+        "lowpass",
+        20000.0,
+		range { 20.0, 20000.0 },
+        title {"Lowpass filter cut"},
+		description {"The cutoff frequency of the master lowpass filter."},
+        setter
+		{
+			MIN_FUNCTION
+			{
+				cryptoverb_.set_lowpass_cutoff(double(args[0]));
+				return args;
+        	}
+		}
+    };
+
 	message<> m_number
 	{
 		this,

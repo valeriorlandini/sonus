@@ -52,6 +52,11 @@
 			<description>Mode changes the way the four internal blocks are arranged. </description>
 		</attribute>
 
+		<attribute name='lowpass' get='1' set='1' type='float64' size='1' >
+			<digest>The cutoff frequency of the master lowpass filter</digest>
+			<description>The cutoff frequency of the master lowpass filter. </description>
+		</attribute>
+
 	</attributelist>
 
 

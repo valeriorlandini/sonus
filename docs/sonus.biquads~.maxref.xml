@@ -62,21 +62,6 @@
 
 	<attributelist>
 
-		<attribute name='cutoff' get='1' set='1' type='float64' size='1' >
-			<digest>Filter cutoff in Hz</digest>
-			<description>Filter cutoff in Hz. </description>
-		</attribute>
-
-		<attribute name='q' get='1' set='1' type='float64' size='1' >
-			<digest>Q factor of the filter</digest>
-			<description>Q factor of the filter. </description>
-		</attribute>
-
-		<attribute name='gain' get='1' set='1' type='float64' size='1' >
-			<digest>Gain in dB for shelving and peak filters</digest>
-			<description>Gain in dB for shelving and peak filters. </description>
-		</attribute>
-
 	</attributelist>
 
 
