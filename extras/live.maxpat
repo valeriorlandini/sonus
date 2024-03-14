@@ -46,6 +46,281 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
+					"hidden" : 1,
+					"id" : "obj-2",
+					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 4,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "signal", "signal", "", "" ],
+					"patching_rect" : [ 23.0, 14.0, 483.0, 196.0 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_invisible" : 1,
+							"parameter_longname" : "amxd~[4]",
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "amxd~[4]",
+							"parameter_type" : 3
+						}
+
+					}
+,
+					"saved_object_attributes" : 					{
+						"parameter_enable" : 1,
+						"patchername" : "Pulsynthe.amxd",
+						"patchername_fallback" : "~/Documents/Max 8/Packages/sonus/patchers/Max Instrument/Pulsynthe.amxd"
+					}
+,
+					"snapshot" : 					{
+						"filetype" : "C74Snapshot",
+						"version" : 2,
+						"minorversion" : 0,
+						"name" : "snapshotlist",
+						"origin" : "max~",
+						"type" : "list",
+						"subtype" : "Undefined",
+						"embed" : 1,
+						"snapshot" : 						{
+							"name" : "Pulsynthe.amxd",
+							"origname" : "~/Documents/Max 8/Packages/sonus/patchers/Max Instrument/Pulsynthe.amxd",
+							"valuedictionary" : 							{
+								"parameter_values" : 								{
+									"Filter Cutoff" : 20000.0,
+									"Filter Envelope Amount" : 0.0,
+									"Filter Resonance" : 50.0,
+									"Filter Type" : 0.0,
+									"Master Gain" : -15.304526898964873,
+									"Oscillator 1 Duty Cycle" : 50.0,
+									"Oscillator 1 Duty Cycle Mod Amount" : 0.0,
+									"Oscillator 1 Duty Cycle Mod Frequency" : 0.1,
+									"Oscillator 1 Frequency Divider" : 0.0,
+									"Oscillator 1 Waveform" : 0.0,
+									"Oscillator 1 Window" : 0.0,
+									"Oscillator 2 Detune" : 0.0,
+									"Oscillator 2 Duty Cycle" : 50.0,
+									"Oscillator 2 Duty Cycle Mod Amount" : 0.0,
+									"Oscillator 2 Duty Cycle Mod Frequency" : 0.1,
+									"Oscillator 2 Frequency Divider" : 0.0,
+									"Oscillator 2 Waveform" : 0.0,
+									"Oscillator 2 Window" : 0.0,
+									"Oscillators Mix" : 50.0,
+									"Pitch Envelope Amount" : 0.0,
+									"Synthesis Algorithm" : 0.0,
+									"blob" : 									{
+										"ADSR Selector" : [ 0 ]
+									}
+
+								}
+
+							}
+,
+							"active" : 1
+						}
+,
+						"snapshotlist" : 						{
+							"current_snapshot" : 0,
+							"entries" : [ 								{
+									"filetype" : "C74Snapshot",
+									"version" : 2,
+									"minorversion" : 0,
+									"name" : "Pulsynthe.amxd",
+									"origin" : "Pulsynthe.amxd",
+									"type" : "amxd",
+									"subtype" : "Undefined",
+									"embed" : 0,
+									"snapshot" : 									{
+										"name" : "Pulsynthe.amxd",
+										"origname" : "~/Documents/Max 8/Packages/sonus/patchers/Max Instrument/Pulsynthe.amxd",
+										"valuedictionary" : 										{
+											"parameter_values" : 											{
+												"Filter Cutoff" : 20000.0,
+												"Filter Envelope Amount" : 0.0,
+												"Filter Resonance" : 50.0,
+												"Filter Type" : 0.0,
+												"Master Gain" : -15.304526898964873,
+												"Oscillator 1 Duty Cycle" : 50.0,
+												"Oscillator 1 Duty Cycle Mod Amount" : 0.0,
+												"Oscillator 1 Duty Cycle Mod Frequency" : 0.1,
+												"Oscillator 1 Frequency Divider" : 0.0,
+												"Oscillator 1 Waveform" : 0.0,
+												"Oscillator 1 Window" : 0.0,
+												"Oscillator 2 Detune" : 0.0,
+												"Oscillator 2 Duty Cycle" : 50.0,
+												"Oscillator 2 Duty Cycle Mod Amount" : 0.0,
+												"Oscillator 2 Duty Cycle Mod Frequency" : 0.1,
+												"Oscillator 2 Frequency Divider" : 0.0,
+												"Oscillator 2 Waveform" : 0.0,
+												"Oscillator 2 Window" : 0.0,
+												"Oscillators Mix" : 50.0,
+												"Pitch Envelope Amount" : 0.0,
+												"Synthesis Algorithm" : 0.0,
+												"blob" : 												{
+													"ADSR Selector" : [ 0 ]
+												}
+
+											}
+
+										}
+,
+										"active" : 1
+									}
+,
+									"fileref" : 									{
+										"name" : "Pulsynthe.amxd",
+										"filename" : "Pulsynthe.amxd.maxsnap",
+										"filepath" : "~/Documents/Max 8/Snapshots",
+										"filepos" : -1,
+										"snapshotfileid" : "018b3ac10c6f44c26db5dcdc8d6004bb"
+									}
+
+								}
+ ]
+						}
+
+					}
+,
+					"text" : "amxd~ pulsynthe",
+					"varname" : "pulsynthe",
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"autosave" : 1,
+					"bgmode" : 1,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"hidden" : 1,
+					"id" : "obj-13",
+					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 4,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "signal", "signal", "", "" ],
+					"patching_rect" : [ 23.0, 14.0, 232.0, 196.0 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_invisible" : 1,
+							"parameter_longname" : "amxd~[3]",
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "amxd~[3]",
+							"parameter_type" : 3
+						}
+
+					}
+,
+					"saved_object_attributes" : 					{
+						"parameter_enable" : 1,
+						"patchername" : "Cryptoverb.amxd",
+						"patchername_fallback" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect/Cryptoverb.amxd"
+					}
+,
+					"snapshot" : 					{
+						"filetype" : "C74Snapshot",
+						"version" : 2,
+						"minorversion" : 0,
+						"name" : "snapshotlist",
+						"origin" : "max~",
+						"type" : "list",
+						"subtype" : "Undefined",
+						"embed" : 1,
+						"snapshot" : 						{
+							"name" : "Cryptoverb.amxd",
+							"origname" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect/Cryptoverb.amxd",
+							"valuedictionary" : 							{
+								"parameter_values" : 								{
+									"Effect Gain" : -15.304526898964873,
+									"Filter Cutoff" : 14734.018114771230103,
+									"Mode" : 2.0,
+									"Space 1 Amount" : 100.0,
+									"Space 2 Amount" : 100.0,
+									"Space 3 Amount" : 100.0,
+									"Space 4 Amount" : 100.0,
+									"Wet" : 50.0
+								}
+
+							}
+,
+							"active" : 1
+						}
+,
+						"snapshotlist" : 						{
+							"current_snapshot" : 0,
+							"entries" : [ 								{
+									"filetype" : "C74Snapshot",
+									"version" : 2,
+									"minorversion" : 0,
+									"name" : "Cryptoverb.amxd",
+									"origin" : "Cryptoverb.amxd",
+									"type" : "amxd",
+									"subtype" : "Undefined",
+									"embed" : 0,
+									"snapshot" : 									{
+										"name" : "Cryptoverb.amxd",
+										"origname" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect/Cryptoverb.amxd",
+										"valuedictionary" : 										{
+											"parameter_values" : 											{
+												"Effect Gain" : -15.304526898964873,
+												"Filter Cutoff" : 14734.018114771230103,
+												"Mode" : 2.0,
+												"Space 1 Amount" : 100.0,
+												"Space 2 Amount" : 100.0,
+												"Space 3 Amount" : 100.0,
+												"Space 4 Amount" : 100.0,
+												"Wet" : 50.0
+											}
+
+										}
+,
+										"active" : 1
+									}
+,
+									"fileref" : 									{
+										"name" : "Cryptoverb.amxd",
+										"filename" : "Cryptoverb.amxd.maxsnap",
+										"filepath" : "~/Documents/Max 8/Snapshots",
+										"filepos" : -1,
+										"snapshotfileid" : "28a3bb056c6463db21c5b8caf7f2cae5"
+									}
+
+								}
+ ]
+						}
+
+					}
+,
+					"text" : "amxd~ cryptoverb",
+					"varname" : "cryptoverb",
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 626.0, 98.0, 180.0, 20.0 ],
+					"text" : "A dense and eerie reverberation"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"autosave" : 1,
+					"bgmode" : 1,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
 					"id" : "obj-9",
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
@@ -173,8 +448,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 626.5, 14.0, 180.0, 34.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 627.0, 16.0, 180.0, 34.0 ],
 					"text" : "A bitcrusher with the ability to manipulate the single bits"
 				}
 
@@ -199,7 +473,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 627.0, 89.0, 180.0, 34.0 ],
+					"patching_rect" : [ 627.0, 128.0, 180.0, 34.0 ],
 					"text" : "A pulsar synthesis based subtractive synthesizer"
 				}
 
@@ -211,7 +485,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 626.0, 52.0, 181.0, 34.0 ],
+					"patching_rect" : [ 626.0, 54.0, 181.0, 34.0 ],
 					"text" : "A bytebeat generator and LFO, with a bonus reverb"
 				}
 
@@ -224,7 +498,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 542.0, 186.0, 67.0, 22.0 ],
+					"patching_rect" : [ 542.0, 391.489358901977539, 67.0, 22.0 ],
 					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
@@ -279,13 +553,48 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-8",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 726.0, 202.0, 223.0, 22.0 ],
+									"text" : "script sendbox pulsynthe_text hidden $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-9",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 726.0, 173.0, 197.0, 22.0 ],
+									"text" : "script sendbox pulsynthe hidden $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-10",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"patching_rect" : [ 726.0, 123.0, 29.5, 22.0 ],
+									"text" : "!= 3"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-5",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 45.0, 202.0, 207.0, 22.0 ],
-									"presentation_linecount" : 2,
 									"text" : "script sendbox bitman_text hidden $1"
 								}
 
@@ -310,7 +619,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 45.0, 173.0, 181.0, 22.0 ],
-									"presentation_linecount" : 2,
 									"text" : "script sendbox bitman hidden $1"
 								}
 
@@ -322,8 +630,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 492.0, 202.0, 223.0, 22.0 ],
-									"text" : "script sendbox pulsynthe_text hidden $1"
+									"patching_rect" : [ 492.0, 202.0, 227.0, 22.0 ],
+									"text" : "script sendbox cryptoverb_text hidden $1"
 								}
 
 							}
@@ -346,8 +654,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 492.0, 173.0, 197.0, 22.0 ],
-									"text" : "script sendbox pulsynthe hidden $1"
+									"patching_rect" : [ 492.0, 173.0, 201.0, 22.0 ],
+									"text" : "script sendbox cryptoverb hidden $1"
 								}
 
 							}
@@ -415,15 +723,7 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-48", 0 ],
-									"order" : 1,
-									"source" : [ "obj-1", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-50", 0 ],
+									"destination" : [ "obj-10", 0 ],
 									"order" : 0,
 									"source" : [ "obj-1", 0 ]
 								}
@@ -431,9 +731,41 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-6", 0 ],
+									"destination" : [ "obj-48", 0 ],
 									"order" : 2,
 									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-50", 0 ],
+									"order" : 1,
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"order" : 3,
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-8", 0 ],
+									"order" : 0,
+									"source" : [ "obj-10", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-9", 0 ],
+									"order" : 1,
+									"source" : [ "obj-10", 0 ]
 								}
 
 							}
@@ -527,10 +859,24 @@
 								}
 
 							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-24", 0 ],
+									"source" : [ "obj-8", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-24", 0 ],
+									"source" : [ "obj-9", 0 ]
+								}
+
+							}
  ]
 					}
 ,
-					"patching_rect" : [ 542.0, 155.0, 63.0, 22.0 ],
+					"patching_rect" : [ 542.0, 360.10638040304184, 63.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -555,161 +901,12 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 542.0, 14.0, 82.0, 110.0 ],
+					"patching_rect" : [ 542.0, 14.0, 82.0, 150.0 ],
 					"spacing_x" : 1.0,
 					"tabcolor" : [ 0.427450980392157, 0.843137254901961, 1.0, 1.0 ],
-					"tabs" : [ "Bitman", "Byter", "Pulsynthe" ],
+					"tabs" : [ "Bitman", "Byter", "Cryptoverb", "Pulsynthe" ],
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"truncate" : 0
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"autosave" : 1,
-					"bgmode" : 1,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"hidden" : 1,
-					"id" : "obj-2",
-					"lockeddragscroll" : 0,
-					"lockedsize" : 0,
-					"maxclass" : "newobj",
-					"numinlets" : 3,
-					"numoutlets" : 4,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "signal", "signal", "", "" ],
-					"patching_rect" : [ 23.0, 14.0, 483.0, 196.0 ],
-					"saved_attribute_attributes" : 					{
-						"valueof" : 						{
-							"parameter_invisible" : 1,
-							"parameter_longname" : "amxd~[1]",
-							"parameter_modmode" : 0,
-							"parameter_shortname" : "amxd~[1]",
-							"parameter_type" : 3
-						}
-
-					}
-,
-					"saved_object_attributes" : 					{
-						"parameter_enable" : 1,
-						"patchername" : "Pulsynthe.amxd",
-						"patchername_fallback" : "~/Documents/Max 8/Packages/sonus/patchers/Max Instrument/Pulsynthe.amxd"
-					}
-,
-					"snapshot" : 					{
-						"filetype" : "C74Snapshot",
-						"version" : 2,
-						"minorversion" : 0,
-						"name" : "snapshotlist",
-						"origin" : "max~",
-						"type" : "list",
-						"subtype" : "Undefined",
-						"embed" : 1,
-						"snapshot" : 						{
-							"name" : "Pulsynthe.amxd",
-							"origname" : "~/Documents/Max 8/Packages/sonus/patchers/Max Instrument/Pulsynthe.amxd",
-							"valuedictionary" : 							{
-								"parameter_values" : 								{
-									"Filter Cutoff" : 20000.0,
-									"Filter Envelope Amount" : 0.0,
-									"Filter Resonance" : 50.0,
-									"Filter Type" : 0.0,
-									"Master Gain" : -15.304526898964873,
-									"Oscillator 1 Duty Cycle" : 50.0,
-									"Oscillator 1 Duty Cycle Mod Amount" : 0.0,
-									"Oscillator 1 Duty Cycle Mod Frequency" : 0.1,
-									"Oscillator 1 Frequency Divider" : 0.0,
-									"Oscillator 1 Waveform" : 2.0,
-									"Oscillator 1 Window" : 0.0,
-									"Oscillator 2 Detune" : 0.0,
-									"Oscillator 2 Duty Cycle" : 50.0,
-									"Oscillator 2 Duty Cycle Mod Amount" : 0.0,
-									"Oscillator 2 Duty Cycle Mod Frequency" : 0.1,
-									"Oscillator 2 Frequency Divider" : 0.0,
-									"Oscillator 2 Waveform" : 3.0,
-									"Oscillator 2 Window" : 0.0,
-									"Oscillators Mix" : 50.0,
-									"Pitch Envelope Amount" : 0.0,
-									"Synthesis Algorithm" : 0.0,
-									"blob" : 									{
-										"ADSR Selector" : [ 0 ]
-									}
-
-								}
-
-							}
-,
-							"active" : 1
-						}
-,
-						"snapshotlist" : 						{
-							"current_snapshot" : 0,
-							"entries" : [ 								{
-									"filetype" : "C74Snapshot",
-									"version" : 2,
-									"minorversion" : 0,
-									"name" : "Pulsynthe.amxd",
-									"origin" : "Pulsynthe.amxd",
-									"type" : "amxd",
-									"subtype" : "Undefined",
-									"embed" : 0,
-									"snapshot" : 									{
-										"name" : "Pulsynthe.amxd",
-										"origname" : "~/Documents/Max 8/Packages/sonus/patchers/Max Instrument/Pulsynthe.amxd",
-										"valuedictionary" : 										{
-											"parameter_values" : 											{
-												"Filter Cutoff" : 20000.0,
-												"Filter Envelope Amount" : 0.0,
-												"Filter Resonance" : 50.0,
-												"Filter Type" : 0.0,
-												"Master Gain" : -15.304526898964873,
-												"Oscillator 1 Duty Cycle" : 50.0,
-												"Oscillator 1 Duty Cycle Mod Amount" : 0.0,
-												"Oscillator 1 Duty Cycle Mod Frequency" : 0.1,
-												"Oscillator 1 Frequency Divider" : 0.0,
-												"Oscillator 1 Waveform" : 2.0,
-												"Oscillator 1 Window" : 0.0,
-												"Oscillator 2 Detune" : 0.0,
-												"Oscillator 2 Duty Cycle" : 50.0,
-												"Oscillator 2 Duty Cycle Mod Amount" : 0.0,
-												"Oscillator 2 Duty Cycle Mod Frequency" : 0.1,
-												"Oscillator 2 Frequency Divider" : 0.0,
-												"Oscillator 2 Waveform" : 3.0,
-												"Oscillator 2 Window" : 0.0,
-												"Oscillators Mix" : 50.0,
-												"Pitch Envelope Amount" : 0.0,
-												"Synthesis Algorithm" : 0.0,
-												"blob" : 												{
-													"ADSR Selector" : [ 0 ]
-												}
-
-											}
-
-										}
-,
-										"active" : 1
-									}
-,
-									"fileref" : 									{
-										"name" : "Pulsynthe.amxd",
-										"filename" : "Pulsynthe.amxd.maxsnap",
-										"filepath" : "~/Documents/Max 8/Snapshots",
-										"filepos" : -1,
-										"snapshotfileid" : "018b3ac10c6f44c26db5dcdc8d6004bb"
-									}
-
-								}
- ]
-						}
-
-					}
-,
-					"text" : "amxd~ pulsynthe",
-					"varname" : "pulsynthe",
-					"viewvisibility" : 1
 				}
 
 			}
@@ -858,13 +1055,31 @@
 					"fontface" : 0,
 					"fontname" : "Arial",
 					"fontsize" : 16.0,
+					"hidden" : 1,
+					"id" : "obj-12",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 23.0, 228.0, 806.0, 62.0 ],
+					"text" : "Cryptoverb implements in Max for Live format the homonymous external of sonus collection. It is a reverberation effect with four different stages, with each stage using a different algorithm to create a dense atmosphere. The mode knob changes the way the four stages are arranged.",
+					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ],
+					"varname" : "cryptoverb_text"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"background" : 1,
+					"fontface" : 0,
+					"fontname" : "Arial",
+					"fontsize" : 16.0,
 					"id" : "obj-10",
 					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 23.0, 228.0, 805.0, 62.0 ],
-					"presentation_linecount" : 3,
 					"text" : "Bitman is an effect that allows to manipulate the single 8 bits of the incoming bitreduced signal. Each bit can be kept as it is, inverted (toggle), set to 1 (set) or set to 0 (clear). Additional controls allow for lowpass filtering, removing the DC offset (suggested to be kept always on) and randomizing the bits statuses",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ],
 					"varname" : "bitman_text"
@@ -934,7 +1149,106 @@
 				}
 
 			}
- ]
+ ],
+		"parameters" : 		{
+			"obj-1" : [ "amxd~", "amxd~", 0 ],
+			"obj-13" : [ "amxd~[3]", "amxd~[3]", 0 ],
+			"obj-2" : [ "amxd~[4]", "amxd~[4]", 0 ],
+			"obj-9" : [ "amxd~[2]", "amxd~[2]", 0 ],
+			"parameterbanks" : 			{
+				"0" : 				{
+					"index" : 0,
+					"name" : "",
+					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+				}
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
+		"dependency_cache" : [ 			{
+				"name" : "Bitman.amxd",
+				"bootpath" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect",
+				"patcherrelativepath" : "../patchers/Max Audio Effect",
+				"type" : "amxd",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Bitman.amxd.maxsnap",
+				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Byter.amxd",
+				"bootpath" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect",
+				"patcherrelativepath" : "../patchers/Max Audio Effect",
+				"type" : "amxd",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Byter.amxd.maxsnap",
+				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Cryptoverb.amxd",
+				"bootpath" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect",
+				"patcherrelativepath" : "../patchers/Max Audio Effect",
+				"type" : "amxd",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Cryptoverb.amxd.maxsnap",
+				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Pulsynthe.amxd",
+				"bootpath" : "~/Documents/Max 8/Packages/sonus/patchers/Max Instrument",
+				"patcherrelativepath" : "../patchers/Max Instrument",
+				"type" : "amxd",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Pulsynthe.amxd.maxsnap",
+				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "sonus.biquads~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.bitman~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.blist.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.bytebeat~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.cryptoverb~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.pulsar~.mxe64",
+				"type" : "mx64"
+			}
+ ],
+		"autosave" : 0
 	}
 
 }
