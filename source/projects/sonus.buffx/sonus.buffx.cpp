@@ -5,6 +5,7 @@
 
 #include "c74_min.h"
 #include <algorithm>
+#include <functional>
 #include <random>
 #include "biquad.h"
 #include "cryptoverb.h"
@@ -670,6 +671,58 @@ public:
                     for (auto s = 0; s < b.frame_count(); s++)
                     {
                         b.lookup(s, ch) += delay.run(double(b.lookup(s, ch))) * wet;
+                    }
+                }
+
+                b.dirty();
+            }        
+
+            return {};
+        }
+    };
+
+    message<> sort
+    {
+        this,
+        "sort",
+        "Sort samples in order: sort [a(scending) / d(escending)]",
+        MIN_FUNCTION
+        {
+            buffer_lock<> b(m_buffer);
+
+            bool ascending = true;
+
+            if (args.size() > 0)
+            {
+                if (std::string(args.at(0)) == "d" || std::string(args.at(0)) == "descending")
+                {
+                    ascending = false;
+                }
+            }
+
+            if (b.valid())
+            {
+                for (auto ch = 0; ch < b.channel_count(); ch++)
+                {
+                    std::vector<float> curr_channel;
+                    
+                    for (auto s = 0; s < b.frame_count(); s++)
+                    {
+                        curr_channel.push_back(b.lookup(s, ch));
+                    }
+                    
+                    if (ascending)
+                    {
+                        std::sort(curr_channel.begin(), curr_channel.end());
+                    }
+                    else
+                    {
+                        std::sort(curr_channel.begin(), curr_channel.end(), std::greater<float>());
+                    }
+
+                    for (auto s = 0; s < b.frame_count(); s++)
+                    {
+                        b.lookup(s, ch) = curr_channel.at(s);
                     }
                 }
 

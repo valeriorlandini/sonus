@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 1,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 106.0, 640.0, 734.0 ],
+		"rect" : [ 34.0, 77.0, 1654.0, 993.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,10 +40,20 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "live.line",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 16.0, 113.0, 805.0, 5.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"comment" : "",
 					"hidden" : 1,
 					"id" : "obj-3",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -57,7 +67,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 170.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 298.0, 233.0, 20.0 ],
 					"text" : "Deep neural network implementation"
 				}
 
@@ -69,7 +79,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 149.0, 64.0, 22.0 ],
+					"patching_rect" : [ 26.0, 277.0, 64.0, 22.0 ],
 					"text" : "sonus.dnn"
 				}
 
@@ -81,7 +91,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 87.0, 194.0, 84.0, 22.0 ],
+					"patching_rect" : [ 87.0, 322.0, 84.0, 22.0 ],
 					"text" : "sonus.ga.num"
 				}
 
@@ -92,7 +102,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 215.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 343.0, 233.0, 20.0 ],
 					"text" : "Genetic algorithm implementations"
 				}
 
@@ -104,7 +114,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 194.0, 57.0, 22.0 ],
+					"patching_rect" : [ 26.0, 322.0, 57.0, 22.0 ],
 					"text" : "sonus.ga"
 				}
 
@@ -115,7 +125,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 260.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 388.0, 233.0, 20.0 ],
 					"text" : "Lindenmayer generative system"
 				}
 
@@ -127,7 +137,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 239.0, 76.0, 22.0 ],
+					"patching_rect" : [ 26.0, 367.0, 76.0, 22.0 ],
 					"text" : "sonus.linden"
 				}
 
@@ -138,7 +148,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 125.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 253.0, 233.0, 20.0 ],
 					"text" : "Cellular automata system"
 				}
 
@@ -150,7 +160,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 104.0, 57.0, 22.0 ],
+					"patching_rect" : [ 26.0, 232.0, 57.0, 22.0 ],
 					"text" : "sonus.ca"
 				}
 
@@ -161,7 +171,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 350.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 478.0, 233.0, 20.0 ],
 					"text" : "Classic perceptron implementation"
 				}
 
@@ -172,7 +182,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 305.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 433.0, 233.0, 20.0 ],
 					"text" : "Artificial neuron implementation"
 				}
 
@@ -183,7 +193,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 80.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 208.0, 233.0, 20.0 ],
 					"text" : "Activation functions (signal rate)"
 				}
 
@@ -194,7 +204,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 35.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 163.0, 233.0, 20.0 ],
 					"text" : "Activation functions"
 				}
 
@@ -206,7 +216,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 284.0, 81.0, 22.0 ],
+					"patching_rect" : [ 26.0, 412.0, 81.0, 22.0 ],
 					"text" : "sonus.neuron"
 				}
 
@@ -218,7 +228,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 329.0, 108.0, 22.0 ],
+					"patching_rect" : [ 26.0, 457.0, 108.0, 22.0 ],
 					"text" : "sonus.perceptron~"
 				}
 
@@ -230,7 +240,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 59.0, 70.0, 22.0 ],
+					"patching_rect" : [ 26.0, 187.0, 70.0, 22.0 ],
 					"text" : "sonus.acti~"
 				}
 
@@ -242,8 +252,25 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 14.0, 63.0, 22.0 ],
+					"patching_rect" : [ 26.0, 142.0, 63.0, 22.0 ],
 					"text" : "sonus.acti"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"background" : 1,
+					"fontface" : 0,
+					"fontname" : "Arial",
+					"fontsize" : 16.0,
+					"id" : "obj-5",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 16.0, 23.0, 807.0, 62.0 ],
+					"text" : "A series of externals dedicated to different artificial intelligence and generative algorithms. Some are about old (but gold) autonomous systems like cellular automata, genetic algorithms and L-systems, other deal with artificial neurons and deep learning.",
+					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 
 			}
@@ -320,7 +347,9 @@
 				}
 
 			}
- ]
+ ],
+		"dependency_cache" : [  ],
+		"autosave" : 0
 	}
 
 }

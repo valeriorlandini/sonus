@@ -52,6 +52,8 @@ Currently finished externals are:
 * `sonus.mathc` Mathematical constants
 * `sonus.mbox` Pop up dialogs generator
 * `sonus.mima~` Signal extremes analyzer
+* `sonus.mumul` Multiply numbers for the same factor
+* `sonus.mumul~` Multiply signals for the same factor
 * `sonus.quadpanner` Quadraphonic panner coefficients
 * `sonus.tent` Tent map calculator
 

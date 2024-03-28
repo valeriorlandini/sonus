@@ -105,6 +105,11 @@
 			<description>Apply a peak filter: peak <o>freq</o> <o>gain</o> </description>
 		</method>
 
+		<method name='sort'>
+			<digest>Sort samples in order: sort [a(scending) / d(escending)] </digest>
+			<description>Sort samples in order: sort [a(scending) / d(escending)] </description>
+		</method>
+
 		<method name='noise'>
 			<digest>Fill the buffer with noise, optionaly mixing it with current content: noise <o>mix</o> </digest>
 			<description>Fill the buffer with noise, optionaly mixing it with current content: noise <o>mix</o> </description>

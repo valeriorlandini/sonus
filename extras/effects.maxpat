@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 1,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 415.0, 84.0, 640.0, 967.0 ],
+		"rect" : [ 979.0, 226.0, 455.0, 779.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,14 +40,24 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "live.line",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 16.0, 113.0, 805.0, 5.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"comment" : "",
 					"hidden" : 1,
 					"id" : "obj-3",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 641.0, 30.0, 30.0 ]
+					"patching_rect" : [ 26.0, 706.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -57,7 +67,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 215.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 343.0, 233.0, 20.0 ],
 					"text" : "Save snapshots of a buffer"
 				}
 
@@ -69,7 +79,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 194.0, 87.0, 22.0 ],
+					"patching_rect" : [ 26.0, 322.0, 87.0, 22.0 ],
 					"text" : "sonus.bufsnap"
 				}
 
@@ -80,7 +90,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 125.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 253.0, 233.0, 20.0 ],
 					"text" : "Parallel biquad filters"
 				}
 
@@ -92,7 +102,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 104.0, 93.0, 22.0 ],
+					"patching_rect" : [ 26.0, 232.0, 93.0, 22.0 ],
 					"text" : "sonus.biquads~"
 				}
 
@@ -103,7 +113,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 305.0, 233.0, 20.0 ],
+					"patching_rect" : [ 279.0, 163.0, 233.0, 20.0 ],
 					"text" : "Eerie stereo reverberator"
 				}
 
@@ -115,7 +125,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 284.0, 107.0, 22.0 ],
+					"patching_rect" : [ 282.0, 142.0, 107.0, 22.0 ],
 					"text" : "sonus.cryptoverb~"
 				}
 
@@ -126,7 +136,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 440.0, 233.0, 20.0 ],
+					"patching_rect" : [ 279.0, 298.0, 233.0, 20.0 ],
 					"text" : "Simple signal mixer"
 				}
 
@@ -138,7 +148,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 419.0, 94.0, 22.0 ],
+					"patching_rect" : [ 282.0, 277.0, 94.0, 22.0 ],
 					"text" : "sonus.summer~"
 				}
 
@@ -149,7 +159,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 170.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 298.0, 233.0, 20.0 ],
 					"text" : "Apply effects to buffers"
 				}
 
@@ -161,7 +171,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 149.0, 70.0, 22.0 ],
+					"patching_rect" : [ 26.0, 277.0, 70.0, 22.0 ],
 					"text" : "sonus.buffx"
 				}
 
@@ -172,7 +182,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 260.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 388.0, 233.0, 20.0 ],
 					"text" : "Chebyshev waveshaper"
 				}
 
@@ -184,7 +194,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 239.0, 83.0, 22.0 ],
+					"patching_rect" : [ 26.0, 367.0, 83.0, 22.0 ],
 					"text" : "sonus.cheby~"
 				}
 
@@ -195,7 +205,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 80.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 208.0, 233.0, 20.0 ],
 					"text" : "Bit manipulator"
 				}
 
@@ -207,7 +217,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 59.0, 87.0, 22.0 ],
+					"patching_rect" : [ 26.0, 187.0, 87.0, 22.0 ],
 					"text" : "sonus.bitman~"
 				}
 
@@ -218,7 +228,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 35.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 163.0, 233.0, 20.0 ],
 					"text" : "Bitcrusher and bit inverter"
 				}
 
@@ -230,7 +240,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 14.0, 86.0, 22.0 ],
+					"patching_rect" : [ 26.0, 142.0, 86.0, 22.0 ],
 					"text" : "sonus.8bitinv~"
 				}
 
@@ -241,7 +251,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 395.0, 233.0, 20.0 ],
+					"patching_rect" : [ 279.0, 253.0, 233.0, 20.0 ],
 					"text" : "Quadraphonic panner"
 				}
 
@@ -252,7 +262,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 350.0, 233.0, 20.0 ],
+					"patching_rect" : [ 279.0, 208.0, 233.0, 20.0 ],
 					"text" : "Continuous selector/mixer"
 				}
 
@@ -263,7 +273,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 485.0, 233.0, 20.0 ],
+					"patching_rect" : [ 279.0, 343.0, 233.0, 20.0 ],
 					"text" : "Wavesets based sample manipulation"
 				}
 
@@ -275,7 +285,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 374.0, 98.0, 22.0 ],
+					"patching_rect" : [ 282.0, 232.0, 98.0, 22.0 ],
 					"text" : "sonus.quadpan~"
 				}
 
@@ -287,7 +297,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 329.0, 96.0, 22.0 ],
+					"patching_rect" : [ 282.0, 187.0, 96.0, 22.0 ],
 					"text" : "sonus.fselector~"
 				}
 
@@ -299,8 +309,25 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 464.0, 94.0, 22.0 ],
+					"patching_rect" : [ 282.0, 322.0, 94.0, 22.0 ],
 					"text" : "sonus.wavesets"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"background" : 1,
+					"fontface" : 0,
+					"fontname" : "Arial",
+					"fontsize" : 16.0,
+					"id" : "obj-5",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 16.0, 23.0, 807.0, 80.0 ],
+					"text" : "A series of externals that add effects to the incoming signal or to a buffer, depending on the object. Some effects are rather common (like the biquad filters of sonus.biquad~) but packed in a handy and easy to use object, other are more exotic like bitwise manipulation or eerie reverberation. Moreover, sonus.buffx and sonus.waveset allow to modify buffers in particular ways, so they are also suited for non-realtime sound design.",
+					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 
 			}
@@ -393,7 +420,9 @@
 				}
 
 			}
- ]
+ ],
+		"dependency_cache" : [  ],
+		"autosave" : 0
 	}
 
 }

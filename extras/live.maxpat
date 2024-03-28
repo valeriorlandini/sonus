@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 1,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 84.0, 1245.0, 979.0 ],
+		"rect" : [ 72.0, 159.0, 1245.0, 979.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,16 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-14",
+					"maxclass" : "live.line",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 16.0, 113.0, 805.0, 5.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"autosave" : 1,
 					"bgmode" : 1,
 					"border" : 0,
@@ -55,7 +65,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "signal", "signal", "", "" ],
-					"patching_rect" : [ 23.0, 14.0, 483.0, 196.0 ],
+					"patching_rect" : [ 23.0, 142.0, 483.0, 196.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_invisible" : 1,
@@ -204,7 +214,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "signal", "signal", "", "" ],
-					"patching_rect" : [ 23.0, 14.0, 232.0, 196.0 ],
+					"patching_rect" : [ 23.0, 142.0, 232.0, 196.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_invisible" : 1,
@@ -308,7 +318,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 626.0, 98.0, 180.0, 20.0 ],
+					"patching_rect" : [ 626.0, 226.0, 180.0, 20.0 ],
 					"text" : "A dense and eerie reverberation"
 				}
 
@@ -329,7 +339,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "signal", "signal", "", "" ],
-					"patching_rect" : [ 23.0, 14.0, 415.0, 196.0 ],
+					"patching_rect" : [ 23.0, 142.0, 415.0, 196.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_invisible" : 1,
@@ -448,7 +458,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 627.0, 16.0, 180.0, 34.0 ],
+					"patching_rect" : [ 627.0, 144.0, 180.0, 34.0 ],
 					"text" : "A bitcrusher with the ability to manipulate the single bits"
 				}
 
@@ -461,7 +471,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 817.0, 19.0, 70.0, 22.0 ],
+					"patching_rect" : [ 817.0, 147.0, 70.0, 22.0 ],
 					"text" : "loadmess 0"
 				}
 
@@ -473,7 +483,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 627.0, 128.0, 180.0, 34.0 ],
+					"patching_rect" : [ 627.0, 256.0, 180.0, 34.0 ],
 					"text" : "A pulsar synthesis based subtractive synthesizer"
 				}
 
@@ -485,7 +495,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 626.0, 54.0, 181.0, 34.0 ],
+					"patching_rect" : [ 626.0, 182.0, 181.0, 34.0 ],
 					"text" : "A bytebeat generator and LFO, with a bonus reverb"
 				}
 
@@ -498,7 +508,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 542.0, 391.489358901977539, 67.0, 22.0 ],
+					"patching_rect" : [ 542.0, 519.0, 67.0, 22.0 ],
 					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
@@ -517,7 +527,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 1,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -876,7 +886,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 542.0, 360.10638040304184, 63.0, 22.0 ],
+					"patching_rect" : [ 542.0, 488.0, 63.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -901,7 +911,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 542.0, 14.0, 82.0, 150.0 ],
+					"patching_rect" : [ 542.0, 142.0, 82.0, 150.0 ],
 					"spacing_x" : 1.0,
 					"tabcolor" : [ 0.427450980392157, 0.843137254901961, 1.0, 1.0 ],
 					"tabs" : [ "Bitman", "Byter", "Cryptoverb", "Pulsynthe" ],
@@ -927,7 +937,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "signal", "signal", "", "" ],
-					"patching_rect" : [ 23.0, 14.0, 500.5, 196.0 ],
+					"patching_rect" : [ 23.0, 142.0, 500.5, 196.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_invisible" : 1,
@@ -1061,10 +1071,27 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 228.0, 806.0, 62.0 ],
+					"patching_rect" : [ 23.0, 356.0, 806.0, 62.0 ],
 					"text" : "Cryptoverb implements in Max for Live format the homonymous external of sonus collection. It is a reverberation effect with four different stages, with each stage using a different algorithm to create a dense atmosphere. The mode knob changes the way the four stages are arranged.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ],
 					"varname" : "cryptoverb_text"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"background" : 1,
+					"fontface" : 0,
+					"fontname" : "Arial",
+					"fontsize" : 16.0,
+					"id" : "obj-15",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 16.0, 23.0, 810.0, 62.0 ],
+					"text" : "Max for Live devices that use some of the sonus externals to bring you effects, instruments and modulators that are ready to use in Ableton Live (although most of their functionalitiies are available also inside a Max/MSP only environment).",
+					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 
 			}
@@ -1079,7 +1106,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 228.0, 805.0, 62.0 ],
+					"patching_rect" : [ 23.0, 356.0, 805.0, 62.0 ],
 					"text" : "Bitman is an effect that allows to manipulate the single 8 bits of the incoming bitreduced signal. Each bit can be kept as it is, inverted (toggle), set to 1 (set) or set to 0 (clear). Additional controls allow for lowpass filtering, removing the DC offset (suggested to be kept always on) and randomizing the bits statuses",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ],
 					"varname" : "bitman_text"
@@ -1098,7 +1125,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 228.0, 805.0, 62.0 ],
+					"patching_rect" : [ 23.0, 356.0, 805.0, 62.0 ],
 					"text" : "Pulsynthe is a simple but complete subtractive synthesizer based on pulsar synthesis. The two oscillators can have their pulsar synthesis parameters separately adjusted. Three envelopes and four synthesis modes (mix, ring modulation, bitwise or, bitwise and) allow for a wide range of sounds and modulations.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ],
 					"varname" : "pulsynthe_text"
@@ -1117,7 +1144,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 228.0, 805.0, 80.0 ],
+					"patching_rect" : [ 23.0, 356.0, 805.0, 80.0 ],
 					"text" : "Byter is a bytebeat generator, with the possibility to use the generated signal as modulator. This is made more effective by the Infrasonic switch, that slows down the generation speed so that the produced signal gradually changes. Moreover, a Dronize knob allows to add a thick reverberation, turning this device in an ever evolving drone and soundscape generator.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ],
 					"varname" : "byter_text"

@@ -59,6 +59,7 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
+					"hidden" : 1,
 					"id" : "obj-107",
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
@@ -529,7 +530,6 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"hidden" : 1,
 					"id" : "obj-99",
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
@@ -559,7 +559,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 16.0, 86.0, 805.0, 32.0 ],
+					"patching_rect" : [ 16.0, 97.0, 805.0, 32.0 ],
 					"spacing_x" : 1.0,
 					"tabcolor" : [ 0.023529411764706, 0.662745098039216, 0.784313725490196, 1.0 ],
 					"tabs" : [ "Generators", "Effects and Sample Manipulation", "Neural Networks and AI", "Math and Utilities", "Max for Live Devices" ],
@@ -838,7 +838,9 @@
  ],
 		"parameters" : 		{
 			"obj-107::obj-1" : [ "amxd~", "amxd~", 0 ],
-			"obj-107::obj-2" : [ "amxd~[1]", "amxd~[1]", 0 ],
+			"obj-107::obj-13" : [ "amxd~[3]", "amxd~[3]", 0 ],
+			"obj-107::obj-2" : [ "amxd~[1]", "amxd~[4]", 0 ],
+			"obj-107::obj-9" : [ "amxd~[2]", "amxd~[2]", 0 ],
 			"parameterbanks" : 			{
 				"0" : 				{
 					"index" : 0,
@@ -852,6 +854,20 @@
 		}
 ,
 		"dependency_cache" : [ 			{
+				"name" : "Bitman.amxd",
+				"bootpath" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect",
+				"patcherrelativepath" : "../patchers/Max Audio Effect",
+				"type" : "amxd",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Bitman.amxd.maxsnap",
+				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "Byter.amxd",
 				"bootpath" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect",
 				"patcherrelativepath" : "../patchers/Max Audio Effect",
@@ -860,6 +876,20 @@
 			}
 , 			{
 				"name" : "Byter.amxd.maxsnap",
+				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Cryptoverb.amxd",
+				"bootpath" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect",
+				"patcherrelativepath" : "../patchers/Max Audio Effect",
+				"type" : "amxd",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Cryptoverb.amxd.maxsnap",
 				"bootpath" : "~/Documents/Max 8/Snapshots",
 				"patcherrelativepath" : "../../../Snapshots",
 				"type" : "mx@s",
@@ -916,6 +946,10 @@
 			}
 , 			{
 				"name" : "sonus.biquads~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.bitman~.mxe64",
 				"type" : "mx64"
 			}
 , 			{

@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 1,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 59.0, 106.0, 640.0, 683.0 ],
+		"rect" : [ 34.0, 77.0, 1591.0, 993.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,11 +40,21 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-10",
+					"maxclass" : "live.line",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 16.0, 113.0, 805.0, 5.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-8",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 215.0, 241.0, 20.0 ],
+					"patching_rect" : [ 23.0, 343.0, 241.0, 20.0 ],
 					"text" : "Multiply all the numbers for the same factor"
 				}
 
@@ -56,7 +66,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 194.0, 80.0, 22.0 ],
+					"patching_rect" : [ 26.0, 322.0, 80.0, 22.0 ],
 					"text" : "sonus.mumul"
 				}
 
@@ -67,7 +77,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 279.0, 35.0, 233.0, 20.0 ],
+					"patching_rect" : [ 279.0, 163.0, 233.0, 20.0 ],
 					"text" : "Bang to 1-interval-0 sequence"
 				}
 
@@ -79,7 +89,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 282.0, 14.0, 70.0, 22.0 ],
+					"patching_rect" : [ 282.0, 142.0, 70.0, 22.0 ],
 					"text" : "sonus.bozo"
 				}
 
@@ -90,7 +100,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 279.0, 215.0, 233.0, 20.0 ],
+					"patching_rect" : [ 279.0, 343.0, 233.0, 20.0 ],
 					"text" : "Multiply all the signals for the same factor"
 				}
 
@@ -102,7 +112,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 282.0, 194.0, 87.0, 22.0 ],
+					"patching_rect" : [ 282.0, 322.0, 87.0, 22.0 ],
 					"text" : "sonus.mumul~"
 				}
 
@@ -126,7 +136,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 170.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 298.0, 233.0, 20.0 ],
 					"text" : "Pop up dialogs generator"
 				}
 
@@ -138,7 +148,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 149.0, 73.0, 22.0 ],
+					"patching_rect" : [ 26.0, 277.0, 73.0, 22.0 ],
 					"text" : "sonus.mbox"
 				}
 
@@ -149,7 +159,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 279.0, 80.0, 233.0, 20.0 ],
+					"patching_rect" : [ 279.0, 208.0, 233.0, 20.0 ],
 					"text" : "Similar to line, but for list of numbers"
 				}
 
@@ -161,7 +171,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 282.0, 59.0, 65.0, 22.0 ],
+					"patching_rect" : [ 282.0, 187.0, 65.0, 22.0 ],
 					"text" : "sonus.lline"
 				}
 
@@ -172,7 +182,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 35.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 163.0, 233.0, 20.0 ],
 					"text" : "Output different items from a list"
 				}
 
@@ -184,7 +194,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 14.0, 65.0, 22.0 ],
+					"patching_rect" : [ 26.0, 142.0, 65.0, 22.0 ],
 					"text" : "sonus.blist"
 				}
 
@@ -195,7 +205,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 279.0, 125.0, 233.0, 20.0 ],
+					"patching_rect" : [ 279.0, 253.0, 233.0, 20.0 ],
 					"text" : "Mathematical constants"
 				}
 
@@ -207,7 +217,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 282.0, 104.0, 77.0, 22.0 ],
+					"patching_rect" : [ 282.0, 232.0, 77.0, 22.0 ],
 					"text" : "sonus.mathc"
 				}
 
@@ -218,7 +228,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 125.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 253.0, 233.0, 20.0 ],
 					"text" : "Non repeating random sequences"
 				}
 
@@ -230,7 +240,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 104.0, 64.0, 22.0 ],
+					"patching_rect" : [ 26.0, 232.0, 64.0, 22.0 ],
 					"text" : "sonus.lurn"
 				}
 
@@ -241,7 +251,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 279.0, 260.0, 233.0, 20.0 ],
+					"patching_rect" : [ 279.0, 388.0, 233.0, 20.0 ],
 					"text" : "Tent map calculator"
 				}
 
@@ -253,7 +263,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 282.0, 239.0, 64.0, 22.0 ],
+					"patching_rect" : [ 282.0, 367.0, 64.0, 22.0 ],
 					"text" : "sonus.tent"
 				}
 
@@ -264,7 +274,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 258.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 386.0, 233.0, 20.0 ],
 					"text" : "Quadraphonic panner coefficients"
 				}
 
@@ -275,7 +285,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 279.0, 170.0, 233.0, 20.0 ],
+					"patching_rect" : [ 279.0, 298.0, 233.0, 20.0 ],
 					"text" : "Signal extremes analyzer"
 				}
 
@@ -286,7 +296,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 80.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 208.0, 233.0, 20.0 ],
 					"text" : "Hot inlets operations"
 				}
 
@@ -298,7 +308,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 237.0, 108.0, 22.0 ],
+					"patching_rect" : [ 26.0, 365.0, 108.0, 22.0 ],
 					"text" : "sonus.quadpanner"
 				}
 
@@ -310,7 +320,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 282.0, 149.0, 80.0, 22.0 ],
+					"patching_rect" : [ 282.0, 277.0, 80.0, 22.0 ],
 					"text" : "sonus.mima~"
 				}
 
@@ -322,8 +332,25 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 59.0, 64.0, 22.0 ],
+					"patching_rect" : [ 26.0, 187.0, 64.0, 22.0 ],
 					"text" : "sonus.hop"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"background" : 1,
+					"fontface" : 0,
+					"fontname" : "Arial",
+					"fontsize" : 16.0,
+					"id" : "obj-11",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 16.0, 23.0, 807.0, 62.0 ],
+					"text" : "A series of externals that ranges from handy utilities to math functions. While they may not be the heart of your next electroacoustic masterpiece, they can help you to create it more easily, allowing to reduce the number of objects needed to perform recurring operations.",
+					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 
 			}
