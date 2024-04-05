@@ -46,7 +46,8 @@ public:
         "wet",
         0,
 		range { 0.0, 1.0 },
-        title {"Global wet"}
+        title {"Global wet"},
+		description {"Global wet of the effect."}
     };
 
 	attribute<int, threadsafe::no, limit::clamp> mode

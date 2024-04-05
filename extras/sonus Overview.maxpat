@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 1,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -149,7 +149,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 1,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -594,7 +594,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 1,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -839,6 +839,7 @@
 		"parameters" : 		{
 			"obj-107::obj-1" : [ "amxd~", "amxd~", 0 ],
 			"obj-107::obj-13" : [ "amxd~[3]", "amxd~[3]", 0 ],
+			"obj-107::obj-17" : [ "amxd~[4]", "amxd~[4]", 0 ],
 			"obj-107::obj-2" : [ "amxd~[1]", "amxd~[4]", 0 ],
 			"obj-107::obj-9" : [ "amxd~[2]", "amxd~[2]", 0 ],
 			"parameterbanks" : 			{
@@ -910,37 +911,51 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "StrangeLFO.amxd",
+				"bootpath" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect",
+				"patcherrelativepath" : "../patchers/Max Audio Effect",
+				"type" : "amxd",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "StrangeLFO.amxd.maxsnap",
+				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ai.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sonus/extras",
-				"patcherrelativepath" : ".",
+				"bootpath" : "~/Documents/Max 8/Packages/sonus/help",
+				"patcherrelativepath" : "../help",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "effects.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sonus/extras",
-				"patcherrelativepath" : ".",
+				"bootpath" : "~/Documents/Max 8/Packages/sonus/help",
+				"patcherrelativepath" : "../help",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "generators.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sonus/extras",
-				"patcherrelativepath" : ".",
+				"bootpath" : "~/Documents/Max 8/Packages/sonus/help",
+				"patcherrelativepath" : "../help",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "live.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sonus/extras",
-				"patcherrelativepath" : ".",
+				"bootpath" : "~/Documents/Max 8/Packages/sonus/help",
+				"patcherrelativepath" : "../help",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "math.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sonus/extras",
-				"patcherrelativepath" : ".",
+				"bootpath" : "~/Documents/Max 8/Packages/sonus/help",
+				"patcherrelativepath" : "../help",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -965,7 +980,27 @@
 				"type" : "mx64"
 			}
 , 			{
+				"name" : "sonus.lorenz~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.mumul~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
 				"name" : "sonus.pulsar~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.roessler~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.summer.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.summer~.mxe64",
 				"type" : "mx64"
 			}
  ],

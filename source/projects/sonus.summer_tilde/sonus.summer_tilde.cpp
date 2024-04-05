@@ -13,10 +13,10 @@ using namespace c74::min;
 class summer_tilde : public object<summer_tilde>, public vector_operator<>
 {
 public:
-	MIN_DESCRIPTION {"Continuous selector from contiguous inputs"};
+	MIN_DESCRIPTION {"Instant signal mixer"};
 	MIN_TAGS {"audio, routing"};
 	MIN_AUTHOR {"Valerio Orlandini"};
-	MIN_RELATED {"selector~"};
+	MIN_RELATED {"sonus.summer"};
 
 	outlet<> out {this, "(signal) Output", "signal"};
 

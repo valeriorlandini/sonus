@@ -6,8 +6,8 @@
 
 <c74object name='sonus.summer~' category='audio,  routing'>
 
-	<digest>Continuous selector from contiguous inputs </digest>
-	<description>Continuous selector from contiguous inputs </description>
+	<digest>Instant signal mixer </digest>
+	<description>Instant signal mixer </description>
 
 
 	<!--METADATA-->
@@ -53,7 +53,7 @@
 	<!--RELATED-->
 
 	<seealsolist>
-		<seealso name='selector~' />
+		<seealso name='sonus.summer' />
 	</seealsolist>
 
 
