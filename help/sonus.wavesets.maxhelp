@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 6,
+			"minor" : 6,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -61,8 +61,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 413.205963671207428, 574.5, 140.0, 50.0 ],
-					"text" : "filter 100 bp 1200 200 hp 4000 300 lp 1000 150 no 20"
+					"patching_rect" : [ 413.205963671207428, 574.5, 161.0, 50.0 ],
+					"text" : "filter 100 bp 1200 200 hp 4000 300 lp 1000 150 no 20 0"
 				}
 
 			}

@@ -86,7 +86,7 @@
 							"origname" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect/StrangeLFO.amxd",
 							"valuedictionary" : 							{
 								"parameter_values" : 								{
-									"Audio Gain" : -6.0,
+									"Audio Gain" : -27.141707487584114,
 									"Dronize" : 0.0,
 									"Lorenz  Mix" : 100.0,
 									"Lorenz Evolution" : 20.0,
@@ -100,8 +100,8 @@
 									"Modulator Gain" : 0.0,
 									"Offset" : 0.0,
 									"Output Audio" : 0.0,
-									"Panel View" : 0.0,
-									"Roessler Evolution" : 20.0,
+									"Panel View" : 1.0,
+									"Roessler Evolution" : 30.0,
 									"Roessler Mix" : 100.0,
 									"Roessler a Parameter" : 0.2,
 									"Roessler b Parameter" : 0.5,
@@ -143,7 +143,7 @@
 										"origname" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect/StrangeLFO.amxd",
 										"valuedictionary" : 										{
 											"parameter_values" : 											{
-												"Audio Gain" : -6.0,
+												"Audio Gain" : -27.141707487584114,
 												"Dronize" : 0.0,
 												"Lorenz  Mix" : 100.0,
 												"Lorenz Evolution" : 20.0,
@@ -157,8 +157,8 @@
 												"Modulator Gain" : 0.0,
 												"Offset" : 0.0,
 												"Output Audio" : 0.0,
-												"Panel View" : 0.0,
-												"Roessler Evolution" : 20.0,
+												"Panel View" : 1.0,
+												"Roessler Evolution" : 30.0,
 												"Roessler Mix" : 100.0,
 												"Roessler a Parameter" : 0.2,
 												"Roessler b Parameter" : 0.5,
