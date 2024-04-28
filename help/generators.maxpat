@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 1,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 786.0, 170.0, 1245.0, 993.0 ],
+		"rect" : [ 486.0, 246.0, 1245.0, 651.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,29 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 23.0, 163.0, 233.0, 20.0 ],
+					"text" : "Harmonic additive generator"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 26.0, 142.0, 90.0, 22.0 ],
+					"text" : "sonus.addosc~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-6",
 					"maxclass" : "live.line",
 					"numinlets" : 1,
@@ -54,7 +77,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 208.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 253.0, 233.0, 20.0 ],
 					"text" : "Bytebeat player"
 				}
 
@@ -102,7 +125,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 187.0, 96.0, 22.0 ],
+					"patching_rect" : [ 26.0, 232.0, 96.0, 22.0 ],
 					"text" : "sonus.byteplay~"
 				}
 
@@ -113,7 +136,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 163.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 208.0, 233.0, 20.0 ],
 					"text" : "Bytebeat generator"
 				}
 
@@ -125,7 +148,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 142.0, 97.0, 22.0 ],
+					"patching_rect" : [ 26.0, 187.0, 97.0, 22.0 ],
 					"text" : "sonus.bytebeat~"
 				}
 
@@ -136,7 +159,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 343.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 388.0, 233.0, 20.0 ],
 					"text" : "Neural network based oscillator"
 				}
 
@@ -148,7 +171,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 322.0, 94.0, 22.0 ],
+					"patching_rect" : [ 26.0, 367.0, 94.0, 22.0 ],
 					"text" : "sonus.neurosc~"
 				}
 
@@ -159,7 +182,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 253.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 298.0, 233.0, 20.0 ],
 					"text" : "Elementary cellular automata oscillator"
 				}
 
@@ -171,7 +194,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 232.0, 89.0, 22.0 ],
+					"patching_rect" : [ 26.0, 277.0, 89.0, 22.0 ],
 					"text" : "sonus.ecaosc~"
 				}
 
@@ -182,7 +205,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 298.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 343.0, 233.0, 20.0 ],
 					"text" : "Lorenz attractor based generator"
 				}
 
@@ -194,7 +217,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 277.0, 84.0, 22.0 ],
+					"patching_rect" : [ 26.0, 322.0, 84.0, 22.0 ],
 					"text" : "sonus.lorenz~"
 				}
 
@@ -285,7 +308,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 388.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 433.0, 233.0, 20.0 ],
 					"text" : "User defined wavetable oscillator"
 				}
 
@@ -320,7 +343,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 367.0, 85.0, 22.0 ],
+					"patching_rect" : [ 26.0, 412.0, 85.0, 22.0 ],
 					"text" : "sonus.nwosc~"
 				}
 
@@ -400,6 +423,13 @@
 					"destination" : [ "obj-3", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-56", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"source" : [ "obj-8", 0 ]
 				}
 
 			}

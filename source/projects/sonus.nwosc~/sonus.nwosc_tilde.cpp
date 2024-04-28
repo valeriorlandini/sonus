@@ -42,7 +42,6 @@ public:
         }
     };
 
-
 	attribute<std::vector<double>> wavetable
 	{
 		this,
