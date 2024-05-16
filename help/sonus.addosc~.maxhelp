@@ -553,7 +553,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 196.0, 441.0, 316.0, 40.0 ],
-					"text" : "arguments: frequency and optional number of harmonics (1-32, default 8)"
+					"text" : "arguments: number of harmonics (1-32) and frequency (both optional)"
 				}
 
 			}
@@ -652,7 +652,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 33.0, 450.0, 145.0, 22.0 ],
-					"text" : "sonus.addosc~ 110 12"
+					"text" : "sonus.addosc~ 12 100"
 				}
 
 			}

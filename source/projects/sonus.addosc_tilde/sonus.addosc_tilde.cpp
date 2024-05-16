@@ -5,8 +5,6 @@
 
 #include "c74_min.h"
 #include "addosc.h"
-#include <array>
-#include <vector>
 
 using namespace c74::min;
 using namespace soutel;
@@ -38,12 +36,12 @@ public:
 
 		if (!args.empty())
 		{
-			osc_.set_frequency(double(args[0]));
+            harmonics_ = std::min(std::max(int(args[0]), 1), 32);
 		}
 
         if (args.size() > 1)
         {
-            harmonics_ = std::min(std::max(int(args[1]), 1), 32);
+			osc_.set_frequency(double(args[1]));
         }
 
 		osc_.set_harmonics(harmonics_);
@@ -59,20 +57,21 @@ public:
                 m_inlets.push_back(std::make_unique<inlet<>>(this, "(signal/float) Harmonic " + std::to_string(i) + " gain", "signal"));
             }
         }
+		
     }
-
-	argument<number> frequency_arg
-	{
-		this,
-		"frequency",
-		"Oscillator frequency."
-    };
 
 	argument<number> harmonics_arg
 	{
 		this,
 		"harmonics",
 		"Number of harmonics (1-32)."
+    };
+
+	argument<number> frequency_arg
+	{
+		this,
+		"frequency",
+		"Oscillator frequency."
     };
 
     attribute<bool, threadsafe::no> normalize

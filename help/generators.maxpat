@@ -429,6 +429,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
+					"hidden" : 1,
 					"source" : [ "obj-8", 0 ]
 				}
 
