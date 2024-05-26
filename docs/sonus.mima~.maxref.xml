@@ -6,8 +6,8 @@
 
 <c74object name='sonus.mima~' category='audio'>
 
-	<digest>Reports the minimum and maximum value ever received </digest>
-	<description>Reports the minimum and maximum value ever received </description>
+	<digest>Reports the minimum and maximum value and delta ever received </digest>
+	<description>Reports the minimum and maximum value and delta ever received </description>
 
 
 	<!--METADATA-->

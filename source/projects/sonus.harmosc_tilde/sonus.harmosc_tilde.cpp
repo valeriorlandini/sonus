@@ -9,7 +9,7 @@
 using namespace c74::min;
 using namespace soutel;
 
-class addosc_tilde : public object<addosc_tilde>, public vector_operator<>
+class harmosc_tilde : public object<harmosc_tilde>, public vector_operator<>
 {
 public:
 	MIN_DESCRIPTION {"Additive harmonic oscillator"};
@@ -30,7 +30,7 @@ public:
 		}
 	};
 
-    addosc_tilde(const atoms& args = {})
+    harmosc_tilde(const atoms& args = {})
     {
         harmonics_ = 8;
 
@@ -60,7 +60,7 @@ public:
 		
     }
 
-	argument<number> harmonics_arg
+	argument<int> harmonics_arg
 	{
 		this,
 		"harmonics",
@@ -199,4 +199,4 @@ public:
 	std::vector<std::unique_ptr<inlet<>>> m_inlets;
 };
 
-MIN_EXTERNAL(addosc_tilde);
+MIN_EXTERNAL(harmosc_tilde);

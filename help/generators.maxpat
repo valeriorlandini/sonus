@@ -44,7 +44,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 163.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 298.0, 233.0, 20.0 ],
 					"text" : "Harmonic additive generator"
 				}
 
@@ -56,8 +56,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 142.0, 90.0, 22.0 ],
-					"text" : "sonus.addosc~"
+					"patching_rect" : [ 26.0, 277.0, 97.0, 22.0 ],
+					"text" : "sonus.harmosc~"
 				}
 
 			}
@@ -77,7 +77,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 253.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 208.0, 233.0, 20.0 ],
 					"text" : "Bytebeat player"
 				}
 
@@ -125,7 +125,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 232.0, 96.0, 22.0 ],
+					"patching_rect" : [ 26.0, 187.0, 96.0, 22.0 ],
 					"text" : "sonus.byteplay~"
 				}
 
@@ -136,7 +136,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 208.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 163.0, 233.0, 20.0 ],
 					"text" : "Bytebeat generator"
 				}
 
@@ -148,7 +148,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 187.0, 97.0, 22.0 ],
+					"patching_rect" : [ 26.0, 142.0, 97.0, 22.0 ],
 					"text" : "sonus.bytebeat~"
 				}
 
@@ -182,7 +182,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 298.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 253.0, 233.0, 20.0 ],
 					"text" : "Elementary cellular automata oscillator"
 				}
 
@@ -194,7 +194,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 277.0, 89.0, 22.0 ],
+					"patching_rect" : [ 26.0, 232.0, 89.0, 22.0 ],
 					"text" : "sonus.ecaosc~"
 				}
 
