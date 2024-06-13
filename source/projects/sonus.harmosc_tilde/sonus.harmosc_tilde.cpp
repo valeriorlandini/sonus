@@ -11,6 +11,11 @@ using namespace soutel;
 
 class harmosc_tilde : public object<harmosc_tilde>, public vector_operator<>
 {
+private:
+	AddOsc<double> osc_;
+	int harmonics_;
+	std::vector<std::unique_ptr<inlet<>>> m_inlets;
+	
 public:
 	MIN_DESCRIPTION {"Additive harmonic oscillator"};
 	MIN_TAGS {"oscillators"};
@@ -151,7 +156,7 @@ public:
 		{
 			if (args.size() >= 2)
 			{
-				osc_.set_harmonic_gain(int(args[0]), double(args[1]));
+				osc_.set_harmonic_gain(int(args[0]) - 1, double(args[1]));
 			}
 			return {};
 		}
@@ -166,7 +171,7 @@ public:
 		{
 			if (args.size() >= 2)
 			{
-				osc_.set_harmonic_phase(int(args[0]), double(args[1]));
+				osc_.set_harmonic_phase(int(args[0]) - 1, double(args[1]));
 			}
 			return {};
 		}
@@ -192,11 +197,6 @@ public:
 			output.samples(0)[i] = osc_.run();
 	    }
 	}
-
-	private:
-	AddOsc<double> osc_;
-	int harmonics_;
-	std::vector<std::unique_ptr<inlet<>>> m_inlets;
 };
 
 MIN_EXTERNAL(harmosc_tilde);

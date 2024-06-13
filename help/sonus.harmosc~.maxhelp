@@ -140,7 +140,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 69.0, 259.0, 61.0, 22.0 ],
-					"text" : "gain 3 0.5"
+					"text" : "gain 3 0.6"
 				}
 
 			}
@@ -231,7 +231,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "float" ],
 					"patching_rect" : [ 75.0, 366.0, 56.0, 22.0 ],
-					"sig" : 0.21
+					"sig" : 0.0
 				}
 
 			}
@@ -652,7 +652,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 33.0, 450.0, 145.0, 22.0 ],
-					"text" : "sonus.addosc~ 12 100"
+					"text" : "sonus.harmosc~ 12 100"
 				}
 
 			}
@@ -724,7 +724,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 12.0, 805.0, 48.0 ],
-					"text" : "sonus.addosc~"
+					"text" : "sonus.harmosc~"
 				}
 
 			}
@@ -878,7 +878,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "sonus.addosc~.mxe64",
+				"name" : "sonus.harmosc~.mxe64",
 				"type" : "mx64"
 			}
  ],
