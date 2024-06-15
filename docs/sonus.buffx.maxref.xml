@@ -50,6 +50,11 @@
 			<description>Backup the current buffer content </description>
 		</method>
 
+		<method name='autoconv'>
+			<digest><o>EXPERIMENTAL</o> Convolve the buffer with itself </digest>
+			<description><o>EXPERIMENTAL</o> Convolve the buffer with itself </description>
+		</method>
+
 		<method name='lowpass'>
 			<digest>Apply a lowpass filter: lowpass <o>freq</o> <o>q</o> </digest>
 			<description>Apply a lowpass filter: lowpass <o>freq</o> <o>q</o> </description>
@@ -103,6 +108,26 @@
 		<method name='peak'>
 			<digest>Apply a peak filter: peak <o>freq</o> <o>gain</o> </digest>
 			<description>Apply a peak filter: peak <o>freq</o> <o>gain</o> </description>
+		</method>
+
+		<method name='rm'>
+			<digest>Ring modulate the buffer with a simple wave: rm <o>freq</o> <o>waveform</o> </digest>
+			<description>Ring modulate the buffer with a simple wave: rm <o>freq</o> <o>waveform</o> </description>
+		</method>
+
+		<method name='rmbuf'>
+			<digest>Ring modulate the buffer with another buffer: rm [buffer name] </digest>
+			<description>Ring modulate the buffer with another buffer: rm [buffer name] </description>
+		</method>
+
+		<method name='am'>
+			<digest>Amplitude modulate the buffer with a simple wave: am <o>freq</o> <o>waveform</o> </digest>
+			<description>Amplitude modulate the buffer with a simple wave: am <o>freq</o> <o>waveform</o> </description>
+		</method>
+
+		<method name='ambuf'>
+			<digest>Amplitude modulate the buffer with another buffer: am [buffer name] </digest>
+			<description>Amplitude modulate the buffer with another buffer: am [buffer name] </description>
 		</method>
 
 		<method name='sort'>

@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 1,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 99.0, 100.0, 838.0, 826.0 ],
+		"rect" : [ 99.0, 100.0, 838.0, 849.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,57 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-62",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 448.0, 714.0, 75.0, 22.0 ],
+					"text" : "am 4 square"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-70",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 447.0, 762.0, 105.0, 22.0 ],
+					"text" : "rmbuf #0_tomix"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
+					"id" : "obj-65",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 561.5, 714.0, 251.0, 70.0 ],
+					"text" : "amplitude or ring modulate with a wave or a buffer: am/rm <freq> <sine/saw/square/tri (default sine)>, ambuf/rmbuf <buffer>"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-64",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 447.0, 738.0, 77.0, 22.0 ],
+					"text" : "rm 5000 saw"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"bubble" : 1,
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
@@ -48,8 +99,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 631.0, 492.5, 186.0, 40.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 631.0, 492.5, 188.0, 40.0 ],
 					"text" : "sort samples in a(scending) or d(escending) order"
 				}
 
@@ -88,7 +138,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 562.0, 682.5, 203.0, 55.0 ],
+					"patching_rect" : [ 562.0, 657.0, 250.0, 55.0 ],
 					"text" : "add a new buffer before (b) or after (a) the current one: glue <buffer> <b/a (default a)>"
 				}
 
@@ -100,7 +150,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 446.023861289024353, 699.0, 107.0, 22.0 ],
+					"patching_rect" : [ 446.0, 673.5, 107.0, 22.0 ],
 					"text" : "glue #0_tomix a"
 				}
 
@@ -112,7 +162,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 446.023861289024353, 659.0, 117.0, 22.0 ],
+					"patching_rect" : [ 446.0, 646.0, 117.0, 22.0 ],
 					"text" : "length 90000 samps"
 				}
 
@@ -124,7 +174,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 446.023861289024353, 635.0, 79.0, 22.0 ],
+					"patching_rect" : [ 446.0, 622.0, 79.0, 22.0 ],
 					"text" : "length 150 %"
 				}
 
@@ -135,11 +185,11 @@
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
 					"id" : "obj-41",
-					"linecount" : 4,
+					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 569.0, 611.0, 196.0, 70.0 ],
+					"patching_rect" : [ 562.0, 597.0, 249.0, 55.0 ],
 					"text" : "change the length (with pitch alteration), syntax: length <amount> <unit: ms, % or samps, default ms>"
 				}
 
@@ -151,7 +201,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 446.023861289024353, 611.0, 91.0, 22.0 ],
+					"patching_rect" : [ 446.0, 598.0, 91.0, 22.0 ],
 					"text" : "length 5000 ms"
 				}
 
@@ -202,7 +252,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 548.0, 554.0, 217.0, 55.0 ],
+					"patching_rect" : [ 562.0, 542.0, 249.0, 55.0 ],
 					"text" : "apply fade in or out, syntax: fade <in /out> <time> <unit: ms / % (default ms)>"
 				}
 
@@ -214,7 +264,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 446.111933946609497, 585.0, 95.0, 22.0 ],
+					"patching_rect" : [ 446.0, 572.0, 95.0, 22.0 ],
 					"text" : "fade out 750 ms"
 				}
 
@@ -226,7 +276,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 446.111933946609497, 561.0, 75.0, 22.0 ],
+					"patching_rect" : [ 446.0, 548.0, 75.0, 22.0 ],
 					"text" : "fade in 33 %"
 				}
 
@@ -300,7 +350,7 @@
 			}
 , 			{
 				"box" : 				{
-					"buffername" : "1016_tomix",
+					"buffername" : "1022_tomix",
 					"id" : "obj-43",
 					"maxclass" : "waveform~",
 					"numinlets" : 5,
@@ -514,7 +564,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 462.205963671207428, 389.5, 145.0, 22.0 ]
+					"patching_rect" : [ 462.205963671207428, 360.0, 145.0, 22.0 ]
 				}
 
 			}
@@ -524,7 +574,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 462.205963671207428, 413.0, 45.0, 45.0 ]
+					"patching_rect" : [ 462.205963671207428, 383.0, 45.0, 45.0 ]
 				}
 
 			}
@@ -600,7 +650,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 506.0, 316.0, 31.0, 22.0 ],
+					"patching_rect" : [ 506.205963671207428, 286.0, 31.0, 22.0 ],
 					"text" : "sig~"
 				}
 
@@ -613,7 +663,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 462.205963671207428, 326.0, 24.0, 24.0 ]
+					"patching_rect" : [ 462.205963671207428, 296.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -624,7 +674,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 462.205963671207428, 355.0, 176.0, 22.0 ],
+					"patching_rect" : [ 462.205963671207428, 325.0, 176.0, 22.0 ],
 					"text" : "groove~ #0_sample @loop 1"
 				}
 
@@ -691,13 +741,13 @@
 			}
 , 			{
 				"box" : 				{
-					"buffername" : "1016_sample",
+					"buffername" : "1022_sample",
 					"id" : "obj-7",
 					"maxclass" : "waveform~",
 					"numinlets" : 5,
 					"numoutlets" : 6,
 					"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-					"patching_rect" : [ 462.205963671207428, 201.0, 328.0, 114.5 ]
+					"patching_rect" : [ 462.205963671207428, 201.0, 328.0, 81.0 ]
 				}
 
 			}
@@ -748,7 +798,7 @@
 					"maxclass" : "live.line",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 772.0, 805.0, 5.0 ]
+					"patching_rect" : [ 16.0, 794.0, 805.0, 5.0 ]
 				}
 
 			}
@@ -770,7 +820,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 300.0, 795.0, 237.0, 22.0 ],
+					"patching_rect" : [ 300.0, 817.0, 237.0, 22.0 ],
 					"text" : "https://github.com/valeriorlandini/sonus",
 					"textcolor" : [ 0.0, 0.015686274509804, 0.396078431372549, 1.0 ]
 				}
@@ -785,7 +835,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 809.0, 129.0, 36.0 ],
+					"patching_rect" : [ 10.0, 831.0, 129.0, 36.0 ],
 					"text" : ";\r\nmax launchbrowser $1"
 				}
 
@@ -853,7 +903,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 779.0, 805.0, 20.0 ],
+					"patching_rect" : [ 16.0, 801.0, 805.0, 20.0 ],
 					"text" : "handmade in italy by valerio orlandini",
 					"textjustification" : 1
 				}
@@ -1126,6 +1176,13 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-62", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-63", 0 ]
 				}
 
@@ -1133,7 +1190,21 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-64", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-66", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-70", 0 ]
 				}
 
 			}

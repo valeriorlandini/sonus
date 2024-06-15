@@ -8,6 +8,7 @@
 #include <functional>
 #include <random>
 #include "biquad.h"
+#include "blosc.h"
 #include "cryptoverb.h"
 #include "delay.h"
 #include "distortions.h"
@@ -479,6 +480,230 @@ public:
         }
     };
 
+    message<> rm
+    {
+        this,
+        "rm",
+        "Ring modulate the buffer with a simple wave: rm [freq] [waveform]",
+        MIN_FUNCTION
+        {
+            if (args.size() < 1)
+            {
+                cerr << "Syntax: rm <frequency> <waveform [optional, sine/saw/square/tri, default sine]>" << endl;
+
+                return {};
+            }
+
+            buffer_lock<> b(m_buffer);
+
+            if (b.valid())
+            {
+                double freq = double(args.at(0));
+                BLOsc<double> oscillator(b.samplerate(), std::clamp(freq, -0.5 * b.samplerate(), 0.5 * b.samplerate()));
+                BLWaveforms waveform = BLWaveforms::sine;
+
+                if (args.size() > 1)
+                {
+                    if (args.at(1) == "saw")
+                    {
+                        waveform = BLWaveforms::saw;
+                    }
+                    if (args.at(1) == "square")
+                    {
+                        waveform = BLWaveforms::square;
+                    }
+                    if (args.at(1) == "tri")
+                    {
+                        waveform = BLWaveforms::triangle;
+                    }
+                }
+
+                for (auto ch = 0; ch < b.channel_count(); ch++)
+                {
+                    oscillator.reset();
+                    for (auto s = 0; s < b.frame_count(); s++)
+                    {
+                        oscillator.run();
+                        switch (waveform)
+                        {
+                            case BLWaveforms::sine:
+                            b.lookup(s, ch) *= oscillator.get_sine();
+                            break;
+                            case BLWaveforms::saw:
+                            b.lookup(s, ch) *= oscillator.get_saw();
+                            break;
+                            case BLWaveforms::square:
+                            b.lookup(s, ch) *= oscillator.get_square();
+                            break;
+                            case BLWaveforms::triangle:
+                            b.lookup(s, ch) *= oscillator.get_triangle();
+                            break;
+                        }
+                    }
+                }
+
+                b.dirty();
+            }            
+
+            return {};
+        }
+    };
+
+    message<> rmbuf
+    {
+        this,
+        "rmbuf",
+        "Ring modulate the buffer with another buffer: rm [buffer name]",
+        MIN_FUNCTION
+        {
+            if (args.size() < 1)
+            {
+                cerr << "Syntax: rmbuf <buffer name>" << endl;
+
+                return {};
+            }
+
+            buffer_lock<> b(m_buffer);
+
+            if (b.valid())
+            {
+                buffer_reference buffer(this, nullptr, false);
+                buffer.set(args.at(0));
+                buffer_lock bl(buffer);
+                if (bl.valid())
+                {
+                    auto mod_s = bl.frame_count();
+                    auto mod_c = bl.channel_count();
+
+                    for (auto ch = 0; ch < b.channel_count(); ch++)
+                    {
+                        for (auto s = 0; s < b.frame_count(); s++)
+                        {
+                            b.lookup(s, ch) *= bl.lookup(s % mod_s, ch % mod_c);
+                        }
+                    }
+
+                }
+
+                b.dirty();
+            }
+
+            return {};
+        }
+    };
+
+    message<> am
+    {
+        this,
+        "am",
+        "Amplitude modulate the buffer with a simple wave: am [freq] [waveform]",
+        MIN_FUNCTION
+        {
+            if (args.size() < 1)
+            {
+                cerr << "Syntax: am <frequency> <waveform [optional, sine/saw/square/tri, default sine]>" << endl;
+
+                return {};
+            }
+
+            buffer_lock<> b(m_buffer);
+
+            if (b.valid())
+            {
+                double freq = double(args.at(0));
+                BLOsc<double> oscillator(b.samplerate(), std::clamp(freq, -0.5 * b.samplerate(), 0.5 * b.samplerate()));
+                BLWaveforms waveform = BLWaveforms::sine;
+
+                if (args.size() > 1)
+                {
+                    if (args.at(1) == "saw")
+                    {
+                        waveform = BLWaveforms::saw;
+                    }
+                    if (args.at(1) == "square")
+                    {
+                        waveform = BLWaveforms::square;
+                    }
+                    if (args.at(1) == "tri")
+                    {
+                        waveform = BLWaveforms::triangle;
+                    }
+                }
+
+                for (auto ch = 0; ch < b.channel_count(); ch++)
+                {
+                    oscillator.reset();
+                    for (auto s = 0; s < b.frame_count(); s++)
+                    {
+                        oscillator.run();
+                        switch (waveform)
+                        {
+                            case BLWaveforms::sine:
+                            b.lookup(s, ch) *= (oscillator.get_sine() + 1.0) * 0.5;
+                            break;
+                            case BLWaveforms::saw:
+                            b.lookup(s, ch) *= (oscillator.get_saw() + 1.0) * 0.5;
+                            break;
+                            case BLWaveforms::square:
+                            b.lookup(s, ch) *= (oscillator.get_square() + 1.0) * 0.5;
+                            break;
+                            case BLWaveforms::triangle:
+                            b.lookup(s, ch) *= (oscillator.get_triangle() + 1.0) * 0.5;
+                            break;
+                        }
+                    }
+                }
+
+                b.dirty();
+            }            
+
+            return {};
+        }
+    };
+
+    message<> ambuf
+    {
+        this,
+        "ambuf",
+        "Amplitude modulate the buffer with another buffer: am [buffer name]",
+        MIN_FUNCTION
+        {
+            if (args.size() < 1)
+            {
+                cerr << "Syntax: ambuf <buffer name>" << endl;
+
+                return {};
+            }
+
+            buffer_lock<> b(m_buffer);
+
+            if (b.valid())
+            {
+                buffer_reference buffer(this, nullptr, false);
+                buffer.set(args.at(0));
+                buffer_lock bl(buffer);
+                if (bl.valid())
+                {
+                    auto mod_s = bl.frame_count();
+                    auto mod_c = bl.channel_count();
+
+                    for (auto ch = 0; ch < b.channel_count(); ch++)
+                    {
+                        for (auto s = 0; s < b.frame_count(); s++)
+                        {
+                            b.lookup(s, ch) *= (bl.lookup(s % mod_s, ch % mod_c) + 1.0) * 0.5;
+                        }
+                    }
+
+                }
+
+                b.dirty();
+            }
+
+            return {};
+        }
+    };
+
     message<> noise
     {
         this,
@@ -932,6 +1157,66 @@ public:
 
             return {};
         }
+    };
+
+    message<> autoconv
+    {
+        this,
+        "autoconv",
+        "[EXPERIMENTAL] Convolve the buffer with itself",
+        MIN_FUNCTION
+        {
+            buffer_lock<false> b(m_buffer);
+            
+            std::vector<std::vector<double>> new_buffer;
+
+            if (b.valid())
+            {
+                for (auto ch = 0; ch < b.channel_count(); ch++)
+                {
+                    if (b.frame_count() > 50000)
+                    {
+                        cout << "Currently autoconvolution is experimental and only for short samples" << endl;
+                        return {};
+                    }
+                    std::vector<double> channel;
+                    for (auto s = 0; s < b.frame_count(); s++)
+                    {
+                        channel.push_back(b.lookup(s, ch));
+                    }
+
+                    std::vector<double> convolved = convolve(channel, channel);
+                    new_buffer.push_back(convolved);
+                }
+                
+                auto new_size = b.frame_count() * 2 - 1;
+                b.resize_in_samples(new_size);
+                b.dirty();  
+            }
+            else
+            {
+                return {};
+            }
+
+            buffer_lock<> b_new(m_buffer);
+
+            if (b_new.valid())
+            {
+                for (auto ch = 0; ch < b.channel_count(); ch++)
+                {
+                    std::vector<double> channel;
+                    for (auto s = 0; s < b.frame_count(); s++)
+                    {
+                        b_new.lookup(s, ch) = new_buffer.at(ch).at(s);
+                    }
+                }
+
+                b_new.dirty();
+
+            }
+
+            return {};
+        }
     };    
     
     message<> glue
@@ -1056,6 +1341,46 @@ private:
                 original_buffer_.push_back(curr_channel);
             }
         }
+    }
+
+    std::vector<double> convolve(const std::vector<double> &x, const std::vector<double> &y, const bool &clipguard = true)
+    {
+        int n = x.size();
+        int m = y.size();
+        int c_size = n + m - 1;
+
+        std::vector<double> c(c_size, 0);
+
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < m; j++)
+            {
+                c.at(i + j) += x.at(i) * y.at(j);
+            }
+        }
+
+        if (clipguard)
+        {
+            double max_value = 0.0;
+            for (auto &s : c)
+            {
+                if (max_value < abs(s))
+                {
+                    max_value = abs(s);
+                }
+            }
+
+            if (max_value > 1.0)
+            {
+                double norm_factor = 1.0 / max_value;
+                for (int i = 0; i < c_size; i++)
+                {
+                    c.at(i) *= norm_factor;
+                }
+            }
+        }
+
+        return c;
     }
 };
 
