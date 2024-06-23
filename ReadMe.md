@@ -58,6 +58,8 @@ Currently finished externals are:
 * `sonus.quadpanner` Quadraphonic panner coefficients
 * `sonus.tent` Tent map calculator
 
+The collection also features six Max for Live devices that use some sonus externals to create synths, effects and modulators.
+
 
 ## How to build
 

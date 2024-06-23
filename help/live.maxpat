@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 84.0, 1594.0, 979.0 ],
+		"rect" : [ 34.0, 77.0, 1165.0, 993.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -46,6 +46,216 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
+					"id" : "obj-21",
+					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 4,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "signal", "signal", "", "" ],
+					"patching_rect" : [ 14.0, 173.0, 800.0, 196.0 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_invisible" : 1,
+							"parameter_longname" : "amxd~[5]",
+							"parameter_modmode" : 0,
+							"parameter_shortname" : "amxd~[5]",
+							"parameter_type" : 3
+						}
+
+					}
+,
+					"saved_object_attributes" : 					{
+						"parameter_enable" : 1,
+						"patchername" : "Modallator.amxd",
+						"patchername_fallback" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect/Modallator.amxd"
+					}
+,
+					"snapshot" : 					{
+						"filetype" : "C74Snapshot",
+						"version" : 2,
+						"minorversion" : 0,
+						"name" : "snapshotlist",
+						"origin" : "max~",
+						"type" : "list",
+						"subtype" : "Undefined",
+						"embed" : 1,
+						"snapshot" : 						{
+							"name" : "Modallator.amxd",
+							"origname" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect/Modallator.amxd",
+							"valuedictionary" : 							{
+								"parameter_values" : 								{
+									"Additive Freq Reduction" : 1.0,
+									"Change Rate" : 50.0,
+									"Frequency Deviation" : 0.0,
+									"Frequency x 10" : 0.0,
+									"Harmonic 1" : 100.0,
+									"Harmonic 2" : 0.0,
+									"Harmonic 3" : 0.0,
+									"Harmonic 4" : 0.0,
+									"Jitter Level" : 0.0,
+									"LFO Frequency" : 20.921423334769401,
+									"Offset" : 0.0,
+									"Phase Distortion" : 50.0,
+									"Pulsar Duty Cycle" : 50.0,
+									"Pulsar Waveform" : 0.0,
+									"Pulsar Window" : 8.0,
+									"Saw Amount" : 0.0,
+									"Sine Amount" : 100.0,
+									"Smooth Output" : 0.0,
+									"Square Amount" : 0.0,
+									"Steps" : 0.0,
+									"Triangle Amount" : 0.0,
+									"live.menu" : 0.0,
+									"live.toggle" : 1.0,
+									"live.toggle[1]" : 1.0,
+									"live.toggle[2]" : 1.0,
+									"live.toggle[3]" : 1.0,
+									"live.toggle[4]" : 1.0,
+									"live.toggle[5]" : 1.0,
+									"blob" : 									{
+										"TargetMax[10]" : [ 100 ],
+										"TargetMax[11]" : [ 100 ],
+										"TargetMax[1]" : [ 100 ],
+										"TargetMax[5]" : [ 100 ],
+										"TargetMax[6]" : [ 100 ],
+										"TargetMax[7]" : [ 100 ],
+										"TargetMax[8]" : [ 100 ],
+										"TargetMax[9]" : [ 100 ],
+										"TargetMin[10]" : [ 0 ],
+										"TargetMin[11]" : [ 0 ],
+										"TargetMin[1]" : [ 0 ],
+										"TargetMin[5]" : [ 0 ],
+										"TargetMin[6]" : [ 0 ],
+										"TargetMin[7]" : [ 0 ],
+										"TargetMin[8]" : [ 0 ],
+										"TargetMin[9]" : [ 0 ],
+										"Wavetable" : [ 0.098017057804184, 0.195090159353512, 0.290284439192537, 0.382683125915406, 0.471396371160759, 0.555569819323419, 0.634392835452022, 0.707106312093558, 0.773009979900775, 0.831469151597416, 0.881920834353324, 0.92387915170401, 0.956940022798717, 0.980785053913331, 0.995184604750825, 0.99999999999912, 0.99518486484789, 0.980785571602587, 0.956940793094542, 0.923880167188047, 0.881922085245923, 0.831470625851818, 0.773011663319128, 0.70710818846365, 0.634394886703414, 0.555572025701473, 0.471398711416884, 0.382685577511694, 0.290286978518814, 0.195092761954721, 0.098019698615894, 0.000002653589793, -0.098014416991784, -0.19508755675093, -0.290281899864215, -0.382680674316425, -0.471394030901315, -0.555567612941453, -0.634390784196162, -0.707104435718486, -0.773008296476978, -0.831467677337159, -0.881919583454514, -0.923878136213468, -0.956939252496154, -0.980784536217169, -0.995184344646754, -0.999999999992078, -0.995185124937946, -0.980786089284936, -0.956941563383629, -0.923881182665579, -0.881923336132312, -0.831472100100365, -0.773013346732038, -0.707110064828764, -0.63439693795034, -0.555574232075615, -0.471401051669689, -0.382688029105286, -0.290289517843048, -0.195095364554555, -0.098022339426914, -0.000005307179587 ],
+										"live.tab" : [ 0.0 ]
+									}
+
+								}
+
+							}
+,
+							"active" : 1
+						}
+,
+						"snapshotlist" : 						{
+							"current_snapshot" : 0,
+							"entries" : [ 								{
+									"filetype" : "C74Snapshot",
+									"version" : 2,
+									"minorversion" : 0,
+									"name" : "Modallator.amxd",
+									"origin" : "Modallator.amxd",
+									"type" : "amxd",
+									"subtype" : "Undefined",
+									"embed" : 0,
+									"snapshot" : 									{
+										"name" : "Modallator.amxd",
+										"origname" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect/Modallator.amxd",
+										"valuedictionary" : 										{
+											"parameter_values" : 											{
+												"Additive Freq Reduction" : 1.0,
+												"Change Rate" : 50.0,
+												"Frequency Deviation" : 0.0,
+												"Frequency x 10" : 0.0,
+												"Harmonic 1" : 100.0,
+												"Harmonic 2" : 0.0,
+												"Harmonic 3" : 0.0,
+												"Harmonic 4" : 0.0,
+												"Jitter Level" : 0.0,
+												"LFO Frequency" : 20.921423334769401,
+												"Offset" : 0.0,
+												"Phase Distortion" : 50.0,
+												"Pulsar Duty Cycle" : 50.0,
+												"Pulsar Waveform" : 0.0,
+												"Pulsar Window" : 8.0,
+												"Saw Amount" : 0.0,
+												"Sine Amount" : 100.0,
+												"Smooth Output" : 0.0,
+												"Square Amount" : 0.0,
+												"Steps" : 0.0,
+												"Triangle Amount" : 0.0,
+												"live.menu" : 0.0,
+												"live.toggle" : 1.0,
+												"live.toggle[1]" : 1.0,
+												"live.toggle[2]" : 1.0,
+												"live.toggle[3]" : 1.0,
+												"live.toggle[4]" : 1.0,
+												"live.toggle[5]" : 1.0,
+												"blob" : 												{
+													"TargetMax[10]" : [ 100 ],
+													"TargetMax[11]" : [ 100 ],
+													"TargetMax[1]" : [ 100 ],
+													"TargetMax[5]" : [ 100 ],
+													"TargetMax[6]" : [ 100 ],
+													"TargetMax[7]" : [ 100 ],
+													"TargetMax[8]" : [ 100 ],
+													"TargetMax[9]" : [ 100 ],
+													"TargetMin[10]" : [ 0 ],
+													"TargetMin[11]" : [ 0 ],
+													"TargetMin[1]" : [ 0 ],
+													"TargetMin[5]" : [ 0 ],
+													"TargetMin[6]" : [ 0 ],
+													"TargetMin[7]" : [ 0 ],
+													"TargetMin[8]" : [ 0 ],
+													"TargetMin[9]" : [ 0 ],
+													"Wavetable" : [ 0.098017057804184, 0.195090159353512, 0.290284439192537, 0.382683125915406, 0.471396371160759, 0.555569819323419, 0.634392835452022, 0.707106312093558, 0.773009979900775, 0.831469151597416, 0.881920834353324, 0.92387915170401, 0.956940022798717, 0.980785053913331, 0.995184604750825, 0.99999999999912, 0.99518486484789, 0.980785571602587, 0.956940793094542, 0.923880167188047, 0.881922085245923, 0.831470625851818, 0.773011663319128, 0.70710818846365, 0.634394886703414, 0.555572025701473, 0.471398711416884, 0.382685577511694, 0.290286978518814, 0.195092761954721, 0.098019698615894, 0.000002653589793, -0.098014416991784, -0.19508755675093, -0.290281899864215, -0.382680674316425, -0.471394030901315, -0.555567612941453, -0.634390784196162, -0.707104435718486, -0.773008296476978, -0.831467677337159, -0.881919583454514, -0.923878136213468, -0.956939252496154, -0.980784536217169, -0.995184344646754, -0.999999999992078, -0.995185124937946, -0.980786089284936, -0.956941563383629, -0.923881182665579, -0.881923336132312, -0.831472100100365, -0.773013346732038, -0.707110064828764, -0.63439693795034, -0.555574232075615, -0.471401051669689, -0.382688029105286, -0.290289517843048, -0.195095364554555, -0.098022339426914, -0.000005307179587 ],
+													"live.tab" : [ 0.0 ]
+												}
+
+											}
+
+										}
+,
+										"active" : 1
+									}
+,
+									"fileref" : 									{
+										"name" : "Modallator.amxd",
+										"filename" : "Modallator.amxd.maxsnap",
+										"filepath" : "~/Documents/Max 8/Snapshots",
+										"filepos" : -1,
+										"snapshotfileid" : "5ec39eb8618157107fa56c1685344262"
+									}
+
+								}
+ ]
+						}
+
+					}
+,
+					"text" : "amxd~ Modallator.amxd",
+					"varname" : "modallator",
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-19",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 18.0, 383.0, 335.0, 20.0 ],
+					"text" : "The ultimate LFO builder",
+					"varname" : "modallator_head"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"autosave" : 1,
+					"bgmode" : 1,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"hidden" : 1,
 					"id" : "obj-17",
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
@@ -54,7 +264,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "signal", "signal", "", "" ],
-					"patching_rect" : [ 23.0, 142.0, 432.0, 196.0 ],
+					"patching_rect" : [ 14.0, 173.0, 432.0, 196.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_invisible" : 1,
@@ -206,13 +416,15 @@
 			}
 , 			{
 				"box" : 				{
+					"fontface" : 1,
+					"hidden" : 1,
 					"id" : "obj-16",
-					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 626.0, 295.0, 180.0, 34.0 ],
-					"text" : "A complex LFO based on two strange attractors"
+					"patching_rect" : [ 18.0, 383.0, 337.0, 20.0 ],
+					"text" : "A complex LFO based on two strange attractors",
+					"varname" : "strangelfo_head"
 				}
 
 			}
@@ -243,7 +455,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "signal", "signal", "", "" ],
-					"patching_rect" : [ 23.0, 142.0, 483.0, 196.0 ],
+					"patching_rect" : [ 14.0, 173.0, 483.0, 196.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_invisible" : 1,
@@ -392,7 +604,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "signal", "signal", "", "" ],
-					"patching_rect" : [ 23.0, 142.0, 232.0, 196.0 ],
+					"patching_rect" : [ 14.0, 173.0, 232.0, 196.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_invisible" : 1,
@@ -492,12 +704,15 @@
 			}
 , 			{
 				"box" : 				{
+					"fontface" : 1,
+					"hidden" : 1,
 					"id" : "obj-11",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 626.0, 226.0, 180.0, 20.0 ],
-					"text" : "A dense and eerie reverberation"
+					"patching_rect" : [ 18.0, 383.0, 336.0, 20.0 ],
+					"text" : "A dense and eerie reverberation",
+					"varname" : "cryptoverb_head"
 				}
 
 			}
@@ -518,7 +733,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "signal", "signal", "", "" ],
-					"patching_rect" : [ 23.0, 142.0, 415.0, 196.0 ],
+					"patching_rect" : [ 14.0, 173.0, 415.0, 196.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_invisible" : 1,
@@ -632,13 +847,15 @@
 			}
 , 			{
 				"box" : 				{
+					"fontface" : 1,
+					"hidden" : 1,
 					"id" : "obj-8",
-					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 627.0, 144.0, 180.0, 34.0 ],
-					"text" : "A bitcrusher with the ability to manipulate the single bits"
+					"patching_rect" : [ 18.0, 383.0, 344.0, 20.0 ],
+					"text" : "A bitcrusher with the ability to manipulate the single bits",
+					"varname" : "bitman_head"
 				}
 
 			}
@@ -650,32 +867,36 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 817.0, 147.0, 70.0, 22.0 ],
+					"patching_rect" : [ 530.0, 70.0, 70.0, 22.0 ],
 					"text" : "loadmess 0"
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"fontface" : 1,
+					"hidden" : 1,
 					"id" : "obj-4",
-					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 627.0, 256.0, 180.0, 34.0 ],
-					"text" : "A pulsar synthesis based subtractive synthesizer"
+					"patching_rect" : [ 18.0, 383.0, 340.0, 20.0 ],
+					"text" : "A pulsar synthesis based subtractive synthesizer",
+					"varname" : "pulsynthe_head"
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"fontface" : 1,
+					"hidden" : 1,
 					"id" : "obj-3",
-					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 626.0, 182.0, 181.0, 34.0 ],
-					"text" : "A bytebeat generator and LFO, with a bonus reverb"
+					"patching_rect" : [ 17.5, 383.0, 337.0, 20.0 ],
+					"text" : "A bytebeat generator and LFO, with a bonus reverb",
+					"varname" : "byter_head"
 				}
 
 			}
@@ -687,7 +908,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 542.0, 519.0, 67.0, 22.0 ],
+					"patching_rect" : [ 542.0, 572.0, 67.0, 22.0 ],
 					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
@@ -712,7 +933,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 130.0, 102.0, 1752.0, 671.0 ],
+						"rect" : [ 151.0, 332.0, 1752.0, 671.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -742,13 +963,127 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-17",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1207.0, 232.0, 231.0, 22.0 ],
+									"presentation_linecount" : 2,
+									"text" : "script sendbox strangelfo_head hidden $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-18",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 967.0, 232.0, 230.0, 22.0 ],
+									"presentation_linecount" : 2,
+									"text" : "script sendbox pulsynthe_head hidden $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-19",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 726.0, 232.0, 235.0, 22.0 ],
+									"presentation_linecount" : 2,
+									"text" : "script sendbox modallator_head hidden $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-20",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 45.0, 232.0, 215.0, 22.0 ],
+									"presentation_linecount" : 2,
+									"text" : "script sendbox bitman_head hidden $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-21",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 492.0, 232.0, 235.0, 22.0 ],
+									"presentation_linecount" : 2,
+									"text" : "script sendbox cryptoverb_head hidden $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-22",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 290.0, 232.0, 205.0, 22.0 ],
+									"presentation_linecount" : 2,
+									"text" : "script sendbox byter_head hidden $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-14",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1207.0, 202.0, 224.0, 22.0 ],
+									"text" : "script sendbox strangelfo_text hidden $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-15",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1207.0, 173.0, 198.0, 22.0 ],
+									"text" : "script sendbox strangelfo hidden $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-16",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"patching_rect" : [ 1207.0, 123.0, 29.5, 22.0 ],
+									"text" : "!= 5"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-11",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 967.0, 202.0, 224.0, 22.0 ],
-									"text" : "script sendbox strangelfo_text hidden $1"
+									"patching_rect" : [ 967.0, 202.0, 223.0, 22.0 ],
+									"text" : "script sendbox pulsynthe_text hidden $1"
 								}
 
 							}
@@ -759,8 +1094,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 967.0, 173.0, 198.0, 22.0 ],
-									"text" : "script sendbox strangelfo hidden $1"
+									"patching_rect" : [ 967.0, 173.0, 197.0, 22.0 ],
+									"text" : "script sendbox pulsynthe hidden $1"
 								}
 
 							}
@@ -783,8 +1118,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 726.0, 202.0, 223.0, 22.0 ],
-									"text" : "script sendbox pulsynthe_text hidden $1"
+									"patching_rect" : [ 726.0, 202.0, 201.0, 22.0 ],
+									"text" : "script sendbox modallator hidden $1"
 								}
 
 							}
@@ -795,8 +1130,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 726.0, 173.0, 197.0, 22.0 ],
-									"text" : "script sendbox pulsynthe hidden $1"
+									"patching_rect" : [ 726.0, 173.0, 227.0, 22.0 ],
+									"text" : "script sendbox modallator_text hidden $1"
 								}
 
 							}
@@ -928,7 +1263,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 45.0, 258.0, 30.0, 30.0 ]
+									"patching_rect" : [ 45.0, 333.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -949,7 +1284,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-10", 0 ],
-									"order" : 1,
+									"order" : 2,
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -957,6 +1292,14 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-13", 0 ],
+									"order" : 1,
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-16", 0 ],
 									"order" : 0,
 									"source" : [ "obj-1", 0 ]
 								}
@@ -965,22 +1308,6 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-48", 0 ],
-									"order" : 3,
-									"source" : [ "obj-1", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-50", 0 ],
-									"order" : 2,
-									"source" : [ "obj-1", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-6", 0 ],
 									"order" : 4,
 									"source" : [ "obj-1", 0 ]
 								}
@@ -988,7 +1315,23 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-8", 0 ],
+									"destination" : [ "obj-50", 0 ],
+									"order" : 3,
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"order" : 5,
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
 									"order" : 0,
 									"source" : [ "obj-10", 0 ]
 								}
@@ -996,8 +1339,16 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-9", 0 ],
+									"destination" : [ "obj-8", 0 ],
 									"order" : 1,
+									"source" : [ "obj-10", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-9", 0 ],
+									"order" : 2,
 									"source" : [ "obj-10", 0 ]
 								}
 
@@ -1019,14 +1370,6 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-11", 0 ],
-									"order" : 0,
-									"source" : [ "obj-13", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-12", 0 ],
 									"order" : 1,
 									"source" : [ "obj-13", 0 ]
 								}
@@ -1034,8 +1377,104 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-12", 0 ],
+									"order" : 2,
+									"source" : [ "obj-13", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-18", 0 ],
+									"order" : 0,
+									"source" : [ "obj-13", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-24", 0 ],
+									"source" : [ "obj-14", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-24", 0 ],
+									"source" : [ "obj-15", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-14", 0 ],
+									"order" : 1,
+									"source" : [ "obj-16", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-15", 0 ],
+									"order" : 2,
+									"source" : [ "obj-16", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-17", 0 ],
+									"order" : 0,
+									"source" : [ "obj-16", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-24", 0 ],
+									"source" : [ "obj-17", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-24", 0 ],
+									"source" : [ "obj-18", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-24", 0 ],
+									"source" : [ "obj-19", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-24", 0 ],
 									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-24", 0 ],
+									"source" : [ "obj-20", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-24", 0 ],
+									"source" : [ "obj-21", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-24", 0 ],
+									"source" : [ "obj-22", 0 ]
 								}
 
 							}
@@ -1063,6 +1502,14 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
+									"order" : 1,
+									"source" : [ "obj-48", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-22", 0 ],
 									"order" : 0,
 									"source" : [ "obj-48", 0 ]
 								}
@@ -1071,7 +1518,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-43", 0 ],
-									"order" : 1,
+									"order" : 2,
 									"source" : [ "obj-48", 0 ]
 								}
 
@@ -1085,8 +1532,16 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
+									"destination" : [ "obj-21", 0 ],
 									"order" : 0,
+									"source" : [ "obj-50", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"order" : 1,
 									"source" : [ "obj-50", 0 ]
 								}
 
@@ -1094,14 +1549,14 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
-									"order" : 1,
+									"order" : 2,
 									"source" : [ "obj-50", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-5", 0 ],
+									"destination" : [ "obj-20", 0 ],
 									"order" : 0,
 									"source" : [ "obj-6", 0 ]
 								}
@@ -1109,8 +1564,16 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-7", 0 ],
+									"destination" : [ "obj-5", 0 ],
 									"order" : 1,
+									"source" : [ "obj-6", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"order" : 2,
 									"source" : [ "obj-6", 0 ]
 								}
 
@@ -1139,7 +1602,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 542.0, 488.0, 63.0, 22.0 ],
+					"patching_rect" : [ 542.0, 541.0, 63.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1164,10 +1627,11 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 542.0, 142.0, 82.0, 188.0 ],
+					"patching_rect" : [ 14.0, 129.0, 807.0, 27.0 ],
+					"segmented" : 1,
 					"spacing_x" : 1.0,
 					"tabcolor" : [ 0.427450980392157, 0.843137254901961, 1.0, 1.0 ],
-					"tabs" : [ "Bitman", "Byter", "Cryptoverb", "Pulsynthe", "StrangeLFO" ],
+					"tabs" : [ "Bitman", "Byter", "Cryptoverb", "Modallator", "Pulsynthe", "StrangeLFO" ],
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"truncate" : 0
 				}
@@ -1190,7 +1654,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "signal", "signal", "", "" ],
-					"patching_rect" : [ 23.0, 142.0, 500.5, 196.0 ],
+					"patching_rect" : [ 14.0, 173.0, 500.5, 196.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_invisible" : 1,
@@ -1318,12 +1782,32 @@
 					"fontface" : 0,
 					"fontname" : "Arial",
 					"fontsize" : 16.0,
+					"id" : "obj-20",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 18.5, 409.0, 805.0, 80.0 ],
+					"presentation_linecount" : 4,
+					"text" : "Modallator is a LFO builder based on six custom oscillators of the sonus package: random shape oscillator, harmonic additive oscillator, phase distortion oscillator, virtual analog oscillator, pulsar oscillator and custom wavetable oscillator. By combining their shapes, and further modifying the result with the global controls, you can carefully sculpt the modulator signal you have in mind.",
+					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ],
+					"varname" : "modallator_text"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"background" : 1,
+					"fontface" : 0,
+					"fontname" : "Arial",
+					"fontsize" : 16.0,
+					"hidden" : 1,
 					"id" : "obj-18",
 					"linecount" : 4,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.5, 356.0, 805.0, 80.0 ],
+					"patching_rect" : [ 18.5, 409.0, 805.0, 80.0 ],
 					"text" : "StrangeLFO is a modulator based on the two strange attractors externals you can find in sonus package: the Lorenz attractor and the Roessler attractor. These two attractors output three signals each, that can be mixed and then the two mixed outputs can be blended in different ways. The resulting signal is always evolving and never exactly repeat itself. A dedicated section allows to use this device as a weird sound generator, too.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ],
 					"varname" : "strangelfo_text"
@@ -1342,7 +1826,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 356.0, 806.0, 62.0 ],
+					"patching_rect" : [ 17.5, 409.0, 806.0, 62.0 ],
 					"text" : "Cryptoverb implements in Max for Live format the homonymous external of sonus collection. It is a reverberation effect with four different stages, with each stage using a different algorithm to create a dense atmosphere. The mode knob changes the way the four stages are arranged.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ],
 					"varname" : "cryptoverb_text"
@@ -1378,7 +1862,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 356.0, 805.0, 62.0 ],
+					"patching_rect" : [ 17.5, 409.0, 805.0, 62.0 ],
 					"text" : "Bitman is an effect that allows to manipulate the single 8 bits of the incoming bitreduced signal. Each bit can be kept as it is, inverted (toggle), set to 1 (set) or set to 0 (clear). Additional controls allow for lowpass filtering, removing the DC offset (suggested to be kept always on) and randomizing the bits statuses",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ],
 					"varname" : "bitman_text"
@@ -1397,7 +1881,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 356.0, 805.0, 62.0 ],
+					"patching_rect" : [ 17.5, 409.0, 805.0, 62.0 ],
 					"text" : "Pulsynthe is a simple but complete subtractive synthesizer based on pulsar synthesis. The two oscillators can have their pulsar synthesis parameters separately adjusted. Three envelopes and four synthesis modes (mix, ring modulation, bitwise or, bitwise and) allow for a wide range of sounds and modulations.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ],
 					"varname" : "pulsynthe_text"
@@ -1416,7 +1900,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 356.0, 805.0, 80.0 ],
+					"patching_rect" : [ 17.5, 409.0, 805.0, 80.0 ],
 					"text" : "Byter is a bytebeat generator, with the possibility to use the generated signal as modulator. This is made more effective by the Infrasonic switch, that slows down the generation speed so that the produced signal gradually changes. Moreover, a Dronize knob allows to add a thick reverberation, turning this device in an ever evolving drone and soundscape generator.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ],
 					"varname" : "byter_text"
@@ -1448,7 +1932,180 @@
 				}
 
 			}
- ]
+ ],
+		"parameters" : 		{
+			"obj-1" : [ "amxd~", "amxd~", 0 ],
+			"obj-13" : [ "amxd~[3]", "amxd~[3]", 0 ],
+			"obj-17" : [ "amxd~[4]", "amxd~[4]", 0 ],
+			"obj-2" : [ "amxd~[1]", "amxd~[4]", 0 ],
+			"obj-21" : [ "amxd~[5]", "amxd~[5]", 0 ],
+			"obj-9" : [ "amxd~[2]", "amxd~[2]", 0 ],
+			"parameterbanks" : 			{
+				"0" : 				{
+					"index" : 0,
+					"name" : "",
+					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+				}
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
+		"dependency_cache" : [ 			{
+				"name" : "Bitman.amxd",
+				"bootpath" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect",
+				"patcherrelativepath" : "../patchers/Max Audio Effect",
+				"type" : "amxd",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Bitman.amxd.maxsnap",
+				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Byter.amxd",
+				"bootpath" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect",
+				"patcherrelativepath" : "../patchers/Max Audio Effect",
+				"type" : "amxd",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Byter.amxd.maxsnap",
+				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Cryptoverb.amxd",
+				"bootpath" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect",
+				"patcherrelativepath" : "../patchers/Max Audio Effect",
+				"type" : "amxd",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Cryptoverb.amxd.maxsnap",
+				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Modallator.amxd",
+				"bootpath" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect",
+				"patcherrelativepath" : "../patchers/Max Audio Effect",
+				"type" : "amxd",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Modallator.amxd.maxsnap",
+				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Pulsynthe.amxd",
+				"bootpath" : "~/Documents/Max 8/Packages/sonus/patchers/Max Instrument",
+				"patcherrelativepath" : "../patchers/Max Instrument",
+				"type" : "amxd",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Pulsynthe.amxd.maxsnap",
+				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "StrangeLFO.amxd",
+				"bootpath" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect",
+				"patcherrelativepath" : "../patchers/Max Audio Effect",
+				"type" : "amxd",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "StrangeLFO.amxd.maxsnap",
+				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "sonus.biquads~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.bitman~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.blist.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.bytebeat~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.cryptoverb~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.harmosc~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.hop.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.lorenz~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.mumul~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.nwosc~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.pdosc~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.pulsar~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.roessler~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.rsosc~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.summer.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.summer~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.vaosc~.mxe64",
+				"type" : "mx64"
+			}
+ ],
+		"autosave" : 0
 	}
 
 }
