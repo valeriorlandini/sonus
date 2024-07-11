@@ -22,16 +22,6 @@
 
 	<objarglist>
 
-		<objarg name='harmonics' optional='1' type='int'>
-			<digest>Number of harmonics (1-32)</digest>
-			<description>Number of harmonics (1-32). </description>
-		</objarg>
-
-		<objarg name='frequency' optional='1' type='number'>
-			<digest>Oscillator frequency</digest>
-			<description>Oscillator frequency. </description>
-		</objarg>
-
 	</objarglist>
 
 
