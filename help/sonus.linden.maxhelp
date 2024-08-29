@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 4,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -44,12 +44,11 @@
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
 					"id" : "obj-7",
-					"linecount" : 3,
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 406.0, 320.5, 205.0, 55.0 ],
-					"presentation_linecount" : 4,
+					"patching_rect" : [ 406.0, 328.0, 314.0, 40.0 ],
 					"text" : "probability that a transition from one symbol to another happens"
 				}
 
@@ -98,12 +97,12 @@
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
 					"id" : "obj-33",
-					"linecount" : 6,
+					"linecount" : 8,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 253.0, 160.0, 358.0, 100.0 ],
-					"text" : "create and send the dictionary, which must have two entries: \"axiom\" with the initial configuration, and \"rules\", with the evolution rules written as sequence of INPUT OUTPUT pairs (e.g. A->AB and B->A are simply written as A AB B A) - constant values (i.e. which do not evolve) are accepted, just do not specify a rule for their evolution"
+					"patching_rect" : [ 253.0, 145.0, 467.0, 130.0 ],
+					"text" : "create and send the dictionary, which must have two entries: \"axiom\" with the initial configuration, and \"rules\", with the evolution rules written as sequence of INPUT OUTPUT pairs (e.g. A->AB and B->A are simply written as A AB B A) - constant values (i.e. which do not evolve) are accepted, just do not specify a rule for their evolution; to specify more than one possibile output for the same symbol, write the possibile outputs without spaces, separated only by a |, all possible outputs have the same probability to be selected"
 				}
 
 			}
@@ -161,8 +160,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 99.0, 295.0, 105.0, 22.0 ],
-					"text" : "set rules A AB B A"
+					"patching_rect" : [ 220.5, 298.0, 115.0, 22.0 ],
+					"text" : "set rules A AB|A B A"
 				}
 
 			}
@@ -292,7 +291,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 805.0, 25.0 ],
-					"text" : "An implementation of a deterministic Lindenmayer system, with custom rules and axioms.",
+					"text" : "An implementation of a deterministic or (basic) stochastic Lindenmayer system, with custom rules and axioms.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
 

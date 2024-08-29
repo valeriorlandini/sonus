@@ -6,6 +6,7 @@
 #include "c74_min.h"
 #include <cstdlib>
 #include <ctime>
+#include <string>
 #include <vector>
 
 using namespace c74::min;
@@ -13,7 +14,7 @@ using namespace c74::min;
 struct rule
 {
     char input;
-    std::string output;
+    std::vector<std::string> output;
 };
 
 class linden : public object<linden>
@@ -64,7 +65,7 @@ public:
 						rule new_rule;
 						std::string in_str = rules[r];
 						new_rule.input = in_str.at(0);
-						new_rule.output = std::string(rules[r + 1]);
+						new_rule.output = split_rule_(std::string(rules[r + 1]));
 						rules_.push_back(new_rule);
 					}
 
@@ -115,7 +116,7 @@ public:
 					{
 						if ((rand() / (double)RAND_MAX) < probability)
 						{
-							next_generation += rules_.at(r).output;
+							next_generation += rules_.at(r).output.at(rand() % rules_.at(r).output.size());
 						}
 						else
 						{
@@ -143,6 +144,19 @@ public:
 	dict system_ { symbol(true) };
 	std::string generation_ = "";
 	std::vector<rule> rules_;
+
+	std::vector<std::string> split_rule_(const std::string &str)
+	{
+    	std::vector<std::string> tokens;
+    	std::stringstream ss(str);
+    	std::string token;
+    	while (std::getline(ss, token, '|'))
+		{
+        	tokens.push_back(token);
+    	}
+
+    	return tokens;
+	}
 };
 
 MIN_EXTERNAL(linden);
