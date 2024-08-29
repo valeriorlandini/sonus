@@ -51,6 +51,11 @@
 
 	<attributelist>
 
+		<attribute name='probability' get='1' set='1' type='float64' size='1' >
+			<digest>Probability that transition actually happen</digest>
+			<description>Probability that transition actually happen. </description>
+		</attribute>
+
 	</attributelist>
 
 

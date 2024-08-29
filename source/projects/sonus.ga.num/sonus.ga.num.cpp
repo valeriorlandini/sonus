@@ -38,7 +38,7 @@ public:
 				int highest = 0;
 				if (d_range.size() > 1)
 				{
-					lowest = int(d_range[0]);
+					lowest = std::max(0, int(d_range[0]));
 					highest = int(d_range[1]);
 					if (highest - lowest < 1)
 					{

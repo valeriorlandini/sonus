@@ -4,6 +4,8 @@
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "c74_min.h"
+#include <cstdlib>
+#include <ctime>
 #include <vector>
 
 using namespace c74::min;
@@ -24,6 +26,21 @@ public:
 
 	inlet<>  in {this, "(dictionary) System rules"};
 	outlet<> out {this, "(symbol/list) Output"};
+
+	linden(const atoms& args = {})
+	{
+		srand(time(0));
+	}
+
+	attribute<double, threadsafe::no, limit::clamp> probability
+	{
+        this,
+        "probability",
+        1.0,
+		range { 0.0, 1.0 },
+        title {"Probability"},
+        description {"Probability that each transition actually happens."}
+    };
 
 	message<> dictionary
 	{
@@ -96,7 +113,14 @@ public:
 				{
 					if (rules_.at(r).input == curr)
 					{
-						next_generation += rules_.at(r).output;
+						if ((rand() / (double)RAND_MAX) < probability)
+						{
+							next_generation += rules_.at(r).output;
+						}
+						else
+						{
+							next_generation += curr;
+						}
 						found = true;
 						break;
 					}

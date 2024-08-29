@@ -201,8 +201,8 @@ public:
                         continue;
                     }
 
-                    auto rand_dev = std::random_device {}; 
-                    auto rand_eng = std::default_random_engine {rand_dev()};
+                    auto rand_dev = std::random_device{}; 
+                    auto rand_eng = std::default_random_engine{rand_dev()};
                     std::vector<int> ws(groups);
                     std::iota(std::begin(ws), std::end(ws), 0);
                     std::shuffle(std::begin(ws), std::end(ws), rand_eng);
