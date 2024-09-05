@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 2,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -56,13 +56,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-35",
-					"linecount" : 3,
+					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 413.205963671207428, 574.5, 161.0, 50.0 ],
-					"text" : "filter 100 bp 1200 200 hp 4000 300 lp 1000 150 no 20 0"
+					"patching_rect" : [ 413.205963671207428, 581.5, 161.0, 36.0 ],
+					"text" : "filter 100 bp 1200 200 hp 4000 300 lp 1000 150 no 20"
 				}
 
 			}

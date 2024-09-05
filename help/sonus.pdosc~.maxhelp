@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 0,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -74,8 +74,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 336.0, 120.5, 343.139037370681763, 69.0 ],
-					"text" : "phase distortion amount (can be also a signal), inside [-1.0, 1.0] range; the phase distortion amount is determined by the absolute value, while the sign changes the phase of the resulting wave"
+					"patching_rect" : [ 336.0, 120.5, 343.139037370681763, 70.0 ],
+					"text" : "phase distortion amount (can be also a signal), inside [0.0, 1.0] range; the phase distortion amount is determined by the absolute value, while the sign changes the phase of the resulting wave"
 				}
 
 			}
@@ -198,7 +198,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 455.0, 129.0, 35.0 ],
+					"patching_rect" : [ 10.0, 455.0, 129.0, 36.0 ],
 					"text" : ";\r\nmax launchbrowser $1"
 				}
 
@@ -235,7 +235,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 80.0, 805.0, 24.0 ],
+					"patching_rect" : [ 16.0, 80.0, 805.0, 25.0 ],
 					"text" : "An oscillator that implements the classic phase distortion algorithm.",
 					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
 				}
@@ -282,7 +282,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 12.0, 805.0, 47.0 ],
+					"patching_rect" : [ 16.0, 12.0, 805.0, 48.0 ],
 					"text" : "sonus.pdosc~"
 				}
 

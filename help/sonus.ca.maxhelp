@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 6,
+			"minor" : 6,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -136,7 +136,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 353.0, 360.0, 175.0, 40.0 ],
+					"patching_rect" : [ 358.0, 360.0, 175.0, 40.0 ],
 					"text" : "set the number of rows and columns of the matrix"
 				}
 
@@ -148,8 +148,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 260.0, 369.0, 82.0, 22.0 ],
-					"text" : "cols 8, rows 8"
+					"patching_rect" : [ 260.0, 369.0, 95.0, 22.0 ],
+					"text" : "cols 12, rows 12"
 				}
 
 			}
@@ -163,7 +163,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 209.0, 235.0, 262.0, 70.0 ],
+					"patching_rect" : [ 214.0, 235.0, 262.0, 70.0 ],
 					"text" : "set the rules, specifying how many alive neighbour cells an alive cell should have to survive and a dead cell to become alive "
 				}
 
@@ -175,8 +175,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 110.0, 259.0, 92.0, 22.0 ],
-					"text" : "surv 2 3, born 3"
+					"patching_rect" : [ 110.0, 259.0, 102.0, 22.0 ],
+					"text" : "surv 2 3, born 1 3"
 				}
 
 			}
@@ -203,7 +203,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 63.0, 198.5, 40.0, 22.0 ],
-					"text" : "fill 0.3"
+					"text" : "fill 0.4"
 				}
 
 			}
@@ -242,7 +242,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 291.0, 532.5, 113.0, 25.0 ],
+					"patching_rect" : [ 342.0, 529.0, 113.0, 25.0 ],
 					"text" : "set a cell value"
 				}
 
@@ -254,7 +254,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 209.0, 534.0, 77.0, 22.0 ],
+					"patching_rect" : [ 260.0, 530.0, 77.0, 22.0 ],
 					"text" : "cell $1 $2 $3"
 				}
 
@@ -262,14 +262,15 @@
 , 			{
 				"box" : 				{
 					"autosize" : 1,
+					"columns" : 12,
 					"id" : "obj-4",
 					"maxclass" : "matrixctrl",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "list", "list" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 33.0, 480.0, 130.0, 130.0 ],
-					"rows" : 8
+					"patching_rect" : [ 33.0, 444.0, 194.0, 194.0 ],
+					"rows" : 12
 				}
 
 			}
@@ -280,7 +281,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "list" ],
-					"patching_rect" : [ 33.0, 420.0, 57.0, 22.0 ],
+					"patching_rect" : [ 33.0, 413.0, 57.0, 22.0 ],
 					"text" : "sonus.ca"
 				}
 
