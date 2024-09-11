@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 6,
+			"minor" : 6,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -352,9 +352,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 9,
 					"numoutlets" : 1,
-					"outlettype" : [ "signal" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 33.0, 322.0, 103.0, 22.0 ],
-					"text" : "sonus.8bitinv~"
+					"text" : "sonus.bitinv~"
 				}
 
 			}
@@ -427,7 +427,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 12.0, 805.0, 48.0 ],
-					"text" : "sonus.8bitinv~"
+					"text" : "sonus.bitinv~"
 				}
 
 			}
@@ -559,11 +559,7 @@
 
 			}
  ],
-		"dependency_cache" : [ 			{
-				"name" : "sonus.8bitinv~.mxe64",
-				"type" : "mx64"
-			}
- ],
+		"dependency_cache" : [  ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "rnbodefault",

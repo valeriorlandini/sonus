@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 2,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -240,8 +240,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 142.0, 86.0, 22.0 ],
-					"text" : "sonus.8bitinv~"
+					"patching_rect" : [ 26.0, 142.0, 79.0, 22.0 ],
+					"text" : "sonus.bitinv~"
 				}
 
 			}

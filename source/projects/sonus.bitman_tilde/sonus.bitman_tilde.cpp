@@ -14,7 +14,7 @@ public:
 	MIN_DESCRIPTION {"Manipulate the single bits of a signal"};
 	MIN_TAGS {"effects, glitch, bitcrusher"};
 	MIN_AUTHOR {"Valerio Orlandini"};
-	MIN_RELATED {"sonus.8bitinv~"};
+	MIN_RELATED {"sonus.bitinv~"};
 
 	inlet<>  in {this, "(signal) Input"};
 	outlet<> out {this, "(signal) Output", "signal"};
