@@ -4,60 +4,66 @@
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "c74_min.h"
-#include <vector>
+#include <cmath>
 
 using namespace c74::min;
 
-class neuron : public object<neuron>
+class meltof : public object<meltof>
 {
 public:
-	MIN_DESCRIPTION {"Implementation of an artificial neuron"};
-	MIN_TAGS {"neural networks, ai"};
+	MIN_DESCRIPTION {"Mel to frequency converter"};
+	MIN_TAGS {"math, utilities"};
 	MIN_AUTHOR {"Valerio Orlandini"};
-	MIN_RELATED {"sonus.perceptron~"};
+	MIN_RELATED {"ftom, mtof, sonus.ftomel"};
 
-	inlet<>  in {this, "(list) Inputs"};
-	outlet<> out {this, "(float) Output"};
+	inlet<>  in {this, "(number) Pitch (mel)"};
+	outlet<> out {this, "(number) Frequency (Hz)"};
 
-	attribute<std::vector<double>> weights
-	{
-		this,
-		"weights",
-		{1.0},
-		title {"Weights"},
-		description {"The weights."}
-	};
 	
-	attribute<number> bias
+	enum class algos : int { shaugh, linor, slaney, enum_count };
+
+    enum_map algos_range = {"O'Shaughnessy", "Lindsay & Norman", "Slaney"};
+
+	attribute<algos> algo
+	{
+        this,
+        "algorithm",
+        algos::shaugh,
+		algos_range,
+        title {"Algorithm"},
+		description {"Conversion algorithm."}
+    };
+
+    message<> m_number
 	{
 		this,
-		"bias",
-		0.0,
-		title {"Bias"},
-		description {"The bias."}
-	};
-
-	message<> list
-	{
-		this,
-		"list",
-		"Perform calculation on the list.",
-        MIN_FUNCTION {
-			auto x = from_atoms<std::vector<double>>(args);
-			const std::vector<double>& wg = this->weights;
-			int inputs = std::min(wg.size(), x.size());
-
-			number result = 0.0;
-
-			for (int i = 0; i < inputs; i++)
+		"number",
+		"Pitch",
+        MIN_FUNCTION
+		{
+			number p = args[0];
+			switch (algo)
 			{
-				result += weights[i] * x[i];
+				case algos::shaugh:
+				out.send(700.0 * (std::pow(10.0, p / 2595.0) - 1.0));
+				break;
+				case algos::linor:
+				out.send((std::pow(10.0, p / 2410.0) - 1.0) / 0.0016);
+				break;
+				case algos::slaney:
+				if (p < 15.0)
+				{
+					out.send((200.0 * p) / 3.0);
+				}
+				else
+				{
+					out.send(std::pow(10.0, ((p - 15.0) / 27.0) * std::log10(6.4)) / 0.001);
+				}
+				break;
 			}
-
-            out.send(result + bias);
-            return {};
-        }
+			return {};
+		}
     };
 };
 
-MIN_EXTERNAL(neuron);
+MIN_EXTERNAL(meltof);
