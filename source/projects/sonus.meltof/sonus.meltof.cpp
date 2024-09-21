@@ -5,6 +5,7 @@
 
 #include "c74_min.h"
 #include <cmath>
+#include <vector>
 
 using namespace c74::min;
 
@@ -42,28 +43,57 @@ public:
         MIN_FUNCTION
 		{
 			number p = args[0];
-			switch (algo)
-			{
-				case algos::shaugh:
-				out.send(700.0 * (std::pow(10.0, p / 2595.0) - 1.0));
-				break;
-				case algos::linor:
-				out.send((std::pow(10.0, p / 2410.0) - 1.0) / 0.0016);
-				break;
-				case algos::slaney:
-				if (p < 15.0)
-				{
-					out.send((200.0 * p) / 3.0);
-				}
-				else
-				{
-					out.send(std::pow(10.0, ((p - 15.0) / 27.0) * std::log10(6.4)) / 0.001);
-				}
-				break;
-			}
+			out.send(conversion(p));
+
 			return {};
 		}
     };
+
+	message<> list
+	{
+		this,
+		"list",
+		"List of pitches to convert.",
+        MIN_FUNCTION
+		{
+			atoms output;
+			output.reserve(args.size());
+
+			for (auto n = 0; n < args.size(); n++)
+			{
+				output.push_back(conversion(number(args[n])));
+			}
+
+			out.send(output);
+
+			return {};
+		}
+    };
+
+	number conversion(number p)
+	{
+		switch (algo)
+		{
+			case algos::shaugh:
+			return 700.0 * (std::pow(10.0, p / 2595.0) - 1.0);
+			break;
+			case algos::linor:
+			return (std::pow(10.0, p / 2410.0) - 1.0) / 0.0016;
+			break;
+			case algos::slaney:
+			if (p < 15.0)
+			{
+				return (200.0 * p) / 3.0;
+			}
+			else
+			{
+				return std::pow(10.0, ((p - 15.0) / 27.0) * std::log10(6.4)) / 0.001;
+			}
+			break;
+		}
+
+		return 0.0;
+	}
 };
 
 MIN_EXTERNAL(meltof);

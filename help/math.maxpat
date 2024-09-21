@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 2,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 184.0, 297.0, 855.0, 589.0 ],
+		"rect" : [ 183.0, 297.0, 855.0, 589.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,11 +40,72 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-19",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 279.0, 253.0, 241.0, 20.0 ],
+					"presentation_linecount" : 2,
+					"text" : "Generate multiple random numbers at once"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-20",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 282.0, 231.0, 110.0, 22.0 ],
+					"presentation_linecount" : 2,
+					"text" : "sonus.multirandom"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-16",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 109.0, 232.0, 77.0, 22.0 ],
+					"text" : "sonus.meltof"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-14",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 23.0, 253.0, 233.0, 20.0 ],
+					"text" : "Frequency / mel converters"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-15",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 26.0, 232.0, 77.0, 22.0 ],
+					"presentation_linecount" : 2,
+					"text" : "sonus.ftomel"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-12",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 279.0, 343.0, 233.0, 20.0 ],
+					"patching_rect" : [ 279.0, 388.0, 233.0, 20.0 ],
 					"text" : "Sum the input numbers"
 				}
 
@@ -56,7 +117,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 282.0, 322.0, 87.0, 22.0 ],
+					"patching_rect" : [ 282.0, 367.0, 87.0, 22.0 ],
 					"text" : "sonus.summer"
 				}
 
@@ -77,8 +138,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 279.0, 208.0, 241.0, 20.0 ],
-					"text" : "Multiply all the numbers for the same factor"
+					"patching_rect" : [ 279.0, 298.0, 241.0, 20.0 ],
+					"text" : "Multiply all the inputs for the same factor"
 				}
 
 			}
@@ -89,7 +150,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 282.0, 187.0, 80.0, 22.0 ],
+					"patching_rect" : [ 282.0, 277.0, 80.0, 22.0 ],
 					"text" : "sonus.mumul"
 				}
 
@@ -119,23 +180,12 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-4",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 279.0, 253.0, 233.0, 20.0 ],
-					"text" : "Multiply all the signals for the same factor"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-5",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 282.0, 232.0, 87.0, 22.0 ],
+					"patching_rect" : [ 369.0, 277.0, 87.0, 22.0 ],
 					"text" : "sonus.mumul~"
 				}
 
@@ -159,7 +209,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 433.0, 233.0, 20.0 ],
+					"patching_rect" : [ 279.0, 163.0, 233.0, 20.0 ],
 					"text" : "Pop up dialogs generator"
 				}
 
@@ -171,7 +221,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 410.0, 73.0, 22.0 ],
+					"patching_rect" : [ 282.0, 140.0, 73.0, 22.0 ],
 					"text" : "sonus.mbox"
 				}
 
@@ -182,7 +232,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 299.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 344.0, 233.0, 20.0 ],
 					"text" : "Similar to line, but for list of numbers"
 				}
 
@@ -194,7 +244,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 277.0, 65.0, 22.0 ],
+					"patching_rect" : [ 26.0, 322.0, 65.0, 22.0 ],
 					"text" : "sonus.lline"
 				}
 
@@ -228,7 +278,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 388.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 433.0, 233.0, 20.0 ],
 					"text" : "Mathematical constants"
 				}
 
@@ -240,7 +290,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 367.0, 77.0, 22.0 ],
+					"patching_rect" : [ 26.0, 412.0, 77.0, 22.0 ],
 					"text" : "sonus.mathc"
 				}
 
@@ -251,7 +301,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 343.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 388.0, 233.0, 20.0 ],
 					"text" : "Non repeating random sequences"
 				}
 
@@ -263,7 +313,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 322.0, 64.0, 22.0 ],
+					"patching_rect" : [ 26.0, 367.0, 64.0, 22.0 ],
 					"text" : "sonus.lurn"
 				}
 
@@ -274,7 +324,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 279.0, 388.0, 233.0, 20.0 ],
+					"patching_rect" : [ 279.0, 433.0, 233.0, 20.0 ],
 					"text" : "Tent map calculator"
 				}
 
@@ -286,7 +336,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 282.0, 367.0, 64.0, 22.0 ],
+					"patching_rect" : [ 282.0, 412.0, 64.0, 22.0 ],
 					"text" : "sonus.tent"
 				}
 
@@ -297,7 +347,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 279.0, 299.0, 233.0, 20.0 ],
+					"patching_rect" : [ 279.0, 344.0, 233.0, 20.0 ],
 					"text" : "Quadraphonic panner coefficients"
 				}
 
@@ -308,7 +358,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 279.0, 163.0, 233.0, 20.0 ],
+					"patching_rect" : [ 279.0, 208.0, 233.0, 20.0 ],
 					"text" : "Signal extremes analyzer"
 				}
 
@@ -319,7 +369,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 23.0, 253.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 298.0, 233.0, 20.0 ],
 					"text" : "Hot inlets operations"
 				}
 
@@ -331,7 +381,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 282.0, 277.0, 108.0, 22.0 ],
+					"patching_rect" : [ 282.0, 322.0, 108.0, 22.0 ],
 					"text" : "sonus.quadpanner"
 				}
 
@@ -343,7 +393,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 282.0, 142.0, 80.0, 22.0 ],
+					"patching_rect" : [ 282.0, 187.0, 80.0, 22.0 ],
 					"text" : "sonus.mima~"
 				}
 
@@ -355,7 +405,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.0, 232.0, 64.0, 22.0 ],
+					"patching_rect" : [ 26.0, 277.0, 64.0, 22.0 ],
 					"text" : "sonus.hop"
 				}
 
@@ -390,6 +440,22 @@
 				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
 					"hidden" : 1,
+					"source" : [ "obj-15", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-16", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"hidden" : 1,
 					"source" : [ "obj-17", 0 ]
 				}
 
@@ -407,6 +473,14 @@
 					"destination" : [ "obj-3", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-20", 0 ]
 				}
 
 			}

@@ -35,6 +35,11 @@
 			<description>Frequency </description>
 		</method>
 
+		<method name='list'>
+			<digest>List of frequencies to convert</digest>
+			<description>List of frequencies to convert. </description>
+		</method>
+
 	</methodlist>
 
 

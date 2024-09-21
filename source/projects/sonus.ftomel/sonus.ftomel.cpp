@@ -42,28 +42,57 @@ public:
         MIN_FUNCTION
 		{
 			number f = args[0];
-			switch (algo)
-			{
-				case algos::shaugh:
-				out.send(2595.0 * std::log10(1.0 + (f / 700.0)));
-				break;
-				case algos::linor:
-				out.send(2410.0 * std::log10((0.0016 * f) + 1.0));
-				break;
-				case algos::slaney:
-				if (f < 1000.0)
-				{
-					out.send((3.0 * f) / 200.0);
-				}
-				else
-				{
-					out.send(15.0 + 27 * (std::log10(f * 0.001) / std::log10(6.4)));
-				}
-				break;
-			}
+			out.send(conversion(f));
+
 			return {};
 		}
     };
+
+	message<> list
+	{
+		this,
+		"list",
+		"List of frequencies to convert.",
+        MIN_FUNCTION
+		{
+			atoms output;
+			output.reserve(args.size());
+
+			for (auto n = 0; n < args.size(); n++)
+			{
+				output.push_back(conversion(number(args[n])));
+			}
+
+			out.send(output);
+
+			return {};
+		}
+    };
+
+	number conversion(number f)
+	{
+		switch (algo)
+		{
+			case algos::shaugh:
+			return 2595.0 * std::log10(1.0 + (f / 700.0));
+			break;
+			case algos::linor:
+			return 2410.0 * std::log10((0.0016 * f) + 1.0);
+			break;
+			case algos::slaney:
+			if (f < 1000.0)
+			{
+				return (3.0 * f) / 200.0;
+			}
+			else
+			{
+				return 15.0 + 27 * (std::log10(f * 0.001) / std::log10(6.4));
+			}
+			break;
+		}
+
+		return 0.0;
+	}
 };
 
 MIN_EXTERNAL(ftomel);

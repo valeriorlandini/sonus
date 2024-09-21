@@ -35,6 +35,11 @@
 			<description>Pitch </description>
 		</method>
 
+		<method name='list'>
+			<digest>List of pitches to convert</digest>
+			<description>List of pitches to convert. </description>
+		</method>
+
 	</methodlist>
 
 
