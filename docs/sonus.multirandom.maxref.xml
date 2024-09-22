@@ -72,6 +72,11 @@
 			<description>Generate floating point values instead of integers. </description>
 		</attribute>
 
+		<attribute name='range' get='1' set='1' type='float64' size='1' >
+			<digest>The range of generated values</digest>
+			<description>The range of generated values. </description>
+		</attribute>
+
 	</attributelist>
 
 

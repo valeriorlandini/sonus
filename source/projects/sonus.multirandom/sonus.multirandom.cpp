@@ -69,16 +69,70 @@ public:
 		}
     };
 
+    attribute<std::vector<number>> range
+    {
+        this,
+        "range",
+        {0, 1},
+        title {"Range"},
+        description {"The range of generated values."},
+        setter
+		{
+			MIN_FUNCTION
+			{
+                if (args.size() > 0)
+				{
+                    number a = 0;
+                    number b = 0;
+					if (args.size() < 2)
+                    {
+                        b = number(args[0]);
+                    }
+                    else
+                    {
+                        a = number(args[0]);
+                        b = number(args[1]);
+                    }
+
+                    if (b < a)
+                    {
+                        number temp = b;
+                        b = a;
+                        a = temp;
+                    }
+
+                    idist_ = std::uniform_int_distribution<>((int)a, (int)b);
+                    fdist_ = std::uniform_real_distribution(a, b);
+					
+					return {a, b};
+				}
+
+				return args;
+        	}
+		}
+    };
+
     multirandom(const atoms& args = {})
     {
+        int outputs = 2;
+
         if (!args.empty() && int(args[0]) > 1)
         {
-            outputs_ = std::min(int(args[0]) + 1, 257);
+            outputs = std::min(int(args[0]) + 1, 257);
         }
 
         if (args.size() > 1)
         {
-            // RANGE factor_ = float(args[1]);
+            number limit = number(args[1]);
+            if (limit < 0)
+            {
+                range[0] = limit;
+                range[1] = 0;
+            }
+            else
+            {
+                range[1] = limit;            
+            }
         }
 
         if (args.size() > 2)
@@ -93,9 +147,9 @@ public:
             seed = millis;
         }
 
-	    for (auto i = 0; i < outputs_; ++i)
+	    for (auto i = 0; i < outputs; ++i)
         {
-            if (i < outputs_ - 1)
+            if (i < outputs - 1)
             {
                 m_outlets.push_back(std::make_unique<outlet<>>(this, "(number) Random number " + std::to_string(i+1)));
             }
@@ -169,7 +223,6 @@ public:
     };
 
 private:
-    int outputs_;
     std::vector<std::unique_ptr<outlet<>>> m_outlets;
     std::default_random_engine gen_;
     std::uniform_real_distribution<number> fdist_;
