@@ -100,7 +100,6 @@ public:
                         b = a;
                         a = temp;
                     }
-
                     idist_ = std::uniform_int_distribution<>((int)a, (int)b);
                     fdist_ = std::uniform_real_distribution(a, b);
 					
@@ -133,6 +132,8 @@ public:
             {
                 range[1] = limit;            
             }
+
+            range.set(range);
         }
 
         if (args.size() > 2)
@@ -164,13 +165,17 @@ public:
 	{
 		this,
 		"number",
-		"Value to scale or, in the last inlet, scale factor",
+		"In second inlet, range limit",
         MIN_FUNCTION
 		{
 			if (inlet == 1)
-			{
-				// SET RANGEin_values_.at(inlet) = float(args[0]);
-			}
+            {
+                number limit = number(args[0]);
+                atoms limits;
+                limits.push_back(0);
+                limits.push_back(limit);
+                this->range.set(limits);
+            }
 			return {};
 		}
     };

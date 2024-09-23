@@ -46,8 +46,8 @@
 	<methodlist>
 
 		<method name='float'>
-			<digest>Value to scale or, in the last inlet, scale factor </digest>
-			<description>Value to scale or, in the last inlet, scale factor </description>
+			<digest>In second inlet, range limit </digest>
+			<description>In second inlet, range limit </description>
 		</method>
 
 		<method name='bang'>
