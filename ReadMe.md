@@ -60,6 +60,9 @@ Currently finished externals are:
 
 The collection also features six Max for Live devices that use some sonus externals to create synths, effects and modulators.
 
+## Compiled binaries
+
+Compiled binaries for both Windows and macOS can be found in the [Releases section](https://github.com/valeriorlandini/sonus/releases).
 
 ## How to build
 
@@ -75,7 +78,7 @@ Run `cmake -G Xcode ..`
 
 Next run `cmake --build . --config Release` or open the Xcode project from this "build" folder and use the GUI.
 
-Note: you can add the `-j4` option where "4" is the number of cores to use.  This can help to speed up your builds, though sometimes the error output is interleaved in such a way as to make troubleshooting more difficult.
+Note: you can add the `-j4` option where "4" is the number of cores to use. This can help speed up your builds, though it may sometimes interleave the error output, making troubleshooting more challenging.
 
 If you are running on a Mac M1 machine, you will likely see an error `cannot be loaded due to system security policy` when loading your externals in Max. To resolve this, you can ad-hoc codesign your external with `codesign --force --deep -s - myobject.mxo`.
 
@@ -98,4 +101,6 @@ Visual Studio 2017:
 Having generated the projects, you can now build by opening the .sln file in the build folder with the Visual Studio app (just double-click the .sln file) or you can build on the command line like this:
 
 `cmake --build . --config Release`
+
+Note: you can add the `-j4` option where "4" is the number of cores to use. This can help speed up your builds, though it may sometimes interleave the error output, making troubleshooting more challenging.
 
