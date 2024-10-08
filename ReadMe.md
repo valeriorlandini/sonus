@@ -13,6 +13,7 @@ Currently finished externals are:
 * `sonus.lorenz~` Lorenz attractor based generator
 * `sonus.neurosc~` Neural network based oscillator
 * `sonus.nwosc~` User defined wavetable oscillator
+* `sonus.nowave~` Scrambled wavetable oscillator
 * `sonus.pdosc~` Phase distorted oscillator
 * `sonus.pulsar~` Pulsar oscillator
 * `sonus.roessler~` Rössler attractor based generator
