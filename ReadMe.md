@@ -22,7 +22,7 @@ Currently finished externals are:
 * `sonus.window~` Window functions generator
 
 ### Effects and Sample Manipulation
-* `sonus.8bitinv~` Bitcrusher and bit inverter
+* `sonus.bitinv~` Bitcrusher and bit inverter
 * `sonus.bitman~` Bit manipulator
 * `sonus.biquads~` Parallel biquad filters
 * `sonus.buffx` Apply effects to buffers
@@ -48,22 +48,26 @@ Currently finished externals are:
 ### Math and Utilities
 * `sonus.blist` Output different items from a list
 * `sonus.bozo` Output a 1 and then a 0 when a bang is received
+* `sonus.ftomel` Frequency to mel converter
 * `sonus.hop` Hot inlets operations
 * `sonus.lline` Similar to line, but for list of numbers
 * `sonus.lurn` Non repeating random sequences
 * `sonus.mathc` Mathematical constants
 * `sonus.mbox` Pop up dialogs generator
+* `sonus.meltof` Mel to frequency converter
 * `sonus.mima~` Signal extremes analyzer
+* `sonus.multirandom` Multi-outlet version of random object
 * `sonus.mumul` Multiply numbers for the same factor
 * `sonus.mumul~` Multiply signals for the same factor
 * `sonus.quadpanner` Quadraphonic panner coefficients
+* `sonus.summer` Numbers summator
 * `sonus.tent` Tent map calculator
 
 The collection also features six Max for Live devices that use some sonus externals to create synths, effects and modulators.
 
 ## Compiled binaries
 
-Compiled binaries for both Windows and macOS can be found in the [Releases section](https://github.com/valeriorlandini/sonus/releases).
+Compiled binaries for both Windows and macOS can be found in the [Releases section](https://github.com/valeriorlandini/sonus/releases). Please note that some of the listed externals may not yet be available in the latest compiled version.
 
 ## How to build
 
