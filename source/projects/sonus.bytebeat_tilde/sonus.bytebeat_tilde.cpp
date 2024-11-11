@@ -1,6 +1,6 @@
 /// @file
 ///	@ingroup 	sonus.*
-///	@copyright	Copyright 2023 Valerio Orlandini. All rights reserved.
+///	@copyright	Copyright 2023-2024 Valerio Orlandini. All rights reserved.
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "parser/mpParser.h"
