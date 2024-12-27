@@ -1,4 +1,6 @@
 cmake_minimum_required(VERSION 3.19)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 project(sonus)
 
 enable_testing()
@@ -25,6 +27,9 @@ if (APPLE)
     endif()
 endif()
 
+if (MSVC)
+    add_compile_options(/std:c++17)
+endif()
 
 # Misc setup and subroutines
 include(${CMAKE_CURRENT_SOURCE_DIR}/source/min-api/script/min-package.cmake)
