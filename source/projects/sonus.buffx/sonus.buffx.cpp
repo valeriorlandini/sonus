@@ -929,11 +929,11 @@ public:
             {
                 for (auto ch = 0; ch < b.channel_count(); ch++)
                 {
-                    std::vector<float> curr_channel;
+                    std::vector<float> curr_channel(b.frame_count());
                     
                     for (auto s = 0; s < b.frame_count(); s++)
                     {
-                        curr_channel.push_back(b.lookup(s, ch));
+                        curr_channel.at(s) = b.lookup(s, ch);
                     }
                     
                     if (ascending)
@@ -1075,11 +1075,11 @@ public:
 
                 for (auto ch = 0; ch < b.channel_count(); ch++)
                 {    
-                    std::vector<double> current_channel;
+                    std::vector<double> current_channel(b.frame_count());
 
                     for (auto s = 0; s < b.frame_count(); s++)
                     {
-                        current_channel.push_back((double)b.lookup(s, ch));
+                        current_channel.at(s) = (double)b.lookup(s, ch);
                     }
 
                     current_buffer.push_back(current_channel);
@@ -1179,10 +1179,11 @@ public:
                         cout << "Currently autoconvolution is experimental and only for short samples" << endl;
                         return {};
                     }
-                    std::vector<double> channel;
+
+                    std::vector<double> channel(b.frame_count());
                     for (auto s = 0; s < b.frame_count(); s++)
                     {
-                        channel.push_back(b.lookup(s, ch));
+                        channel.at(s) = b.lookup(s, ch);
                     }
 
                     std::vector<double> convolved = convolve(channel, channel);
@@ -1331,11 +1332,11 @@ private:
 
             for (int ch = 0; ch < b.channel_count(); ch++)
             {
-                std::vector<double> curr_channel;
+                std::vector<double> curr_channel(b.frame_count());
 
                 for (int s = 0; s < b.frame_count(); s++)
                 {
-                    curr_channel.push_back(b.lookup(s, ch));
+                    curr_channel.at(s) = b.lookup(s, ch);
                 }
 
                 original_buffer_.push_back(curr_channel);

@@ -161,11 +161,11 @@ private:
 
             for (int ch = 0; ch < b.channel_count(); ch++)
             {
-                std::vector<double> curr_channel;
+                std::vector<double> curr_channel(b.frame_count());
 
                 for (int s = 0; s < b.frame_count(); s++)
                 {
-                    curr_channel.push_back(b.lookup(s, ch));
+                    curr_channel.at(s) = b.lookup(s, ch);
                 }
 
                 new_snapshot.push_back(curr_channel);
