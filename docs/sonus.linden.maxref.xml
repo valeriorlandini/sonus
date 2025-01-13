@@ -51,6 +51,11 @@
 
 	<attributelist>
 
+		<attribute name='last' get='1' set='1' type='long' size='1' >
+			<digest>If set to a number different from 0, only the last n symbols are kept, so that the sequence does not grow indefinitely</digest>
+			<description>If set to a number different from 0, only the last n symbols are kept, so that the sequence does not grow indefinitely. While this technically breaks the definition of a L-system, it can be useful for generative sequencing. </description>
+		</attribute>
+
 		<attribute name='probability' get='1' set='1' type='float64' size='1' >
 			<digest>Probability that each transition actually happens</digest>
 			<description>Probability that each transition actually happens. </description>

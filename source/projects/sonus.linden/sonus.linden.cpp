@@ -43,6 +43,16 @@ public:
         description {"Probability that each transition actually happens."}
     };
 
+	attribute<int, threadsafe::no, limit::clamp> last
+	{
+        this,
+        "last",
+        0,
+		range { 0, 1024 },
+        title {"Truncate sequence"},
+        description {"If set to a number different from 0, only the last n symbols are kept, so that the sequence does not grow indefinitely. While this technically breaks the definition of a L-system, it can be useful for generative sequencing."}
+    };
+
 	message<> dictionary
 	{
 		this,
@@ -132,6 +142,12 @@ public:
 					next_generation += curr;
 				}
 			}
+
+			if (last > 0 && next_generation.size() > last)
+			{
+				next_generation = next_generation.substr(next_generation.size() - (unsigned int)last);
+			}
+
 			generation_ = next_generation;
 
 			out.send(next_generation);

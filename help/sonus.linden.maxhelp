@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 3,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -43,6 +43,35 @@
 					"bubble" : 1,
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
+					"id" : "obj-12",
+					"linecount" : 5,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 406.0, 384.0, 314.0, 85.0 ],
+					"presentation_linecount" : 5,
+					"text" : "if set to a number different from 0, only the last n symbols are kept, so that the sequence does not grow indefinitely. While this technically breaks the definition of a L-system, it can be useful for generative sequencing."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"attr" : "last",
+					"id" : "obj-8",
+					"maxclass" : "attrui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 245.0, 415.5, 150.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
 					"id" : "obj-7",
 					"linecount" : 2,
 					"maxclass" : "comment",
@@ -72,7 +101,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 33.0, 468.0, 84.0, 22.0 ],
+					"patching_rect" : [ 33.0, 500.0, 84.0, 22.0 ],
 					"text" : "print L-system"
 				}
 
@@ -86,7 +115,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 426.0, 496.5, 131.0, 25.0 ],
+					"patching_rect" : [ 426.0, 529.0, 131.0, 25.0 ],
 					"text" : "current sequence"
 				}
 
@@ -113,7 +142,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 33.0, 498.0, 374.0, 22.0 ]
+					"patching_rect" : [ 33.0, 530.0, 374.0, 22.0 ]
 				}
 
 			}
@@ -420,6 +449,13 @@
 					"destination" : [ "obj-36", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-40", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-8", 0 ]
 				}
 
 			}
