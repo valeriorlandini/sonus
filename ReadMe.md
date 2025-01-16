@@ -63,6 +63,7 @@ Currently finished externals are:
 * `sonus.quadpanner` Quadraphonic panner coefficients
 * `sonus.summer` Numbers summator
 * `sonus.tent` Tent map calculator
+* `sonus.wtp` "The Well-Tuned Piano" tuner
 
 The collection also features six Max for Live devices that use some sonus externals to create synths, effects and modulators.
 

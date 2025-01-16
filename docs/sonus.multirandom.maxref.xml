@@ -62,11 +62,6 @@
 
 	<attributelist>
 
-		<attribute name='seed' get='1' set='1' type='float64' size='1' >
-			<digest>The random seed for the random generation</digest>
-			<description>The random seed for the random generation. </description>
-		</attribute>
-
 		<attribute name='floatoutput' get='1' set='1' type='long' size='1' >
 			<digest>Generate floating point values instead of integers</digest>
 			<description>Generate floating point values instead of integers. </description>
@@ -75,6 +70,11 @@
 		<attribute name='range' get='1' set='1' type='float64' size='1' >
 			<digest>The range of generated values</digest>
 			<description>The range of generated values. </description>
+		</attribute>
+
+		<attribute name='seed' get='1' set='1' type='float64' size='1' >
+			<digest>The random seed for the random generation</digest>
+			<description>The random seed for the random generation. </description>
 		</attribute>
 
 	</attributelist>

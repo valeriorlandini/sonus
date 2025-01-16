@@ -55,6 +55,11 @@
 			<description>Restore the buffer content at the time when backup was set </description>
 		</method>
 
+		<method name='mirshrink'>
+			<digest>Mirror-copy a group of wavesets and then shrink the group so that it keeps the original size </digest>
+			<description>Mirror-copy a group of wavesets and then shrink the group so that it keeps the original size </description>
+		</method>
+
 		<method name='shuffle'>
 			<digest>Randomly reorder the wavesets, optionally in groups of n </digest>
 			<description>Randomly reorder the wavesets, optionally in groups of n </description>

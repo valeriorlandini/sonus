@@ -377,6 +377,89 @@ public:
             return {};
         }
     };
+
+    message<> mirshrink
+    {
+        this,
+        "mirshrink",
+        "Mirror-copy a group of wavesets and then shrink the group so that it keeps the original size",
+        MIN_FUNCTION
+        {
+            analyse();
+            buffer_lock<> b(m_buffer);
+
+            int mir_group = 1;
+
+            if (!args.empty())
+            {
+                mir_group = std::max(1, int(args.at(0)));
+            }
+
+
+            if (b.valid())
+            {
+                for (int ch = 0; ch < b.channel_count(); ch++)
+                {
+                    int w = 0;
+                    for (w = 0; w < wavesets_idx_.at(ch).size(); w += mir_group)
+                    {
+                        int start = wavesets_idx_.at(ch).at(w).start;
+                        int end = wavesets_idx_.at(ch).at(std::min(int(wavesets_idx_.at(ch).size()) - 1, w + mir_group - 1)).end;
+                        
+                        std::vector<float> curr_waveset;
+
+                        for (int s = start; s <= end; ++s)
+                        {
+                            curr_waveset.push_back((float)b.lookup(s, ch));
+                        }
+                        for (int s = end; s >= start; --s)
+                        {
+                            curr_waveset.push_back((float)b.lookup(s, ch));
+                        }
+
+                        auto mirshrink_ws = resize_chunk(curr_waveset, curr_waveset.size() / 2);
+     
+                        int pos = 0;
+
+                        for (int s = start; s <= end; ++s)
+                        {
+                            b.lookup(s, ch) = mirshrink_ws.at(pos++);
+                        }
+                    }
+
+                    if (w - mir_group < wavesets_idx_.at(ch).size() - 1)
+                    {
+                        int start = wavesets_idx_.at(ch).at(w - mir_group).start;
+                        int end = wavesets_idx_.at(ch).at(int(wavesets_idx_.at(ch).size()) - 1).end;
+                        
+                        std::vector<float> curr_waveset;
+
+                        for (int s = start; s <= end; ++s)
+                        {
+                            curr_waveset.push_back((float)b.lookup(s, ch));
+                        }
+                        for (int s = end; s >= start; --s)
+                        {
+                            curr_waveset.push_back((float)b.lookup(s, ch));
+                        }
+     
+                        auto mirshrink_ws = resize_chunk(curr_waveset, curr_waveset.size() / 2);
+
+                        int pos = 0;
+
+                        for (int s = start; s <= end; ++s)
+                        {
+                            b.lookup(s, ch) = mirshrink_ws.at(pos++);
+                        }
+                    }
+                }
+
+                b.dirty();
+            }            
+
+            return {};
+        }
+    };
     
     message<> multiply
     {
