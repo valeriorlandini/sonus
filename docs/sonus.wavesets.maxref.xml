@@ -71,8 +71,8 @@
 		</method>
 
 		<method name='multiply'>
-			<digest>Multiply each group of wavesets with the next one </digest>
-			<description>Multiply each group of wavesets with the next one </description>
+			<digest>Multiply each group of wavesets with the next one, resizing the second accordingly </digest>
+			<description>Multiply each group of wavesets with the next one, resizing the second accordingly </description>
 		</method>
 
 		<method name='reverse'>
@@ -83,6 +83,11 @@
 		<method name='average'>
 			<digest>Average each group of wavesets with the next one </digest>
 			<description>Average each group of wavesets with the next one </description>
+		</method>
+
+		<method name='mix'>
+			<digest>Mix each group of wavesets with the next one, resizing the second accordingly </digest>
+			<description>Mix each group of wavesets with the next one, resizing the second accordingly </description>
 		</method>
 
 		<method name='power'>
@@ -98,6 +103,11 @@
 		<method name='filter'>
 			<digest>Apply to n wavesets a filter (lp, hp, bp, or no for no filter) with a m cutoff, the sequence can be of arbitrary length (e.g</digest>
 			<description>Apply to n wavesets a filter (lp, hp, bp, or no for no filter) with a m cutoff, the sequence can be of arbitrary length (e.g. n1 lp m1 n2 no m2...) </description>
+		</method>
+
+		<method name='same'>
+			<digest>Resize each group of n wavesets to the same length, that can be expressed in a time unit among ms (milliseconds, default) or sm (samples) </digest>
+			<description>Resize each group of n wavesets to the same length, that can be expressed in a time unit among ms (milliseconds, default) or sm (samples) </description>
 		</method>
 
 	</methodlist>

@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 456.0, 290.0, 854.0, 797.0 ],
+		"rect" : [ 99.0, 100.0, 854.0, 797.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -43,13 +43,66 @@
 					"bubble" : 1,
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
+					"id" : "obj-47",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 319.0, 689.0, 505.0, 25.0 ],
+					"presentation_linecount" : 2,
+					"text" : "resize each group of n wavesets to the specified (in ms or sm, i.e. samples) length"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-45",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 208.0, 690.5, 104.0, 22.0 ],
+					"text" : "same 200 250 ms"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
+					"id" : "obj-41",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 178.194033026695251, 397.5, 214.0, 40.0 ],
+					"text" : "mix each group of n wavesets with the next one"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-33",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 110.0, 406.5, 51.0, 22.0 ],
+					"text" : "mix 150"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
 					"id" : "obj-43",
 					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 506.0, 651.5, 318.0, 55.0 ],
-					"presentation_linecount" : 4,
+					"patching_rect" : [ 506.0, 629.0, 318.0, 55.0 ],
 					"text" : "mirror-copy each group of n wavesets, then shrink the duplicated groups so that the total length remains the same"
 				}
 
@@ -61,7 +114,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 413.205963671207428, 668.0, 87.0, 22.0 ],
+					"patching_rect" : [ 413.0, 645.5, 87.0, 22.0 ],
 					"text" : "mirshrink 3000"
 				}
 
@@ -76,7 +129,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 578.0, 557.0, 246.0, 85.0 ],
+					"patching_rect" : [ 578.0, 540.0, 246.0, 85.0 ],
 					"text" : "filter groups of n wavesets with a filter (lp, hp, bp, no for no filter) with the m cutoff. any number of n filter m tuples can be specified, if no filter use any  value for cutoff (it will be ignored)"
 				}
 
@@ -89,7 +142,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 413.205963671207428, 581.5, 161.0, 36.0 ],
+					"patching_rect" : [ 413.0, 565.0, 161.0, 36.0 ],
 					"text" : "filter 100 bp 1200 200 hp 4000 300 lp 1000 150 no 20"
 				}
 
@@ -104,7 +157,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 578.0, 497.0, 243.0, 55.0 ],
+					"patching_rect" : [ 578.0, 480.0, 243.0, 55.0 ],
 					"text" : "resize groups of n wavesets (with pitch change) by the m amount. any number of n m pairs can be specified"
 				}
 
@@ -116,7 +169,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 413.205963671207428, 513.5, 161.0, 22.0 ],
+					"patching_rect" : [ 413.0, 497.0, 161.0, 22.0 ],
 					"text" : "stretch 200 1.5 100 0.8 10 3."
 				}
 
@@ -141,12 +194,12 @@
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
 					"id" : "obj-38",
-					"linecount" : 6,
+					"linecount" : 5,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 178.194033026695251, 427.5, 214.0, 100.0 ],
-					"text" : "raise each sample of a group of wavesets with the absolute value of the samples of the next one as exponent (WARNING: very loud!!! lower the volume before apply!!!)"
+					"patching_rect" : [ 178.194033026695251, 439.5, 214.0, 85.0 ],
+					"text" : "raise each sample of a group of wavesets with the absolute value of the samples of the next one as exponent (WARNING: loud!!! lower the volume before!)"
 				}
 
 			}
@@ -192,7 +245,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 102.0, 466.5, 58.0, 22.0 ],
+					"patching_rect" : [ 101.5, 471.0, 58.0, 22.0 ],
 					"text" : "power 10"
 				}
 
@@ -203,12 +256,12 @@
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
 					"id" : "obj-25",
-					"linecount" : 4,
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 178.194033026695251, 355.5, 214.0, 70.0 ],
-					"text" : "multiply each group of n wavesets with the next one (suggestion: normalize the buffer after this operation)"
+					"patching_rect" : [ 178.194033026695251, 355.5, 214.0, 40.0 ],
+					"text" : "multiply each group of n wavesets with the next one"
 				}
 
 			}
@@ -219,7 +272,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 102.0, 379.5, 66.0, 22.0 ],
+					"patching_rect" : [ 97.5, 364.5, 66.0, 22.0 ],
 					"text" : "multiply 40"
 				}
 
@@ -740,6 +793,13 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-33", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-34", 0 ]
 				}
 
@@ -770,6 +830,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-42", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-45", 0 ]
 				}
 
 			}

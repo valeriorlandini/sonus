@@ -465,7 +465,7 @@ public:
     {
         this,
         "multiply",
-        "Multiply each group of wavesets with the next one",
+        "Multiply each group of wavesets with the next one, resizing the second accordingly",
         MIN_FUNCTION
         {
             analyse();
@@ -519,6 +519,78 @@ public:
                         for (int s = 0; s < curr_waveset.size(); s++)
                         {
                             new_buffer.push_back(curr_waveset.at(s) * resized_next.at(s));
+                        }
+                    }
+                    for (int s = 0; s < new_buffer.size(); s++)
+                    {
+                        b.lookup(s, ch) = new_buffer.at(s);
+                    }
+                }
+
+                b.dirty();
+            }            
+
+            return {};
+        }
+    };  
+
+    message<> mix
+    {
+        this,
+        "mix",
+        "Mix each group of wavesets with the next one, resizing the second accordingly",
+        MIN_FUNCTION
+        {
+            analyse();
+            buffer_lock<> b(m_buffer);
+
+            int avg_group = 1;
+
+            if (!args.empty())
+            {
+                avg_group = std::max(1, int(args.at(0)));
+            }
+
+            if (b.valid())
+            {
+                for (int ch = 0; ch < b.channel_count(); ch++)
+                {
+                    int w = 0;
+                    std::vector<float> new_buffer;
+                    for (w = 0; w < wavesets_idx_.at(ch).size(); w += avg_group)
+                    {
+                        int start_curr = wavesets_idx_.at(ch).at(w).start;
+                        int end_curr = wavesets_idx_.at(ch).at((w + avg_group - 1) % wavesets_idx_.at(ch).size()).end;
+                        
+                        int start_next = wavesets_idx_.at(ch).at((w + avg_group) % wavesets_idx_.at(ch).size()).start;
+                        int end_next = wavesets_idx_.at(ch).at((w + (avg_group * 2) - 1) % wavesets_idx_.at(ch).size()).end;
+                        
+                        std::vector<float> curr_waveset;
+                        std::vector<float> next_waveset;
+
+                        if (end_curr < start_curr)
+                        {
+                            end_curr += b.frame_count();
+                        }
+                        for (int s = start_curr; s <= end_curr; ++s)
+                        {
+                            curr_waveset.push_back((float)b.lookup(s % b.frame_count(), ch));
+                        }
+
+                        if (end_next < start_next)
+                        {
+                            end_next += b.frame_count();
+                        }
+                        for (int s = start_next; s <= end_next; ++s)
+                        {
+                            next_waveset.push_back((float)b.lookup(s % b.frame_count(), ch));
+                        }
+     
+                        std::vector<float> resized_next = resize_chunk(next_waveset, curr_waveset.size());
+
+                        for (int s = 0; s < curr_waveset.size(); s++)
+                        {
+                            new_buffer.push_back((curr_waveset.at(s) + resized_next.at(s)) * 0.707f);
                         }
                     }
                     for (int s = 0; s < new_buffer.size(); s++)
@@ -797,6 +869,113 @@ public:
 
                 b.dirty();
             }            
+
+            return {};
+        }
+    };
+
+    message<> same
+    {
+        this,
+        "same",
+        "Resize each group of n wavesets to the same length, that can be expressed in a time unit among ms (milliseconds, default) or sm (samples)",
+        MIN_FUNCTION
+        {
+            analyse();
+            buffer_lock<false> b(m_buffer);
+
+            if (args.size() < 2)
+            {
+                cout << "Syntax: same n <length> <unit (ms, sm) - optional, default ms>" << endl;
+                return {};
+            }
+
+            if (b.valid())
+            {
+                int avg_group = std::max(1, int(args.at(0)));
+                float length = float(args.at(1));
+                int sample_length = static_cast<int>(std::ceil(length * (float)b.samplerate() * 0.001f));
+
+                if (args.size() > 2 && std::string(args.at(2)) == "sm")
+                {
+                    sample_length = static_cast<int>(length);
+                }
+
+                if (sample_length < 2)
+                {
+                    sample_length = 2; 
+                }
+
+                std::vector<std::vector<double>> new_buffer;
+                int max_length = 0;
+
+                for (int ch = 0; ch < b.channel_count(); ch++)
+                {
+                    int w = 0;
+                    std::vector<double> new_channel;
+
+                    for (w = 0; w < wavesets_idx_.at(ch).size(); w += avg_group)
+                    {
+                        int start_curr = wavesets_idx_.at(ch).at(w).start;
+                        int end_curr = wavesets_idx_.at(ch).at((w + avg_group - 1) % wavesets_idx_.at(ch).size()).end;
+                        
+                        std::vector<double> curr_waveset;
+
+                        if (end_curr < start_curr)
+                        {
+                            end_curr += b.frame_count();
+                        }
+                        for (int s = start_curr; s <= end_curr; ++s)
+                        {
+                            curr_waveset.push_back((double)b.lookup(s % b.frame_count(), ch));
+                        }
+     
+                        std::vector<double> resized = resize_chunk(curr_waveset, sample_length);
+
+                        for (int s = 0; s < resized.size(); s++)
+                        {
+                            new_channel.push_back(resized.at(s));
+                        }
+                    }
+
+                    new_buffer.push_back(new_channel);
+
+                    if (new_channel.size() > max_length)
+                    {
+                        max_length = new_channel.size();
+                    }
+                }
+
+                for (auto ch = 0; ch < b.channel_count(); ch++)
+                {
+                    if (new_buffer.at(ch).size() < max_length)
+                    {
+                        new_buffer.at(ch).resize(max_length, 0.0);
+                    }
+                }
+
+                b.resize_in_samples(max_length);
+
+                b.dirty();
+
+                buffer_lock<> b_new(m_buffer);
+
+                if (b_new.valid())
+                {
+                    for (auto ch = 0; ch < b_new.channel_count(); ch++)
+                    {
+                        for (auto s = 0; s < b_new.frame_count(); s++)
+                        {
+                            if (new_buffer.at(ch).size() > s)
+                            {
+                                b_new.lookup(s, ch) = new_buffer.at(ch).at(s);
+                            }
+                        }
+                    }
+
+                    b_new.dirty();
+                }
+            }
 
             return {};
         }
