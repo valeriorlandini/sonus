@@ -48,7 +48,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 319.0, 689.0, 505.0, 25.0 ],
-					"presentation_linecount" : 2,
 					"text" : "resize each group of n wavesets to the specified (in ms or sm, i.e. samples) length"
 				}
 
@@ -75,8 +74,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 178.194033026695251, 397.5, 214.0, 40.0 ],
-					"text" : "mix each group of n wavesets with the next one"
+					"patching_rect" : [ 168.194033026695251, 397.5, 228.0, 40.0 ],
+					"text" : "mix each group of n wavesets with the next one resizing the latter"
 				}
 
 			}
@@ -287,7 +286,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 189.194033026695251, 313.5, 203.0, 40.0 ],
+					"patching_rect" : [ 178.194033026695251, 313.5, 214.0, 40.0 ],
 					"text" : "average each group of n wavesets with the next one"
 				}
 
@@ -300,7 +299,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 98.0, 322.5, 75.0, 22.0 ],
-					"text" : "average 150"
+					"text" : "average 200"
 				}
 
 			}
