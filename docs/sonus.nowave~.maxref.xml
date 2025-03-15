@@ -52,14 +52,14 @@
 
 	<attributelist>
 
-		<attribute name='seed' get='1' set='1' type='long' size='1' >
-			<digest>Seed for wavetable generation</digest>
-			<description>Seed for wavetable generation. </description>
-		</attribute>
-
 		<attribute name='interp' get='1' set='1' type='long' size='1' >
 			<digest>If active, the values of the wavetable are interpolated</digest>
 			<description>If active, the values of the wavetable are interpolated. </description>
+		</attribute>
+
+		<attribute name='seed' get='1' set='1' type='long' size='1' >
+			<digest>Seed for wavetable generation</digest>
+			<description>Seed for wavetable generation. </description>
 		</attribute>
 
 	</attributelist>

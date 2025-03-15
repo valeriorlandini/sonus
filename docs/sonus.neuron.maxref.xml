@@ -42,14 +42,14 @@
 
 	<attributelist>
 
-		<attribute name='weights' get='1' set='1' type='float64' size='1' >
-			<digest>The weights</digest>
-			<description>The weights. </description>
-		</attribute>
-
 		<attribute name='bias' get='1' set='1' type='float64' size='1' >
 			<digest>The bias</digest>
 			<description>The bias. </description>
+		</attribute>
+
+		<attribute name='weights' get='1' set='1' type='float64' size='1' >
+			<digest>The weights</digest>
+			<description>The weights. </description>
 		</attribute>
 
 	</attributelist>

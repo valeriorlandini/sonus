@@ -47,11 +47,6 @@
 
 	<attributelist>
 
-		<attribute name='mutrate' get='1' set='1' type='float64' size='1' >
-			<digest>Probability of mutation in the population</digest>
-			<description>Probability of mutation in the population. </description>
-		</attribute>
-
 		<attribute name='matrate' get='1' set='1' type='float64' size='1' >
 			<digest>Proportion of population members that mate at every step</digest>
 			<description>Proportion of population members that mate at every step. </description>
@@ -60,6 +55,11 @@
 		<attribute name='multicross' get='1' set='1' type='long' size='1' >
 			<digest>Allow multiple crossovers during mating</digest>
 			<description>Allow multiple crossovers during mating. </description>
+		</attribute>
+
+		<attribute name='mutrate' get='1' set='1' type='float64' size='1' >
+			<digest>Probability of mutation in the population</digest>
+			<description>Probability of mutation in the population. </description>
 		</attribute>
 
 	</attributelist>
