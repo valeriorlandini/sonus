@@ -52,14 +52,14 @@
 
 	<attributelist>
 
+		<attribute name='beta' get='1' set='1' type='float64' size='1' >
+			<digest>Value for the rho parameter</digest>
+			<description>Value for the rho parameter. The standard value is 2.6667. </description>
+		</attribute>
+
 		<attribute name='rho' get='1' set='1' type='float64' size='1' >
 			<digest>Value for the rho parameter</digest>
 			<description>Value for the rho parameter. The standard value is 28.0, when it is greater than 24.74 the system is chaotic. </description>
-		</attribute>
-
-		<attribute name='speed' get='1' set='1' type='float64' size='1' >
-			<digest>Speed of evolution of the system, normalized between 0 and 1</digest>
-			<description>Speed of evolution of the system, normalized between 0 and 1. </description>
 		</attribute>
 
 		<attribute name='sigma' get='1' set='1' type='float64' size='1' >
@@ -67,9 +67,9 @@
 			<description>Value for the sigma parameter. The standard value is 10.0. </description>
 		</attribute>
 
-		<attribute name='beta' get='1' set='1' type='float64' size='1' >
-			<digest>Value for the rho parameter</digest>
-			<description>Value for the rho parameter. The standard value is 2.6667. </description>
+		<attribute name='speed' get='1' set='1' type='float64' size='1' >
+			<digest>Speed of evolution of the system, normalized between 0 and 1</digest>
+			<description>Speed of evolution of the system, normalized between 0 and 1. </description>
 		</attribute>
 
 	</attributelist>

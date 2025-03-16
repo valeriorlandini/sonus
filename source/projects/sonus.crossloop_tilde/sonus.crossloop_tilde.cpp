@@ -6,6 +6,8 @@
 #include "c74_min.h"
 #include <algorithm>
 #include <cmath>
+#include <sys/stat.h>
+#include <utility>
 #include "interp.h"
 
 using namespace c74::min;
@@ -36,23 +38,66 @@ public:
     {
         this,
         "buffer",
-        "buffer~ to work on.",
-        MIN_ARGUMENT_FUNCTION
-        {
-            m_buffer.set(arg);
-        }
+        "buffer~ to work on."
     };
 
 	argument<int> channels_arg
     {
         this,
-        "inputs",
+        "outputs",
         "The number of output channels."
+    };
+
+    attribute<number, threadsafe::no> crossfade
+    {
+        this,
+        "crossfade",
+        0.0,
+        range { 0.0, 100.0 },
+        title {"Crossfade"},
+        description {"Crossfade amount as percent of the total buffer."},
+        setter
+		{
+			MIN_FUNCTION
+			{
+				buffer_lock<> b(m_buffer);
+
+                if (b.valid())
+                {
+                    crossfade_samples_[0] = number(args[0]) * b.frame_count() * 0.01;
+                    crossfade_samples_[1] = b.frame_count() - crossfade_samples_[0];
+                }
+				return args;
+        	}
+		}
+    };
+
+    attribute<number, threadsafe::no> loop_start
+    {
+        this,
+        "startloop",
+        0.0,
+        title {"Loop start"},
+        description {"Loop start in milliseconds."}
+    };
+
+    attribute<number, threadsafe::no> loop_end
+    {
+        this,
+        "endloop",
+        0.0,
+        title {"Loop end"},
+        description {"Loop end in milliseconds."}
     };
 
     crossloop_tilde(const atoms& args = {})
     {
         outputs_ = 2;
+
+        if (!args.empty())
+        {
+            m_buffer.set(args[0]);
+        }
 
         if (!args.empty() && args.size() > 1)
         {
@@ -80,37 +125,62 @@ public:
 
         for (auto i = 0; i < input.frame_count(); ++i)
         {
+
             for (auto ch = 0; ch < outputs_ - 1; ch++)
             {
-                if (b.valid() && ch < b.channel_count())
+                output.samples(ch)[i] = 0.0;
+                
+                if (b.valid())
                 {
-                    playhead_[ch] += input.samples(0)[ch];
+                    sample ph = input.samples(0)[i];
 
-                    while (playhead_[ch] < 0.0)
+                    sample sample_start = std::floor(loop_start * b.samplerate() * 0.001);
+                    sample_start = std::clamp(sample_start, 0.0, static_cast<sample>(b.frame_count() - 1));
+
+                    sample sample_end = static_cast<sample>(b.frame_count() - 1);
+                    if (loop_end > 0.0)
                     {
-                        playhead_[ch] += b.frame_count();
+                        sample_end = std::floor(loop_end * b.samplerate() * 0.001);
+                        sample_end = std::clamp(sample_end, 0.0, static_cast<sample>(b.frame_count() - 1));
                     }
 
-                    if (playhead_[ch] >= b.frame_count())
+                    if (sample_start > sample_end)
                     {
-                        playhead_[ch] = std::fmod(playhead_[ch], b.frame_count());
+                        std::swap(sample_start, sample_end);
+                        ph *= -1.0;
                     }
 
-                    sample ceil = std::ceil(playhead_[ch]);
-                    if (ceil >= b.frame_count())
-                    {
-                        ceil = 0.0;
-                    }
-                    sample bs = b.lookup(static_cast<unsigned int>(ceil), ch);
-                    sample floor;
-                    sample t = std::modf(playhead_[ch], &floor);
-                    sample as = b.lookup(static_cast<unsigned int>(floor), ch);
+                    sample length = sample_end - sample_start;
 
-                    output.samples(ch)[i] = cosip(as, bs, t);
-                }
-                else
-                {
-                    output.samples(ch)[i] = 0.0;
+                    sample crossfade_start_last_sample = crossfade * 0.01 * length;
+                    sample crossfade_end_first_sample = crossfade_samples_[1];
+
+                    if (ch < b.channel_count())
+                    {
+                        playhead_[ch] += ph;
+
+                        while (playhead_[ch] < sample_start)
+                        {
+                            playhead_[ch] += length;
+                        }
+
+                        if (playhead_[ch] >= sample_end)
+                        {
+                            playhead_[ch] = sample_start + std::fmod(playhead_[ch], sample_end);
+                        }
+
+                        sample ceil = std::ceil(playhead_[ch]);
+                        if (ceil >= sample_end)
+                        {
+                            ceil = 0.0;
+                        }
+                        sample bs = b.lookup(static_cast<unsigned int>(ceil), ch);
+                        sample floor;
+                        sample t = std::modf(playhead_[ch], &floor);
+                        sample as = b.lookup(static_cast<unsigned int>(floor), ch);
+
+                        output.samples(ch)[i] = cosip(as, bs, t);
+                    }
                 }
             }
 	    }
@@ -120,6 +190,7 @@ private:
     int outputs_;
     std::vector<std::unique_ptr<outlet<>>> m_outlets;
     std::vector<sample> playhead_;
+    std::array<sample, 2> crossfade_samples_;
 };
 
 MIN_EXTERNAL(crossloop_tilde);

@@ -28,7 +28,7 @@
 			<description>buffer~ to work on. </description>
 		</objarg>
 
-		<objarg name='inputs' optional='1' type='int'>
+		<objarg name='outputs' optional='1' type='int'>
 			<digest>The number of output channels</digest>
 			<description>The number of output channels. </description>
 		</objarg>
@@ -51,6 +51,21 @@
 	<!--ATTRIBUTES-->
 
 	<attributelist>
+
+		<attribute name='crossfade' get='1' set='1' type='float64' size='1' >
+			<digest>Crossfade amount as percent of the total buffer</digest>
+			<description>Crossfade amount as percent of the total buffer. </description>
+		</attribute>
+
+		<attribute name='endloop' get='1' set='1' type='float64' size='1' >
+			<digest>Loop end in milliseconds</digest>
+			<description>Loop end in milliseconds. </description>
+		</attribute>
+
+		<attribute name='startloop' get='1' set='1' type='float64' size='1' >
+			<digest>Loop start in milliseconds</digest>
+			<description>Loop start in milliseconds. </description>
+		</attribute>
 
 	</attributelist>
 
