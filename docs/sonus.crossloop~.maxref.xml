@@ -45,6 +45,11 @@
 			<description>Choose a named buffer~ from which to read. </description>
 		</method>
 
+		<method name='float'>
+			<digest>Set the crossfade amount or loop start or end time, according to the inlet </digest>
+			<description>Set the crossfade amount or loop start or end time, according to the inlet </description>
+		</method>
+
 	</methodlist>
 
 
@@ -53,8 +58,8 @@
 	<attributelist>
 
 		<attribute name='crossfade' get='1' set='1' type='float64' size='1' >
-			<digest>Crossfade amount as percent of the total buffer</digest>
-			<description>Crossfade amount as percent of the total buffer. </description>
+			<digest>Crossfade amount</digest>
+			<description>Crossfade amount. </description>
 		</attribute>
 
 		<attribute name='endloop' get='1' set='1' type='float64' size='1' >

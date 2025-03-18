@@ -21,9 +21,9 @@ public:
     MIN_AUTHOR		{ "Valerio Orlandini" };
     MIN_RELATED		{ "index~, buffer~, groove~" };
 
-    inlet<>  in_pb	    { this, "(signal) Sample playback increment", "signal" };
-    inlet<>  in_ls	    { this, "(signal/float) Loop start", "signal" };
-    inlet<>  in_le	    { this, "(signal/float) Loop end", "signal" };
+    inlet<>  in_pb	    { this, "(signal) Sample playback increment, (number) Crossfade amount", "signal" };
+    inlet<>  in_ls	    { this, "(number) Loop start", "signal" };
+    inlet<>  in_le	    { this, "(number) Loop end", "signal" };
 
     buffer_reference m_buffer
     {
@@ -48,47 +48,60 @@ public:
         "The number of output channels."
     };
 
-    attribute<number, threadsafe::no> crossfade
+    attribute<number, threadsafe::no, limit::clamp> crossfade
     {
         this,
         "crossfade",
         0.0,
         range { 0.0, 100.0 },
-        title {"Crossfade"},
-        description {"Crossfade amount as percent of the total buffer."},
-        setter
-		{
-			MIN_FUNCTION
-			{
-				buffer_lock<> b(m_buffer);
-
-                if (b.valid())
-                {
-                    crossfade_samples_[0] = number(args[0]) * b.frame_count() * 0.01;
-                    crossfade_samples_[1] = b.frame_count() - crossfade_samples_[0];
-                }
-				return args;
-        	}
-		}
+        title {"Crossfade (%)"},
+        description {"Crossfade amount."}
     };
 
-    attribute<number, threadsafe::no> loop_start
+    attribute<number, threadsafe::no, limit::clamp> loop_start
     {
         this,
         "startloop",
         0.0,
-        title {"Loop start"},
+        range { 0.0, 10000000.0 },
+        title {"Loop start (ms)"},
         description {"Loop start in milliseconds."}
     };
 
-    attribute<number, threadsafe::no> loop_end
+    attribute<number, threadsafe::no, limit::clamp> loop_end
     {
         this,
         "endloop",
         0.0,
-        title {"Loop end"},
+        range { 0.0, 10000000.0 },
+        title {"Loop end (ms)"},
         description {"Loop end in milliseconds."}
     };
+
+	message<> m_number
+	{
+		this,
+		"number",
+		"Set the crossfade amount or loop start or end time, according to the inlet",
+        MIN_FUNCTION
+		{
+			switch (inlet)
+            {
+                case 0:
+                    crossfade = number(args[0]);
+                    break;
+                case 1:
+                    loop_start = number(args[0]);
+                    break;
+                case 2:
+                    loop_end = number(args[0]);
+                    break;
+            }
+
+            return {};
+		}
+    };
+
 
     crossloop_tilde(const atoms& args = {})
     {
@@ -152,8 +165,8 @@ public:
 
                     sample length = sample_end - sample_start;
 
-                    sample crossfade_start_last_sample = crossfade * 0.01 * length;
-                    sample crossfade_end_first_sample = crossfade_samples_[1];
+                    sample crossfade_samples = crossfade * 0.005 * length;
+                    sample crossfade_start_sample = sample_end - crossfade_samples;
 
                     if (ch < b.channel_count())
                     {
@@ -166,20 +179,56 @@ public:
 
                         if (playhead_[ch] >= sample_end)
                         {
-                            playhead_[ch] = sample_start + std::fmod(playhead_[ch], sample_end);
+                            playhead_[ch] = sample_start + std::fmod(playhead_[ch], sample_end) + crossfade_samples;
                         }
 
-                        sample ceil = std::ceil(playhead_[ch]);
-                        if (ceil >= sample_end)
+                        if (playhead_[ch] > crossfade_start_sample)
                         {
-                            ceil = 0.0;
-                        }
-                        sample bs = b.lookup(static_cast<unsigned int>(ceil), ch);
-                        sample floor;
-                        sample t = std::modf(playhead_[ch], &floor);
-                        sample as = b.lookup(static_cast<unsigned int>(floor), ch);
+                            sample fade_in_gain = (playhead_[ch] - crossfade_start_sample) / crossfade_samples;
+                            sample fade_out_gain = 1.0 - fade_in_gain;
+                            fade_in_gain = std::sqrt(fade_in_gain);
+                            fade_out_gain = std::sqrt(fade_out_gain);
 
-                        output.samples(ch)[i] = cosip(as, bs, t);
+                            sample ceil = std::ceil(playhead_[ch]);
+                            if (ceil >= sample_end)
+                            {
+                                ceil = 0.0;
+                            }
+                            sample bs = b.lookup(static_cast<unsigned int>(ceil), ch);
+                            sample floor;
+                            sample t = std::modf(playhead_[ch], &floor);
+                            sample as = b.lookup(static_cast<unsigned int>(floor), ch);
+                            sample out = cosip(as, bs, t) * fade_out_gain;
+
+                            sample corresponding_ph = sample_start + playhead_[ch] - crossfade_start_sample;
+
+                            ceil = std::ceil(corresponding_ph);
+                            if (ceil >= sample_end)
+                            {
+                                ceil = 0.0;
+                            }
+                            bs = b.lookup(static_cast<unsigned int>(ceil), ch);
+                            floor;
+                            t = std::modf(corresponding_ph, &floor);
+                            as = b.lookup(static_cast<unsigned int>(floor), ch);
+                            out += cosip(as, bs, t) * fade_in_gain;
+
+                            output.samples(ch)[i] = out;
+                        }
+                        else
+                        {
+                            sample ceil = std::ceil(playhead_[ch]);
+                            if (ceil >= sample_end)
+                            {
+                                ceil = 0.0;
+                            }
+                            sample bs = b.lookup(static_cast<unsigned int>(ceil), ch);
+                            sample floor;
+                            sample t = std::modf(playhead_[ch], &floor);
+                            sample as = b.lookup(static_cast<unsigned int>(floor), ch);
+
+                            output.samples(ch)[i] = cosip(as, bs, t);
+                        }
                     }
                 }
             }
@@ -190,7 +239,6 @@ private:
     int outputs_;
     std::vector<std::unique_ptr<outlet<>>> m_outlets;
     std::vector<sample> playhead_;
-    std::array<sample, 2> crossfade_samples_;
 };
 
 MIN_EXTERNAL(crossloop_tilde);
