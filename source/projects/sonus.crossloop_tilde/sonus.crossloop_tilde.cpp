@@ -135,6 +135,9 @@ public:
     void operator()(audio_bundle input, audio_bundle output)
     {
         buffer_lock<> b(m_buffer);
+        
+        sample loop_start_ = loop_start;
+        sample loop_end_ = loop_end;
 
         for (auto i = 0; i < input.frame_count(); ++i)
         {
@@ -147,13 +150,13 @@ public:
                 {
                     sample ph = input.samples(0)[i];
 
-                    sample sample_start = std::floor(loop_start * b.samplerate() * 0.001);
+                    sample sample_start = std::floor(loop_start_ * b.samplerate() * 0.001);
                     sample_start = std::clamp(sample_start, 0.0, static_cast<sample>(b.frame_count() - 1));
 
                     sample sample_end = static_cast<sample>(b.frame_count() - 1);
                     if (loop_end > 0.0)
                     {
-                        sample_end = std::floor(loop_end * b.samplerate() * 0.001);
+                        sample_end = std::floor(loop_end_ * b.samplerate() * 0.001);
                         sample_end = std::clamp(sample_end, 0.0, static_cast<sample>(b.frame_count() - 1));
                     }
 
@@ -165,24 +168,25 @@ public:
 
                     sample length = sample_end - sample_start;
 
-                    sample crossfade_samples = crossfade * 0.005 * length;
+                    sample crossfade_samples = std::max(1.0, crossfade * 0.005 * length);
                     sample crossfade_start_sample = sample_end - crossfade_samples;
 
                     if (ch < b.channel_count())
                     {
                         playhead_[ch] += ph;
 
-                        while (playhead_[ch] < sample_start)
+                        while (playhead_[ch] < sample_start && length > 0.0)
                         {
                             playhead_[ch] += length;
                         }
 
                         if (playhead_[ch] >= sample_end)
                         {
-                            playhead_[ch] = sample_start + std::fmod(playhead_[ch], sample_end) + crossfade_samples;
+                            playhead_[ch] = sample_start + std::fmod(playhead_[ch] - sample_start, length) + crossfade_samples;
+                            //playhead_[ch] = sample_start + std::fmod(playhead_[ch], sample_end) + crossfade_samples;
                         }
 
-                        if (playhead_[ch] > crossfade_start_sample)
+                        if (playhead_[ch] > crossfade_start_sample && crossfade > 0.0)
                         {
                             sample fade_in_gain = (playhead_[ch] - crossfade_start_sample) / crossfade_samples;
                             sample fade_out_gain = 1.0 - fade_in_gain;

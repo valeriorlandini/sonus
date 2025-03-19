@@ -28,7 +28,7 @@ Currently finished externals are:
 * `sonus.buffx` Apply effects to buffers
 * `sonus.bufsnap` Save snapshots of a buffer
 * `sonus.cheby~` Chebyshev waveshaper
-* `sonus.crossloop~` Loop player with crossfade
+* `sonus.crossloop~` Buffer loop player with crossfade
 * `sonus.cryptoverb~` Eerie stereo reverberator
 * `sonus.fselector~` Continuous selector/mixer
 * `sonus.quadpan~` Quadraphonic panner
