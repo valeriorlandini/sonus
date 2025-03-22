@@ -1,6 +1,6 @@
 /// @file       sonus.buffx.cpp
 ///	@ingroup 	sonus.*
-///	@copyright	Copyright 2023-2024 Valerio Orlandini. All rights reserved.
+///	@copyright	Copyright 2023-2025 Valerio Orlandini. All rights reserved.
 ///	@license	Use of this source code is governed by the MIT License found in the License.md file.
 
 #include "c74_min.h"
