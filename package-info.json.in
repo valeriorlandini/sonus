@@ -16,9 +16,9 @@
 	},
 	"package_extra" : {
 		"reverse_domain" : "com.valeriorlandini",
-		"copyright" : "Copyright (c) 2023-2024 Valerio Orlandini"
+		"copyright" : "Copyright (c) 2023-2025 Valerio Orlandini"
 	},
 	"tags" : [ "autonomous systems", "generative", "synthesis", "ai", "sample manipulation" ],
-	"version" : "0.4.1",
+	"version" : "0.5.0",
 	"website" : "https://valeriorlandini.github.io/sonus/"
 }
