@@ -18,10 +18,10 @@ public:
 	MIN_AUTHOR {"Valerio Orlandini"};
 	MIN_RELATED {"urn, random"};
 
-	inlet<>  in {this, "(bang) Next element"};
-	inlet<>  in_l {this, "(list) Elements to choose from"};
+	inlet<>  in {this, "(bang) Next item"};
+	inlet<>  in_l {this, "(list) Items to choose from"};
 	outlet<> out {this, "(symbol) Output"};
-	outlet<> out_end {this, "(bang) Bang when all elements have been chosen"};
+	outlet<> out_end {this, "(bang) Bang when all items have been chosen"};
 
 	lurn()
 	{
@@ -39,8 +39,11 @@ public:
 			{
 				elements_ = from_atoms<std::vector<std::string>>(args);
 				elements_left_ = from_atoms<std::vector<std::string>>(args);
-				elements_.erase(elements_.begin());
-				elements_left_.erase(elements_left_.begin());
+				if (elements_.size() > 0 && elements_.at(0) == "list")
+				{
+					elements_.erase(elements_.begin());
+					elements_left_.erase(elements_left_.begin());
+				}
 
 				if (elements_.size() > 0)
 				{
@@ -56,7 +59,7 @@ public:
 	{
 		this,
 		"clear",
-		"Clear the list of already chosen elements.",
+		"Clear the list of already chosen items.",
         MIN_FUNCTION
 		{
 			if (inlet == 0)
@@ -77,7 +80,7 @@ public:
 	{
 		this,
 		"bang",
-		"Output next value.",
+		"Output next item.",
 		MIN_FUNCTION
 		{
 			if (inlet == 0)

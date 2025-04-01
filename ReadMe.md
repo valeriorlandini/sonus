@@ -53,6 +53,7 @@ Currently finished externals are:
 * `sonus.ftomel` Frequency to mel converter
 * `sonus.hop` Hot inlets operations
 * `sonus.lline` Similar to line, but for list of numbers
+* `sonus.lrandom` Random items from a list
 * `sonus.lurn` Non repeating random sequences
 * `sonus.mathc` Mathematical constants
 * `sonus.mbox` Pop up dialogs generator
