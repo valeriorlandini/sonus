@@ -2,42 +2,16 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 6,
-			"revision" : 2,
+			"major" : 9,
+			"minor" : 0,
+			"revision" : 7,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1120.0, 227.0, 471.0, 767.0 ],
-		"bglocked" : 0,
-		"openinpresentation" : 0,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
-		"default_fontname" : "Arial",
-		"gridonopen" : 1,
+		"rect" : [ 288.0, 223.0, 903.0, 767.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
-		"toolbarvisible" : 1,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
-		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-2",
@@ -45,7 +19,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 23.0, 346.0, 233.0, 20.0 ],
-					"text" : "Genetic algorithm implementation (chars)"
+					"text" : "Genetic algorithm implementation (chars)",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -79,7 +54,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 23.0, 298.0, 233.0, 20.0 ],
-					"text" : "Deep neural network implementation"
+					"text" : "Deep neural network implementation",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -114,7 +90,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 23.0, 388.0, 245.0, 20.0 ],
-					"text" : "Genetic algorithm implementation (numbers)"
+					"text" : "Genetic algorithm implementation (numbers)",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -137,7 +114,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 279.0, 163.0, 233.0, 20.0 ],
-					"text" : "Lindenmayer generative system"
+					"text" : "Lindenmayer generative system",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -160,7 +138,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 23.0, 253.0, 233.0, 20.0 ],
-					"text" : "Cellular automata system"
+					"text" : "Cellular automata system",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -183,7 +162,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 279.0, 253.0, 233.0, 20.0 ],
-					"text" : "Classic perceptron implementation"
+					"text" : "Classic perceptron implementation",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -194,7 +174,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 279.0, 208.0, 233.0, 20.0 ],
-					"text" : "Artificial neuron implementation"
+					"text" : "Artificial neuron implementation",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -205,7 +186,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 23.0, 208.0, 233.0, 20.0 ],
-					"text" : "Activation functions (signal rate)"
+					"text" : "Activation functions (signal rate)",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -216,7 +198,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 23.0, 163.0, 233.0, 20.0 ],
-					"text" : "Activation functions"
+					"text" : "Activation functions",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -281,7 +264,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 23.0, 810.0, 62.0 ],
 					"text" : "A series of externals dedicated to different artificial intelligence and generative algorithms. Some are about old (but gold) autonomous systems like cellular automata, genetic algorithms and L-systems, other deal with artificial neurons and deep learning.",
-					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
+					"textcolor" : [ 0.956862745098039, 0.764705882352941, 0.450980392156863, 1.0 ]
 				}
 
 			}

@@ -2,42 +2,16 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 6,
-			"revision" : 2,
+			"major" : 9,
+			"minor" : 0,
+			"revision" : 7,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 77.0, 1165.0, 993.0 ],
-		"bglocked" : 0,
-		"openinpresentation" : 0,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
-		"default_fontname" : "Arial",
-		"gridonopen" : 1,
+		"rect" : [ 134.0, 85.0, 1165.0, 905.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
-		"toolbarvisible" : 1,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
-		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"autosave" : 1,
@@ -46,6 +20,7 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
+					"hidden" : 1,
 					"id" : "obj-21",
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
@@ -54,7 +29,7 @@
 					"numoutlets" : 4,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "signal", "signal", "", "" ],
-					"patching_rect" : [ 14.0, 173.0, 800.0, 196.0 ],
+					"patching_rect" : [ 14.0, 173.0, 770.0, 196.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_invisible" : 1,
@@ -69,7 +44,7 @@
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 1,
 						"patchername" : "Modallator.amxd",
-						"patchername_fallback" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect/Modallator.amxd"
+						"patchername_fallback" : "~/Documents/Max 9/Packages/sonus/patchers/Max Audio Effect/Modallator.amxd"
 					}
 ,
 					"snapshot" : 					{
@@ -83,10 +58,11 @@
 						"embed" : 1,
 						"snapshot" : 						{
 							"name" : "Modallator.amxd",
-							"origname" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect/Modallator.amxd",
+							"origname" : "~/Documents/Max 9/Packages/sonus/patchers/Max Audio Effect/Modallator.amxd",
 							"valuedictionary" : 							{
 								"parameter_values" : 								{
 									"Additive Freq Reduction" : 1.0,
+									"Additive Switch" : 1.0,
 									"Change Rate" : 50.0,
 									"Frequency Deviation" : 0.0,
 									"Frequency x 10" : 0.0,
@@ -96,25 +72,25 @@
 									"Harmonic 4" : 0.0,
 									"Jitter Level" : 0.0,
 									"LFO Frequency" : 20.921423334769401,
+									"LFO Synchronization" : 0.0,
 									"Offset" : 0.0,
-									"Phase Distortion" : 50.0,
-									"Pulsar Duty Cycle" : 50.0,
+									"Phase Distortion" : 0.0,
+									"Phase Distortion Switch" : 1.0,
+									"Pulsar Duty Cycle" : 100.0,
+									"Pulsar Switch" : 1.0,
 									"Pulsar Waveform" : 0.0,
 									"Pulsar Window" : 8.0,
+									"Random Shape Switch" : 1.0,
 									"Saw Amount" : 0.0,
 									"Sine Amount" : 100.0,
 									"Smooth Output" : 0.0,
 									"Square Amount" : 0.0,
 									"Steps" : 0.0,
 									"Triangle Amount" : 0.0,
-									"live.menu" : 0.0,
-									"live.toggle" : 1.0,
-									"live.toggle[1]" : 1.0,
-									"live.toggle[2]" : 1.0,
-									"live.toggle[3]" : 1.0,
-									"live.toggle[4]" : 1.0,
-									"live.toggle[5]" : 1.0,
+									"Virtual Analog Switch" : 1.0,
+									"Wavetable Switch" : 1.0,
 									"blob" : 									{
+										"Show Controls or Mapping" : [ 1 ],
 										"TargetMax[10]" : [ 100 ],
 										"TargetMax[11]" : [ 100 ],
 										"TargetMax[1]" : [ 100 ],
@@ -131,8 +107,7 @@
 										"TargetMin[7]" : [ 0 ],
 										"TargetMin[8]" : [ 0 ],
 										"TargetMin[9]" : [ 0 ],
-										"Wavetable" : [ 0.098017057804184, 0.195090159353512, 0.290284439192537, 0.382683125915406, 0.471396371160759, 0.555569819323419, 0.634392835452022, 0.707106312093558, 0.773009979900775, 0.831469151597416, 0.881920834353324, 0.92387915170401, 0.956940022798717, 0.980785053913331, 0.995184604750825, 0.99999999999912, 0.99518486484789, 0.980785571602587, 0.956940793094542, 0.923880167188047, 0.881922085245923, 0.831470625851818, 0.773011663319128, 0.70710818846365, 0.634394886703414, 0.555572025701473, 0.471398711416884, 0.382685577511694, 0.290286978518814, 0.195092761954721, 0.098019698615894, 0.000002653589793, -0.098014416991784, -0.19508755675093, -0.290281899864215, -0.382680674316425, -0.471394030901315, -0.555567612941453, -0.634390784196162, -0.707104435718486, -0.773008296476978, -0.831467677337159, -0.881919583454514, -0.923878136213468, -0.956939252496154, -0.980784536217169, -0.995184344646754, -0.999999999992078, -0.995185124937946, -0.980786089284936, -0.956941563383629, -0.923881182665579, -0.881923336132312, -0.831472100100365, -0.773013346732038, -0.707110064828764, -0.63439693795034, -0.555574232075615, -0.471401051669689, -0.382688029105286, -0.290289517843048, -0.195095364554555, -0.098022339426914, -0.000005307179587 ],
-										"live.tab" : [ 0.0 ]
+										"Wavetable" : [ 0.098017057804184, 0.195090159353512, 0.290284439192537, 0.382683125915406, 0.471396371160759, 0.555569819323419, 0.634392835452022, 0.707106312093558, 0.773009979900775, 0.831469151597416, 0.881920834353324, 0.92387915170401, 0.956940022798717, 0.980785053913331, 0.995184604750825, 0.99999999999912, 0.99518486484789, 0.980785571602587, 0.956940793094542, 0.923880167188047, 0.881922085245923, 0.831470625851818, 0.773011663319128, 0.70710818846365, 0.634394886703414, 0.555572025701473, 0.471398711416884, 0.382685577511694, 0.290286978518814, 0.195092761954721, 0.098019698615894, 0.000002653589793, -0.098014416991784, -0.19508755675093, -0.290281899864215, -0.382680674316425, -0.471394030901315, -0.555567612941453, -0.634390784196162, -0.707104435718486, -0.773008296476978, -0.831467677337159, -0.881919583454514, -0.923878136213468, -0.956939252496154, -0.980784536217169, -0.995184344646754, -0.999999999992078, -0.995185124937946, -0.980786089284936, -0.956941563383629, -0.923881182665579, -0.881923336132312, -0.831472100100365, -0.773013346732038, -0.707110064828764, -0.63439693795034, -0.555574232075615, -0.471401051669689, -0.382688029105286, -0.290289517843048, -0.195095364554555, -0.098022339426914, -0.000005307179587 ]
 									}
 
 								}
@@ -152,13 +127,14 @@
 									"origin" : "Modallator.amxd",
 									"type" : "amxd",
 									"subtype" : "Undefined",
-									"embed" : 0,
+									"embed" : 1,
 									"snapshot" : 									{
 										"name" : "Modallator.amxd",
-										"origname" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect/Modallator.amxd",
+										"origname" : "~/Documents/Max 9/Packages/sonus/patchers/Max Audio Effect/Modallator.amxd",
 										"valuedictionary" : 										{
 											"parameter_values" : 											{
 												"Additive Freq Reduction" : 1.0,
+												"Additive Switch" : 1.0,
 												"Change Rate" : 50.0,
 												"Frequency Deviation" : 0.0,
 												"Frequency x 10" : 0.0,
@@ -168,25 +144,25 @@
 												"Harmonic 4" : 0.0,
 												"Jitter Level" : 0.0,
 												"LFO Frequency" : 20.921423334769401,
+												"LFO Synchronization" : 0.0,
 												"Offset" : 0.0,
-												"Phase Distortion" : 50.0,
-												"Pulsar Duty Cycle" : 50.0,
+												"Phase Distortion" : 0.0,
+												"Phase Distortion Switch" : 1.0,
+												"Pulsar Duty Cycle" : 100.0,
+												"Pulsar Switch" : 1.0,
 												"Pulsar Waveform" : 0.0,
 												"Pulsar Window" : 8.0,
+												"Random Shape Switch" : 1.0,
 												"Saw Amount" : 0.0,
 												"Sine Amount" : 100.0,
 												"Smooth Output" : 0.0,
 												"Square Amount" : 0.0,
 												"Steps" : 0.0,
 												"Triangle Amount" : 0.0,
-												"live.menu" : 0.0,
-												"live.toggle" : 1.0,
-												"live.toggle[1]" : 1.0,
-												"live.toggle[2]" : 1.0,
-												"live.toggle[3]" : 1.0,
-												"live.toggle[4]" : 1.0,
-												"live.toggle[5]" : 1.0,
+												"Virtual Analog Switch" : 1.0,
+												"Wavetable Switch" : 1.0,
 												"blob" : 												{
+													"Show Controls or Mapping" : [ 1 ],
 													"TargetMax[10]" : [ 100 ],
 													"TargetMax[11]" : [ 100 ],
 													"TargetMax[1]" : [ 100 ],
@@ -203,8 +179,7 @@
 													"TargetMin[7]" : [ 0 ],
 													"TargetMin[8]" : [ 0 ],
 													"TargetMin[9]" : [ 0 ],
-													"Wavetable" : [ 0.098017057804184, 0.195090159353512, 0.290284439192537, 0.382683125915406, 0.471396371160759, 0.555569819323419, 0.634392835452022, 0.707106312093558, 0.773009979900775, 0.831469151597416, 0.881920834353324, 0.92387915170401, 0.956940022798717, 0.980785053913331, 0.995184604750825, 0.99999999999912, 0.99518486484789, 0.980785571602587, 0.956940793094542, 0.923880167188047, 0.881922085245923, 0.831470625851818, 0.773011663319128, 0.70710818846365, 0.634394886703414, 0.555572025701473, 0.471398711416884, 0.382685577511694, 0.290286978518814, 0.195092761954721, 0.098019698615894, 0.000002653589793, -0.098014416991784, -0.19508755675093, -0.290281899864215, -0.382680674316425, -0.471394030901315, -0.555567612941453, -0.634390784196162, -0.707104435718486, -0.773008296476978, -0.831467677337159, -0.881919583454514, -0.923878136213468, -0.956939252496154, -0.980784536217169, -0.995184344646754, -0.999999999992078, -0.995185124937946, -0.980786089284936, -0.956941563383629, -0.923881182665579, -0.881923336132312, -0.831472100100365, -0.773013346732038, -0.707110064828764, -0.63439693795034, -0.555574232075615, -0.471401051669689, -0.382688029105286, -0.290289517843048, -0.195095364554555, -0.098022339426914, -0.000005307179587 ],
-													"live.tab" : [ 0.0 ]
+													"Wavetable" : [ 0.098017057804184, 0.195090159353512, 0.290284439192537, 0.382683125915406, 0.471396371160759, 0.555569819323419, 0.634392835452022, 0.707106312093558, 0.773009979900775, 0.831469151597416, 0.881920834353324, 0.92387915170401, 0.956940022798717, 0.980785053913331, 0.995184604750825, 0.99999999999912, 0.99518486484789, 0.980785571602587, 0.956940793094542, 0.923880167188047, 0.881922085245923, 0.831470625851818, 0.773011663319128, 0.70710818846365, 0.634394886703414, 0.555572025701473, 0.471398711416884, 0.382685577511694, 0.290286978518814, 0.195092761954721, 0.098019698615894, 0.000002653589793, -0.098014416991784, -0.19508755675093, -0.290281899864215, -0.382680674316425, -0.471394030901315, -0.555567612941453, -0.634390784196162, -0.707104435718486, -0.773008296476978, -0.831467677337159, -0.881919583454514, -0.923878136213468, -0.956939252496154, -0.980784536217169, -0.995184344646754, -0.999999999992078, -0.995185124937946, -0.980786089284936, -0.956941563383629, -0.923881182665579, -0.881923336132312, -0.831472100100365, -0.773013346732038, -0.707110064828764, -0.63439693795034, -0.555574232075615, -0.471401051669689, -0.382688029105286, -0.290289517843048, -0.195095364554555, -0.098022339426914, -0.000005307179587 ]
 												}
 
 											}
@@ -217,9 +192,9 @@
 									"fileref" : 									{
 										"name" : "Modallator.amxd",
 										"filename" : "Modallator.amxd.maxsnap",
-										"filepath" : "~/Documents/Max 8/Snapshots",
+										"filepath" : "~/Documents/Max 9/Snapshots",
 										"filepos" : -1,
-										"snapshotfileid" : "5ec39eb8618157107fa56c1685344262"
+										"snapshotfileid" : "063cb6511cc48816b006777312bdd1f0"
 									}
 
 								}
@@ -237,12 +212,14 @@
 , 			{
 				"box" : 				{
 					"fontface" : 1,
+					"hidden" : 1,
 					"id" : "obj-19",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 18.0, 383.0, 335.0, 20.0 ],
 					"text" : "The ultimate LFO builder",
+					"textcolor" : [ 0.92156862745098, 0.917647058823529, 0.933333333333333, 1.0 ],
 					"varname" : "modallator_head"
 				}
 
@@ -279,7 +256,7 @@
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 1,
 						"patchername" : "StrangeLFO.amxd",
-						"patchername_fallback" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect/StrangeLFO.amxd"
+						"patchername_fallback" : "~/Documents/Max 9/Packages/sonus/patchers/Max Audio Effect/StrangeLFO.amxd"
 					}
 ,
 					"snapshot" : 					{
@@ -293,7 +270,7 @@
 						"embed" : 1,
 						"snapshot" : 						{
 							"name" : "StrangeLFO.amxd",
-							"origname" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect/StrangeLFO.amxd",
+							"origname" : "~/Documents/Max 9/Packages/sonus/patchers/Max Audio Effect/StrangeLFO.amxd",
 							"valuedictionary" : 							{
 								"parameter_values" : 								{
 									"Audio Gain" : -27.141707487584114,
@@ -350,7 +327,7 @@
 									"embed" : 1,
 									"snapshot" : 									{
 										"name" : "StrangeLFO.amxd",
-										"origname" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect/StrangeLFO.amxd",
+										"origname" : "~/Documents/Max 9/Packages/sonus/patchers/Max Audio Effect/StrangeLFO.amxd",
 										"valuedictionary" : 										{
 											"parameter_values" : 											{
 												"Audio Gain" : -27.141707487584114,
@@ -399,7 +376,7 @@
 										"filename" : "StrangeLFO.amxd.maxsnap",
 										"filepath" : "~/Documents/Max 8/Snapshots",
 										"filepos" : -1,
-										"snapshotfileid" : "77f58decdbb1aec5818d3afaf5c96574"
+										"snapshotfileid" : "406deb86618199013ca9435b7207eaf7"
 									}
 
 								}
@@ -424,6 +401,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 18.0, 383.0, 337.0, 20.0 ],
 					"text" : "A complex LFO based on two strange attractors",
+					"textcolor" : [ 0.92156862745098, 0.917647058823529, 0.933333333333333, 1.0 ],
 					"varname" : "strangelfo_head"
 				}
 
@@ -470,7 +448,7 @@
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 1,
 						"patchername" : "Pulsynthe.amxd",
-						"patchername_fallback" : "~/Documents/Max 8/Packages/sonus/patchers/Max Instrument/Pulsynthe.amxd"
+						"patchername_fallback" : "~/Documents/Max 9/Packages/sonus/patchers/Max Instrument/Pulsynthe.amxd"
 					}
 ,
 					"snapshot" : 					{
@@ -484,7 +462,7 @@
 						"embed" : 1,
 						"snapshot" : 						{
 							"name" : "Pulsynthe.amxd",
-							"origname" : "~/Documents/Max 8/Packages/sonus/patchers/Max Instrument/Pulsynthe.amxd",
+							"origname" : "~/Documents/Max 9/Packages/sonus/patchers/Max Instrument/Pulsynthe.amxd",
 							"valuedictionary" : 							{
 								"parameter_values" : 								{
 									"Filter Cutoff" : 20000.0,
@@ -529,10 +507,10 @@
 									"origin" : "Pulsynthe.amxd",
 									"type" : "amxd",
 									"subtype" : "Undefined",
-									"embed" : 0,
+									"embed" : 1,
 									"snapshot" : 									{
 										"name" : "Pulsynthe.amxd",
-										"origname" : "~/Documents/Max 8/Packages/sonus/patchers/Max Instrument/Pulsynthe.amxd",
+										"origname" : "~/Documents/Max 9/Packages/sonus/patchers/Max Instrument/Pulsynthe.amxd",
 										"valuedictionary" : 										{
 											"parameter_values" : 											{
 												"Filter Cutoff" : 20000.0,
@@ -570,9 +548,9 @@
 									"fileref" : 									{
 										"name" : "Pulsynthe.amxd",
 										"filename" : "Pulsynthe.amxd.maxsnap",
-										"filepath" : "~/Documents/Max 8/Snapshots",
+										"filepath" : "~/Documents/Max 9/Snapshots",
 										"filepos" : -1,
-										"snapshotfileid" : "018b3ac10c6f44c26db5dcdc8d6004bb"
+										"snapshotfileid" : "da9259ffe37113de1c73835401161428"
 									}
 
 								}
@@ -619,7 +597,7 @@
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 1,
 						"patchername" : "Cryptoverb.amxd",
-						"patchername_fallback" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect/Cryptoverb.amxd"
+						"patchername_fallback" : "~/Documents/Max 9/Packages/sonus/patchers/Max Audio Effect/Cryptoverb.amxd"
 					}
 ,
 					"snapshot" : 					{
@@ -633,7 +611,7 @@
 						"embed" : 1,
 						"snapshot" : 						{
 							"name" : "Cryptoverb.amxd",
-							"origname" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect/Cryptoverb.amxd",
+							"origname" : "~/Documents/Max 9/Packages/sonus/patchers/Max Audio Effect/Cryptoverb.amxd",
 							"valuedictionary" : 							{
 								"parameter_values" : 								{
 									"Effect Gain" : -15.304526898964873,
@@ -661,10 +639,10 @@
 									"origin" : "Cryptoverb.amxd",
 									"type" : "amxd",
 									"subtype" : "Undefined",
-									"embed" : 0,
+									"embed" : 1,
 									"snapshot" : 									{
 										"name" : "Cryptoverb.amxd",
-										"origname" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect/Cryptoverb.amxd",
+										"origname" : "~/Documents/Max 9/Packages/sonus/patchers/Max Audio Effect/Cryptoverb.amxd",
 										"valuedictionary" : 										{
 											"parameter_values" : 											{
 												"Effect Gain" : -15.304526898964873,
@@ -685,9 +663,9 @@
 									"fileref" : 									{
 										"name" : "Cryptoverb.amxd",
 										"filename" : "Cryptoverb.amxd.maxsnap",
-										"filepath" : "~/Documents/Max 8/Snapshots",
+										"filepath" : "~/Documents/Max 9/Snapshots",
 										"filepos" : -1,
-										"snapshotfileid" : "28a3bb056c6463db21c5b8caf7f2cae5"
+										"snapshotfileid" : "83604d06307d477cc6cc3fbca7375b9e"
 									}
 
 								}
@@ -712,6 +690,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 18.0, 383.0, 336.0, 20.0 ],
 					"text" : "A dense and eerie reverberation",
+					"textcolor" : [ 0.92156862745098, 0.917647058823529, 0.933333333333333, 1.0 ],
 					"varname" : "cryptoverb_head"
 				}
 
@@ -724,7 +703,6 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"hidden" : 1,
 					"id" : "obj-9",
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
@@ -748,7 +726,7 @@
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 1,
 						"patchername" : "Bitman.amxd",
-						"patchername_fallback" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect/Bitman.amxd"
+						"patchername_fallback" : "~/Documents/Max 9/Packages/sonus/patchers/Max Audio Effect/Bitman.amxd"
 					}
 ,
 					"snapshot" : 					{
@@ -762,17 +740,17 @@
 						"embed" : 1,
 						"snapshot" : 						{
 							"name" : "Bitman.amxd",
-							"origname" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect/Bitman.amxd",
+							"origname" : "~/Documents/Max 9/Packages/sonus/patchers/Max Audio Effect/Bitman.amxd",
 							"valuedictionary" : 							{
 								"parameter_values" : 								{
-									"Bit 1 State" : 0.0,
-									"Bit 2 State" : 2.0,
-									"Bit 3 State" : 2.0,
-									"Bit 4 State" : 2.0,
-									"Bit 5 State" : 1.0,
+									"Bit 1 State" : 3.0,
+									"Bit 2 State" : 3.0,
+									"Bit 3 State" : 3.0,
+									"Bit 4 State" : 3.0,
+									"Bit 5 State" : 3.0,
 									"Bit 6 State" : 3.0,
 									"Bit 7 State" : 3.0,
-									"Bit 8 State" : 2.0,
+									"Bit 8 State" : 3.0,
 									"DC Filter" : 1.0,
 									"Gain" : -3.514718625761429,
 									"Gate Threshold" : -30.0,
@@ -797,20 +775,20 @@
 									"origin" : "Bitman.amxd",
 									"type" : "amxd",
 									"subtype" : "Undefined",
-									"embed" : 0,
+									"embed" : 1,
 									"snapshot" : 									{
 										"name" : "Bitman.amxd",
-										"origname" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect/Bitman.amxd",
+										"origname" : "~/Documents/Max 9/Packages/sonus/patchers/Max Audio Effect/Bitman.amxd",
 										"valuedictionary" : 										{
 											"parameter_values" : 											{
-												"Bit 1 State" : 0.0,
-												"Bit 2 State" : 2.0,
-												"Bit 3 State" : 2.0,
-												"Bit 4 State" : 2.0,
-												"Bit 5 State" : 1.0,
+												"Bit 1 State" : 3.0,
+												"Bit 2 State" : 3.0,
+												"Bit 3 State" : 3.0,
+												"Bit 4 State" : 3.0,
+												"Bit 5 State" : 3.0,
 												"Bit 6 State" : 3.0,
 												"Bit 7 State" : 3.0,
-												"Bit 8 State" : 2.0,
+												"Bit 8 State" : 3.0,
 												"DC Filter" : 1.0,
 												"Gain" : -3.514718625761429,
 												"Gate Threshold" : -30.0,
@@ -828,9 +806,9 @@
 									"fileref" : 									{
 										"name" : "Bitman.amxd",
 										"filename" : "Bitman.amxd.maxsnap",
-										"filepath" : "~/Documents/Max 8/Snapshots",
+										"filepath" : "~/Documents/Max 9/Snapshots",
 										"filepos" : -1,
-										"snapshotfileid" : "4c6b68eaff92f058ea1048f14e781371"
+										"snapshotfileid" : "0728e0e14b5a21cc7147926cc28faad1"
 									}
 
 								}
@@ -848,13 +826,13 @@
 , 			{
 				"box" : 				{
 					"fontface" : 1,
-					"hidden" : 1,
 					"id" : "obj-8",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 18.0, 383.0, 344.0, 20.0 ],
 					"text" : "A bitcrusher with the ability to manipulate the single bits",
+					"textcolor" : [ 0.92156862745098, 0.917647058823529, 0.933333333333333, 1.0 ],
 					"varname" : "bitman_head"
 				}
 
@@ -882,6 +860,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 18.0, 383.0, 340.0, 20.0 ],
 					"text" : "A pulsar synthesis based subtractive synthesizer",
+					"textcolor" : [ 0.92156862745098, 0.917647058823529, 0.933333333333333, 1.0 ],
 					"varname" : "pulsynthe_head"
 				}
 
@@ -896,6 +875,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 17.5, 383.0, 337.0, 20.0 ],
 					"text" : "A bytebeat generator and LFO, with a bonus reverb",
+					"textcolor" : [ 0.92156862745098, 0.917647058823529, 0.933333333333333, 1.0 ],
 					"varname" : "byter_head"
 				}
 
@@ -925,42 +905,16 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 6,
-							"revision" : 2,
+							"major" : 9,
+							"minor" : 0,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
 						"rect" : [ 151.0, 332.0, 1752.0, 671.0 ],
-						"bglocked" : 0,
-						"openinpresentation" : 0,
-						"default_fontsize" : 12.0,
-						"default_fontface" : 0,
-						"default_fontname" : "Arial",
-						"gridonopen" : 1,
 						"gridsize" : [ 15.0, 15.0 ],
-						"gridsnaponopen" : 1,
-						"objectsnaponopen" : 1,
-						"statusbarvisible" : 2,
-						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
-						"boxanimatetime" : 200,
-						"enablehscroll" : 1,
-						"enablevscroll" : 1,
-						"devicewidth" : 0.0,
-						"description" : "",
-						"digest" : "",
-						"tags" : "",
-						"style" : "",
-						"subpatcher_template" : "",
-						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-17",
@@ -969,7 +923,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 1207.0, 232.0, 231.0, 22.0 ],
-									"presentation_linecount" : 2,
 									"text" : "script sendbox strangelfo_head hidden $1"
 								}
 
@@ -982,7 +935,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 967.0, 232.0, 230.0, 22.0 ],
-									"presentation_linecount" : 2,
 									"text" : "script sendbox pulsynthe_head hidden $1"
 								}
 
@@ -995,7 +947,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 726.0, 232.0, 235.0, 22.0 ],
-									"presentation_linecount" : 2,
 									"text" : "script sendbox modallator_head hidden $1"
 								}
 
@@ -1008,7 +959,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 45.0, 232.0, 215.0, 22.0 ],
-									"presentation_linecount" : 2,
 									"text" : "script sendbox bitman_head hidden $1"
 								}
 
@@ -1021,7 +971,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 492.0, 232.0, 235.0, 22.0 ],
-									"presentation_linecount" : 2,
 									"text" : "script sendbox cryptoverb_head hidden $1"
 								}
 
@@ -1034,7 +983,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 290.0, 232.0, 205.0, 22.0 ],
-									"presentation_linecount" : 2,
 									"text" : "script sendbox byter_head hidden $1"
 								}
 
@@ -1603,13 +1551,6 @@
 					}
 ,
 					"patching_rect" : [ 542.0, 541.0, 63.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"description" : "",
-						"digest" : "",
-						"globalpatchername" : "",
-						"tags" : ""
-					}
-,
 					"text" : "p switcher"
 				}
 
@@ -1669,7 +1610,7 @@
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 1,
 						"patchername" : "Byter.amxd",
-						"patchername_fallback" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect/Byter.amxd"
+						"patchername_fallback" : "~/Documents/Max 9/Packages/sonus/patchers/Max Audio Effect/Byter.amxd"
 					}
 ,
 					"snapshot" : 					{
@@ -1683,7 +1624,7 @@
 						"embed" : 1,
 						"snapshot" : 						{
 							"name" : "Byter.amxd",
-							"origname" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect/Byter.amxd",
+							"origname" : "~/Documents/Max 9/Packages/sonus/patchers/Max Audio Effect/Byter.amxd",
 							"valuedictionary" : 							{
 								"parameter_values" : 								{
 									"Bytebeat 1 SR Reduction" : 4.0,
@@ -1694,10 +1635,10 @@
 									"Infrasonic" : 0.0,
 									"Pass Audio In" : 1.0,
 									"blob" : 									{
-										"Bytebeat 1 Formula" : [ "(t&t%255)-(t>>13&(t%(t>>8|t>>16)))" ],
-										"Bytebeat 2 Formula" : [ "t*(t>>10&((t>>16)+1))" ],
-										"Preset" : [ 5 ],
-										"Show Generator" : [ 1 ],
+										"Bytebeat 1 Formula" : [ "" ],
+										"Bytebeat 2 Formula" : [ "" ],
+										"Preset" : [ 0 ],
+										"Show Generator" : [ 0 ],
 										"TargetMax[1]" : [ 100 ],
 										"TargetMax[5]" : [ 100 ],
 										"TargetMax[6]" : [ 100 ],
@@ -1723,10 +1664,10 @@
 									"origin" : "Byter.amxd",
 									"type" : "amxd",
 									"subtype" : "Undefined",
-									"embed" : 0,
+									"embed" : 1,
 									"snapshot" : 									{
 										"name" : "Byter.amxd",
-										"origname" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect/Byter.amxd",
+										"origname" : "~/Documents/Max 9/Packages/sonus/patchers/Max Audio Effect/Byter.amxd",
 										"valuedictionary" : 										{
 											"parameter_values" : 											{
 												"Bytebeat 1 SR Reduction" : 4.0,
@@ -1737,10 +1678,10 @@
 												"Infrasonic" : 0.0,
 												"Pass Audio In" : 1.0,
 												"blob" : 												{
-													"Bytebeat 1 Formula" : [ "(t&t%255)-(t>>13&(t%(t>>8|t>>16)))" ],
-													"Bytebeat 2 Formula" : [ "t*(t>>10&((t>>16)+1))" ],
-													"Preset" : [ 5 ],
-													"Show Generator" : [ 1 ],
+													"Bytebeat 1 Formula" : [ "" ],
+													"Bytebeat 2 Formula" : [ "" ],
+													"Preset" : [ 0 ],
+													"Show Generator" : [ 0 ],
 													"TargetMax[1]" : [ 100 ],
 													"TargetMax[5]" : [ 100 ],
 													"TargetMax[6]" : [ 100 ],
@@ -1759,9 +1700,9 @@
 									"fileref" : 									{
 										"name" : "Byter.amxd",
 										"filename" : "Byter.amxd.maxsnap",
-										"filepath" : "~/Documents/Max 8/Snapshots",
+										"filepath" : "~/Documents/Max 9/Snapshots",
 										"filepos" : -1,
-										"snapshotfileid" : "a7de2654e53afd2cd4a0deab38173f05"
+										"snapshotfileid" : "45bec2cc67e7e39f4a74a45e8ba8017d"
 									}
 
 								}
@@ -1782,15 +1723,15 @@
 					"fontface" : 0,
 					"fontname" : "Arial",
 					"fontsize" : 16.0,
+					"hidden" : 1,
 					"id" : "obj-20",
 					"linecount" : 4,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 18.5, 409.0, 805.0, 80.0 ],
-					"presentation_linecount" : 4,
+					"patching_rect" : [ 18.5, 409.0, 810.0, 80.0 ],
 					"text" : "Modallator is a LFO builder based on six custom oscillators of the sonus package: random shape oscillator, harmonic additive oscillator, phase distortion oscillator, virtual analog oscillator, pulsar oscillator and custom wavetable oscillator. By combining their shapes, and further modifying the result with the global controls, you can carefully sculpt the modulator signal you have in mind.",
-					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ],
+					"textcolor" : [ 0.956862745098039, 0.764705882352941, 0.450980392156863, 1.0 ],
 					"varname" : "modallator_text"
 				}
 
@@ -1809,7 +1750,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 18.5, 409.0, 805.0, 80.0 ],
 					"text" : "StrangeLFO is a modulator based on the two strange attractors externals you can find in sonus package: the Lorenz attractor and the Roessler attractor. These two attractors output three signals each, that can be mixed and then the two mixed outputs can be blended in different ways. The resulting signal is always evolving and never exactly repeat itself. A dedicated section allows to use this device as a weird sound generator, too.",
-					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ],
+					"textcolor" : [ 0.956862745098039, 0.764705882352941, 0.450980392156863, 1.0 ],
 					"varname" : "strangelfo_text"
 				}
 
@@ -1828,7 +1769,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 17.5, 409.0, 806.0, 62.0 ],
 					"text" : "Cryptoverb implements in Max for Live format the homonymous external of sonus collection. It is a reverberation effect with four different stages, with each stage using a different algorithm to create a dense atmosphere. The mode knob changes the way the four stages are arranged.",
-					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ],
+					"textcolor" : [ 0.956862745098039, 0.764705882352941, 0.450980392156863, 1.0 ],
 					"varname" : "cryptoverb_text"
 				}
 
@@ -1846,7 +1787,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 23.0, 810.0, 62.0 ],
 					"text" : "Max for Live devices that use some of the sonus externals to bring you effects, instruments and modulators that are ready to use in Ableton Live (although most of their functionalitiies are available also inside a Max/MSP only environment).",
-					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
+					"textcolor" : [ 0.956862745098039, 0.764705882352941, 0.450980392156863, 1.0 ]
 				}
 
 			}
@@ -1856,7 +1797,6 @@
 					"fontface" : 0,
 					"fontname" : "Arial",
 					"fontsize" : 16.0,
-					"hidden" : 1,
 					"id" : "obj-10",
 					"linecount" : 3,
 					"maxclass" : "comment",
@@ -1864,7 +1804,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 17.5, 409.0, 805.0, 62.0 ],
 					"text" : "Bitman is an effect that allows to manipulate the single 8 bits of the incoming bitreduced signal. Each bit can be kept as it is, inverted (toggle), set to 1 (set) or set to 0 (clear). Additional controls allow for lowpass filtering, removing the DC offset (suggested to be kept always on) and randomizing the bits statuses",
-					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ],
+					"textcolor" : [ 0.956862745098039, 0.764705882352941, 0.450980392156863, 1.0 ],
 					"varname" : "bitman_text"
 				}
 
@@ -1883,7 +1823,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 17.5, 409.0, 805.0, 62.0 ],
 					"text" : "Pulsynthe is a simple but complete subtractive synthesizer based on pulsar synthesis. The two oscillators can have their pulsar synthesis parameters separately adjusted. Three envelopes and four synthesis modes (mix, ring modulation, bitwise or, bitwise and) allow for a wide range of sounds and modulations.",
-					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ],
+					"textcolor" : [ 0.956862745098039, 0.764705882352941, 0.450980392156863, 1.0 ],
 					"varname" : "pulsynthe_text"
 				}
 
@@ -1902,7 +1842,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 17.5, 409.0, 805.0, 80.0 ],
 					"text" : "Byter is a bytebeat generator, with the possibility to use the generated signal as modulator. This is made more effective by the Infrasonic switch, that slows down the generation speed so that the produced signal gradually changes. Moreover, a Dronize knob allows to add a thick reverberation, turning this device in an ever evolving drone and soundscape generator.",
-					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ],
+					"textcolor" : [ 0.956862745098039, 0.764705882352941, 0.450980392156863, 1.0 ],
 					"varname" : "byter_text"
 				}
 
@@ -1954,77 +1894,77 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "Bitman.amxd",
-				"bootpath" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect",
+				"bootpath" : "~/Documents/Max 9/Packages/sonus/patchers/Max Audio Effect",
 				"patcherrelativepath" : "../patchers/Max Audio Effect",
 				"type" : "amxd",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Bitman.amxd.maxsnap",
-				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"bootpath" : "~/Documents/Max 9/Snapshots",
 				"patcherrelativepath" : "../../../Snapshots",
 				"type" : "mx@s",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Byter.amxd",
-				"bootpath" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect",
+				"bootpath" : "~/Documents/Max 9/Packages/sonus/patchers/Max Audio Effect",
 				"patcherrelativepath" : "../patchers/Max Audio Effect",
 				"type" : "amxd",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Byter.amxd.maxsnap",
-				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"bootpath" : "~/Documents/Max 9/Snapshots",
 				"patcherrelativepath" : "../../../Snapshots",
 				"type" : "mx@s",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Cryptoverb.amxd",
-				"bootpath" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect",
+				"bootpath" : "~/Documents/Max 9/Packages/sonus/patchers/Max Audio Effect",
 				"patcherrelativepath" : "../patchers/Max Audio Effect",
 				"type" : "amxd",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Cryptoverb.amxd.maxsnap",
-				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"bootpath" : "~/Documents/Max 9/Snapshots",
 				"patcherrelativepath" : "../../../Snapshots",
 				"type" : "mx@s",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Modallator.amxd",
-				"bootpath" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect",
+				"bootpath" : "~/Documents/Max 9/Packages/sonus/patchers/Max Audio Effect",
 				"patcherrelativepath" : "../patchers/Max Audio Effect",
 				"type" : "amxd",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Modallator.amxd.maxsnap",
-				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"bootpath" : "~/Documents/Max 9/Snapshots",
 				"patcherrelativepath" : "../../../Snapshots",
 				"type" : "mx@s",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Pulsynthe.amxd",
-				"bootpath" : "~/Documents/Max 8/Packages/sonus/patchers/Max Instrument",
+				"bootpath" : "~/Documents/Max 9/Packages/sonus/patchers/Max Instrument",
 				"patcherrelativepath" : "../patchers/Max Instrument",
 				"type" : "amxd",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Pulsynthe.amxd.maxsnap",
-				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"bootpath" : "~/Documents/Max 9/Snapshots",
 				"patcherrelativepath" : "../../../Snapshots",
 				"type" : "mx@s",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "StrangeLFO.amxd",
-				"bootpath" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect",
+				"bootpath" : "~/Documents/Max 9/Packages/sonus/patchers/Max Audio Effect",
 				"patcherrelativepath" : "../patchers/Max Audio Effect",
 				"type" : "amxd",
 				"implicit" : 1

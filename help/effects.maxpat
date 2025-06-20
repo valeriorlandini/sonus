@@ -2,42 +2,16 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 6,
-			"revision" : 4,
+			"major" : 9,
+			"minor" : 0,
+			"revision" : 7,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 979.0, 226.0, 851.0, 779.0 ],
-		"bglocked" : 0,
-		"openinpresentation" : 0,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
-		"default_fontname" : "Arial",
-		"gridonopen" : 1,
+		"rect" : [ 786.0, 148.0, 451.0, 779.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
-		"toolbarvisible" : 1,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
-		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-1",
@@ -45,7 +19,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 279.0, 163.0, 233.0, 20.0 ],
-					"text" : "Buffer looper with crossfade"
+					"text" : "Buffer looper with crossfade",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -91,7 +66,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 23.0, 343.0, 233.0, 20.0 ],
-					"text" : "Save snapshots of a buffer"
+					"text" : "Save snapshots of a buffer",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -114,7 +90,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 23.0, 253.0, 233.0, 20.0 ],
-					"text" : "Parallel biquad filters"
+					"text" : "Parallel biquad filters",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -137,7 +114,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 279.0, 208.0, 233.0, 20.0 ],
-					"text" : "Eerie stereo reverberator"
+					"text" : "Eerie stereo reverberator",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -160,7 +138,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 279.0, 343.0, 233.0, 20.0 ],
-					"text" : "Simple signal mixer"
+					"text" : "Simple signal mixer",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -183,7 +162,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 23.0, 298.0, 233.0, 20.0 ],
-					"text" : "Apply effects to buffers"
+					"text" : "Apply effects to buffers",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -206,7 +186,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 23.0, 388.0, 233.0, 20.0 ],
-					"text" : "Chebyshev waveshaper"
+					"text" : "Chebyshev waveshaper",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -229,7 +210,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 23.0, 208.0, 233.0, 20.0 ],
-					"text" : "Bit manipulator"
+					"text" : "Bit manipulator",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -252,7 +234,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 23.0, 163.0, 233.0, 20.0 ],
-					"text" : "Bitcrusher and bit inverter"
+					"text" : "Bitcrusher and bit inverter",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -275,7 +258,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 279.0, 298.0, 233.0, 20.0 ],
-					"text" : "Quadraphonic panner"
+					"text" : "Quadraphonic panner",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -286,7 +270,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 279.0, 253.0, 233.0, 20.0 ],
-					"text" : "Continuous selector/mixer"
+					"text" : "Continuous selector/mixer",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -297,7 +282,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 279.0, 388.0, 233.0, 20.0 ],
-					"text" : "Wavesets based sample manipulation"
+					"text" : "Wavesets based sample manipulation",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -350,7 +336,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 23.0, 807.0, 80.0 ],
 					"text" : "A series of externals that add effects to the incoming signal or to a buffer, depending on the object. Some effects are rather common (like the biquad filters of sonus.biquad~) but packed in a handy and easy to use object, other are more exotic like bitwise manipulation or eerie reverberation. Moreover, sonus.buffx and sonus.waveset allow to modify buffers in particular ways, so they are also suited for non-realtime sound design.",
-					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
+					"textcolor" : [ 0.956862745098039, 0.764705882352941, 0.450980392156863, 1.0 ]
 				}
 
 			}

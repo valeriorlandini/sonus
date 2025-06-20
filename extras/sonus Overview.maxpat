@@ -2,43 +2,17 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 6,
-			"revision" : 2,
+			"major" : 9,
+			"minor" : 0,
+			"revision" : 7,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 239.0, 226.0, 840.0, 682.0 ],
-		"bglocked" : 0,
-		"openinpresentation" : 0,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
-		"default_fontname" : "Arial",
-		"gridonopen" : 1,
+		"rect" : [ 239.0, 226.0, 846.0, 699.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
-		"toolbarvisible" : 1,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
 		"showontab" : 0,
-		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"hidden" : 1,
@@ -147,42 +121,16 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 6,
-							"revision" : 2,
+							"major" : 9,
+							"minor" : 0,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
 						"rect" : [ 34.0, 77.0, 1980.0, 993.0 ],
-						"bglocked" : 0,
-						"openinpresentation" : 0,
-						"default_fontsize" : 12.0,
-						"default_fontface" : 0,
-						"default_fontname" : "Arial",
-						"gridonopen" : 1,
 						"gridsize" : [ 15.0, 15.0 ],
-						"gridsnaponopen" : 1,
-						"objectsnaponopen" : 1,
-						"statusbarvisible" : 2,
-						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
-						"boxanimatetime" : 200,
-						"enablehscroll" : 1,
-						"enablevscroll" : 1,
-						"devicewidth" : 0.0,
-						"description" : "",
-						"digest" : "",
-						"tags" : "",
-						"style" : "",
-						"subpatcher_template" : "",
-						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-7",
@@ -443,13 +391,6 @@
 					}
 ,
 					"patching_rect" : [ 16.0, 777.0, 63.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"description" : "",
-						"digest" : "",
-						"globalpatchername" : "",
-						"tags" : ""
-					}
-,
 					"text" : "p switcher"
 				}
 
@@ -592,42 +533,16 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 6,
-							"revision" : 2,
+							"major" : 9,
+							"minor" : 0,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
 						"rect" : [ 1146.0, 565.0, 290.0, 244.0 ],
-						"bglocked" : 0,
-						"openinpresentation" : 0,
-						"default_fontsize" : 12.0,
-						"default_fontface" : 0,
-						"default_fontname" : "Arial",
-						"gridonopen" : 1,
 						"gridsize" : [ 15.0, 15.0 ],
-						"gridsnaponopen" : 1,
-						"objectsnaponopen" : 1,
-						"statusbarvisible" : 2,
-						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
-						"boxanimatetime" : 200,
-						"enablehscroll" : 1,
-						"enablevscroll" : 1,
-						"devicewidth" : 0.0,
-						"description" : "",
-						"digest" : "",
-						"tags" : "",
-						"style" : "",
-						"subpatcher_template" : "",
-						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-14",
@@ -703,13 +618,6 @@
 					}
 ,
 					"patching_rect" : [ 355.0, 825.0, 91.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"description" : "",
-						"digest" : "",
-						"globalpatchername" : "",
-						"tags" : ""
-					}
-,
 					"text" : "p load-helpfiles"
 				}
 
@@ -726,22 +634,6 @@
 			}
 , 			{
 				"box" : 				{
-					"background" : 1,
-					"fontface" : 0,
-					"fontname" : "Arial",
-					"fontsize" : 20.0,
-					"id" : "obj-3",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 55.0, 805.0, 29.0 ],
-					"text" : "a collection of open source objects for creative patching"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"background" : 1,
 					"fontface" : 1,
 					"fontname" : "Arial",
 					"fontsize" : 36.0,
@@ -767,6 +659,39 @@
 					"patching_rect" : [ 16.0, 639.0, 805.0, 20.0 ],
 					"text" : "handmade in italy by valerio orlandini",
 					"textjustification" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"background" : 1,
+					"fontface" : 0,
+					"fontname" : "Arial",
+					"fontsize" : 20.0,
+					"id" : "obj-3",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 16.0, 55.0, 805.0, 29.0 ],
+					"text" : "a collection of open source objects for creative patching",
+					"textcolor" : [ 0.576470588235294, 0.745098039215686, 1.0, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"angle" : 270.0,
+					"background" : 1,
+					"bgcolor" : [ 0.235, 0.235, 0.235, 1.0 ],
+					"bordercolor" : [ 0.619607843137255, 0.745098039215686, 0.952941176470588, 0.0 ],
+					"id" : "obj-2",
+					"maxclass" : "panel",
+					"mode" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 0.0, 0.0, 846.0, 688.0 ],
+					"proportion" : 0.5,
+					"rounded" : 0
 				}
 
 			}
@@ -841,6 +766,7 @@
 			"obj-107::obj-13" : [ "amxd~[3]", "amxd~[3]", 0 ],
 			"obj-107::obj-17" : [ "amxd~[4]", "amxd~[4]", 0 ],
 			"obj-107::obj-2" : [ "amxd~[1]", "amxd~[4]", 0 ],
+			"obj-107::obj-21" : [ "amxd~[5]", "amxd~[5]", 0 ],
 			"obj-107::obj-9" : [ "amxd~[2]", "amxd~[2]", 0 ],
 			"parameterbanks" : 			{
 				"0" : 				{
@@ -856,63 +782,77 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "Bitman.amxd",
-				"bootpath" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect",
+				"bootpath" : "~/Documents/Max 9/Packages/sonus/patchers/Max Audio Effect",
 				"patcherrelativepath" : "../patchers/Max Audio Effect",
 				"type" : "amxd",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Bitman.amxd.maxsnap",
-				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"bootpath" : "~/Documents/Max 9/Snapshots",
 				"patcherrelativepath" : "../../../Snapshots",
 				"type" : "mx@s",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Byter.amxd",
-				"bootpath" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect",
+				"bootpath" : "~/Documents/Max 9/Packages/sonus/patchers/Max Audio Effect",
 				"patcherrelativepath" : "../patchers/Max Audio Effect",
 				"type" : "amxd",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Byter.amxd.maxsnap",
-				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"bootpath" : "~/Documents/Max 9/Snapshots",
 				"patcherrelativepath" : "../../../Snapshots",
 				"type" : "mx@s",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Cryptoverb.amxd",
-				"bootpath" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect",
+				"bootpath" : "~/Documents/Max 9/Packages/sonus/patchers/Max Audio Effect",
 				"patcherrelativepath" : "../patchers/Max Audio Effect",
 				"type" : "amxd",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Cryptoverb.amxd.maxsnap",
-				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"bootpath" : "~/Documents/Max 9/Snapshots",
+				"patcherrelativepath" : "../../../Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Modallator.amxd",
+				"bootpath" : "~/Documents/Max 9/Packages/sonus/patchers/Max Audio Effect",
+				"patcherrelativepath" : "../patchers/Max Audio Effect",
+				"type" : "amxd",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Modallator.amxd.maxsnap",
+				"bootpath" : "~/Documents/Max 9/Snapshots",
 				"patcherrelativepath" : "../../../Snapshots",
 				"type" : "mx@s",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Pulsynthe.amxd",
-				"bootpath" : "~/Documents/Max 8/Packages/sonus/patchers/Max Instrument",
+				"bootpath" : "~/Documents/Max 9/Packages/sonus/patchers/Max Instrument",
 				"patcherrelativepath" : "../patchers/Max Instrument",
 				"type" : "amxd",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Pulsynthe.amxd.maxsnap",
-				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"bootpath" : "~/Documents/Max 9/Snapshots",
 				"patcherrelativepath" : "../../../Snapshots",
 				"type" : "mx@s",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "StrangeLFO.amxd",
-				"bootpath" : "~/Documents/Max 8/Packages/sonus/patchers/Max Audio Effect",
+				"bootpath" : "~/Documents/Max 9/Packages/sonus/patchers/Max Audio Effect",
 				"patcherrelativepath" : "../patchers/Max Audio Effect",
 				"type" : "amxd",
 				"implicit" : 1
@@ -926,35 +866,35 @@
 			}
 , 			{
 				"name" : "ai.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sonus/help",
+				"bootpath" : "~/Documents/Max 9/Packages/sonus/help",
 				"patcherrelativepath" : "../help",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "effects.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sonus/help",
+				"bootpath" : "~/Documents/Max 9/Packages/sonus/help",
 				"patcherrelativepath" : "../help",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "generators.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sonus/help",
+				"bootpath" : "~/Documents/Max 9/Packages/sonus/help",
 				"patcherrelativepath" : "../help",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "live.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sonus/help",
+				"bootpath" : "~/Documents/Max 9/Packages/sonus/help",
 				"patcherrelativepath" : "../help",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "math.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/sonus/help",
+				"bootpath" : "~/Documents/Max 9/Packages/sonus/help",
 				"patcherrelativepath" : "../help",
 				"type" : "JSON",
 				"implicit" : 1
@@ -980,11 +920,27 @@
 				"type" : "mx64"
 			}
 , 			{
+				"name" : "sonus.harmosc~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.hop.mxe64",
+				"type" : "mx64"
+			}
+, 			{
 				"name" : "sonus.lorenz~.mxe64",
 				"type" : "mx64"
 			}
 , 			{
 				"name" : "sonus.mumul~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.nwosc~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.pdosc~.mxe64",
 				"type" : "mx64"
 			}
 , 			{
@@ -996,11 +952,19 @@
 				"type" : "mx64"
 			}
 , 			{
+				"name" : "sonus.rsosc~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
 				"name" : "sonus.summer.mxe64",
 				"type" : "mx64"
 			}
 , 			{
 				"name" : "sonus.summer~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sonus.vaosc~.mxe64",
 				"type" : "mx64"
 			}
  ],

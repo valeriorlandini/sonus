@@ -2,42 +2,16 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 6,
-			"revision" : 4,
+			"major" : 9,
+			"minor" : 0,
+			"revision" : 7,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
 		"rect" : [ 587.0, 326.0, 855.0, 589.0 ],
-		"bglocked" : 0,
-		"openinpresentation" : 0,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
-		"default_fontname" : "Arial",
-		"gridonopen" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
-		"toolbarvisible" : 1,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
-		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-25",
@@ -45,7 +19,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 23.5, 434.0, 233.0, 20.0 ],
-					"text" : "Random items from a list"
+					"text" : "Random items from a list",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -57,7 +32,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 26.5, 413.0, 87.0, 22.0 ],
-					"presentation_linecount" : 2,
 					"text" : "sonus.lrandom"
 				}
 
@@ -69,7 +43,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 535.0, 253.0, 233.0, 20.0 ],
-					"text" : "\"The Well-Tuned Piano\" tuner"
+					"text" : "\"The Well-Tuned Piano\" tuner",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -92,7 +67,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 23.0, 253.0, 233.0, 20.0 ],
-					"text" : "Euclidean distance between two points"
+					"text" : "Euclidean distance between two points",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -115,7 +91,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 279.0, 345.0, 241.0, 20.0 ],
-					"text" : "Generate multiple random numbers at once"
+					"text" : "Generate multiple random numbers at once",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -150,7 +127,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 23.0, 299.0, 233.0, 20.0 ],
-					"text" : "Frequency / mel converters"
+					"text" : "Frequency / mel converters",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -173,7 +151,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 535.0, 163.0, 233.0, 20.0 ],
-					"text" : "Sum the input numbers"
+					"text" : "Sum the input numbers",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -206,7 +185,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 279.0, 389.0, 241.0, 20.0 ],
-					"text" : "Multiply all the inputs for the same factor"
+					"text" : "Multiply all the inputs for the same factor",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -229,7 +209,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 23.0, 208.0, 233.0, 20.0 ],
-					"text" : "Bang to 1-interval-0 sequence"
+					"text" : "Bang to 1-interval-0 sequence",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -277,7 +258,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 279.0, 255.0, 233.0, 20.0 ],
-					"text" : "Pop up dialogs generator"
+					"text" : "Pop up dialogs generator",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -300,7 +282,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 23.0, 390.0, 233.0, 20.0 ],
-					"text" : "Similar to line, but for list of numbers"
+					"text" : "Similar to line, but for list of numbers",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -323,7 +306,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 23.0, 163.0, 233.0, 20.0 ],
-					"text" : "Output different items from a list"
+					"text" : "Output different items from a list",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -346,7 +330,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 279.0, 208.0, 233.0, 20.0 ],
-					"text" : "Mathematical constants"
+					"text" : "Mathematical constants",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -369,7 +354,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 279.0, 163.0, 233.0, 20.0 ],
-					"text" : "Non repeating random sequences"
+					"text" : "Non repeating random sequences",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -392,7 +378,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 535.0, 208.0, 233.0, 20.0 ],
-					"text" : "Tent map calculator"
+					"text" : "Tent map calculator",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -415,7 +402,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 279.0, 435.0, 233.0, 20.0 ],
-					"text" : "Quadraphonic panner coefficients"
+					"text" : "Quadraphonic panner coefficients",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -426,7 +414,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 279.0, 299.0, 233.0, 20.0 ],
-					"text" : "Signal extremes analyzer"
+					"text" : "Signal extremes analyzer",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -437,7 +426,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 23.0, 344.0, 233.0, 20.0 ],
-					"text" : "Hot inlets operations"
+					"text" : "Hot inlets operations",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
 
 			}
@@ -490,7 +480,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 23.0, 807.0, 62.0 ],
 					"text" : "A series of externals that ranges from handy utilities to math functions. While they may not be the heart of your next electroacoustic masterpiece, they can help you to create it more easily, allowing to reduce the number of objects needed to perform recurring operations.",
-					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
+					"textcolor" : [ 0.956862745098039, 0.764705882352941, 0.450980392156863, 1.0 ]
 				}
 
 			}
