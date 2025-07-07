@@ -237,7 +237,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 805.0, 43.0 ],
 					"text" : "Specify a series of items (symbols or numbers) and an inlet will be created for each of them. When the inlet receives a bang, the item is sent to the output.",
-					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
+					"textcolor" : [ 0.956862745098039, 0.764705882352941, 0.450980392156863, 1.0 ]
 				}
 
 			}

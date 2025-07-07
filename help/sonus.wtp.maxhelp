@@ -332,7 +332,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 805.0, 43.0 ],
 					"text" : "An object that, given a fundamental frequency, returns the frequencies of the other steps of an octave according to the tuning of La Monte Young's \"The Well-Tuned Piano\"",
-					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
+					"textcolor" : [ 0.956862745098039, 0.764705882352941, 0.450980392156863, 1.0 ]
 				}
 
 			}

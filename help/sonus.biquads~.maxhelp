@@ -379,7 +379,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 809.0, 43.0 ],
 					"text" : "This object incorporates seven distinct second-order filters (lowpass, highpass, bandpass, bandreject, low shelf, high shelf, and peak), each with its individual output but sharing the same set of parameters.",
-					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
+					"textcolor" : [ 0.956862745098039, 0.764705882352941, 0.450980392156863, 1.0 ]
 				}
 
 			}

@@ -341,7 +341,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 805.0, 62.0 ],
 					"text" : "A generator for bytebeat music, which outputs audio from expressions where a variable is manipulated with bit and math operators. If you want to use ready to go formulas, check sonus.byteplay~.\nThis external uses muparserx to parse the formulas (https://github.com/beltoforion/muparserx)",
-					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
+					"textcolor" : [ 0.956862745098039, 0.764705882352941, 0.450980392156863, 1.0 ]
 				}
 
 			}

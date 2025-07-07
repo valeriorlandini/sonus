@@ -265,7 +265,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 805.0, 43.0 ],
 					"text" : "A player for a series of ready to use bytebeat formulas, which generate audio from expressions where a variable is manipulated with bit and math operators. If you want to use your own formulas, check sonus.bytebeat~.",
-					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
+					"textcolor" : [ 0.956862745098039, 0.764705882352941, 0.450980392156863, 1.0 ]
 				}
 
 			}

@@ -338,7 +338,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 805.0, 43.0 ],
 					"text" : "Quadraphonic panner, assuming that each speaker is positioned at a corner of the room. This object calculates the gain coefficients for each speaker. To directly pan a signal in a quadraphonic space, check sonus.quadpan~.",
-					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
+					"textcolor" : [ 0.956862745098039, 0.764705882352941, 0.450980392156863, 1.0 ]
 				}
 
 			}

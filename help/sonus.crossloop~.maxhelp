@@ -344,7 +344,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 805.0, 43.0 ],
 					"text" : "This object plays a buffer, (in a way similar to groove~), but with an optional crossfade between the end and the beginning of the buffer. This allows for smoother transitions when the audio is not inherently designed to loop.",
-					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
+					"textcolor" : [ 0.956862745098039, 0.764705882352941, 0.450980392156863, 1.0 ]
 				}
 
 			}

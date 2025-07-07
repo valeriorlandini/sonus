@@ -270,7 +270,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 805.0, 43.0 ],
 					"text" : "This generator creates sequences using the tent map function: f(x) := μ * min{x, 1 - x}. As the μ (mu) value approaches 2, the sequence becomes unstable (i.e., chaotic). The outputs are always within the [0, 1] interval.",
-					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
+					"textcolor" : [ 0.956862745098039, 0.764705882352941, 0.450980392156863, 1.0 ]
 				}
 
 			}

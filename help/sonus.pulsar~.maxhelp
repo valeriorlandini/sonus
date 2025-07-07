@@ -253,7 +253,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 80.0, 805.0, 62.0 ],
 					"text" : "An implementation of the pulsar oscillator, as described by Curtis Roads in \"Microsound\". A pulsar oscillator generates a periodic signal at a certain frequency, with the signal made up by a wave (optionally windowed) and an amount of silence. The duty cycles defines the relative length of the wave in the periodic signal.",
-					"textcolor" : [ 0.258823529411765, 0.258823529411765, 0.258823529411765, 1.0 ]
+					"textcolor" : [ 0.956862745098039, 0.764705882352941, 0.450980392156863, 1.0 ]
 				}
 
 			}
