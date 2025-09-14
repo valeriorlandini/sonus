@@ -54,8 +54,6 @@ public:
     {
         inputs_ = 3;
 
-        cout << "here " << endl;
-
         if (!args.empty() && int(args[0]) > 1)
         {
             inputs_ = std::min(int(args[0]) + 1, 257);
