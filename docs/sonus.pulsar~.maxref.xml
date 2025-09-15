@@ -51,14 +51,14 @@
 
 	<attributelist>
 
-		<attribute name='window' get='1' set='1' type='long' size='1' >
-			<digest>Window function to multiply the pulsar</digest>
-			<description>Window function to multiply the pulsar. </description>
-		</attribute>
-
 		<attribute name='waveform' get='1' set='1' type='long' size='1' >
 			<digest>Waveform of the pulsar</digest>
 			<description>Waveform of the pulsar. </description>
+		</attribute>
+
+		<attribute name='window' get='1' set='1' type='long' size='1' >
+			<digest>Window function to multiply the pulsar</digest>
+			<description>Window function to multiply the pulsar. </description>
 		</attribute>
 
 	</attributelist>

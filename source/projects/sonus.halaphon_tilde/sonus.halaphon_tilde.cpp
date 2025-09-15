@@ -53,6 +53,24 @@ public:
         "The initial rotation speed."
     };
 
+    attribute<number, threadsafe::no, limit::clamp> width
+	{
+        this,
+        "width",
+        1.0,
+		range { 0.0, 2.0 },
+        title {"Panning width"},
+		description {"Sets the width of the panning. A value of 0 means that each speaker plays alone, 1 means that the sound is equally distributed between two adjacent speakers, 2 means that the sound is always played by all speakers, albeit at different levels."},
+        setter
+        {
+            MIN_FUNCTION
+            {
+                width_ = convert_width_(double(args[0]));
+                return args;
+            }
+        }
+    };
+
     halaphon_tilde(const atoms& args = {})
     {
         outputs_ = 2;
@@ -73,19 +91,40 @@ public:
         {
             m_outlets.push_back(std::make_unique<outlet<>>(this, "(signal) Output at speaker" + std::to_string(i+1), "signal"));
         }
+
+        width_ = convert_width_(width);
     }
 
+    message<> m_number
+	{
+		this,
+		"number",
+		"Frequency",
+        MIN_FUNCTION
+		{
+            if (inlet == 1)
+            {
+                frequency_ = double(args[0]);
+            }
+
+			return {};
+		}
+    }; 
+
 	void operator()(audio_bundle input, audio_bundle output)
-    {
-		std::vector<float> inputs_sample;
-        
+    {   
         for (auto i = 0; i < input.frame_count(); ++i)
         {
+            if (in_speed.has_signal_connection())
+            {
+                frequency_ = input.samples(1)[i];
+            }
+
             update_gains_();
             
             for (auto ch = 0; ch < outputs_; ch++)
             {
-                output.samples(ch)[i] = inputs.samples(0)[i] * gains_->at(ch);
+                output.samples(ch)[i] = input.samples(0)[i] * gains_[ch];
             }
 	    }
     }
@@ -96,12 +135,20 @@ private:
     std::vector<double> gains_;
     double frequency_ = 0.0;
     double inv_sample_rate_ = 1.0 / 44100.0;
+    double width_ = 1.0;
     double phasor_ = 0.0;
-    const double double_pi_ = (double)(M_PI * 2.0);
+    const double double_pi_ = static_cast<double>(M_PI * 2.0);
+
+    inline double convert_width_(double x)
+    {
+        double n = static_cast<double>(outputs_);
+
+        return (x * x - (n + 1) * x + 2 * n) / 2;
+    }
 
     inline void update_gains_()
     {
-        phasor_ += frequency_ * inv_sample_rate_;
+        phasor_ -= frequency_ * inv_sample_rate_;
         while (phasor_ > 1.0)
         {
             phasor_ -= 1.0; 
@@ -113,17 +160,17 @@ private:
 
         for (auto g = 0; g < outputs_; g++)
         {
-            gains[g] = phasor_ + static_cast<double>(g) / static_cast<double>(outputs_);
-            gains[g] = std::fmod(1.0, gains[g]);
-            gains[g] *= static_cast<double>outputs_;
-            if (gains[g] > 1.0)
+            gains_[g] = phasor_ + static_cast<double>(g) / static_cast<double>(outputs_);
+            gains_[g] = std::fmod(gains_[g], 1.0);
+            gains_[g] *= width_;
+            if (gains_[g] > 1.0)
             {
-                gains[g] = 1.0;
+                gains_[g] = 1.0;
             }
-            gains[g] *= 0.5;
-            gains[g] -= 0.25;
-            gains[g] *= double_pi_;
-            gains[g] = std::cos(gains[g]);
+            gains_[g] *= 0.5;
+            gains_[g] -= 0.25;
+            gains_[g] *= double_pi_;
+            gains_[g] = std::cos(gains_[g]);
         }
     }
 };

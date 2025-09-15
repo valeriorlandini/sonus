@@ -31,6 +31,7 @@ Currently finished externals are:
 * `sonus.crossloop~` Buffer loop player with crossfade
 * `sonus.cryptoverb~` Eerie stereo reverberator
 * `sonus.fselector~` Continuous selector/mixer
+* `sonus.halaphon~` Circular panner across multiple speakers
 * `sonus.quadpan~` Quadraphonic panner
 * `sonus.summer~` Simple signal mixer
 * `sonus.wavesets` Wavesets based sample manipulation

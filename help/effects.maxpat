@@ -10,15 +10,39 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 786.0, 148.0, 451.0, 779.0 ],
+		"rect" : [ 1187.0, 166.0, 451.0, 779.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 276.0, 253.0, 233.0, 20.0 ],
+					"text" : "Automatic circular panner",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 279.0, 232.0, 100.0, 22.0 ],
+					"text" : "sonus.halaphon~"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 279.0, 163.0, 233.0, 20.0 ],
+					"patching_rect" : [ 23.0, 433.0, 233.0, 20.0 ],
 					"text" : "Buffer looper with crossfade",
 					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
@@ -31,7 +55,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 282.0, 142.0, 102.0, 22.0 ],
+					"patching_rect" : [ 26.0, 412.0, 102.0, 22.0 ],
 					"text" : "sonus.crossloop~"
 				}
 
@@ -113,7 +137,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 279.0, 208.0, 233.0, 20.0 ],
+					"patching_rect" : [ 278.0, 163.0, 233.0, 20.0 ],
 					"text" : "Eerie stereo reverberator",
 					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
@@ -126,7 +150,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 282.0, 187.0, 107.0, 22.0 ],
+					"patching_rect" : [ 281.0, 142.0, 107.0, 22.0 ],
 					"text" : "sonus.cryptoverb~"
 				}
 
@@ -137,7 +161,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 279.0, 343.0, 233.0, 20.0 ],
+					"patching_rect" : [ 277.0, 343.0, 233.0, 20.0 ],
 					"text" : "Simple signal mixer",
 					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
@@ -150,7 +174,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 282.0, 322.0, 94.0, 22.0 ],
+					"patching_rect" : [ 280.0, 322.0, 94.0, 22.0 ],
 					"text" : "sonus.summer~"
 				}
 
@@ -257,7 +281,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 279.0, 298.0, 233.0, 20.0 ],
+					"patching_rect" : [ 277.0, 298.0, 233.0, 20.0 ],
 					"text" : "Quadraphonic panner",
 					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
@@ -269,7 +293,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 279.0, 253.0, 233.0, 20.0 ],
+					"patching_rect" : [ 278.0, 208.0, 233.0, 20.0 ],
 					"text" : "Continuous selector/mixer",
 					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
@@ -281,7 +305,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 279.0, 388.0, 233.0, 20.0 ],
+					"patching_rect" : [ 277.0, 388.0, 233.0, 20.0 ],
 					"text" : "Wavesets based sample manipulation",
 					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
@@ -294,7 +318,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 282.0, 277.0, 98.0, 22.0 ],
+					"patching_rect" : [ 280.0, 277.0, 98.0, 22.0 ],
 					"text" : "sonus.quadpan~"
 				}
 
@@ -306,7 +330,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 282.0, 232.0, 96.0, 22.0 ],
+					"patching_rect" : [ 281.0, 187.0, 96.0, 22.0 ],
 					"text" : "sonus.fselector~"
 				}
 
@@ -318,7 +342,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 282.0, 367.0, 94.0, 22.0 ],
+					"patching_rect" : [ 280.0, 367.0, 94.0, 22.0 ],
 					"text" : "sonus.wavesets"
 				}
 
@@ -394,6 +418,14 @@
 					"destination" : [ "obj-3", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-66", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-7", 0 ]
 				}
 
 			}
