@@ -76,7 +76,7 @@ Compiled binaries for both Windows and macOS can be found in the [Releases secti
 
 ## How to build
 
-Grab the source inside your `Documents/Max 8/Packages` folder with `git clone https://github.com/valeriorlandini/sonus.git --recursive` 
+Grab the source inside your `Documents/Max 8/Packages` (or `Max 9`, according to your Max/MSP version) folder with `git clone https://github.com/valeriorlandini/sonus.git --recursive` 
 
 `cd sonus` and then `mkdir build` to create a folder with your various build files.
 
@@ -88,9 +88,9 @@ Run `cmake -G Xcode ..`
 
 Next run `cmake --build . --config Release` or open the Xcode project from this "build" folder and use the GUI.
 
-Note: you can add the `-j4` option where "4" is the number of cores to use. This can help speed up your builds, though it may sometimes interleave the error output, making troubleshooting more challenging.
+Note: you can add the `-jX` option where X is the number of cores to use (e.g. `-j4`). This can help speed up your builds, though it may sometimes interleave the error output, making troubleshooting more challenging.
 
-If you are running on a Mac M1 machine, you will likely see an error `cannot be loaded due to system security policy` when loading your externals in Max. To resolve this, you can ad-hoc codesign your external with `codesign --force --deep -s - myobject.mxo`.
+If you are running on a Mac M1+ machine, you will likely see an error `cannot be loaded due to system security policy` when loading your externals in Max. To resolve this, you can ad-hoc codesign your external with `codesign --force --deep -s - myobject.mxo`.
 
 ### Windows
 
@@ -112,5 +112,5 @@ Having generated the projects, you can now build by opening the .sln file in the
 
 `cmake --build . --config Release`
 
-Note: you can add the `-j4` option where "4" is the number of cores to use. This can help speed up your builds, though it may sometimes interleave the error output, making troubleshooting more challenging.
+Note: you can add the `-jX` option where X is the number of cores to use (e.g. `-j4`). This can help speed up your builds, though it may sometimes interleave the error output, making troubleshooting more challenging.
 
