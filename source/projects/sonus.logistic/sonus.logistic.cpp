@@ -8,26 +8,26 @@
 
 using namespace c74::min;
 
-class tent : public object<tent>
+class logistic : public object<logistic>
 {
 public:
-	MIN_DESCRIPTION {"Tent map generator"};
+	MIN_DESCRIPTION {"Logistic map generator"};
 	MIN_TAGS {"maps, math"};
 	MIN_AUTHOR {"Valerio Orlandini"};
-	MIN_RELATED {"sonus.logistic"};
+	MIN_RELATED {"sonus.tent"};
 
 	inlet<>  in {this, "(bang) Next value"};
-	inlet<>  in_mu {this, "(float) mu parameter"};
+	inlet<>  in_mu {this, "(float) r parameter"};
 	outlet<> out {this, "(float) Output"};
 
-	attribute<number, threadsafe::no, limit::clamp> mu
+	attribute<number, threadsafe::no, limit::clamp> r
 	{
         this,
-        "mu",
-        1.41,
-		range { 0.0, 2.0 },
-        title {"mu parameter"},
-		description {"mu parameter. Should be inside [0.0-2.0] range, with chaotic results achieved with values greater than 1.0."}
+        "r",
+        3.6,
+		range { 0.0, 3.999999 },
+        title {"r parameter"},
+		description {"r parameter. Should be inside [0.0-4.0) range, with divergent trajectories with r > 3.0 and chaotic one with r > 3.56995."}
     };
 
 	attribute<number, threadsafe::no, limit::clamp> x
@@ -40,14 +40,14 @@ public:
 		description {"Initial value. Should be inside [0.0-1.0] range."}
     };
 	
-	argument<number> mu_arg
+	argument<number> r_arg
 	{
 		this,
-		"mu",
-		"mu parameter, from 0 to 2.",
+		"r",
+		"r parameter, from 0 to 4.",
         MIN_ARGUMENT_FUNCTION
 		{
-			mu = arg;
+			r = arg;
         }
     };
 	
@@ -64,7 +64,7 @@ public:
 			}
 			else
 			{
-				mu = args;
+				r = args;
 			}
 
 			return {};
@@ -78,18 +78,11 @@ public:
 		"Output next value",
 		MIN_FUNCTION
 		{
-			if (x < 0.5)
-			{
-				x *= mu;
-			}
-			else
-			{
-				x = (1.0 - x) * mu;
-			}
+			x = r * x * (1.0 - x);
 			out.send(x.get());
 			return {};
 		}
 	};
 };
 
-MIN_EXTERNAL(tent);
+MIN_EXTERNAL(logistic);

@@ -54,6 +54,7 @@ Currently finished externals are:
 * `sonus.ftomel` Frequency to mel converter
 * `sonus.hop` Hot inlets operations
 * `sonus.lline` Similar to line, but for list of numbers
+* `sonus.logistic` Logistic map calculator
 * `sonus.lrandom` Random items from a list
 * `sonus.lurn` Non repeating random sequences
 * `sonus.mathc` Mathematical constants
@@ -76,7 +77,7 @@ Compiled binaries for both Windows and macOS can be found in the [Releases secti
 
 ## How to build
 
-Grab the source inside your `Documents/Max 8/Packages` (or `Max 9`, according to your Max/MSP version) folder with `git clone https://github.com/valeriorlandini/sonus.git --recursive` 
+Grab the source inside your `Documents/Max 9/Packages` (or `Max 8`, according to your Max/MSP version) folder with `git clone https://github.com/valeriorlandini/sonus.git --recursive` 
 
 `cd sonus` and then `mkdir build` to create a folder with your various build files.
 

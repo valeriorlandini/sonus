@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 7,
+			"revision" : 9,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -13,6 +13,30 @@
 		"rect" : [ 587.0, 326.0, 855.0, 589.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-27",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 279.0, 163.0, 233.0, 20.0 ],
+					"text" : "Logistic map calculator",
+					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-28",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 282.0, 142.0, 81.0, 22.0 ],
+					"text" : "sonus.logistic"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-25",
 					"maxclass" : "comment",
@@ -42,7 +66,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 535.0, 253.0, 233.0, 20.0 ],
+					"patching_rect" : [ 535.0, 298.0, 233.0, 20.0 ],
 					"text" : "\"The Well-Tuned Piano\" tuner",
 					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
@@ -55,7 +79,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 538.0, 232.0, 63.0, 22.0 ],
+					"patching_rect" : [ 538.0, 277.0, 63.0, 22.0 ],
 					"text" : "sonus.wtp"
 				}
 
@@ -90,7 +114,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 279.0, 345.0, 241.0, 20.0 ],
+					"patching_rect" : [ 279.0, 390.0, 241.0, 20.0 ],
 					"text" : "Generate multiple random numbers at once",
 					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
@@ -103,7 +127,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 282.0, 323.0, 110.0, 22.0 ],
+					"patching_rect" : [ 282.0, 368.0, 110.0, 22.0 ],
 					"text" : "sonus.multirandom"
 				}
 
@@ -150,7 +174,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 535.0, 163.0, 233.0, 20.0 ],
+					"patching_rect" : [ 535.0, 208.0, 233.0, 20.0 ],
 					"text" : "Sum the input numbers",
 					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
@@ -163,7 +187,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 538.0, 142.0, 87.0, 22.0 ],
+					"patching_rect" : [ 538.0, 187.0, 87.0, 22.0 ],
 					"text" : "sonus.summer"
 				}
 
@@ -184,7 +208,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 279.0, 389.0, 241.0, 20.0 ],
+					"patching_rect" : [ 279.0, 434.0, 241.0, 20.0 ],
 					"text" : "Multiply all the inputs for the same factor",
 					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
@@ -197,7 +221,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 282.0, 368.0, 80.0, 22.0 ],
+					"patching_rect" : [ 282.0, 413.0, 80.0, 22.0 ],
 					"text" : "sonus.mumul"
 				}
 
@@ -233,7 +257,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 369.0, 368.0, 87.0, 22.0 ],
+					"patching_rect" : [ 369.0, 413.0, 87.0, 22.0 ],
 					"text" : "sonus.mumul~"
 				}
 
@@ -257,7 +281,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 279.0, 255.0, 233.0, 20.0 ],
+					"patching_rect" : [ 279.0, 300.0, 233.0, 20.0 ],
 					"text" : "Pop up dialogs generator",
 					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
@@ -270,7 +294,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 282.0, 232.0, 73.0, 22.0 ],
+					"patching_rect" : [ 282.0, 277.0, 73.0, 22.0 ],
 					"text" : "sonus.mbox"
 				}
 
@@ -329,7 +353,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 279.0, 208.0, 233.0, 20.0 ],
+					"patching_rect" : [ 279.0, 253.0, 233.0, 20.0 ],
 					"text" : "Mathematical constants",
 					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
@@ -342,7 +366,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 282.0, 187.0, 77.0, 22.0 ],
+					"patching_rect" : [ 282.0, 232.0, 77.0, 22.0 ],
 					"text" : "sonus.mathc"
 				}
 
@@ -353,7 +377,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 279.0, 163.0, 233.0, 20.0 ],
+					"patching_rect" : [ 279.0, 208.0, 233.0, 20.0 ],
 					"text" : "Non repeating random sequences",
 					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
@@ -366,7 +390,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 282.0, 142.0, 64.0, 22.0 ],
+					"patching_rect" : [ 282.0, 187.0, 64.0, 22.0 ],
 					"text" : "sonus.lurn"
 				}
 
@@ -377,7 +401,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 535.0, 208.0, 233.0, 20.0 ],
+					"patching_rect" : [ 535.0, 253.0, 233.0, 20.0 ],
 					"text" : "Tent map calculator",
 					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
@@ -390,7 +414,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 538.0, 187.0, 64.0, 22.0 ],
+					"patching_rect" : [ 538.0, 232.0, 64.0, 22.0 ],
 					"text" : "sonus.tent"
 				}
 
@@ -401,7 +425,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 279.0, 435.0, 233.0, 20.0 ],
+					"patching_rect" : [ 535.0, 164.0, 233.0, 20.0 ],
 					"text" : "Quadraphonic panner coefficients",
 					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
@@ -413,7 +437,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 279.0, 299.0, 233.0, 20.0 ],
+					"patching_rect" : [ 279.0, 344.0, 233.0, 20.0 ],
 					"text" : "Signal extremes analyzer",
 					"textcolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 1.0 ]
 				}
@@ -438,7 +462,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 282.0, 413.0, 108.0, 22.0 ],
+					"patching_rect" : [ 538.0, 142.0, 108.0, 22.0 ],
 					"text" : "sonus.quadpanner"
 				}
 
@@ -450,7 +474,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 282.0, 278.0, 80.0, 22.0 ],
+					"patching_rect" : [ 282.0, 323.0, 80.0, 22.0 ],
 					"text" : "sonus.mima~"
 				}
 
@@ -570,6 +594,14 @@
 					"destination" : [ "obj-3", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-26", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-28", 0 ]
 				}
 
 			}

@@ -27,7 +27,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 212.0, 339.5, 196.0, 92.0 ],
+					"patching_rect" : [ 212.0, 350.0, 196.0, 92.0 ],
 					"peakcolor" : [ 0.498039, 0.498039, 0.498039, 1.0 ],
 					"setminmax" : [ 0.0, 1.0 ],
 					"setstyle" : 2
@@ -42,8 +42,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 263.0, 169.0, 80.0, 22.0 ],
-					"text" : "loadmess 1.5"
+					"patching_rect" : [ 263.0, 179.0, 80.0, 22.0 ],
+					"text" : "loadmess 3.7"
 				}
 
 			}
@@ -55,7 +55,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 300.0, 206.0, 80.0, 22.0 ],
+					"patching_rect" : [ 300.0, 216.0, 80.0, 22.0 ],
 					"text" : "loadmess 0.5"
 				}
 
@@ -71,7 +71,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 120.5, 250.5, 50.0, 22.0 ]
+					"patching_rect" : [ 121.0, 261.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -80,13 +80,13 @@
 					"format" : 6,
 					"id" : "obj-10",
 					"maxclass" : "flonum",
-					"maximum" : 2.0,
+					"maximum" : 3.999,
 					"minimum" : 0.0,
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 78.0, 207.5, 50.0, 22.0 ]
+					"patching_rect" : [ 95.0, 218.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -99,7 +99,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 188.0, 249.0, 132.0, 25.0 ],
+					"patching_rect" : [ 179.0, 259.5, 132.0, 25.0 ],
 					"text" : "initial x value"
 				}
 
@@ -112,7 +112,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 33.0, 167.5, 24.0, 24.0 ]
+					"patching_rect" : [ 33.0, 178.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -125,7 +125,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 33.0, 408.0, 50.0, 22.0 ]
+					"patching_rect" : [ 33.0, 418.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -138,7 +138,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 78.0, 167.5, 175.0, 25.0 ],
+					"patching_rect" : [ 66.0, 177.5, 136.0, 25.0 ],
 					"text" : "next value"
 				}
 
@@ -200,8 +200,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 145.0, 206.0, 146.0, 25.0 ],
-					"text" : "μ parameter"
+					"patching_rect" : [ 151.0, 216.0, 140.0, 25.0 ],
+					"text" : "r parameter"
 				}
 
 			}
@@ -214,7 +214,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 89.0, 406.5, 113.0, 25.0 ],
+					"patching_rect" : [ 89.0, 417.0, 113.0, 25.0 ],
 					"text" : "output value"
 				}
 
@@ -226,8 +226,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 33.0, 348.0, 64.0, 22.0 ],
-					"text" : "sonus.tent"
+					"patching_rect" : [ 33.0, 358.0, 81.0, 22.0 ],
+					"text" : "sonus.logistic"
 				}
 
 			}
@@ -248,12 +248,12 @@
 					"fontname" : "Arial",
 					"fontsize" : 16.0,
 					"id" : "obj-1",
-					"linecount" : 2,
+					"linecount" : 4,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 80.0, 805.0, 43.0 ],
-					"text" : "This generator creates sequences using the tent map function: f(x) := μ * min{x, 1 - x}. As the μ (mu) value approaches 2, the sequence becomes unstable (i.e., chaotic). The outputs are always within the [0, 1] interval.",
+					"patching_rect" : [ 16.0, 80.0, 805.0, 80.0 ],
+					"text" : "This generator creates sequences using the logistic map function: f(x) := r * x * (1.0 - x). When the r value (representing the popolation growth rate) is greater than 3.0, the sequence no longer converges to a single value, and with r inside [3.56995, 4.0) interval the sequence becomes unstable (i.e., chaotic). The outputs are always within the [0, 1] interval.",
 					"textcolor" : [ 0.956862745098039, 0.764705882352941, 0.450980392156863, 1.0 ]
 				}
 
@@ -269,7 +269,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 55.0, 805.0, 29.0 ],
-					"text" : "tent map calculator"
+					"text" : "logistic map calculator"
 				}
 
 			}
@@ -300,7 +300,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 12.0, 805.0, 48.0 ],
-					"text" : "sonus.tent"
+					"text" : "sonus.logistic"
 				}
 
 			}
@@ -368,7 +368,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "sonus.tent.mxe64",
+				"name" : "sonus.logistic.mxe64",
 				"type" : "mx64"
 			}
  ],
