@@ -6,8 +6,8 @@
 
 <c74object name='sonus.logistic' category='maps,  math'>
 
-	<digest>Tent map generator </digest>
-	<description>Tent map generator </description>
+	<digest>Logistic map generator </digest>
+	<description>Logistic map generator </description>
 
 
 	<!--METADATA-->
@@ -54,7 +54,7 @@
 
 		<attribute name='r' get='1' set='1' type='float64' size='1' >
 			<digest>r parameter</digest>
-			<description>r parameter. Should be inside [0.0-4.0) range, with divergent trajectories with r > 2.0 and chaotic one with r > 3.56995. </description>
+			<description>r parameter. Should be inside [0.0-4.0) range, with divergent trajectories with r > 3.0 and chaotic one with r > 3.56995. </description>
 		</attribute>
 
 		<attribute name='x' get='1' set='1' type='float64' size='1' >

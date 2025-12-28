@@ -21,7 +21,7 @@ public:
 	MIN_DESCRIPTION {"Random wavetable oscillator with recallable seeds"};
 	MIN_TAGS {"oscillator, noise"};
 	MIN_AUTHOR {"Valerio Orlandini"};
-	MIN_RELATED {"noise~, rand~, sonus.nwosc~"};
+	MIN_RELATED {"noise~, rand~, sonus.collatz~, sonus.nwosc~"};
 
 	inlet<>  in {this, "(signal) Wavetable Position (from 0 to 1)"};
 	inlet<>  in_s {this, "(int) Seed"};
@@ -41,7 +41,7 @@ public:
 		"Seed for wavetable generation."
     };
 
-    attribute<int> seed
+    attribute<int, threadsafe::no, limit::clamp> seed
 	{
 		this,
 		"seed",

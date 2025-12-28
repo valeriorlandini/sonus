@@ -70,6 +70,7 @@
 	<seealsolist>
 		<seealso name='noise~' />
 		<seealso name='rand~' />
+		<seealso name='sonus.collatz~' />
 		<seealso name='sonus.nwosc~' />
 	</seealsolist>
 

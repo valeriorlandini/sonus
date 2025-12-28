@@ -8,6 +8,7 @@ Currently finished externals are:
 ### Generators
 * `sonus.bytebeat~` A bytebeat parser and generator
 * `sonus.byteplay~` An efficient player of many bytebeat formulas
+* `sonus.collatz~` Collatz conjecture based wavetable oscillator
 * `sonus.ecaosc~` Elementary cellular automata oscillator
 * `sonus.harmosc~` Harmonic additive oscillator
 * `sonus.lorenz~` Lorenz attractor based generator
