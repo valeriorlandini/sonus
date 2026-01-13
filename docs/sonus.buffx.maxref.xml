@@ -170,6 +170,11 @@
 			<description>Mix with other buffers: mix [buffer name] [buffer gain] ... [buffer name] [buffer gain] </description>
 		</method>
 
+		<method name='spec'>
+			<digest>Apply a spectral transformation: spec [type: peak / blur / rsupp] [frame size, default 4096] </digest>
+			<description>Apply a spectral transformation: spec [type: peak / blur / rsupp] [frame size, default 4096] </description>
+		</method>
+
 	</methodlist>
 
 

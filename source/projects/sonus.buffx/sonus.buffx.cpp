@@ -12,6 +12,8 @@
 #include "cryptoverb.h"
 #include "delay.h"
 #include "distortions.h"
+#define DJ_FFT_IMPLEMENTATION
+#include "dj_fft.h"
 
 using namespace c74::min;
 using namespace soutel;
@@ -1316,7 +1318,89 @@ public:
 
             return {};
         }
-    };    
+    };
+    
+    message<> spec
+    {
+        this,
+        "spec",
+        "Apply a spectral transformation: spec [type: peak / blur / rsupp] [frame size, default 4096]",
+        MIN_FUNCTION
+        {
+            buffer_lock<> b(m_buffer);
+
+            if (b.valid())
+            {                
+                std::string transform = "peak";
+                int frame_size = 4096;
+ 
+                if (args.size() > 1)
+                {
+                    int n = int(args.at(1));
+                    if (n >= 32 && n <= 32768 && (n & (n - 1)) == 0)
+                    {
+                        frame_size = n;
+                    }
+                }
+
+                int hop_size = frame_size / 2;
+                int padding = frame_size - hop_size;
+                window_.resize(frame_size);
+                fill_window();
+
+                for (auto ch = 0; ch < b.channel_count(); ch++)
+                {
+                    std::vector<sample> new_channel(b.frame_count() + padding, 0.0);
+                    for (auto f = -padding; f < static_cast<int>(b.frame_count()); f += hop_size)
+                    {
+                        // Read frame
+                        dj::fft_arg<sample> fft_frame(frame_size);
+					    std::vector<sample> current_frame(frame_size, 0.0);
+    					for (auto s = 0; s < frame_size; ++s)
+	    				{
+                            auto curr_sample = f + s;
+                            if (curr_sample < b.frame_count())
+			    			{
+                                if (curr_sample < 0)
+                                {
+                                    fft_frame[s] = std::complex<sample>(0.0, 0.0);
+                                }
+		    				    else
+                                {
+                                    fft_frame[s] = std::complex<sample>(b.lookup(curr_sample, ch) * window_[s], 0.0);
+                                }
+					    	}
+						    else
+						    {
+                                fft_frame[s] = std::complex<sample>(0.0, 0.0);
+						    }
+					    }
+
+                        auto fft_data = dj::fft1d(fft_frame, dj::fft_dir::DIR_FWD);
+                        auto ifft_data = dj::fft1d(fft_data, dj::fft_dir::DIR_BWD);
+
+    					for (auto s = 0; s < frame_size; ++s)
+	    				{
+                            auto curr_sample = f + s;
+		    				if (curr_sample >= 0 && curr_sample < b.frame_count())
+			    			{
+                                new_channel[curr_sample] += ifft_data[s].real();
+					    	}
+					    }
+                    }
+
+                    for (auto s = 0; s < b.frame_count(); s++)
+                    {
+                        b.lookup(s, ch) = new_channel[s + padding];
+                    }
+                }
+
+                b.dirty();
+            }            
+
+            return {};
+        }
+    };   
     
 
 private:
@@ -1383,6 +1467,19 @@ private:
 
         return c;
     }
+
+    static constexpr sample double_pi_ = 3.14159265358979323846 * 2.0;
+    std::vector<sample> window_;
+	
+	inline void fill_window()
+	{
+		sample w_mul  = 1.0 / (static_cast<sample>(window_.size()) - 1.0);
+
+		for (auto n = 0; n < window_.size(); n++)
+		{
+			window_[n] = 0.5 * (1.0 - cos(double_pi_ * n * w_mul));
+		}
+	}
 };
 
 MIN_EXTERNAL(buffx);
