@@ -1391,7 +1391,7 @@ public:
 
                     for (auto s = 0; s < b.frame_count(); s++)
                     {
-                        b.lookup(s, ch) = new_channel[s + padding];
+                        b.lookup(s, ch) = new_channel[s];
                     }
                 }
 
