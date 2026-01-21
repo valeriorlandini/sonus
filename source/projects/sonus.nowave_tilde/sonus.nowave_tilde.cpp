@@ -46,7 +46,7 @@ public:
 		this,
 		"seed",
 		0,
-		range {0, 4294967296},
+		range {0, 2147483647},
 		title {"Seed"},
         description {"Seed for wavetable generation."},
 		setter
