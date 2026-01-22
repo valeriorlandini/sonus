@@ -24,8 +24,8 @@ public:
 	enum class waveforms : int { sine, triangle, saw, square, noise, dc, phasor, enum_count };
     enum_map waveforms_range = {"sine", "triangle", "saw", "square", "noise", "dc", "phasor"};
 
-	enum class windows : int { hann, hamming, blackman, nuttall, blackmannuttall, blackmanharris, flattop, bartletthann, rectangular, enum_count };
-    enum_map windows_range = {"hann", "hamming", "blackman", "nuttall", "blackman-nuttall", "blackman-harris", "flat-top", "bartlett-hann", "rectangular"};
+	enum class windows : int { hann, hamming, blackman, nuttall, blackmannuttall, blackmanharris, flattop, bartletthann, rectangular, linearup, lineardown, expoup, expodown, enum_count };
+    enum_map windows_range = {"hann", "hamming", "blackman", "nuttall", "blackman-nuttall", "blackman-harris", "flat-top", "bartlett-hann", "rectangular", "linear up", "linear down", "expo up", "expo down"};
 
 	message<> dspsetup
 	{
