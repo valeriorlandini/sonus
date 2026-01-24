@@ -67,7 +67,7 @@ public:
 		windows::rectangular,
 		windows_range,
 		title {"Window"},
-        description {"Window function to multiply the pulsar."},
+        description {"Window function or envelope applied to the waveform."},
 		setter
 		{
 			MIN_FUNCTION
