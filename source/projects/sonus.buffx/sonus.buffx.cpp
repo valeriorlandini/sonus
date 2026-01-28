@@ -1331,16 +1331,39 @@ public:
 
             if (b.valid())
             {                
-                std::string transform = "peak";
+                enum class transforms : int { none, peak, filter, shift, enum_count };
+                auto transform = transforms::none;
                 int frame_size = 4096;
- 
-                if (args.size() > 1)
+                float option = 0.0f;
+
+                if (!args.empty())
                 {
-                    int n = int(args.at(1));
+                    std::string t = std::string(args.at(0));
+                    if (t == "peak")
+                    {
+                        transform = transforms::peak;
+                    }
+                    else if (t == "filter")
+                    {
+                        transform = transforms::filter;
+                    }
+                    else if (t == "shift")
+                    {
+                        transform = transforms::shift;
+                    }
+
+                    if (args.size() > 1)
+                    {
+                        option = float(args.at(1));
+                    }
+
+                    /*
+                    int n = int(args.at(2));
                     if (n >= 32 && n <= 32768 && (n & (n - 1)) == 0)
                     {
                         frame_size = n;
                     }
+                        */
                 }
 
                 int hop_size = frame_size / 2;
@@ -1377,6 +1400,79 @@ public:
 					    }
 
                         auto fft_data = dj::fft1d(fft_frame, dj::fft_dir::DIR_FWD);
+                        auto h_size = fft_data.size() / 2 + 1;
+
+                        if (transform == transforms::peak)
+                        {
+                            auto k = std::clamp(static_cast<int>(option), 1, static_cast<int>(h_size));
+                            std::vector<std::pair<float, size_t>> magnitudes;
+                            magnitudes.reserve(h_size);
+                            for (size_t i = 0; i < h_size; ++i)
+                            {
+                                float mag = std::abs(fft_data[i]);
+                                magnitudes.emplace_back(mag, i);
+                            }
+                        
+                            std::partial_sort(magnitudes.begin(), magnitudes.begin() + k, magnitudes.end(),
+                                [](const auto& a, const auto& b) { return a.first > b.first; });
+
+                            std::vector<bool> keep(frame_size, false);
+                            for (int i = 0; i < k; ++i)
+                            {
+                                size_t idx = magnitudes[i].second;
+                                keep[idx] = true;
+                                // Also keep the symmetric bin
+                                if (idx > 0 && idx < frame_size / 2)
+                                {
+                                    size_t sym_idx = frame_size - idx;
+                                keep[sym_idx] = true;
+                                }
+                            }
+                    
+
+                            for (size_t i = 0; i < fft_data.size(); ++i)
+                            {
+                                if (!keep[i])
+                                {
+                                    fft_data[i] = {0.0f, 0.0f};
+                                }
+                            }
+                        }
+                        else if (transform == transforms::filter)
+                        {
+                            float cutoff = std::clamp(option, 0.0f, static_cast<float>(b.samplerate()) * 0.5f);
+                            size_t cutoff_bin = static_cast<size_t>(cutoff * frame_size / b.samplerate());
+                            for (size_t i = 0; i < fft_data.size(); ++i)
+                            {
+                                if (i > cutoff_bin && i < frame_size - cutoff_bin)
+                                {
+                                    fft_data[i] = {0.0f, 0.0f};
+                                }
+                            }
+                        }
+                        else if (transform == transforms::shift)
+                        {
+                            float shift_freq = std::clamp(option, -static_cast<float>(b.samplerate()) * 0.5f, static_cast<float>(b.samplerate()) * 0.5f);
+                            int shift_bins = static_cast<int>(shift_freq * frame_size / b.samplerate());
+                            dj::fft_arg<sample> shifted_fft(frame_size, {0.0f, 0.0f});
+                            for (size_t i = 0; i < fft_data.size(); ++i)            
+                            {
+                                int shifted_index = static_cast<int>(i) + shift_bins;
+                                if (shifted_index >= 0 && shifted_index < static_cast<int>(frame_size))
+                                {
+                                    shifted_fft[shifted_index] = fft_data[i];
+                                }
+                                // Symmetric bin
+                                int sym_index = static_cast<int>(frame_size) - static_cast<int>(i);
+                                int shifted_sym_index = sym_index + shift_bins;
+                                if (shifted_sym_index >= 0 && shifted_sym_index < static_cast<int>(frame_size))
+                                {
+                                    shifted_fft[shifted_sym_index] = fft_data[sym_index];
+                                }
+                            }
+                            fft_data = shifted_fft;
+                        }
+
                         auto ifft_data = dj::fft1d(fft_data, dj::fft_dir::DIR_BWD);
 
     					for (auto s = 0; s < frame_size; ++s)
@@ -1384,8 +1480,13 @@ public:
                             auto curr_sample = f + s;
 		    				if (curr_sample >= 0 && curr_sample < b.frame_count())
 			    			{
-                                new_channel[curr_sample] += ifft_data[s].real();
+                                new_channel[curr_sample] += ifft_data[s].real();// * window_[s];
 					    	}
+
+                            // Avoid discontinuities due to windowing
+                            {
+                                //new_channel[curr_sample] /= window_[s];
+                            }
 					    }
                     }
 

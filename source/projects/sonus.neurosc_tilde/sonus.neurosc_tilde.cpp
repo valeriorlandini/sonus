@@ -5,8 +5,7 @@
 
 #include "c74_min.h"
 #include "biquad.h"
-#include "neurowave.h"
-#include "wtosc.h"
+#include "neuralwave.h"
 
 using namespace c74::min;
 using namespace soutel;
@@ -39,11 +38,10 @@ public:
 			oscillator_.set_sample_rate(double(args[0]));
 			interval_ = (int)args[0] / 20;
 			elapsed_ = 0;
-			waveform_.set_latent_space(latent_);
-			waveform_.generate_wave();
-			oscillator_.set_wavetable(waveform_.get_wavetable());
+			oscillator_.set_latent_space(latent_);
 			lowpass_.set_sample_rate(double(args[0]));
-			lowpass_.set_cutoff(double(args[0]) * 0.375);
+			lowpass_.set_cutoff(double(args[0]) * 0.45);
+			lowpass_.set_q(0.5);
 			return {};
 		}
 	};
@@ -58,6 +56,23 @@ public:
             oscillator_.set_frequency((double)arg);
         }
     };
+
+	attribute<bool> window
+	{
+		this,
+		"window",
+		false,
+		title {"Window"},
+        description {"Apply a Hann window to the output waveform."},
+		setter
+		{
+			MIN_FUNCTION
+			{
+				oscillator_.set_windowed(bool(args[0]));
+				return args;
+			}
+		}
+	};
 
 	message<> m_number
 	{
@@ -173,20 +188,16 @@ public:
 			elapsed_ = 0;
 			if (changed_)
 			{
-				waveform_.set_latent_space(latent_);
-				waveform_.generate_wave();
-				oscillator_.set_wavetable(waveform_.get_wavetable());
-				oscillator_.normalize(0.707);
+				oscillator_.set_latent_space(latent_);
 				changed_ = false;
 			}
 		}
 
-		return lowpass_.run(oscillator_.run());
+		return oscillator_.run();
 	}
 
 	private:
-	WTOsc<double> oscillator_;
-	Neurowave<double> waveform_;
+	NeuralWave<double> oscillator_;
 	std::array<double, 8> latent_ = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
 	Biquad<double> lowpass_;
 	int elapsed_;

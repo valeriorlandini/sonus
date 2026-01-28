@@ -51,6 +51,11 @@
 
 	<attributelist>
 
+		<attribute name='window' get='1' set='1' type='long' size='1' >
+			<digest>Apply a Hann window to the output waveform</digest>
+			<description>Apply a Hann window to the output waveform. </description>
+		</attribute>
+
 	</attributelist>
 
 
