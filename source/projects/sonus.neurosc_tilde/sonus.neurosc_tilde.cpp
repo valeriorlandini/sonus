@@ -40,8 +40,8 @@ public:
 			elapsed_ = 0;
 			oscillator_.set_latent_space(latent_);
 			lowpass_.set_sample_rate(double(args[0]));
-			lowpass_.set_cutoff(double(args[0]) * 0.45);
-			lowpass_.set_q(0.5);
+			lowpass_.set_cutoff(double(args[0]) * 0.4);
+			lowpass_.set_q(0.3);
 			return {};
 		}
 	};
@@ -193,7 +193,7 @@ public:
 			}
 		}
 
-		return oscillator_.run();
+		return std::clamp(lowpass_.run(oscillator_.run()), -1.0, 1.0);
 	}
 
 	private:
