@@ -13,17 +13,6 @@
         "boxes": [
             {
                 "box": {
-                    "id": "obj-69",
-                    "maxclass": "message",
-                    "numinlets": 2,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 132.0, 765.0, 80.0, 22.0 ],
-                    "text": "spec peak 33"
-                }
-            },
-            {
-                "box": {
                     "id": "obj-62",
                     "maxclass": "message",
                     "numinlets": 2,
@@ -310,7 +299,7 @@
             },
             {
                 "box": {
-                    "buffername": "1031_tomix",
+                    "buffername": "1100_tomix",
                     "id": "obj-43",
                     "maxclass": "waveform~",
                     "numinlets": 5,
@@ -670,7 +659,7 @@
             },
             {
                 "box": {
-                    "buffername": "1031_sample",
+                    "buffername": "1100_sample",
                     "id": "obj-7",
                     "maxclass": "waveform~",
                     "numinlets": 5,
@@ -1078,12 +1067,6 @@
                 "patchline": {
                     "destination": [ "obj-2", 0 ],
                     "source": [ "obj-66", 0 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-2", 0 ],
-                    "source": [ "obj-69", 0 ]
                 }
             },
             {
