@@ -299,7 +299,7 @@
             },
             {
                 "box": {
-                    "buffername": "1100_tomix",
+                    "buffername": "1031_tomix",
                     "id": "obj-43",
                     "maxclass": "waveform~",
                     "numinlets": 5,
@@ -659,7 +659,7 @@
             },
             {
                 "box": {
-                    "buffername": "1100_sample",
+                    "buffername": "1031_sample",
                     "id": "obj-7",
                     "maxclass": "waveform~",
                     "numinlets": 5,

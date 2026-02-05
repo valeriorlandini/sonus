@@ -40,7 +40,7 @@ public:
 			elapsed_ = 0;
 			oscillator_.set_latent_space(latent_);
 			lowpass_.set_sample_rate(double(args[0]));
-			lowpass_.set_cutoff(double(args[0]) * 0.4);
+			lowpass_.set_cutoff(std::min(double(args[0]) * 0.36, 16000.0));
 			lowpass_.set_q(0.3);
 			return {};
 		}

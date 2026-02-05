@@ -1425,7 +1425,7 @@ public:
                                 if (idx > 0 && idx < frame_size / 2)
                                 {
                                     size_t sym_idx = frame_size - idx;
-                                keep[sym_idx] = true;
+                                    keep[sym_idx] = true;
                                 }
                             }
                     
@@ -1440,13 +1440,25 @@ public:
                         }
                         else if (transform == transforms::filter)
                         {
-                            float cutoff = std::clamp(option, 0.0f, static_cast<float>(b.samplerate()) * 0.5f);
-                            size_t cutoff_bin = static_cast<size_t>(cutoff * frame_size / b.samplerate());
+                            float cutoff = std::clamp(option, static_cast<float>(b.samplerate()) * -0.5f, static_cast<float>(b.samplerate()) * 0.5f);
+                            size_t cutoff_bin = static_cast<size_t>(std::abs(cutoff) * frame_size / b.samplerate());
                             for (size_t i = 0; i < fft_data.size(); ++i)
                             {
-                                if (i > cutoff_bin && i < frame_size - cutoff_bin)
+                                if (cutoff >= 0.0f)
                                 {
-                                    fft_data[i] = {0.0f, 0.0f};
+                                    // Perform low-pass filtering
+                                    if (i > cutoff_bin && i < frame_size - cutoff_bin)
+                                    {
+                                        fft_data[i] = {0.0f, 0.0f};
+                                    }
+                                }
+                                else
+                                {
+                                    // Perform high-pass filtering
+                                    if (i < cutoff_bin || i >= frame_size - cutoff_bin)
+                                    {
+                                        fft_data[i] = {0.0f, 0.0f};
+                                    }
                                 }
                             }
                         }
@@ -1455,19 +1467,14 @@ public:
                             float shift_freq = std::clamp(option, -static_cast<float>(b.samplerate()) * 0.5f, static_cast<float>(b.samplerate()) * 0.5f);
                             int shift_bins = static_cast<int>(shift_freq * frame_size / b.samplerate());
                             dj::fft_arg<sample> shifted_fft(frame_size, {0.0f, 0.0f});
-                            for (size_t i = 0; i < fft_data.size(); ++i)            
+                            for (size_t i = 0; i < h_size; ++i)            
                             {
                                 int shifted_index = static_cast<int>(i) + shift_bins;
-                                if (shifted_index >= 0 && shifted_index < static_cast<int>(frame_size))
+                                if (shifted_index >= 0 && shifted_index < h_size)
                                 {
                                     shifted_fft[shifted_index] = fft_data[i];
-                                }
-                                // Symmetric bin
-                                int sym_index = static_cast<int>(frame_size) - static_cast<int>(i);
-                                int shifted_sym_index = sym_index + shift_bins;
-                                if (shifted_sym_index >= 0 && shifted_sym_index < static_cast<int>(frame_size))
-                                {
-                                    shifted_fft[shifted_sym_index] = fft_data[sym_index];
+                                    // Symmetric bin
+                                    shifted_fft[static_cast<int>(frame_size) - shifted_index] = fft_data[static_cast<int>(frame_size) - static_cast<int>(i)];
                                 }
                             }
                             fft_data = shifted_fft;
@@ -1480,13 +1487,8 @@ public:
                             auto curr_sample = f + s;
 		    				if (curr_sample >= 0 && curr_sample < b.frame_count())
 			    			{
-                                new_channel[curr_sample] += ifft_data[s].real();// * window_[s];
+                                new_channel[curr_sample] += ifft_data[s].real();
 					    	}
-
-                            // Avoid discontinuities due to windowing
-                            {
-                                //new_channel[curr_sample] /= window_[s];
-                            }
 					    }
                     }
 
