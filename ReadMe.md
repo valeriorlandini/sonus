@@ -1,4 +1,14 @@
+## Table of contents
+
+- [Overview](#sonus)
+- [Compiled binaries](#compiled-binaries)
+- [How to build](#how-to-build)
+    - [Mac](#mac)
+    - [Windows](#windows)
+- [How to cite](#how-to-cite)
+
 # sonus
+
 An open source Max/MSP package for sound experimentation and algorithmic composition.
 A collection of externals coded in C++ and dealing with math, autonomous systems and experimental sound design.
 
@@ -114,4 +124,10 @@ Having generated the projects, you can now build by opening the .sln file in the
 `cmake --build . --config Release`
 
 Note: you can add the `-jX` option where X is the number of cores to use (e.g. `-j4`). This can help speed up your builds, though it may sometimes interleave the error output, making troubleshooting more challenging.
+
+## How to cite
+
+If you are using *sonus* in an academic context, you are welcome to cite [this paper](https://zenodo.org/records/18600750):
+
+> Orlandini, V. (2026). sonus, an open-source Max/MSP package for sound experimentation and algorithmic composition. Zenodo. https://doi.org/10.5281/zenodo.18600750
 

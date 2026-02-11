@@ -6,8 +6,8 @@
 
 <c74object name='sonus.collatz~' category='oscillator,  noise'>
 
-	<digest>Oscillator with wavetable created from Collatz Conjecture rules </digest>
-	<description>Oscillator with wavetable created from Collatz Conjecture rules </description>
+	<digest>Oscillator with wavetable created from Collatz conjecture rules </digest>
+	<description>Oscillator with wavetable created from Collatz conjecture rules </description>
 
 
 	<!--METADATA-->
