@@ -1,5 +1,3 @@
-## Table of contents
-
 - [Overview](#sonus)
 - [Compiled binaries](#compiled-binaries)
 - [How to build](#how-to-build)
