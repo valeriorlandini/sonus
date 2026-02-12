@@ -3,5 +3,5 @@ plugins:
 - jekyll-remote-theme
 title: sonus
 description: A Max/MSP package for sound experimentation and algorithmic composition
-show_downloads: true
+show_downloads: false
 logo: icon.png
