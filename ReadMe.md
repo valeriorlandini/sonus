@@ -1,9 +1,4 @@
-- [Overview](#sonus)
-- [Compiled binaries](#compiled-binaries)
-- [How to build](#how-to-build)
-    - [Mac](#mac)
-    - [Windows](#windows)
-- [How to cite](#how-to-cite)
+#### [Overview](#sonus) | [Compiled binaries](#compiled-binaries) | [How to build](#how-to-build) | [How to cite](#how-to-cite)
 
 # sonus
 
