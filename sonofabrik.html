@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SonoFabrik</title>
+  <meta name="description" content="SonoFabrik is a middleware for creating sound objects from natural-language prompts using open-source neural audio models, and arranging them in a DAW-like environment.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="nav">
+    <a class="brand" href="#top"><span class="dot"></span>SonoFabrik</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#install">Install</a>
+      <a href="#run">Run</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <p class="eyebrow">Middleware · Neural audio · Open source</p>
+      <h1>Sound objects,<br><span class="fade">fabricated from words.</span></h1>
+      <p class="lead">
+        Describe a sound in plain language. SonoFabrik generates it with open-source
+        neural audio models and lets you arrange it in a DAW-like environment.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#install">Get started</a>
+        <a class="btn" href="#about">What it does</a>
+      </div>
+
+      <div class="wave" aria-hidden="true">
+        <span style="--i:0;--h:22%"></span><span style="--i:1;--h:38%"></span><span style="--i:2;--h:30%"></span><span style="--i:3;--h:58%"></span>
+        <span style="--i:4;--h:44%"></span><span style="--i:5;--h:76%"></span><span style="--i:6;--h:52%"></span><span style="--i:7;--h:90%"></span>
+        <span style="--i:8;--h:64%"></span><span style="--i:9;--h:48%"></span><span style="--i:10;--h:70%"></span><span style="--i:11;--h:34%"></span>
+        <span style="--i:12;--h:56%"></span><span style="--i:13;--h:82%"></span><span style="--i:14;--h:40%"></span><span style="--i:15;--h:62%"></span>
+        <span style="--i:16;--h:26%"></span><span style="--i:17;--h:46%"></span><span style="--i:18;--h:72%"></span><span style="--i:19;--h:36%"></span>
+        <span style="--i:20;--h:54%"></span><span style="--i:21;--h:84%"></span><span style="--i:22;--h:60%"></span><span style="--i:23;--h:42%"></span>
+        <span style="--i:24;--h:68%"></span><span style="--i:25;--h:30%"></span><span style="--i:26;--h:50%"></span><span style="--i:27;--h:78%"></span>
+        <span style="--i:28;--h:44%"></span><span style="--i:29;--h:24%"></span><span style="--i:30;--h:58%"></span><span style="--i:31;--h:36%"></span>
+        <span style="--i:32;--h:66%"></span><span style="--i:33;--h:88%"></span><span style="--i:34;--h:52%"></span><span style="--i:35;--h:32%"></span>
+        <span style="--i:36;--h:46%"></span><span style="--i:37;--h:70%"></span><span style="--i:38;--h:28%"></span><span style="--i:39;--h:40%"></span>
+        <span style="--i:40;--h:60%"></span><span style="--i:41;--h:34%"></span><span style="--i:42;--h:20%"></span><span style="--i:43;--h:42%"></span>
+        <span style="--i:44;--h:28%"></span><span style="--i:45;--h:18%"></span><span style="--i:46;--h:30%"></span><span style="--i:47;--h:14%"></span>
+      </div>
+    </section>
+
+    <!-- SCREENSHOT PLACEHOLDER -->
+    <section class="shot" aria-label="Screenshot">
+      <div class="window">
+        <div class="window-bar">
+          <i></i><i></i><i></i>
+          <span>localhost:5173</span>
+        </div>
+        <div class="window-body">
+          <!-- Replace this block with: <img src="screenshot.png" alt="SonoFabrik interface"> -->
+          <div class="placeholder">
+            <span class="ph-label">Screenshot placeholder</span>
+            <span class="ph-size">1600 × 900</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <h2><span class="idx">01</span> What it does</h2>
+      <div class="grid">
+        <article>
+          <h3>Prompt to sound</h3>
+          <p>Create sound objects from natural-language prompts using open-source neural audio models.</p>
+        </article>
+        <article>
+          <h3>Arrange</h3>
+          <p>Place and layer generated sounds in a DAW-like environment, right in the browser.</p>
+        </article>
+        <article>
+          <h3>Export</h3>
+          <p>Individual audio files or a complete mix. Also REAPER projects and Python scripts for the underlying command-line audio engine.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- INSTALL -->
+    <section id="install" class="steps">
+      <h2><span class="idx">02</span> Installation</h2>
+      <p class="note">Tested on Linux; macOS and Windows should be almost identical. Clone or download the repository, then open a terminal in the <code>sonofabrik</code> directory.</p>
+
+      <div class="step">
+        <h3><span class="n">1</span> Node.js dependencies</h3>
+        <pre><code>npm install</code></pre>
+      </div>
+
+      <div class="step">
+        <h3><span class="n">2</span> Python dependencies</h3>
+        <p>A virtual environment is recommended.</p>
+        <pre><code>python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt</code></pre>
+      </div>
+
+      <div class="step">
+        <h3><span class="n">3</span> Stable Audio Open</h3>
+        <p>
+          Download <a href="https://huggingface.co/stabilityai/stable-audio-open-1.0">Stable Audio Open 1.0</a>
+          from Hugging Face. It is a gated model, so you need a free account and token, plus the
+          <a href="https://huggingface.co/docs/huggingface_hub/guides/cli">HuggingFace CLI</a>.
+        </p>
+        <pre><code>hf auth login
+hf download hf://stabilityai/stable-audio-open-1.0/ --local-dir ./stable-audio-open-1.0</code></pre>
+        <p>You should end up with a <code>stable-audio-open-1.0</code> directory in the repository root.</p>
+      </div>
+    </section>
+
+    <!-- RUN -->
+    <section id="run" class="steps">
+      <h2><span class="idx">03</span> Running</h2>
+      <p class="note">A Python backend and a web interface. Start the backend first.</p>
+
+      <div class="step">
+        <h3><span class="n">1</span> Backend</h3>
+        <pre><code>python server.py</code></pre>
+      </div>
+
+      <div class="step">
+        <h3><span class="n">2</span> Interface</h3>
+        <p>In a second terminal:</p>
+        <pre><code>npm run dev</code></pre>
+        <p>Then open <a href="http://localhost:5173/">http://localhost:5173/</a>.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>SonoFabrik</span>
+    <span class="muted">Have fun.</span>
+  </footer>
+
+</body>
+</html>
